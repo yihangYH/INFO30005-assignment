@@ -15,7 +15,7 @@ Jincheng(Derex) Wang     1025060       [jinchengw@student.unimelb.edu.au](mailto
 
 Lihui(Frankie) Hu         1074459       lihui@student.unimelb.edu.au
 
-## assignment requirement：
+## Assignment requirement：
 
 in the shared google doc:
 
