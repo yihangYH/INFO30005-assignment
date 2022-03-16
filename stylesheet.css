@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: rgb(231, 24, 24); 
+    height: 15%; 
+    position: relative;
+    overflow: hidden;
+}
+
+.logo {
+    height: 100%;
+    width: 30%;
+    float: left;
+   
+}
+.topBar {
+    float: left;
+    width: 70%;
+    position: absolute;
+    left: 30%;
+    bottom: 0;
+   
+    
+}
+.topBar ul{
+    list-style-type: none;
+    list-style: none;
+}
+.topBar li{
+    display: inline;
+    margin-left: 2%;
+    
+}
+
+.topBar ul li a{
+    font-size: 200%; 
+    text-decoration: none;
+    color: #000;
+}
+.main {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+.pic {
+    margin-left: 8%;
+    margin-right: 8%;
+}
+.doc_pic {
+    width: 100%;
+    
+}
+
+.about_dia {
+    margin-top: 10%;
+    margin-left: 8%;
+    margin-right: 8%;
+    width: 85%;
+    float: left;
+}
+
+
+.dia1_pic {
+    width: 70%;
+}
+.about_dia_p {
+    margin-top: 10%;
+    margin-left: 8%;
+    margin-right: 8%;
+    width: 100%;
+}
+
+.about_dia_p ul{
+    display: flex;
+    list-style-type: none;
+    list-style: none;
+}
+.about_dia_p ul li {
+    font-size: large;
+}
+
+
+.about_dia ul{
+    display: flex;
+    list-style-type: none;
+    list-style: none;
+    
+}
+.about_dia ul li {
+    font-size: large;    
+}
+.dia1_pic1 {
+    width: 110%;
+}
+
+p {
+    line-height: 190%;
+}
+
+.about_dia table {
+    font-size: x-large;
+}
+
+
