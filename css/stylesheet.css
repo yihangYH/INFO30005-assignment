@@ -1,0 +1,915 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans ';
+}
+
+@media screen and (min-width: 300px) and (max-width:420px){
+  .about-diabetes-gestational-li h1{
+    width: 120%;
+  }
+  .topBar ul a{
+    font-weight: normal;
+  }
+  .topBar ul {
+    justify-content: center;
+    align-items: center;
+    padding-top: 0;
+  }
+  .topBar {
+    display: flex;
+    position: absolute;
+    margin-top: 5%;
+    margin-left: 40%;
+    flex-direction: row-reverse;
+  }
+  .about-us {
+    margin-top: 5%;
+  }
+  .about {
+    margin-top: 5%;
+  }
+  .topBar input {
+    width: 50px;
+    height: 30px;
+    opacity: 0;
+  }
+  .topBar span {
+    position: absolute;
+    margin-left: 65%;
+    margin-top: 8%;
+    margin-right: 4%;
+    top: calc(20% - 10px);
+    width: 30px;
+    height: 4px;
+    border-radius: 15px;
+    background-color: #999;
+    pointer-events: none;
+    transition: transform 0.3s ease-in-out, top 0.3s ease-in-out 0.3s;
+  }
+  .topBar span:nth-child(3) {
+    top: calc(20% + 6px);
+  }
+  .topBar ul {
+    width: 0;
+    overflow: hidden;
+  }
+  .topBar ul li {
+    list-style: none;
+  }
+  .topBar ul li a {
+    text-decoration:underline;
+    color: #333;
+  }
+  .topBar ul li a:hover {
+    color: #333;
+  }
+  .topBar input ~ ul {
+    width: 170px;
+    font-size: 0;
+  }
+  .topBar input:checked ~ ul {
+    width: 170px;
+    font-size: large;
+    text-align: right;
+  }
+  .topBar input:checked ~ span:nth-child(2) {
+    top: calc(8% - 1px);
+    margin-left: 70%;
+    transform: rotate(-45deg);
+    background-color: #999;
+    transition: top 0.3s ease-in-out, transform 0.3s ease-in-out 0.3s;
+  }
+  .topBar input:checked ~ span:nth-child(3) {
+    top: calc(8% - 1px);
+    margin-left: 70%;
+    transform: rotate(45deg);
+    background-color: #999;
+    transition: top 0.3s ease-in-out, transform 0.3s ease-in-out 0.3s;
+  }
+  .about-us-main{
+    padding-bottom: 120%;
+    background-color: #FDF9F8;
+  }
+  .about-diabetes-body {
+    background-color: #FDF9F8;
+    height: 100%;
+    overflow: hidden;
+  }
+  .welcome-header {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 320px;
+    margin-left: 5%;
+    font-family: '*Insert google font';
+    float: left;
+  }
+  .about-us-body {
+    background-color: #FDF9F8;
+    height: 100%;
+    overflow: hidden;
+  }
+  .welcome-body {
+    background-color: #FDF9F8;
+    height: 200vw;
+    overflow: hidden;
+  }
+  .side-picture{
+    margin-top: -450px;
+    float: left;
+    height: 150px;
+    width: 170px;
+    transform: rotate(28deg);
+    border-radius: 10%;
+    margin-left: 30%;
+  }
+  .welcome-picture {
+    display: inline-block;
+    transform: rotate(-28deg);
+    width: 80vw;
+    margin-top: -42%;
+    margin-left: -23%;
+  }
+  .welcome-sentence {
+    font-size: 15px;
+    font-family: serif;
+    font-weight: normal;
+    color: gray;
+    margin-right: 7%;
+  }
+  .about-us-h1 {
+    text-align: center;
+    margin-top: 5%;
+  }
+  .about-us-paragraph{
+    text-align: left;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .main {
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+  .about-diabetes-paragraph ul{
+    list-style-type: none;
+    list-style: none;
+  }
+  .about-diabetes-paragraph ul li {
+    font-size: small;
+  }
+  .about-diabetes-paragraph {
+    margin-top: 10%;
+    margin-left: 8%;
+    margin-right: 8%;
+    width: 90%;
+  }
+  .about-diabetes-paragraph0{
+    width: 90%;
+  }
+  .type-picture { 
+    width: 100%;
+  }
+  .about-diabetes-type {
+    margin-top: 10%;
+    margin-left: 5%;
+    margin-right: 8%;
+    width: 85%;
+    float: left;
+    display: tables;
+  }
+  .about-diabetes-type ul{
+    list-style-type: none;
+    list-style: none;
+  }
+  .about-diabetes-type ul li {
+      font-size: small; 
+  }
+  .type1-picture {
+    width: 140%;
+    margin-left: 0;
+  }
+  .about-diabetes-type-li {
+    margin-left: 20%;
+  }
+  .about-diabetes-type1 {
+    margin-top: 10%;
+    margin-left: 8%;
+    margin-right: 8%;
+    width: 85%;
+    float: left;
+  }
+  .about-diabetes-type1 ul{
+    list-style-type: none;
+    list-style: none;
+  }
+  .about-diabetes-type1 ul li {
+      font-size: small; 
+      width: 70%;   
+  }
+  .about-diabetes-type1-paragraph2 {
+    width: 140%;
+    height: 100px;
+  }
+  .about-diabetes-type1-paragraph1 {
+    width: 140%;
+  }
+  .switch {
+    display: table-footer-group;
+  }
+  .switcha {
+    display: table-header-group;
+  }
+  .about-diabetes-type-li {
+    margin-left: 5%;
+  }
+  .about-diabetes-type2 {
+    margin-top: 10%;
+    margin-left: 8%;
+    margin-right: 8%;
+    width: 85%;
+    float: left;
+  }
+  .about-diabetes-type2 ul{
+    list-style-type: none;
+    list-style: none;
+  }
+  .about-diabetes-type2 ul li {
+      font-size: small; 
+      width: 95%;
+      margin-left: 0;   
+  }
+  .type2-picture {
+    width: 100%;
+    height: 170px;
+    
+  }
+  .about-diabetes-gestational-paragraph {
+    width: 150%;
+  }
+  .about-diabetes-type2-paragraph {
+    width: 100%;
+    margin-left: 5%;
+    
+  }
+  .Gestational-Diabetes-picture {
+    width: 140%;
+  }
+  .about-diabetes-gestational {
+    margin-top: 10%;
+    margin-left: 8%;
+    margin-right: 8%;
+    width: 85%;
+    float: left;
+  }
+  .about-diabetes-gestational ul{
+    list-style-type: none;
+    list-style: none;
+    
+  }
+  .about-diabetes-gestational ul li {
+      font-size: small; 
+      width: 70%;   
+  }
+  .header {
+    background:linear-gradient(to bottom,#DFAFAD,#FDF9F8);
+    height: 100px; 
+    position: relative;
+    z-index: 0;
+    width: 100%;
+  }
+  .logo {
+    width: 60%;
+    float: left;
+    
+}
+
+  
+  .about-us-text {
+      margin-top: 5%;
+      font-size: 10px;
+  }
+  iframe {
+      width: 90%;
+      height: 100%;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      position:relative;
+      overflow: hidden;
+  }
+}
+
+@media screen and (min-width: 1920px) { 
+    .topBar input {
+      visibility: hidden;
+    }
+    .about {
+      float: right;
+      margin-right: 7.3%;
+    }
+    .about-us-main{
+      padding-bottom: 9%;
+      background-color: #FDF9F8;
+    }
+    .about-diabetes-gestational-li{
+      width: 60%;
+    }
+
+    .about-us-paragraph{
+      text-align: left;
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+
+    .about-us-h1 {
+      text-align: center;
+      margin-top: 5%;
+    }
+    .topBar {
+      float: right;
+      width: 70%;
+      position: absolute;
+      left: 30%;
+      bottom: 0px;
+    
+    }
+    .about-diabetes {
+      margin-left: 0;
+    }
+    .topBar ul{
+        list-style-type: none;
+        list-style: none;
+    }
+    .topBar ul a{
+      font-weight: normal;
+    }
+    .topBar li{
+        display: inline; 
+    }
+
+    .main {
+        height: 100%;
+        width: 100%;
+        position: relative;
+    }
+    .about-diabetes-paragraph ul{
+      display: flex;
+      list-style: none;
+    }
+    
+
+    .topBar .about-us {
+      margin-left: 18%;
+    }
+    
+    .about-diabetes-paragraph ul li {
+      font-size: xx-large;
+    }
+  
+    .about-diabetes-paragraph {
+      margin-top: 10%;
+      margin-left: 8%;
+      margin-right: 8%;
+      width: 90%;
+    }
+  
+
+    .type-picture {
+      width: 140%;
+      margin-top: 2%;
+    }
+    .about-diabetes-type {
+      margin-top: 10%;
+      margin-left: 8%;
+      margin-right: 8%;
+      width: 85%;
+      float: left;
+    }
+    .about-diabetes-type ul{
+      display: flex;
+      list-style-type: none;
+      list-style: none;
+      
+    }
+    .about-diabetes-type ul li {
+        font-size: xx-large; 
+         
+    }
+    .type1-picture {
+      width: 100%;
+      margin-left: -2%;
+      height: 370px;
+      margin-top: 3%;
+    }
+    .about-diabetes-type-li {
+      margin-left: 20%;
+    }
+    .about-diabetes-type1 {
+      margin-top: 10%;
+      margin-left: 8%;
+      margin-right: 8%;
+      width: 85%;
+      float: left;
+    }
+    .about-diabetes-type1 ul{
+      display: flex;
+      list-style-type: none;
+      list-style: none;
+      
+    }
+    .about-diabetes-type1 ul li {
+        font-size: xx-large; 
+        width: 70%;   
+    }
+    .about-diabetes-type1-paragraph2 {
+      width: 200%;
+      height: 200px;
+    }
+    .about-diabetes-type-li {
+      margin-left: 25%;
+    }
+    .about-diabetes-type2 {
+      margin-top: 5%;
+      margin-left: 8%;
+      margin-right: 8%;
+      width: 85%;
+      float: left;
+    }
+    .about-diabetes-type2 ul{
+      display: flex;
+      list-style: none;
+      
+    }
+    .type2-picture {
+      width: 340%;
+      height: 550px;
+      margin-top: 8%;
+    }
+    .about-diabetes-type2-paragraph {
+      width: 50%;
+      font-size: xx-large; 
+      margin-left: 51%;
+      
+    }
+    .Gestational-Diabetes-picture {
+      width: 110%;
+      margin-top: 3%;
+    }
+    .about-diabetes-gestational {
+      margin-top: 10%;
+      margin-left: 8%;
+      margin-right: 8%;
+      width: 85%;
+      float: left;
+    }
+    .about-diabetes-gestational ul{
+      display: flex;
+      list-style-type: none;
+      list-style: none;
+      
+    }
+    .about-diabetes-gestational ul li {
+        font-size: xx-large; 
+        width: 70%;   
+    }
+    .welcome-header {
+      font-size: 50px;
+      font-weight: bold;
+      margin-top: 10%;
+      margin-left: 5%;
+      font-family: Arial, Helvetica, sans-serif;
+      float: left;
+      
+    }
+    .welcome-body {
+      background-color: #FDF9F8;
+      height: 1000px;
+      display: flex;
+      overflow: hidden;
+      
+    }
+    .side-picture{
+      margin-top: 10%;
+      float: left;
+      height: 550px;
+      transform: rotate(19deg);
+      border-radius: 10%;
+      margin-left: 8%;
+      margin-right: 10%;
+    }
+    .welcome-picture {
+      display: inline-block;
+      transform: rotate(-18deg);
+      width: 150%;
+      margin-top: -54%;
+      margin-left: -17%;
+      
+    }
+    .welcome-sentence {
+      font-size: 35px;
+      font-family: serif;
+      color: gray;
+      font-weight: normal;
+    }
+    .about-diabetes-body {
+      background-color: #FDF9F8;
+      height: 100%;
+      
+      overflow: hidden;
+    }
+    .about-us-body {
+      background-color: #FDF9F8;
+      height: 100%;
+      
+      overflow: hidden;
+    }
+    .about-diabetes-paragraph p {
+      width: 100%;
+    }
+    
+    .header {
+      background:linear-gradient(to bottom,#DFAFAD,#FDF9F8);
+      height: 150px; 
+      position: relative;
+      z-index: 0;
+      
+    }
+    .logo {
+      width: 250px;
+      overflow: hidden;
+      
+    }
+    .topBar ul li a{
+        font-size: 300%; 
+        text-decoration: none;
+        color: #000;
+    }
+    
+    .slider {
+      margin-left: -12%;
+        width: 30%;
+        height: 90%;
+        background:linear-gradient(to bottom,#DFAFAD,white);
+        border-radius: 4px;
+        position: absolute;
+        left: 100px;
+        bottom: 0;
+        z-index: -1;
+        transition: all ease, 0.4s;
+        overflow: hidden;
+    
+    }
+        
+    li:nth-child(2):hover ~ .slider {
+        left: 47%;
+        width: 36%;
+    }
+      
+    li:nth-child(3):hover ~ .slider {
+        left: 85%;
+    }
+    .about-us-text  {
+        margin-top: 5%;
+        font-size: xx-large;
+    }
+    .about-us-main table {
+      margin-left: 5%;
+    }
+    iframe {
+      width: 900px;
+      height: 500px;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      position:relative;
+      overflow: hidden;
+      margin-right: 80px;
+      margin-top: 3%;
+    }
+      @keyframes waves {
+        from {
+          clip-path: polygon(
+            0% 17%,
+            9% 10%,
+            18% 4%,
+            30% 0%,
+            43% 1%,
+            49% 4%,
+            57% 7%,
+            66% 10%,
+            78% 11%,
+            89% 11%,
+            96% 9%,
+            100% 7%,
+            100% 100%,
+            0% 100%
+          );
+        }
+        50% {
+          clip-path: polygon(
+            0% 4%,
+            6% 9%,
+            13% 13%,
+            23% 15%,
+            31% 16%,
+            42% 15%,
+            49% 13%,
+            61% 10%,
+            71% 5%,
+            81% 3%,
+            90% 2%,
+            100% 5%,
+            100% 100%,
+            0% 100%
+          );
+        }
+        to {
+          clip-path: polygon(
+            0% 17%,
+            9% 10%,
+            18% 4%,
+            30% 0%,
+            43% 1%,
+            49% 4%,
+            57% 7%,
+            66% 10%,
+            78% 11%,
+            89% 11%,
+            96% 9%,
+            100% 7%,
+            100% 100%,
+            0% 100%
+          );
+        }
+    }
+} 
+
+@media screen and (min-device-width: 700px) and (max-device-width: 1300px) { 
+  .topBar input {
+    visibility: hidden;
+  }
+  .about-us-main table {
+    margin-left: 4%;
+  }
+  .topBar ul a{
+    font-weight: normal;
+  }
+  .about {
+    float: right;
+    margin-right: 4%;
+  }
+  .about-us-main{
+    padding-bottom: 9%;
+    background-color: #FDF9F8;
+  }
+  .welcome-header {
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 10%;
+    margin-left: 5%;
+    
+    width: 100%;
+    
+  }
+  .welcome-body {
+    background-color: #FDF9F8;
+    height: 718px;
+    display: flex;
+  }
+  .side-picture{ 
+    float: left;
+  }
+  .welcome-picture {
+    height: 50vh;
+    margin-top: 5%;
+    
+  }
+  .welcome-sentence {
+    font-size: 20px;
+    font-weight: normal;
+    color: gray;
+
+  }
+  .about-us-main{
+    display: flex;
+    
+    overflow: hidden;
+  }
+  .about-diabetes-body {
+    height: 100%;
+    overflow: hidden;
+    background-color: #FDF9F8;
+  }
+  .about-us-body{
+    background-color: #FDF9F8;
+    height: 100%;
+    position: relative;
+  }
+  .about-diabetes-gestational-li {
+    width: 60%;
+  }
+
+  .about-us-paragraph{
+    text-align: left;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+  }
+  .topBar {
+    float: right;
+    width: 70%;
+    position: absolute;
+    margin-left: 30%;
+    bottom: 15px;
+    font-weight: bolder;
+  }
+  .about-diabetes {
+    /* margin-left: -4%; */
+  }
+    .topBar ul{
+        list-style: none;
+      
+    }
+    .topBar li{
+        display: inline; 
+    }
+
+    .main {
+        height: 100%;
+        width: 100%;
+        /* position: relative; */
+    }
+    .about-diabetes-paragraph ul{
+      display: flex;
+      list-style-type: none;
+      list-style: none;
+    }
+
+    .topBar .about-us {
+        margin-left: 10%;
+    }
+    .about-diabetes-paragraph ul li {
+      font-size: large;
+    }
+    .about-diabetes-paragraph {
+      margin-top: 10%;
+      margin-left: 8%;
+      margin-right: 8%;
+      width: 90%;
+    }
+    
+    .type-picture {
+      width: 100%;
+      margin-top: 3%;
+    }
+    .about-diabetes-type {
+      margin-top: 10%;
+      margin-left: 8%;
+      margin-right: 8%;
+      width: 85%;
+      float: left;
+    }
+    .about-diabetes-type ul{
+      display: flex;
+      
+      list-style: none;
+      
+    }
+    .about-diabetes-type ul li {
+        font-size: large; 
+         
+    }
+    .type1-picture {
+      width: 103%;
+      margin-left: 3%;
+      height: 200px;
+      margin-top: 3%;
+    }
+    
+    .about-diabetes-type1 {
+      margin-top: 10%;
+      margin-left: 8%;
+      margin-right: 8%;
+      width: 85%;
+      float: left;
+    }
+    .about-diabetes-type1 ul{
+      display: flex;
+      list-style: none;
+      
+    }
+    .about-diabetes-type1 ul li {
+        font-size: large; 
+        width: 70%;   
+    }
+    .about-diabetes-type1-paragraph2 {
+      width: 200%;
+    }
+    .about-diabetes-type-li {
+      margin-left: 5%;
+    }
+    .about-diabetes-type2 {
+      margin-top: 10%;
+      margin-left: 8%;
+      margin-right: 8%;
+      width: 85%;
+      float: left;
+    }
+    .about-diabetes-type2 ul{
+      display: flex;
+      list-style: none;
+      
+    }
+    .about-diabetes-type2 ul li {
+        font-size: large; 
+    }
+    .type2-picture {
+      width: 40vw;
+      margin-top: 0%;
+      margin-left: 0%;
+      height: 40vh;
+    }
+    .about-diabetes-type2-paragraph {
+      width: 100%;
+      margin-left: 10%;
+      
+    }
+    .Gestational-Diabetes-picture {
+      width: 110%;
+      margin-top: 2%;
+    }
+    .about-diabetes-gestational {
+      margin-top: 10%;
+      margin-left: 8%;
+      margin-right: 8%;
+      width: 85%;
+      float: left;
+    }
+    .about-diabetes-gestational ul{
+      display: flex;
+      list-style-type: none;
+      list-style: none;
+      
+    }
+    .about-diabetes-gestational ul li {
+        font-size: large; 
+        width: 70%;   
+    }
+    .header {
+      background:linear-gradient(to bottom,#DFAFAD,#FDF9F8);
+      height: 150px; 
+      position: relative;
+      z-index: 0; 
+    }
+    .logo {
+      width: 250px;
+      overflow: hidden;
+      
+    }
+    .topBar ul li a{
+      font-size: 200%; 
+      text-decoration: none;
+      color: #000;
+    }
+    .about-us-text  {
+      margin-top: 5%;
+      font-size: x-large;
+      text-align: center;
+    }
+    iframe {
+      margin-top: 3%;
+      width: 476px;
+      height: 250px;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      position:relative;
+      overflow: hidden;
+      margin-right: 20px;
+    }
+} 
+
+a {
+  color: black;
+  text-decoration: underline;
+  font-weight: 800;
+}
+
+p {
+    line-height: 190%;
+}
+
+h1 {
+  margin-bottom: 2%;
+}
+b {
+  font-family: 'Open Sans ExtraBold 800';
+}
+
+
+  
