@@ -5,6 +5,26 @@ Repository for INFO30005 group project
 
 The HTML code is [here](https://github.com/yihangYH/INFO30005-assignment/tree/main/HTML) and the CSS code is [here](https://github.com/yihangYH/INFO30005-assignment/tree/main/css)
 
+### Tutorial
+
+TutorialTutorial T8, Thursday 6:15 pmTutor: Dekko Shi
+
+### Links
+
+Link to prototype (Phone size patient app): https://xd.adobe.com/view/4301ee10-beba-4f66-abba-0b595899353f-1652/
+
+Link to second prototype (desktop size Clinician app): https://xd.adobe.com/view/6fb12ce0-ea8b-4f6d-bfa7-4be1bd9bf9b6-3ae2/
+
+Link to HTML/CSS file: https://github.com/yihangYH/INFO30005-assignment
+
+### Screenshot from XD: Patient app
+
+![](/Users/liuyihang/Documents/INFO30005/INFO30005-assignment/README_res/Patient.jpeg)
+
+### Screenshot from XD: Clinician app
+
+![](/Users/liuyihang/Documents/INFO30005/INFO30005-assignment/README_res/Clinician.jpeg)
+
 ### Important Note:
 
 All HTML and CSS work fine in Chrome devtools, but Safari devtool may display errors.
