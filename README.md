@@ -1,6 +1,18 @@
 # INFO30005-assignment
 Repository for INFO30005 group project 
 
+## Stage 1:
+
+The HTML code is [here](https://github.com/yihangYH/INFO30005-assignment/tree/main/HTML) and the CSS code is [here](https://github.com/yihangYH/INFO30005-assignment/tree/main/css)
+
+### Important Note:
+
+All HTML and CSS work fine in Chrome devtools, but Safari devtool may display errors.
+
+Please use http or https as prefix when opening static pages, otherwise Youtube videos **About diabetes** will not appear.
+
+If the Youtube video does not load, please refresh the page.
+
 ## Group member:
 
 **Student Name           Student ID    Student Email** 
