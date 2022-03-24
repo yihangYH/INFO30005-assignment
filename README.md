@@ -11,19 +11,23 @@ TutorialTutorial T8, Thursday 6:15 pmTutor: Dekko Shi
 
 ### Links
 
-Link to prototype (Phone size patient app): https://xd.adobe.com/view/4301ee10-beba-4f66-abba-0b595899353f-1652/
+Link to prototype (Phone size patient app):https://xd.adobe.com/view/4301ee10-beba-4f66-abba-0b595899353f-1652/
 
-Link to second prototype (desktop size Clinician app): https://xd.adobe.com/view/6fb12ce0-ea8b-4f6d-bfa7-4be1bd9bf9b6-3ae2/
+Link to second prototype (desktop size Clinician app):https://xd.adobe.com/view/aeebc65c-d20d-4a19-88e5-225d45f08e78-fbb8/
 
 Link to HTML/CSS file: https://github.com/yihangYH/INFO30005-assignment
 
 ### Screenshot from XD: Patient app
 
-![](./README_res/Patient.jpeg)
+<p align="center">
+  <img src="README_res/Patient.jpeg"  width="600" >
+</p>
 
 ### Screenshot from XD: Clinician app
 
-![](./README_res/Clinician.jpeg)
+<p align="center">
+  <img src="README_res/Clinician.jpeg"  width="600" >
+</p>
 
 ### Important Note:
 
@@ -32,6 +36,8 @@ All HTML and CSS work fine in Chrome devtools, but Safari devtool may display er
 Please use http or https as prefix when opening static pages, otherwise Youtube videos **About diabetes** will not appear.
 
 If the Youtube video does not load, please refresh the page.
+
+For mobile sizes, if you view from XD or Chrome Devtool, you may find that the text is too small, please enlarge it. On actual mobile devices, all text font sizes are displayed normally.
 
 ## Group member:
 
