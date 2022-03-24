@@ -19,11 +19,11 @@ Link to HTML/CSS file: https://github.com/yihangYH/INFO30005-assignment
 
 ### Screenshot from XD: Patient app
 
-![](/Users/liuyihang/Documents/INFO30005/INFO30005-assignment/README_res/Patient.jpeg)
+![](./README_res/Patient.jpeg)
 
 ### Screenshot from XD: Clinician app
 
-![](/Users/liuyihang/Documents/INFO30005/INFO30005-assignment/README_res/Clinician.jpeg)
+![](./README_res/Clinician.jpeg)
 
 ### Important Note:
 
