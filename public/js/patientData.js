@@ -235,3 +235,13 @@ function commentClear3(){
             document.getElementById('pen3').style.position='absolute';
             document.getElementById('pen3').style.left='122%';
 }
+
+
+function cancel(){
+    document.getElementById('main-body').style.display='flex';
+    document.getElementById('date').style.display='flex';
+    document.getElementById('text').style.display = 'flex';
+    document.getElementById('blur').style.display = 'none';
+    document.getElementById('cancel').style.display = 'none';
+    document.getElementById('container').style.display = 'none';
+}
