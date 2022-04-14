@@ -74,21 +74,21 @@
     }
     .trophies p{
         position: relative;
-        top:10%;
-        left: 10%;
+        top:4%;
+        left: -23%;
         text-align: center;
     }
     .rankings p{
         position: relative;
-        top:-3%;
+        top:-5%;
         text-align: center;
-        padding-left:63%;
+        padding-left:41%;
     }
     .learn-more {
         text-align: center;
         position: relative;
-        width: 190%;
-        left: -73%;
+        width: 284%;
+        left: -174%;
         top: 5%;
         font-style: italic;
         background-color: #FAF7F7;
@@ -97,9 +97,9 @@
     }
     .trophies-pic {
         position: relative;
-        top:10%;
-        width: 78%;
-        left: 10%;
+        top:4%;
+        width: 50%;
+        left: -4%;
     }
     .vl {
         border-left: 1px solid rgb(215, 215, 215);
@@ -109,8 +109,8 @@
         left: 48%;
     }
     .rankings-pic {
-        padding-left: 60%;
-        width: 43%;
+        padding-left: 28%;
+        width: 80%;
     }
     .album {
         display: flex;
