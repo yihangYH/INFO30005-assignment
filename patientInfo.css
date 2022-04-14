@@ -1,0 +1,655 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans");
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans ', sans-serif;
+}
+
+@media screen and (min-width: 300px) and (max-width:420px) {
+
+    .header {
+        display: flex;
+        background: linear-gradient(to bottom, #DFAFAD, #FDF9F8);
+    }
+
+    .logo {
+        width: 150px;
+    }
+    body {
+        height: 100%;
+        width: 100%;
+    }
+    .log-out {
+        position: absolute;
+        left: 80%;
+        top: 4%;
+        border-radius: 20px;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        padding-left: 2%;
+        padding-right: 2%;
+        background-color: #DFAFAD;
+        color: white;
+    }
+    
+    .main-body {
+        background-color: #FDF9F8;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+    }
+    .word-welcome {
+        font-size: 37px;
+        font-weight: 550;
+        position: absolute;
+        left: 10px;
+        top:3%;
+    }
+    .user-name {
+        font-size: 35px;
+        font-weight: 200;
+        position: absolute;
+        left: 10px;
+        top:10%;
+    }
+    .details {
+        font-size: 18px;
+        font-weight:200;
+        font-style: italic;
+        position: absolute;
+        left: 10px;
+        top:15%;
+        color: #DFAFAD;
+    }
+    .trophies-and-rankings {
+        display: flex;
+        position: absolute;
+        left: 54%;
+        width: 28%;
+        height: 7%;
+        padding: 7%;
+        border-radius: 10%;
+        border:1px solid rgb(215, 215, 215)
+    }
+    .trophies p{
+        position: relative;
+        top:10%;
+        left: 10%;
+        text-align: center;
+    }
+    .rankings p{
+        position: relative;
+        top:-3%;
+        text-align: center;
+        padding-left:63%;
+    }
+    .learn-more {
+        text-align: center;
+        position: relative;
+        width: 190%;
+        left: -73%;
+        top: 5%;
+        font-style: italic;
+        background-color: #FAF7F7;
+        padding: 1.5px;
+        border-radius: 10%;
+    }
+    .trophies-pic {
+        position: relative;
+        top:10%;
+        width: 78%;
+        left: 10%;
+    }
+    .vl {
+        border-left: 1px solid rgb(215, 215, 215);
+        height: 77%;
+        top:0%;
+        position: absolute;
+        left: 48%;
+    }
+    .rankings-pic {
+        padding-left: 60%;
+        width: 43%;
+    }
+    .album {
+        display: flex;
+        position: absolute;
+        border-radius: 10px;
+        top:20%;
+        left: 10px;
+        font-weight: lighter;
+        font-size: 20px;
+    }
+    .pen-pic {
+        position: absolute;
+        display: flex;
+        left: 102%;
+        top: -20%;
+        width: 13%;
+    }
+    .your-data {
+        font-size: 35px;
+        font-weight: 200;
+        display: flex;
+        position: absolute;
+        border-radius: 10px;
+        top:26%;
+        left: 10px;
+    }
+    .update {
+        display: flex;
+        position: absolute;
+        border-radius: 20px;
+        width: 71%;
+        top:20%;
+        color: white;
+        padding-top: 3%;
+        padding-bottom: 3%;
+        padding-left: 32%;
+        background-color: #DFAFAD;
+        left: 110%;
+        font-size: medium;
+        font-weight: 500;
+    }
+    .blood-glucose{
+        font-weight: bold;
+        font-size: 14px;
+        display: flex;
+        position: absolute;
+        top:36%;
+        left: 10px;
+        width: 90%;
+    }
+    .blood-glucose-words{
+        width: 20%;
+    }
+    .blood-glucose-data {
+        display: flex;
+        position: absolute;
+        left: 30%;
+        top:-6%;
+        font-size: xx-large;
+        font-weight: 340;
+    }
+    .blood-glucose-arrow {
+        position: absolute;
+        display: flex;
+        left: 64%;
+        top: -30%;
+        width: 42%;
+    }
+    .first-hr {
+        border: 1px solid gray;
+        width: 80%;
+        position: absolute;
+        top:42%;
+        left: 10px;
+    }
+    .weight {
+        font-weight: bold;
+        font-size: 14px;
+        display: flex;
+        position: absolute;
+        top:46%;
+        left: 10px;
+        width: 90%;
+    }
+    .weight-data {
+        display: flex;
+        position: absolute;
+        left: 30%;
+        top:-59%;
+        font-size: xx-large;
+        font-weight: 340;
+    }
+    .weight-arrow {
+        position: absolute;
+        display: flex;
+        left: 64%;
+        top: -115%;
+        width: 42%;
+    }
+    .sec-hr {
+        border: 1px solid gray;
+        width: 80%;
+        position: absolute;
+        top:52%;
+        left: 10px;
+    }
+    .third-hr {
+        border: 1px solid gray;
+        width: 80%;
+        position: absolute;
+        top:64%;
+        left: 10px;
+    }
+    .insulin-taken{
+        font-weight: bold;
+        font-size: 14px;
+        display: flex;
+        position: absolute;
+        top:56%;
+        left: 10px;
+        width: 90%;
+    }
+    .insulin-taken-word {
+        width: 20%;
+    }
+    .insulin-taken-data {
+        display: flex;
+        position: absolute;
+        left: 30%;
+        top:-3% ;
+        font-size: xx-large;
+        font-weight: 340;
+    }
+    .insulin-taken-arrow {
+        position: absolute;
+        display: flex;
+        left: 64%;
+        top: -36%;
+        width: 42%;
+    }
+    .exercise {
+        font-weight: bold;
+        font-size: 14px;
+        display: flex;
+        position: absolute;
+        top:68%;
+        left: 10px;
+        width: 90%;
+    }
+    .exercise-data {
+        display: flex;
+        position: absolute;
+        left: 30%;
+        top:-50%;
+        font-size: xx-large;
+        font-weight: 340;
+    }
+    .exercise-arrow {
+        position: absolute;
+        display: flex;
+        left: 64%;
+        top: -112%;
+        width: 42%;
+    }
+    .forth-hr{
+        border: 1px solid gray;
+        width: 80%;
+        position: absolute;
+        top:74%;
+        left: 10px;
+    }
+    .date{
+        font-size: medium;
+        display: flex;
+        position: absolute;
+        top:86%;
+        left: 43%;
+        color: gray;
+    }
+    .text{
+        display: flex;
+        position: absolute;
+        top:93%;
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align: center;
+        color: #A22929;
+        font-size: xx-large;
+        font-weight: lighter;
+    }
+}
+
+@media screen and (min-width: 1980px) {
+
+    .header {
+        display: flex;
+        background: linear-gradient(to bottom, #DFAFAD, #FDF9F8);
+        width: 1980px;
+        height: 200px;
+    }
+
+    .logo {
+        position: absolute;
+        width: 350px;
+        left: 20px;
+
+    }
+
+    body {
+        height: 100%;
+        width: 100%;
+    }
+
+    .log-out {
+        position: absolute;
+        left: 86%;
+        top: 6%;
+        width: 150px;
+        height: 50px;
+        font-size: 40px;
+        text-align: center;
+        border-radius: 18px;
+        padding-top: 0.5%;
+        padding-bottom: 0.5%;
+        padding-left: 1%;
+        padding-right: 1%;
+        background-color: #DFAFAD;
+        color: white;
+    }
+
+    .main-body {
+        background-color: #FDF9F8;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+    }
+
+    .word-welcome {
+        font-size: 50px;
+        font-weight: bolder;
+        position: absolute;
+        left: 86px;
+        top: 3%;
+        list-style: none;
+    }
+
+    .user-name {
+        position: absolute;
+        font-weight: 500;
+        font-size: 48px;
+        left: 89px;
+        top: 10%;
+        list-style: none;
+
+    }
+
+    .details {
+        font-size: x-large;
+        position: absolute;
+        font-weight: 500;
+        font-size: 40px;
+        left: 89px;
+        top: 16%;
+        list-style: none;
+        color: #DFAFAD;
+    }
+
+    .album {
+        display: flex;
+        position: absolute;
+        border-radius: 10px;
+        top: 3%;
+        left: 55.5%;
+        width: 24%;
+        font-size: 30px;
+        /* padding: 160px;
+        padding-top: 0.5%;
+        padding-left: 0.5%;
+        color: #707070;
+        background-color: rgb(243, 237, 237); */
+    }
+
+    .pen-pic {
+        display: flex;
+        position: absolute;
+        width: 11%;
+        left: 76%;
+        top: -14%;
+    }
+
+    /* .submit{
+        position: absolute;
+        padding-top: 23%;
+        padding-left: 76%;
+        font-size: 36px;
+        font-weight: Bold;
+        color: black;
+    } */
+    .trophies-and-rankings {
+        display: flex;
+        position: absolute;
+        left: 26%;
+        top: 4%;
+        width: 14%;
+        height: 120px;
+        padding: 30px;
+        border-radius: 10px;
+        border: 0.5px solid rgb(215, 215, 215)
+    }
+
+    .trophies p {
+        text-align: center;
+        padding-left: 43%;
+        font-size: 20px;
+    }
+
+    .rankings p {
+        text-align: center;
+        position: relative;
+        left: -10%;
+        font-size: 20px;
+    }
+
+    .trophies-pic {
+        height: 79px;
+        padding-left: 22%;
+        padding-top: 0%;
+
+    }
+
+    .rankings-pic {
+        width: 84px;
+        height: 79px;
+        padding-left: 95px;
+        left: 50%;
+
+    }
+
+    .learn-more {
+        text-align: center;
+        position: relative;
+        left: -32.5%;
+        top: 7%;
+        width: 337px;
+        padding: 1.5px;
+        font-size: 20px;
+        border-radius: 10px;
+        background-color: #FAF7F7;
+        font-style: italic;
+
+    }
+
+    .vl {
+        border-left: 1px solid rgb(215, 215, 215);
+        height: 77%;
+        position: absolute;
+        left: 50%;
+        top: 5%;
+    }
+
+    .your-data {
+        display: flex;
+        position: absolute;
+        border-radius: 10px;
+        top: 26%;
+        left: 88px;
+        font-size: 60px;
+    }
+
+    .update {
+        display: flex;
+        position: absolute;
+        border-radius: 20px;
+        width: 50%;
+        top: 14%;
+        left: 357%;
+        font-size: 30px;
+        padding: 10px;
+        padding-left: 12%;
+        color: white;
+        background-color: #DFAFAD;
+
+
+    }
+
+    .blood-glucose-words {
+        display: flex;
+        position: absolute;
+        top: 41%;
+        left: 4.5%;
+        font-size: 32px;
+        font-weight: bold;
+    }
+
+    .blood-glucose-data {
+        display: flex;
+        position: relative;
+        left: 23%;
+        top: 427px;
+        width: 320px;
+        font-size: 50px;
+        font-weight: 100;
+    }
+
+    .blood-glucose-arrow {
+        position: absolute;
+        width: 80px;
+        left: 40%;
+        top: 38%;
+    }
+
+    .weight {
+        display: flex;
+        position: absolute;
+        top: 40%;
+        left: 55.5%;
+        font-size: 32px;
+        font-weight: bold;
+    }
+
+    .weight-data {
+        display: flex;
+        position: absolute;
+        top: -35%;
+        left: 250%;
+        width: 182px;
+        font-size: 50px;
+        font-weight: 100;
+    }
+
+    .weight-arrow {
+        position: absolute;
+        width: 80px;
+        left: 354%;
+        top: -50%;
+    }
+
+    .insulin-taken-word {
+        display: flex;
+        position: absolute;
+        top: 59%;
+        left: 92px;
+        font-size: 32px;
+        font-weight: bolder;
+    }
+
+    .insulin-taken-data {
+        display: flex;
+        position: absolute;
+        left: 23%;
+        top: 58%;
+        font-size: 50px;
+        font-weight: 100;
+    }
+
+    .insulin-taken-arrow {
+        position: absolute;
+        width: 80px;
+        left: 40%;
+        top: 57%;
+    }
+
+    .exercise {
+        display: flex;
+        position: absolute;
+        top: 59%;
+        left: 55.5%;
+        width: 40%;
+        font-size: 32px;
+        font-weight: bold;
+    }
+
+    .exercise-data {
+        display: flex;
+        position: absolute;
+        left: 41%;
+        top: -34%;
+        width: 300px;
+        font-size: 50px;
+        font-weight: 100;
+    }
+
+    .exercise-arrow {
+        position: absolute;
+        width: 80px;
+        left: 85%;
+        top: -45%;
+    }
+
+    .first-hr {
+        border: 1px solid rgb(219, 219, 219);
+        width: 40%;
+        position: absolute;
+        top: 45%;
+        left: 90px;
+    }
+
+    .sec-hr {
+        border: 1px solid rgb(219, 219, 219);
+        width: 40%;
+        position: absolute;
+        top: 45%;
+        left: 55.5%;
+    }
+
+    .third-hr {
+        border: 1px solid rgb(219, 219, 219);
+        width: 40%;
+        position: absolute;
+        top: 64%;
+        left: 90px;
+    }
+
+    .forth-hr {
+        border: 1px solid rgb(219, 219, 219);
+        width: 40%;
+        position: absolute;
+        top: 64%;
+        left: 55.5%;
+    }
+
+    .date {
+        display: flex;
+        position: absolute;
+        top: 83%;
+        left: 75%;
+        color: gray;
+        font-size: 30px;
+    }
+
+    .text {
+        display: flex;
+        position: absolute;
+        top: 90%;
+        left: 25%;
+        /* padding-left: 10px;
+        padding-right: 10px; */
+        text-align: center;
+        color: #A22929;
+        font-size: 35px;
+    }
+}
