@@ -6,7 +6,7 @@ const app = express()
 const exphbs = require('express-handlebars')
 app.use(express.json()) // needed if POST data is in JSON format
 app.use(express.urlencoded({ extended: true })) // only needed for URL-encoded input
-
+require('./models/index')
 app.engine(
     'hbs',
     exphbs.engine({
@@ -32,6 +32,8 @@ app.get('/aboutThisWebsite', (req, res) => {
 app.get('/data', (req, res) => {
     res.render('data.hbs')
 })
+
+    
 
 app.use(express.static('public'))
 // Tells the app to listen on port 3000 and logs tha tinformation to the console.
