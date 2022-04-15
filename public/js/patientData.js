@@ -4,7 +4,7 @@ function updateBtnclick(){
     document.getElementById('text').style.display = 'none';
     document.getElementById('blur').style.display = 'flex';
     document.getElementById('cancel').style.display = 'flex';
-    document.getElementById('container').style.display = 'flex';
+    document.getElementById('container').style.display = 'block';
 }
 
 
@@ -22,7 +22,7 @@ function setCommentWindow(){
     document.getElementById('comment').style.display = 'none';
     document.getElementById('butn1').style.display = 'none';
     document.getElementById('submit-div').style.display = 'flex';
-    document.getElementById('pen').style.display = 'none'
+    document.getElementById('pen').style.display = 'none';
    
 }
 
@@ -31,22 +31,22 @@ function setCommentWindow1(){
     document.getElementById('comment1').style.display = 'none';
     document.getElementById('butn2').style.display = 'none';
     document.getElementById('submit-div1').style.display = 'flex';
-    document.getElementById('pen1').style.display = 'none'
+    document.getElementById('pen1').style.display = 'none';
 }
 function setCommentWindow2(){
     document.getElementById('text-block2').style.display = 'flex';
     document.getElementById('comment2').style.display = 'none';
     document.getElementById('butn3').style.display = 'none';
     document.getElementById('submit-div2').style.display = 'flex';
-    document.getElementById('pen2').style.display = 'none'
+    document.getElementById('pen2').style.display = 'none';
 }
 
 function setCommentWindow3(){
     document.getElementById('text-block3').style.display = 'flex';
+    document.getElementById('submit-div3').style.display = 'flex';
     document.getElementById('comment3').style.display = 'none';
     document.getElementById('butn4').style.display = 'none';
-    document.getElementById('submit-div3').style.display = 'flex';
-    document.getElementById('pen3').style.display = 'none'
+    document.getElementById('pen3').style.display = 'none';
 }
 
 function submit(){
