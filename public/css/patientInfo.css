@@ -16,10 +16,12 @@
     .logo {
         width: 150px;
     }
+
     body {
         height: 100%;
         width: 100%;
     }
+
     .log-out {
         position: absolute;
         left: 80%;
@@ -32,36 +34,40 @@
         background-color: #DFAFAD;
         color: white;
     }
-    
+
     .main-body {
         background-color: #FDF9F8;
         height: 100%;
         width: 100%;
         position: absolute;
     }
+
     .word-welcome {
         font-size: 37px;
         font-weight: 550;
         position: absolute;
         left: 10px;
-        top:3%;
+        top: 3%;
     }
+
     .user-name {
         font-size: 35px;
         font-weight: 200;
         position: absolute;
         left: 10px;
-        top:10%;
+        top: 10%;
     }
+
     .details {
         font-size: 18px;
-        font-weight:200;
+        font-weight: 200;
         font-style: italic;
         position: absolute;
         left: 10px;
-        top:15%;
+        top: 15%;
         color: #DFAFAD;
     }
+
     .trophies-and-rankings {
         display: flex;
         position: absolute;
@@ -70,20 +76,23 @@
         height: 7%;
         padding: 7%;
         border-radius: 10%;
-        border:1px solid rgb(215, 215, 215)
+        border: 1px solid rgb(215, 215, 215)
     }
-    .trophies p{
+
+    .trophies p {
         position: relative;
-        top:4%;
+        top: 4%;
         left: -23%;
         text-align: center;
     }
-    .rankings p{
+
+    .rankings p {
         position: relative;
-        top:-5%;
+        top: -5%;
         text-align: center;
-        padding-left:41%;
+        padding-left: 41%;
     }
+
     .learn-more {
         text-align: center;
         position: relative;
@@ -95,33 +104,38 @@
         padding: 1.5px;
         border-radius: 10%;
     }
+
     .trophies-pic {
         position: relative;
-        top:4%;
+        top: 4%;
         width: 50%;
         left: -4%;
     }
+
     .vl {
         border-left: 1px solid rgb(215, 215, 215);
         height: 77%;
-        top:0%;
+        top: 0%;
         position: absolute;
         left: 48%;
     }
+
     .rankings-pic {
         padding-left: 28%;
         width: 80%;
     }
+
     .album {
         display: flex;
         position: absolute;
         border-radius: 10px;
-        top:20%;
+        top: 20%;
         left: 10px;
         font-weight: lighter;
         font-size: 20px;
-        
+
     }
+
     .pen-pic {
         position: absolute;
         display: flex;
@@ -129,21 +143,23 @@
         top: -20%;
         width: 13%;
     }
+
     .your-data {
         font-size: 35px;
         font-weight: 200;
         display: flex;
         position: absolute;
         border-radius: 10px;
-        top:26%;
+        top: 26%;
         left: 10px;
     }
+
     .update {
         display: flex;
         position: absolute;
         border-radius: 20px;
         width: 100%;
-        top:20%;
+        top: 20%;
         color: white;
         padding-top: 3%;
         padding-bottom: 3%;
@@ -155,26 +171,30 @@
         border: none;
         cursor: pointer;
     }
-    .blood-glucose{
+
+    .blood-glucose {
         font-weight: bold;
         font-size: 14px;
         display: flex;
         position: absolute;
-        top:36%;
+        top: 36%;
         left: 10px;
         width: 90%;
     }
-    .blood-glucose-words{
+
+    .blood-glucose-words {
         width: 20%;
     }
+
     .blood-glucose-data {
         display: flex;
         position: absolute;
         left: 30%;
-        top:-6%;
+        top: -6%;
         font-size: xx-large;
         font-weight: 340;
     }
+
     .blood-glucose-arrow {
         position: absolute;
         display: flex;
@@ -182,30 +202,34 @@
         top: -30%;
         width: 42%;
     }
+
     .first-hr {
         border: 1px solid gray;
         width: 80%;
         position: absolute;
-        top:42%;
+        top: 42%;
         left: 10px;
     }
+
     .weight {
         font-weight: bold;
         font-size: 14px;
         display: flex;
         position: absolute;
-        top:46%;
+        top: 46%;
         left: 10px;
         width: 90%;
     }
+
     .weight-data {
         display: flex;
         position: absolute;
         left: 30%;
-        top:-59%;
+        top: -59%;
         font-size: xx-large;
         font-weight: 340;
     }
+
     .weight-arrow {
         position: absolute;
         display: flex;
@@ -213,40 +237,46 @@
         top: -115%;
         width: 42%;
     }
+
     .sec-hr {
         border: 1px solid gray;
         width: 80%;
         position: absolute;
-        top:52%;
+        top: 52%;
         left: 10px;
     }
+
     .third-hr {
         border: 1px solid gray;
         width: 80%;
         position: absolute;
-        top:64%;
+        top: 64%;
         left: 10px;
     }
-    .insulin-taken{
+
+    .insulin-taken {
         font-weight: bold;
         font-size: 14px;
         display: flex;
         position: absolute;
-        top:56%;
+        top: 56%;
         left: 10px;
         width: 90%;
     }
+
     .insulin-taken-word {
         width: 20%;
     }
+
     .insulin-taken-data {
         display: flex;
         position: absolute;
         left: 30%;
-        top:-3% ;
+        top: -3%;
         font-size: xx-large;
         font-weight: 340;
     }
+
     .insulin-taken-arrow {
         position: absolute;
         display: flex;
@@ -254,23 +284,26 @@
         top: -36%;
         width: 42%;
     }
+
     .exercise {
         font-weight: bold;
         font-size: 14px;
         display: flex;
         position: absolute;
-        top:68%;
+        top: 68%;
         left: 10px;
         width: 90%;
     }
+
     .exercise-data {
         display: flex;
         position: absolute;
         left: 30%;
-        top:-50%;
+        top: -50%;
         font-size: xx-large;
         font-weight: 340;
     }
+
     .exercise-arrow {
         position: absolute;
         display: flex;
@@ -278,25 +311,28 @@
         top: -112%;
         width: 42%;
     }
-    .forth-hr{
+
+    .forth-hr {
         border: 1px solid gray;
         width: 80%;
         position: absolute;
-        top:74%;
+        top: 74%;
         left: 10px;
     }
-    .date{
+
+    .date {
         font-size: medium;
         display: flex;
         position: absolute;
-        top:86%;
+        top: 86%;
         left: 43%;
         color: gray;
     }
-    .text{
+
+    .text {
         display: flex;
         position: absolute;
-        top:93%;
+        top: 93%;
         padding-left: 10px;
         padding-right: 10px;
         text-align: center;
@@ -304,7 +340,8 @@
         font-size: xx-large;
         font-weight: lighter;
     }
-    .blur{
+
+    .blur {
         display: none;
         position: absolute;
         top: 10%;
@@ -313,6 +350,7 @@
         margin: 0;
         padding: 0;
     }
+
     .container {
         margin: 0;
         display: none;
@@ -321,6 +359,7 @@
         left: 8%;
         right: 8%;
     }
+
     input,
     .text-block {
         outline-style: none;
@@ -330,7 +369,8 @@
         left: -22%;
         padding-left: 4%;
     }
-    .cancel{
+
+    .cancel {
         width: 10%;
         display: none;
         position: absolute;
@@ -338,7 +378,8 @@
         left: 82%;
         z-index: 1;
     }
-    .submit-div{
+
+    .submit-div {
         display: none;
         position: relative;
         margin-top: -8%;
@@ -347,24 +388,28 @@
         border-radius: 10px;
         width: 135%;
     }
-    .comment-clear,.comment-submit{
+
+    .comment-clear,
+    .comment-submit {
         border: 0;
         background-color: Transparent;
-        cursor:pointer;
+        cursor: pointer;
     }
-    
-    .comment-submit{
+
+    .comment-submit {
         display: flex;
         position: absolute;
         left: 80%;
     }
-    .butn{
+
+    .butn {
         border: 0;
         background-color: Transparent;
-        cursor:pointer;
+        cursor: pointer;
         padding-bottom: 2.5%;
     }
-    .text-block{
+
+    .text-block {
         display: flex;
         position: relative;
         margin-top: 1%;
@@ -374,26 +419,29 @@
         outline: none;
         background-color: #F0EFEF;
     }
-    .comment{
+
+    .comment {
         display: flex;
         position: relative;
         padding-top: 1%;
         width: 100%;
     }
-    .container .pen{
+
+    .container .pen {
         display: flex;
         position: relative;
         width: 10%;
         left: 90%;
     }
+
     .container p {
         margin: 0;
         display: flex;
         position: relative;
         left: -22%;
-    
+
     }
-    
+
     .dialog {
         display: flex;
         flex-direction: column;
@@ -401,7 +449,8 @@
         background-color: #fff;
         border-radius: 10px;
     }
-    .dialog .insert-data{
+
+    .dialog .insert-data {
         text-align: center;
         font-size: xx-large;
         display: flex;
@@ -410,14 +459,15 @@
         width: 130%;
         bottom: 4%;
     }
-    .update-btn{
+
+    .update-btn {
         display: flex;
         position: relative;
         top: 5%;
         left: 5%;
     }
-    
-    .update-btn button{
+
+    .update-btn button {
         border: none;
         background-color: #DF9FA0;
         font-size: large;
@@ -427,17 +477,19 @@
         padding-top: 3.5%;
         padding-bottom: 2.5%;
     }
-    
+
     .item {
-        margin:10px;
+        margin: 10px;
         display: flex;
         flex-direction: column;
         width: 100%;
     }
-    input::placeholder{
+
+    input::placeholder {
         text-align: right;
         padding-right: 2%;
     }
+
     .item input {
         width: 130%;
         border: none;
@@ -445,18 +497,18 @@
         padding-top: 2.5%;
         padding-bottom: 2.5%;
     }
-    
+
     .comments {
         color: #9e9e9e;
         font-size: 10px;
         cursor: pointer;
     }
-    
+
     .text-block {
         width: 135%;
         height: 60px;
         display: none;
-        cursor:pointer;
+        cursor: pointer;
     }
 }
 
@@ -480,7 +532,8 @@
         height: 100%;
         width: 100%;
     }
-    hr{
+
+    hr {
         width: 100%;
     }
 
@@ -815,7 +868,7 @@
         font-size: 35px;
     }
 
-    .blur{
+    .blur {
         display: none;
         position: absolute;
         top: 15%;
@@ -833,6 +886,7 @@
         left: 26%;
         right: 26%;
     }
+
     input,
     .text-block {
         outline-style: none;
@@ -842,7 +896,8 @@
         left: -5%;
         padding-left: 4%;
     }
-    .cancel{
+
+    .cancel {
         width: 5%;
         display: none;
         position: absolute;
@@ -850,7 +905,8 @@
         left: 67%;
         z-index: 1;
     }
-    .submit-div{
+
+    .submit-div {
         display: none;
         position: relative;
         margin-top: -1%;
@@ -859,10 +915,12 @@
         border-radius: 10px;
         width: 106%;
     }
-    .comment-clear,.comment-submit{
+
+    .comment-clear,
+    .comment-submit {
         border: 0;
         background-color: Transparent;
-        cursor:pointer;
+        cursor: pointer;
         font-size: xx-large;
         display: flex;
         position: relative;
@@ -870,19 +928,21 @@
         bottom: 4%;
         font-weight: bolder;
     }
-    
-    .comment-submit{
+
+    .comment-submit {
         display: flex;
         position: absolute;
         left: 84%;
     }
-    .butn{
+
+    .butn {
         border: 0;
         background-color: Transparent;
-        cursor:pointer;
+        cursor: pointer;
         padding-bottom: 2.5%;
     }
-    .text-block{
+
+    .text-block {
         display: flex;
         position: relative;
         margin-top: 1%;
@@ -892,26 +952,30 @@
         outline: none;
         background-color: #F0EFEF;
     }
-    .comment{
+
+    .comment {
         display: flex;
         position: relative;
         padding-top: 1%;
         width: 100%;
     }
-    .container .pen{
+
+    .container .pen {
         display: flex;
         position: relative;
         width: 7%;
         left: 78%;
     }
+
     .container p {
         margin: 0;
         display: flex;
         position: relative;
         left: -5%;
         font-size: xx-large;
-    
+
     }
+
     .dialog {
         display: flex;
         flex-direction: column;
@@ -920,7 +984,8 @@
         border-radius: 10px;
         padding-top: 100px;
     }
-    .dialog .insert-data{
+
+    .dialog .insert-data {
         text-align: center;
         font-size: xxx-large;
         display: flex;
@@ -928,14 +993,15 @@
         left: 28%;
         width: 60%;
     }
-    .update-btn{
+
+    .update-btn {
         display: flex;
         position: relative;
         margin-top: 4%;
         left: 5%;
     }
-    
-    .update-btn button{
+
+    .update-btn button {
         border: none;
         background-color: #DF9FA0;
         font-size: large;
@@ -946,20 +1012,23 @@
         padding-bottom: 2.5%;
         font-size: xx-large;
     }
-    
+
     .item {
-        margin:10px;
+        margin: 10px;
         display: flex;
         flex-direction: column;
         width: 100%;
     }
-    .item:nth-of-type(1){
+
+    .item:nth-of-type(1) {
         margin-top: 4%;
     }
-    input::placeholder{
+
+    input::placeholder {
         text-align: right;
         padding-right: 2%;
     }
+
     .item input {
         width: 102%;
         border: none;
@@ -968,18 +1037,18 @@
         padding-bottom: 2.5%;
         font-size: xx-large;
     }
-    
+
     .comments {
         color: #9e9e9e;
         font-size: 10px;
         cursor: pointer;
     }
-    
+
     .text-block {
         width: 106%;
         height: 135px;
         display: none;
-        cursor:pointer;
+        cursor: pointer;
         font-size: x-large;
     }
 

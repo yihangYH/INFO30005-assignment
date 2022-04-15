@@ -1,9 +1,9 @@
 if (process.env.NODE_ENV !== 'production') {
-    require('dotenv').config() 
+    require('dotenv').config()
 }
 const mongoose = require('mongoose')
 
-mongoose.connect(process.env.MONGO_URL || 'mongodb://localhost', { 
+mongoose.connect(process.env.MONGO_URL || 'mongodb://localhost', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     dbName: 'info30005Database'
@@ -11,9 +11,11 @@ mongoose.connect(process.env.MONGO_URL || 'mongodb://localhost', {
 
 const db = mongoose.connection.on('error', err => {
     console.error(err);
-    process.exit(1) 
+    process.exit(1)
 })
 
 db.once('open', async () => {
-    console.log(`Mongo connection started on ${db.host}:${db.port}`) 
+    console.log(`Mongo connection started on ${db.host}:${db.port}`)
 })
+
+require('./patient')
