@@ -62,7 +62,7 @@ function submit(){
         if(String(text).length > 22){
             document.getElementById('comment').innerHTML= text.substring(0,22) + "..." ;
             imgp = document.createElement("IMG");
-            imgp.setAttribute("src", "../public/res/pen.png");
+            imgp.setAttribute("src", "../res/pen.png");
             imgp.setAttribute('class',"pen");
             imgp.setAttribute('id','pen');
             document.getElementById('comment').appendChild(imgp);
@@ -78,7 +78,7 @@ function submit(){
         }else{
             document.getElementById('comment').innerHTML= text;
             imgp = document.createElement("IMG");
-            imgp.setAttribute("src", "../public/res/pen.png");
+            imgp.setAttribute("src", "../res/pen.png");
             imgp.setAttribute('class',"pen");
             imgp.setAttribute('id','pen');
             document.getElementById('comment').appendChild(imgp);
@@ -105,7 +105,7 @@ function submit1(){
         if(String(text).length > 22){
             document.getElementById('comment1').innerHTML= text.substring(0,22) + "...";
             imgp = document.createElement("IMG");
-            imgp.setAttribute("src", "../public/res/pen.png");
+            imgp.setAttribute("src", "../res/pen.png");
             imgp.setAttribute('class',"pen");
             imgp.setAttribute('id','pen1');
             document.getElementById('comment1').appendChild(imgp);
@@ -118,7 +118,7 @@ function submit1(){
         }else{
             document.getElementById('comment1').innerHTML= text;
             imgp = document.createElement("IMG");
-            imgp.setAttribute("src", "../public/res/pen.png");
+            imgp.setAttribute("src", "../res/pen.png");
             imgp.setAttribute('class',"pen");
             imgp.setAttribute('id','pen1');
             document.getElementById('comment1').appendChild(imgp);
@@ -148,7 +148,7 @@ function submit2(){
         if(String(text).length > 22){
             document.getElementById('comment2').innerHTML= text.substring(0,22) + "...";
             imgp = document.createElement("IMG");
-            imgp.setAttribute("src", "../public/res/pen.png");
+            imgp.setAttribute("src", "../res/pen.png");
             imgp.setAttribute('class',"pen");
             imgp.setAttribute('id','pen2');
             document.getElementById('comment2').appendChild(imgp);
@@ -161,7 +161,7 @@ function submit2(){
         }else{
             document.getElementById('comment2').innerHTML= text;
             imgp = document.createElement("IMG");
-            imgp.setAttribute("src", "../public/res/pen.png");
+            imgp.setAttribute("src", "../res/pen.png");
             imgp.setAttribute('class',"pen");
             imgp.setAttribute('id','pen2');
             document.getElementById('comment2').appendChild(imgp);
@@ -188,7 +188,7 @@ function submit3(){
         if(String(text).length > 22){
             document.getElementById('comment3').innerHTML= text.substring(0,22) + "...";
             imgp = document.createElement("IMG");
-            imgp.setAttribute("src", "../public/res/pen.png");
+            imgp.setAttribute("src", "../res/pen.png");
             imgp.setAttribute('class',"pen");
             imgp.setAttribute('id','pen3');
             document.getElementById('comment3').appendChild(imgp);
@@ -201,7 +201,7 @@ function submit3(){
         }else{
             document.getElementById('comment3').innerHTML= text;
             imgp = document.createElement("IMG");
-            imgp.setAttribute("src", "../public/res/pen.png");
+            imgp.setAttribute("src", "../res/pen.png");
             imgp.setAttribute('class',"pen");
             imgp.setAttribute('id','pen3');
             document.getElementById('comment3').appendChild(imgp);
@@ -220,7 +220,7 @@ function commentClear(){
     document.getElementById('text-block').value = "";
     document.getElementById('comment').innerHTML = "+ Comment"
     imgp = document.createElement("IMG");
-            imgp.setAttribute("src", "../public/res/pen.png");
+            imgp.setAttribute("src", "../res/pen.png");
             imgp.setAttribute('class',"pen");
             imgp.setAttribute('id','pen');
             document.getElementById('comment').appendChild(imgp);
@@ -236,7 +236,7 @@ function commentClear1(){
     document.getElementById('text-block1').value = "";
     document.getElementById('comment1').innerHTML = "+ Comment"
     imgp = document.createElement("IMG");
-            imgp.setAttribute("src", "../public/res/pen.png");
+            imgp.setAttribute("src", "../res/pen.png");
             imgp.setAttribute('class',"pen");
             imgp.setAttribute('id','pen1');
             document.getElementById('comment1').appendChild(imgp);
@@ -252,7 +252,7 @@ function commentClear2(){
     document.getElementById('text-block2').value = "";
     document.getElementById('comment2').innerHTML = "+ Comment"
     imgp = document.createElement("IMG");
-    imgp.setAttribute("src", "../public/res/pen.png");
+    imgp.setAttribute("src", "../res/pen.png");
     imgp.setAttribute('class',"pen");
     imgp.setAttribute('id','pen2');
     document.getElementById('comment2').appendChild(imgp);
@@ -268,7 +268,7 @@ function commentClear3(){
     document.getElementById('text-block3').value = "";
     document.getElementById('comment3').innerHTML = "+ Comment"
     imgp = document.createElement("IMG");
-            imgp.setAttribute("src", "../public/res/pen.png");
+            imgp.setAttribute("src", "../res/pen.png");
             imgp.setAttribute('class',"pen");
             imgp.setAttribute('id','pen3');
             document.getElementById('comment3').appendChild(imgp);

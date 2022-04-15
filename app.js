@@ -29,6 +29,10 @@ app.get('/aboutThisWebsite', (req, res) => {
     res.render('aboutThisWebsite.hbs')
 })
 
+app.get('/data', (req, res) => {
+    res.render('data.hbs')
+})
+
 app.use(express.static('public'))
 // Tells the app to listen on port 3000 and logs tha tinformation to the console.
 app.listen(process.env.PORT || 3000, () => {
