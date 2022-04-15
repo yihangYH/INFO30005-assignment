@@ -55,7 +55,6 @@ function submit(){
     document.getElementById('butn1').style.display = 'flex';
     document.getElementById('submit-div').style.display = 'none';
     var text = document.getElementById('text-block').value;
-    console.log(text);
     if(text == "" ){
         document.getElementById('pen').style.display = 'flex';
     }
@@ -68,19 +67,27 @@ function submit(){
             imgp.setAttribute('id','pen');
             document.getElementById('comment').appendChild(imgp);
             document.getElementById('pen').style.position='absolute';
-            document.getElementById('pen').style.left='120%';
+            if(window.innerWidth == 375){
+                document.getElementById('pen').style.left='122%';
+            }else if (window.innerWidth==1980){
+                document.getElementById('pen').style.left='98%';
+            }
+            // document.getElementById('pen').style.left='122%';
 
             
         }else{
             document.getElementById('comment').innerHTML= text;
-            console.log(document.getElementById('comment').innerHTML);
             imgp = document.createElement("IMG");
             imgp.setAttribute("src", "../public/res/pen.png");
             imgp.setAttribute('class',"pen");
             imgp.setAttribute('id','pen');
             document.getElementById('comment').appendChild(imgp);
             document.getElementById('pen').style.position='absolute';
-            document.getElementById('pen').style.left='120%';
+            if(window.innerWidth == 375){
+                document.getElementById('pen').style.left='122%';
+            }else if (window.innerWidth==1980){
+                document.getElementById('pen').style.left='98%';
+            }
         }
     }
 }
@@ -103,17 +110,24 @@ function submit1(){
             imgp.setAttribute('id','pen1');
             document.getElementById('comment1').appendChild(imgp);
             document.getElementById('pen1').style.position='absolute';
-            document.getElementById('pen1').style.left='120%';
+            if(window.innerWidth == 375){
+                document.getElementById('pen1').style.left='120%';
+            }else if (window.innerWidth==1980){
+                document.getElementById('pen1').style.left='98%';
+            }
         }else{
             document.getElementById('comment1').innerHTML= text;
-            console.log(document.getElementById('comment1').innerHTML);
             imgp = document.createElement("IMG");
             imgp.setAttribute("src", "../public/res/pen.png");
             imgp.setAttribute('class',"pen");
             imgp.setAttribute('id','pen1');
             document.getElementById('comment1').appendChild(imgp);
             document.getElementById('pen1').style.position='absolute';
-            document.getElementById('pen1').style.left='120%';
+            if(window.innerWidth == 375){
+                document.getElementById('pen1').style.left='120%';
+            }else if (window.innerWidth==1980){
+                document.getElementById('pen1').style.left='98%';
+            }
         }
     }
 
@@ -139,17 +153,24 @@ function submit2(){
             imgp.setAttribute('id','pen2');
             document.getElementById('comment2').appendChild(imgp);
             document.getElementById('pen2').style.position='absolute';
-            document.getElementById('pen2').style.left='120%';
+            if(window.innerWidth == 375){
+                document.getElementById('pen2').style.left='120%';
+            }else if (window.innerWidth==1980){
+                document.getElementById('pen2').style.left='98%';
+            }
         }else{
             document.getElementById('comment2').innerHTML= text;
-            console.log(document.getElementById('comment2').innerHTML);
             imgp = document.createElement("IMG");
             imgp.setAttribute("src", "../public/res/pen.png");
             imgp.setAttribute('class',"pen");
             imgp.setAttribute('id','pen2');
             document.getElementById('comment2').appendChild(imgp);
             document.getElementById('pen2').style.position='absolute';
-            document.getElementById('pen2').style.left='120%';
+            if(window.innerWidth == 375){
+                document.getElementById('pen2').style.left='120%';
+            }else if (window.innerWidth==1980){
+                document.getElementById('pen2').style.left='98%';
+            }
         }
     }
 }
@@ -172,17 +193,24 @@ function submit3(){
             imgp.setAttribute('id','pen3');
             document.getElementById('comment3').appendChild(imgp);
             document.getElementById('pen3').style.position='absolute';
-            document.getElementById('pen3').style.left='120%';
+            if(window.innerWidth == 375){
+                document.getElementById('pen3').style.left='120%';
+            }else if (window.innerWidth==1980){
+                document.getElementById('pen3').style.left='98%';
+            }
         }else{
             document.getElementById('comment3').innerHTML= text;
-            console.log(document.getElementById('comment3').innerHTML);
             imgp = document.createElement("IMG");
             imgp.setAttribute("src", "../public/res/pen.png");
             imgp.setAttribute('class',"pen");
             imgp.setAttribute('id','pen3');
             document.getElementById('comment3').appendChild(imgp);
             document.getElementById('pen3').style.position='absolute';
-            document.getElementById('pen3').style.left='120%';
+            if(window.innerWidth == 375){
+                document.getElementById('pen3').style.left='120%';
+            }else if (window.innerWidth==1980){
+                document.getElementById('pen3').style.left='98%';
+            }
         }
     }
 
@@ -197,7 +225,11 @@ function commentClear(){
             imgp.setAttribute('id','pen');
             document.getElementById('comment').appendChild(imgp);
             document.getElementById('pen').style.position='absolute';
-            document.getElementById('pen').style.left='122%';
+            if(window.innerWidth == 375){
+                document.getElementById('pen').style.left='122%';
+            }else if (window.innerWidth==1980){
+                document.getElementById('pen').style.left='98%';
+            }
 }
 
 function commentClear1(){
@@ -209,7 +241,11 @@ function commentClear1(){
             imgp.setAttribute('id','pen1');
             document.getElementById('comment1').appendChild(imgp);
             document.getElementById('pen1').style.position='absolute';
-            document.getElementById('pen1').style.left='122%';
+            if(window.innerWidth == 375){
+                document.getElementById('pen1').style.left='122%';
+            }else if (window.innerWidth==1980){
+                document.getElementById('pen1').style.left='98%';
+            }
 }
 
 function commentClear2(){
@@ -221,7 +257,11 @@ function commentClear2(){
     imgp.setAttribute('id','pen2');
     document.getElementById('comment2').appendChild(imgp);
     document.getElementById('pen2').style.position='absolute';
-    document.getElementById('pen2').style.left='122%';
+    if(window.innerWidth == 375){
+        document.getElementById('pen2').style.left='122%';
+    }else if (window.innerWidth==1980){
+        document.getElementById('pen2').style.left='98%';
+    }
 }
 
 function commentClear3(){
@@ -233,7 +273,11 @@ function commentClear3(){
             imgp.setAttribute('id','pen3');
             document.getElementById('comment3').appendChild(imgp);
             document.getElementById('pen3').style.position='absolute';
-            document.getElementById('pen3').style.left='122%';
+            if(window.innerWidth == 375){
+                document.getElementById('pen3').style.left='122%';
+            }else if (window.innerWidth ==1980){
+                document.getElementById('pen3').style.left='98%';
+            }
 }
 
 
