@@ -641,14 +641,16 @@
         display: flex;
         position: absolute;
         border-radius: 20px;
-        width: 50%;
+        width: 70%;
         top: 14%;
         left: 357%;
         font-size: 30px;
         padding: 10px;
-        padding-left: 12%;
+        padding-left: 15%;
         color: white;
         background-color: #DFAFAD;
+        border: none;
+        cursor: pointer;
 
 
     }
@@ -809,4 +811,173 @@
         color: #A22929;
         font-size: 35px;
     }
+
+    .blur{
+        display: none;
+        position: absolute;
+        top: 15%;
+        width: 100%;
+        height: 90%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        margin: 0;
+        display: none;
+        position: absolute;
+        top: 20%;
+        left: 32%;
+        right: 8%;
+    }
+    input,
+    .text-block {
+        outline-style: none;
+        border-radius: 10px;
+        display: flex;
+        position: relative;
+        left: -5%;
+        padding-left: 4%;
+    }
+    .cancel{
+        width: 5%;
+        display: none;
+        position: absolute;
+        top: 20%;
+        left: 67%;
+        z-index: 1;
+    }
+    .submit-div{
+        display: none;
+        position: relative;
+        margin-top: -1%;
+        background-color: #F0EFEF;
+        left: -5%;
+        border-radius: 10px;
+        width: 106%;
+    }
+    .comment-clear,.comment-submit{
+        border: 0;
+        background-color: Transparent;
+        cursor:pointer;
+        font-size: xx-large;
+        display: flex;
+        position: relative;
+        left: 4%;
+        bottom: 4%;
+        font-weight: bolder;
+    }
+    
+    .comment-submit{
+        display: flex;
+        position: absolute;
+        left: 84%;
+    }
+    .butn{
+        border: 0;
+        background-color: Transparent;
+        cursor:pointer;
+        padding-bottom: 2.5%;
+    }
+    .text-block{
+        display: flex;
+        position: relative;
+        margin-top: 1%;
+        box-sizing: border-box;
+        border: none;
+        resize: none;
+        outline: none;
+        background-color: #F0EFEF;
+    }
+    .comment{
+        display: flex;
+        position: relative;
+        padding-top: 1%;
+        width: 100%;
+    }
+    .container .pen{
+        display: flex;
+        position: relative;
+        width: 7%;
+        left: 72%;
+    }
+    .container p {
+        margin: 0;
+        display: flex;
+        position: relative;
+        left: -5%;
+        font-size: xx-large;
+    
+    }
+    .dialog {
+        display: flex;
+        flex-direction: column;
+        padding: 50px;
+        background-color: #fff;
+        border-radius: 10px;
+    }
+    .dialog .insert-data{
+        text-align: center;
+        font-size: xxx-large;
+        display: flex;
+        position: relative;
+        left: 15%;
+        width: 100%;
+        bottom: -2%;
+    }
+    .update-btn{
+        display: flex;
+        position: relative;
+        top: 5%;
+        left: 5%;
+    }
+    
+    .update-btn button{
+        border: none;
+        background-color: #DF9FA0;
+        font-size: large;
+        color: white;
+        border-radius: 10px;
+        width: 80%;
+        padding-top: 3.5%;
+        padding-bottom: 2.5%;
+        font-size: xx-large;
+    }
+    
+    .item {
+        margin:10px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .item:nth-of-type(1){
+        margin-top: 12%;
+    }
+    input::placeholder{
+        text-align: right;
+        padding-right: 2%;
+    }
+    .item input {
+        width: 102%;
+        border: none;
+        background-color: #F3DFD6;
+        padding-top: 2.5%;
+        padding-bottom: 2.5%;
+        font-size: xx-large;
+    }
+    
+    .comments {
+        color: #9e9e9e;
+        font-size: 10px;
+        cursor: pointer;
+    }
+    
+    .text-block {
+        width: 106%;
+        height: 135px;
+        display: none;
+        cursor:pointer;
+        font-size: x-large;
+    }
+
 }
