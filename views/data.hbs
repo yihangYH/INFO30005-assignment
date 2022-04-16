@@ -29,10 +29,10 @@
         <div class="information">
             <ul>
                 <li class="word-welcome">Welcome:</li>
-                {{#each patientInfo}}
+                {{#with patientInfo}}
                 <li class="user-name">{{this.first_name}}</li>
-                <li class="details"> {{this.first_name}} {{this.last_name}} / {{this.birthday}} </li>
-                {{/each}}
+                <li class="details"> {{this.screen_name}} {{this.last_name}} / {{this.birthday}} </li>
+                {{/with}}
             </ul>
         </div>
         <div class="trophies-and-rankings">
@@ -62,13 +62,13 @@
 
             </button>
         </div>
+        {{#with patientInfo}}
         <div class="blood-glucose">
             <div class="blood-glucose-words">
                 BLOOD GLUCOSE
             </div>
             <div class="blood-glucose-data">
-                No data today
-
+                <p id="blood-glucose-data">No data today</p>
             </div>
             <div class="blood-glucose-arrow">
                 <img class="blood-glucose-arrow" src="../res/arrow.png" alt="arrow">
@@ -80,7 +80,7 @@
                 WEIGHT
             </div>
             <div class="weight-data">
-                <P>80.1</P> &nbsp kg
+                <P id="weight-data">80.1 &nbsp kg</P>
             </div>
             <div class="weight-arrow">
                 <img class="weight-arrow" src="../res/arrow.png" alt="arrow">
@@ -92,7 +92,7 @@
                 INSULIN TAKEN
             </div>
             <div class="insulin-taken-data">
-                <P>5</P> &nbsp Doses
+                <P id="insulin-taken-data">5 &nbsp Doses</P>
             </div>
             <div class="insulin-taken-arrow">
                 <img class="insulin-taken-arrow" src="../res/arrow.png" alt="arrow">
@@ -104,7 +104,7 @@
                 EXERCISE
             </div>
             <div class="exercise-data">
-                <P>5000</P> &nbsp Steps
+                <P id="exercise-data">5000 &nbsp Steps</P>
             </div>
             <div class="exercise-arrow">
                 <img class="exercise-arrow" src="../res/arrow.png" alt="arrow">
@@ -112,6 +112,14 @@
         </div>
         <hr class="forth-hr">
     </div>
+    <script>
+        var data = []
+        data.push({{ this.healthyData_required }})
+        if (data[2] == 0) {
+            document.getElementById("insulin-taken-data").innerHTML = "Not required"
+        }
+    </script>
+    {{/with}}
     <div class="date" id="date">
         <div class="date-text">
             <P>Updated on:&nbsp</P>
@@ -156,7 +164,7 @@
             </div>
             <div class="item">
                 <p>INSULIN TAKEN</p>
-                <input type="text" placeholder="(DOSES)" />
+                <input id="insulin-taken-input" type="text" placeholder="(DOSES)" />
                 <button class="butn" id="butn3" onclick="setCommentWindow2()">
                     <p class="comment" id="comment2">+ Comment <img class="pen" id="pen2" src="../res/pen.png" alt="">
                     </p>
@@ -186,5 +194,22 @@
         </div>
     </div>
 </body>
+
+<script>
+    { { #with patientInfo } }
+    { { !--code related name is for testing purpose--} }
+    var name = "{{this.first_name}}"
+    console.log(name)
+    var data = []
+    data.push({{ this.healthyData_required }})
+    if (data[2] == 0) {
+        document.getElementById('insulin-taken-input').readOnly = true
+        document.getElementById('insulin-taken-input').placeholder = "Not required"
+        document.getElementById('butn3').disabled = true
+        document.getElementById('butn3').style.cursor = "none"
+
+    }
+    { { /with}}
+</script>
 
 </html>
