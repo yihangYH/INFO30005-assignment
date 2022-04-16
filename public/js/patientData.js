@@ -17,6 +17,7 @@ function updatePlusClick() {
     document.getElementById('container').style.display = 'none';
 }
 
+
 function setCommentWindow() {
     document.getElementById('text-block').style.display = 'flex';
     document.getElementById('comment').style.display = 'none';
@@ -323,43 +324,44 @@ function setPatientDataValue(blood_glucose, exericse, insulin_taken,weight,data)
         if(i == 0 ){
             if(!data[0]){
                 document.getElementById("blood-glucose-data").innerHTML = "Not required"
-            }
-            if(blood_glucose == "None"){
                 bloodGlucose()
-            }
-            else{
+            }else{
                 document.getElementById("blood-glucose-data").innerHTML = blood_glucose + "&nbsp nml/L"
+            }
+            if(blood_glucose == undefined && data[0]){
+                document.getElementById("blood-glucose-data").innerHTML = "No data today"
             }
         }else if(i==1 ){
             if(!data[1]){
                 document.getElementById("weight-data").innerHTML = "Not required"
-            }
-            if(weight == "None"){
                 weightFunction()
-            }
-            else{
+            }else{
                 document.getElementById("weight-data").innerHTML = weight + "&nbsp Kg"
+            }
+            if(weight == undefined && data[1]){
+                document.getElementById("weight-data").innerHTML = "No data today"
             }
         }else if(i==2){
             if(!data[2]){
                 document.getElementById("insulin-taken-data").innerHTML = "Not required"
-            }
-            if(insulin_taken == "None"){
                 insulin()
-            }
-            else{
+            }else{
                 document.getElementById("insulin-taken-data").innerHTML = insulin_taken + "&nbsp DOSES"
+            }
+            if(insulin_taken == undefined && data[2]){
+                document.getElementById("insulin-taken-data").innerHTML = "No data today"
             }
         }else{
             if(!data[3]){
                 document.getElementById("exercise-data").innerHTML = "Not required"
-            }
-            if(exericse == "None"){
                 exericseFunction()
-            }
-            else{
+            }else{
                 document.getElementById("exercise-data").innerHTML = exericse + "&nbsp Steps"
+            }
+            if(exericse == undefined && data[3]){
+                document.getElementById("exercise-data").innerHTML = "No data today"
             }
         }
     }
+
 }

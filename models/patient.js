@@ -17,7 +17,7 @@ const healthyDataSchema = new mongoose.Schema({
     blood_glucose: String,
     exericse: String,
     insulin_taken: String,
-    time: Date,
+    time: String,
     weight: String,
 })
 
