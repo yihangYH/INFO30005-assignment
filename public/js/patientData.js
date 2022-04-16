@@ -289,4 +289,66 @@ function cancel() {
     document.getElementById('blur').style.display = 'none';
     document.getElementById('cancel').style.display = 'none';
     document.getElementById('container').style.display = 'none';
+    window.location.reload();
+}
+
+function weightFunction(){
+    document.getElementById('weight-input').readOnly = true
+    document.getElementById('weight-input').placeholder = "Not required"
+    document.getElementById('butn2').disabled = true
+    document.getElementById('butn2').style.cursor = "none"
+}
+function bloodGlucose(){
+    document.getElementById('blood-glucose-input').readOnly = true
+    document.getElementById('blood-glucose-input').placeholder = "Not required"
+    document.getElementById('butn1').disabled = true
+    document.getElementById('butn1').style.cursor = "none"
+}
+function insulin(){
+    document.getElementById('insulin-taken-input').readOnly = true
+    document.getElementById('insulin-taken-input').placeholder = "Not required"
+    document.getElementById('butn3').disabled = true
+    document.getElementById('butn3').style.cursor = "none"
+}
+
+function exerciseFunction(){
+    document.getElementById('exericse-input').readOnly = true
+    document.getElementById('exericse-input').placeholder = "Not required"
+    document.getElementById('butn4').disabled = true
+    document.getElementById('butn4').style.cursor = "none"
+}
+
+function setPatientDataValue(blood_glucose, exericse, insulin_taken,weight){
+    for(let i = 0; i < 4; i++){
+        if(i == 0 ){
+            if(blood_glucose == "None"){
+                bloodGlucose()
+            }
+            else{
+                document.getElementById("blood-glucose-data").innerHTML = blood_glucose + "&nbsp nml/L"
+            }
+        }else if(i==1 ){
+            if(weight == "None"){
+                weightFunction()
+            }
+            else{
+                document.getElementById("weight-data").innerHTML = weight + "&nbsp Kg"
+            }
+        }else if(i==2){
+            if(insulin_taken == "None"){
+                insulin()
+                
+            }
+            else{
+                document.getElementById("insulin-taken-data").innerHTML = insulin_taken + "&nbsp DOSES"
+            }
+        }else{
+            if(exericse == "None"){
+                exericseFunction()
+            }
+            else{
+                document.getElementById("exercise-data").innerHTML = exericse + "&nbsp Steps"
+            }
+        }
+    }
 }

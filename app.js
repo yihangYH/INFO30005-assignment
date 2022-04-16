@@ -34,7 +34,8 @@ app.get('/aboutThisWebsite', (req, res) => {
 
 app.get('/data', async (req, res) => {
     console.log('GET /data')
-    const patient = await Patient.findOne({first_name:"Pat"}).lean();
+    const patient = await Patient.findOne({first_name:"Pat"}).populate('healthyData').lean();
+    // const healthyData = await Patient.findOne({first_name:"Pat"}).populate('healthyData').lean();
     console.log(patient)
     res.render('data.hbs', {patientInfo: patient})
 })

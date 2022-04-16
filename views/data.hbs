@@ -139,7 +139,7 @@
             <p class="insert-data">Enter today's data</p>
             <div class="item">
                 <p>BLOOD GLUCOSE</p>
-                <input type="text" placeholder="(nml/L)" />
+                <input id = "blood-glucose-input" type="text" placeholder="(nml/L)" />
                 <button class="butn" id="butn1" onclick="setCommentWindow()">
                     <p class="comment" id="comment">+ Comment <img class="pen" id="pen" src="../res/pen.png" alt=""></p>
                 </button>
@@ -151,7 +151,7 @@
             </div>
             <div class="item">
                 <p>Weight</p>
-                <input type="text" placeholder="(Kg)" />
+                <input id = "weight-input"type="text" placeholder="(Kg)" />
                 <button class="butn" id="butn2" onclick="setCommentWindow1()">
                     <p class="comment" id="comment1">+ Comment <img class="pen" id="pen1" src="../res/pen.png" alt="">
                     </p>
@@ -177,7 +177,7 @@
             </div>
             <div class="item">
                 <p>EXERICSE</p>
-                <input type="text" placeholder="(Steps)" />
+                <input id = "exericse-input" type="text" placeholder="(Steps)" />
                 <button class="butn" id="butn4" onclick="setCommentWindow3()">
                     <p class="comment" id="comment3">+ Comment<img class="pen" id="pen3" src="../res/pen.png" alt="">
                     </p>
@@ -196,20 +196,20 @@
 </body>
 
 <script>
-    { { #with patientInfo } }
-    { { !--code related name is for testing purpose--} }
-    var name = "{{this.first_name}}"
-    console.log(name)
-    var data = []
-    data.push({{ this.healthyData_required }})
-    if (data[2] == 0) {
-        document.getElementById('insulin-taken-input').readOnly = true
-        document.getElementById('insulin-taken-input').placeholder = "Not required"
-        document.getElementById('butn3').disabled = true
-        document.getElementById('butn3').style.cursor = "none"
+    {{#with patientInfo}}
+        var blood_glucose, exericse, insulin_taken,weight;
+        {{#each this.healthyData}}
+            blood_glucose = "{{this.blood_glucose}}"
+            exericse = "{{this.exericse}}"
+            insulin_taken = "{{this.insulin_taken}}"
+            weight = "{{this.weight}}"
+        {{/each}}
+        var data = []
+        data.push({{ this.healthyData_required }})
+        setPatientDataValue(blood_glucose, exericse, insulin_taken,weight)
 
-    }
-    { { /with}}
+        
+    {{/with}}
 </script>
 
 </html>
