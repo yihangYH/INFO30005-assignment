@@ -318,9 +318,12 @@ function exerciseFunction(){
     document.getElementById('butn4').style.cursor = "none"
 }
 
-function setPatientDataValue(blood_glucose, exericse, insulin_taken,weight){
+function setPatientDataValue(blood_glucose, exericse, insulin_taken,weight,data){
     for(let i = 0; i < 4; i++){
         if(i == 0 ){
+            if(!data[0]){
+                document.getElementById("blood-glucose-data").innerHTML = "Not required"
+            }
             if(blood_glucose == "None"){
                 bloodGlucose()
             }
@@ -328,6 +331,9 @@ function setPatientDataValue(blood_glucose, exericse, insulin_taken,weight){
                 document.getElementById("blood-glucose-data").innerHTML = blood_glucose + "&nbsp nml/L"
             }
         }else if(i==1 ){
+            if(!data[1]){
+                document.getElementById("weight-data").innerHTML = "Not required"
+            }
             if(weight == "None"){
                 weightFunction()
             }
@@ -335,14 +341,19 @@ function setPatientDataValue(blood_glucose, exericse, insulin_taken,weight){
                 document.getElementById("weight-data").innerHTML = weight + "&nbsp Kg"
             }
         }else if(i==2){
+            if(!data[2]){
+                document.getElementById("insulin-taken-data").innerHTML = "Not required"
+            }
             if(insulin_taken == "None"){
                 insulin()
-                
             }
             else{
                 document.getElementById("insulin-taken-data").innerHTML = insulin_taken + "&nbsp DOSES"
             }
         }else{
+            if(!data[3]){
+                document.getElementById("exercise-data").innerHTML = "Not required"
+            }
             if(exericse == "None"){
                 exericseFunction()
             }

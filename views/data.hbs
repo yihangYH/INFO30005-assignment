@@ -112,13 +112,6 @@
         </div>
         <hr class="forth-hr">
     </div>
-    <script>
-        var data = []
-        data.push({{ this.healthyData_required }})
-        if (data[2] == 0) {
-            document.getElementById("insulin-taken-data").innerHTML = "Not required"
-        }
-    </script>
     {{/with}}
     <div class="date" id="date">
         <div class="date-text">
@@ -206,7 +199,7 @@
         {{/each}}
         var data = []
         data.push({{ this.healthyData_required }})
-        setPatientDataValue(blood_glucose, exericse, insulin_taken,weight)
+        setPatientDataValue(blood_glucose, exericse, insulin_taken,weight,data)
 
         
     {{/with}}
