@@ -1,3 +1,5 @@
+
+
 function updateBtnclick() {
     document.getElementById('main-body').style.display = 'none';
     document.getElementById('date').style.display = 'none';
@@ -5,6 +7,20 @@ function updateBtnclick() {
     document.getElementById('blur').style.display = 'flex';
     document.getElementById('cancel').style.display = 'flex';
     document.getElementById('container').style.display = 'block';
+    // reloadUpdatePage();
+}
+
+function reloadUpdatePage(){
+    var date = document.getElementById('date').innerHTML
+    date = date.substring(17, date.length - 10).split('/')
+    let today = new Date();
+    if(today.getDate() == date[1] && today.getMonth() == date[0] - 1){
+        document.getElementById('blood-glucose-input').value = document.getElementById('blood-glucose-data').innerHTML.split('&')[0];
+        document.getElementById('weight-input').value = document.getElementById('weight-data').innerHTML.split('&')[0];
+        document.getElementById('insulin-taken-input').value = document.getElementById('insulin-taken-data').innerHTML.split('&')[0];
+        document.getElementById('exericse-input').value = document.getElementById('exercise-data').innerHTML.split('&')[0];
+    }
+    
 }
 
 
@@ -295,26 +311,26 @@ function cancel() {
 
 function weightFunction(){
     document.getElementById('weight-input').readOnly = true
-    document.getElementById('weight-input').placeholder = "Not required"
+    document.getElementById('weight-input').value = "Not required"
     document.getElementById('butn2').disabled = true
     document.getElementById('butn2').style.cursor = "none"
 }
 function bloodGlucose(){
     document.getElementById('blood-glucose-input').readOnly = true
-    document.getElementById('blood-glucose-input').placeholder = "Not required"
+    document.getElementById('blood-glucose-input').value = "Not required"
     document.getElementById('butn1').disabled = true
     document.getElementById('butn1').style.cursor = "none"
 }
 function insulin(){
     document.getElementById('insulin-taken-input').readOnly = true
-    document.getElementById('insulin-taken-input').placeholder = "Not required"
+    document.getElementById('insulin-taken-input').value = "Not required"
     document.getElementById('butn3').disabled = true
     document.getElementById('butn3').style.cursor = "none"
 }
 
 function exerciseFunction(){
     document.getElementById('exericse-input').readOnly = true
-    document.getElementById('exericse-input').placeholder = "Not required"
+    document.getElementById('exericse-input').value = "Not required"
     document.getElementById('butn4').disabled = true
     document.getElementById('butn4').style.cursor = "none"
 }

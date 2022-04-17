@@ -128,7 +128,7 @@
     <img class="blur" id="blur" src="../res/blur.jpeg" alt="">
     <button type="button" onclick="cancel()"><img class="cancel" id="cancel" src="../res/cancel.jpg" alt=""></button>
     <div class="container" id="container">
-        <form action="/data/{{this.screen_name}}" method="post">
+        <form action="/data/{{this._id}}" method="post">
             <div class="dialog">
                 <p class="insert-data">Enter today's data</p>
                 <div class="item">
@@ -202,11 +202,16 @@
             exericse = "{{this.exericse}}"
             insulin_taken = "{{this.insulin_taken}}"
             weight = "{{this.weight}}"
+            time = "{{this.time}}"
         {{/each}}
         var data = []
         data.push({{ this.healthyData_required }})
         setPatientDataValue(blood_glucose, exericse, insulin_taken, weight, data)
-
+        if(time==""){
+            document.getElementById("date").innerHTML = "Not updated"
+        }else{
+            document.getElementById("date").innerHTML = "Updated on:&nbsp" + time
+        }
     {{/with}}
 </script>
 
