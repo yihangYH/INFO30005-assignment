@@ -35,10 +35,8 @@ app.get('/aboutThisWebsite', (req, res) => {
 
 
 app.get('/data/:id', async (req, res) => {
-    console.log('hit data')
     const patient = await Patient.findOne({_id:req.params.id}).populate('healthyData').lean();
     // const healthyData = await Patient.findOne({first_name:"Pat"}).populate('healthyData').lean();
-    // console.log(patient)
     res.render('data.hbs', {patientInfo: patient})
 })
 
@@ -47,10 +45,11 @@ app.use((req, res, next) => {
     next()
 })
 
-app.post('/data/:name', async (req, res) => {
-    let date = new Date()
-    let dateString = date.getFullYear() + "/" + (date.getMonth()+1) + "/" + date.getDate();
-    const patient = await Patient.findOne({first_name:"Pat"}).lean();
+app.post('/data/:id', async (req, res) => {
+
+    let AuDate = new Date().toLocaleString("en-US", {timeZone: "Australia/Sydney"});
+    let dateString = AuDate.toString().replace(',', ' ')
+    const patient = await Patient.findOne({_id:req.params.id}).lean();
     const data = new healthyData({
         blood_glucose: req.body.blood_glucose,
         exericse: req.body.exericse,
@@ -59,11 +58,11 @@ app.post('/data/:name', async (req, res) => {
         weight: req.body.weight,
     })
     patient.healthyData.push(data._id)
-    await Patient.findOneAndUpdate({first_name:"Pat"}, {$push: {healthyData: data._id}})
+    await Patient.findOneAndUpdate({_id:req.params.id}, {$push: {healthyData: data._id}})
     data.save((err,result) => {
         if (err) res.send(err)
     })
-    res.redirect('../data');
+    res.redirect('../data/' + req.params.id);
 })
 
 app.post('/login', async(req, res) => {
