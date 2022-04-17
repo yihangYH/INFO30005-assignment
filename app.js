@@ -9,6 +9,7 @@ app.use(express.json()) // needed if POST data is in JSON format
 app.use(express.urlencoded({ extended: true })) // only needed for URL-encoded input
 const {Patient} = require('./models/patient.js')
 const {healthyData} = require('./models/patient.js')
+const { Router } = require('express')
 
 app.engine(
     'hbs',
@@ -33,9 +34,9 @@ app.get('/aboutThisWebsite', (req, res) => {
 })
 
 
-app.get('/data', async (req, res) => {
-    console.log('GET /data')
-    const patient = await Patient.findOne({first_name:"Pat"}).populate('healthyData').lean();
+app.get('/data/:id', async (req, res) => {
+    console.log('hit data')
+    const patient = await Patient.findOne({_id:req.params.id}).populate('healthyData').lean();
     // const healthyData = await Patient.findOne({first_name:"Pat"}).populate('healthyData').lean();
     // console.log(patient)
     res.render('data.hbs', {patientInfo: patient})
@@ -63,15 +64,23 @@ app.post('/data/:name', async (req, res) => {
         if (err) res.send(err)
     })
     res.redirect('../data');
-    // const newPatient = await Patient.findOne({first_name:"Pat"}).populate('healthyData').lean()
-    // res.render('data.hbs', {patientInfo: newPatient})
-    // app.get('/data', async (req, res) => {
-    //     console.log('GET /data')
-    //     const patient = await Patient.findOne({first_name:"Pat"}).populate('healthyData').lean();
-    //     // const healthyData = await Patient.findOne({first_name:"Pat"}).populate('healthyData').lean();
-    //     // console.log(patient)
-    //     res.render('data.hbs', {patientInfo: patient})
-    // })
+})
+
+app.post('/login', async(req, res) => {
+    if(typeof req.body.isDoctor == "object"){
+        const patient = await Patient.findOne({userid:req.body.userid}).populate('healthyData').lean();
+        if(patient != null && patient.password == req.body.password){
+            res.status("202")
+            res.statusMessage = patient._id
+        }else if(patient != null && patient.password != req.body.password){
+            res.status("201")
+        }
+       res.send()
+    }else if(typeof req.body.isPatient == "object"){
+
+        res.status("201")
+        res.send()
+    }
 })
 
 app.get('/login', async (req, res) => {

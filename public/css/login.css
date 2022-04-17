@@ -121,15 +121,21 @@ input::-webkit-input-placeholder{
 }
 
 #login-box {
-    margin-top: 10%;
+    margin-top:15%;
     background-color: #DF9FA0;
     border: 0px;
-    border-radius: 10px;
-    width: 89%;
+    border-radius: 20px;
+    width: 86%;
     padding: 13px;
     color: white;
-    font-size: 20px;
+    font-size: 32px;
     cursor: pointer;
+    display: flex;
+    position: relative;
+    left: 7%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 35%;
 }
 
 input[type="text"]

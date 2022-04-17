@@ -17,32 +17,32 @@
                 </div>
             </div>
             <div class="bottom">
-                <div class="login-content">
-                    <h1>Welcome back!</h1>
-                    <h2>
-                        I am a <input id = "patient" type="button" value="Patient" onclick="identity_patient()" /> / 
-                        <input id = "doctor" type="button" value="Doctor" style="color: grey;"  onclick="identity_doctor()" />
-                    </h2>
-                    <ul>
-                        <li> <input type="text" id="username" placeholder="User id"></li>
-                        <li> <input type="password"  id="password" placeholder="Password"></li>
-                        <li>
-                            <label class="container">Show Password
-                                <input type="checkbox" onclick="myFunction()">
-                                <span class="checkmark"></span>
-                              </label>
-                        </li>
-                        <li>Forgot Password</li>
-                        <li><input id="login-box" type="button" value="Login"  onclick="validate()" /></li>
-                        <li><div id = "errorMessage", style="display: none;">incorrect</div></li>
-                        <li><div id = "missing" ,style="display: none;">missing</div></li>
-                        <li><div id = "missing-indentity", style="display: none;">missing identity</div></li>
-                    </ul>
-                </div>
+                <form action="/login" method="post">
+                    <div class="login-content">
+                        <h1>Welcome back!</h1>
+                        <h2>
+                            I am a <input id = "patient" type="button" name="patient" value="Patient" onclick="identity_patient()" /> / 
+                            <input id = "doctor" type="button" value="Doctor" name="doctor" style="color: grey;"  onclick="identity_doctor()" />
+                        </h2>
+                        <ul>
+                            <li> <input name="userID" type="text" id="username" placeholder="User id"></li>
+                            <li> <input type="password" name="password" id="password" placeholder="Password"></li>
+                            <li>
+                                <label class="container">Show Password
+                                    <input type="checkbox" onclick="myFunction()">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </li>
+                            <li>Forgot Password</li>
+                            <li><button id="login-box" type="button" onclick="validate()"  >Login</button></li>
+                            <li><div id = "errorMessage", ></div></li>
+                        </ul>
+                    </div>
+                </form>
             </div>
         </div>
         <div>
-            <img  class="side-picture" src="../public/res/login.png" alt="picture">
+            <img  class="side-picture" src="../res/login.png" alt="picture">
         </div>
     </div>
 </body>
