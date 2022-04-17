@@ -74,6 +74,9 @@ app.post('/data/:name', async (req, res) => {
     // })
 })
 
+app.get('/login', async (req, res) => {
+    res.render('login.hbs')
+})
 app.use(express.static('public'))
 // Tells the app to listen on port 3000 and logs tha tinformation to the console.
 app.listen(process.env.PORT || 3000, () => {

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../js/login.js"></script>
+    <link rel = "stylesheet" href = "../css/login.css" media = " all" />
+    <title>Login</title>
+</head>
+<body>
+    <div class="main">
+        <div>
+            <div class="header">
+                <div class="logo">
+                    <img src="/res/logo.png" alt="logo">
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="login-content">
+                    <h1>Welcome back!</h1>
+                    <h2>
+                        I am a <input id = "patient" type="button" value="Patient" onclick="identity_patient()" /> / 
+                        <input id = "doctor" type="button" value="Doctor" style="color: grey;"  onclick="identity_doctor()" />
+                    </h2>
+                    <ul>
+                        <li> <input type="text" id="username" placeholder="User id"></li>
+                        <li> <input type="password"  id="password" placeholder="Password"></li>
+                        <li>
+                            <label class="container">Show Password
+                                <input type="checkbox" onclick="myFunction()">
+                                <span class="checkmark"></span>
+                              </label>
+                        </li>
+                        <li>Forgot Password</li>
+                        <li><input id="login-box" type="button" value="Login"  onclick="validate()" /></li>
+                        <li><div id = "errorMessage", style="display: none;">incorrect</div></li>
+                        <li><div id = "missing" ,style="display: none;">missing</div></li>
+                        <li><div id = "missing-indentity", style="display: none;">missing identity</div></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div>
+            <img  class="side-picture" src="../public/res/login.png" alt="picture">
+        </div>
+    </div>
+</body>
+</html>
