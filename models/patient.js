@@ -7,7 +7,7 @@ const patientSchema = new mongoose.Schema({
     screen_name: String,
     bio: String,
     brithday: String,
-    healthyData_required: [Boolean], //0:weight, 1:blood pressure, 2:blood sugar, 3:blood oxygen
+    healthyData_required: [Boolean], 
     healthyData:[{type:mongoose.Schema.Types.ObjectId, ref:'healthyData'}],
 })
 

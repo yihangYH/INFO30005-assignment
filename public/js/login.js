@@ -27,10 +27,12 @@ async function validate() {
       isDoctor: doctor,
       isPatient: patient
     }
+    // error message if user not enter either username of password
     if (document.getElementById("username").value == "" || document.getElementById("password").value == "") {
       document.getElementById('errorMessage').innerHTML = "please enter a username and password";
       return
     }
+    // post method for login
     const response = await fetch('/login', {
       method: 'POST',
       headers: {
@@ -39,6 +41,7 @@ async function validate() {
       body: JSON.stringify(patientInfo)
     });
     console.log(response);
+    // based on the response, redirect to data page for patient, or showing error meesage
     if (response.status == 202) {
       window.location.href = "../data/" + response.statusText;
     } else if (response.status == 201) {

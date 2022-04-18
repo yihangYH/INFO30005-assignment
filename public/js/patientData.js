@@ -7,6 +7,7 @@ function updateBtnclick() {
     document.getElementById('blur').style.display = 'flex';
     document.getElementById('cancel').style.display = 'flex';
     document.getElementById('container').style.display = 'block';
+    // the comment out function is for detecting if patient has already uploaded the data
     // reloadUpdatePage();
 }
 
