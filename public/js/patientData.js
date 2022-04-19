@@ -343,7 +343,7 @@ function cancel() {
     document.getElementById('blur').style.display = 'none';
     document.getElementById('cancel').style.display = 'none';
     document.getElementById('container').style.display = 'none';
-    window.location.reload();
+    // window.location.reload();
 }
 
 function weightFunction(){
