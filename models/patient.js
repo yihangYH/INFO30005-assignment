@@ -9,10 +9,10 @@ const patientSchema = new mongoose.Schema({
     birthday: String,
     healthyData_required: [Boolean], 
     healthyData:[{type:mongoose.Schema.Types.ObjectId, ref:'healthyData'}],
-    weight: {type:mongoose.Schema.Types.ObjectId, ref:'weight'},
-    exercise: {type:mongoose.Schema.Types.ObjectId, ref:'exercise'},
-    insulinTaken: {type:mongoose.Schema.Types.ObjectId, ref:'insulinTaken'},
-    bloodGlucose: {type:mongoose.Schema.Types.ObjectId, ref:'bloodGlucose'},
+    weight: [{type:mongoose.Schema.Types.ObjectId, ref:'weight'}],
+    exercise: [{type:mongoose.Schema.Types.ObjectId, ref:'exercise'}],
+    insulinTaken: [{type:mongoose.Schema.Types.ObjectId, ref:'insulinTaken'}],
+    bloodGlucose: [{type:mongoose.Schema.Types.ObjectId, ref:'bloodGlucose'}],
 
 })
 
