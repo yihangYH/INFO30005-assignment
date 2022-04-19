@@ -626,7 +626,7 @@
     .trophies-and-rankings {
         display: flex;
         position: absolute;
-        left: 26%;
+        left: 33%;
         top: 4%;
         width: 14%;
         height: 120px;
@@ -853,7 +853,7 @@
         display: flex;
         position: absolute;
         top: 83%;
-        left: 75%;
+        left: 70%;
         color: gray;
         font-size: 30px;
     }
@@ -1057,19 +1057,31 @@
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (min-width: 1024px) and (max-width: 1366px) {
 
     .header {
         display: flex;
         background: linear-gradient(to bottom, #DFAFAD, #FDF9F8);
-        width: 1980px;
-        height: 200px;
+        width: 1024px;
+        height: 120px;
     }
 
     .logo {
         position: absolute;
-        width: 350px;
-        left: 20px;
+        width: 250px;
+        left: 18px;
 
     }
 
@@ -1084,11 +1096,11 @@
 
     .log-out {
         position: absolute;
-        left: 86%;
-        top: 6%;
-        width: 150px;
-        height: 50px;
-        font-size: 40px;
+        left: 78%;
+        top:  7%;
+        width: 120px;
+        height: 35px;
+        font-size: 28px;
         text-align: center;
         border-radius: 18px;
         padding-top: 0.5%;
@@ -1107,20 +1119,20 @@
     }
 
     .word-welcome {
-        font-size: 50px;
+        font-size: 35px;
         font-weight: bolder;
         position: absolute;
-        left: 86px;
-        top: 3%;
+        left: 70px;
+        top: 5%;
         list-style: none;
     }
 
     .user-name {
         position: absolute;
         font-weight: 500;
-        font-size: 48px;
-        left: 89px;
-        top: 10%;
+        font-size: 32px;
+        left: 70px;
+        top: 12%;
         list-style: none;
 
     }
@@ -1129,9 +1141,9 @@
         font-size: x-large;
         position: absolute;
         font-weight: 500;
-        font-size: 40px;
-        left: 89px;
-        top: 16%;
+        font-size: 26px;
+        left: 70px;
+        top: 18%;
         list-style: none;
         color: #DFAFAD;
     }
@@ -1140,10 +1152,10 @@
         display: flex;
         position: absolute;
         border-radius: 10px;
-        top: 3%;
+        top: 6%;
         left: 55.5%;
         width: 24%;
-        font-size: 30px;
+        font-size: 20px;
         /* padding: 160px;
         padding-top: 0.5%;
         padding-left: 0.5%;
@@ -1155,8 +1167,8 @@
         display: flex;
         position: absolute;
         width: 11%;
-        left: 76%;
-        top: -14%;
+        left: 98%;
+        top: -8%;
     }
 
     /* .submit{
@@ -1170,51 +1182,55 @@
     .trophies-and-rankings {
         display: flex;
         position: absolute;
-        left: 26%;
-        top: 4%;
-        width: 14%;
-        height: 120px;
+        left: 36%;
+        top: 5%;
+        width: 12%;
+        height: 35px;
         padding: 30px;
         border-radius: 10px;
         border: 0.5px solid rgb(215, 215, 215)
     }
 
     .trophies p {
+        position: absolute;
         text-align: center;
-        padding-left: 43%;
-        font-size: 20px;
+        left: 22%;
+        top: 62%;
+        font-size: 15px;
     }
 
     .rankings p {
+        position:absolute;
         text-align: center;
-        position: relative;
-        left: -10%;
-        font-size: 20px;
+        left: 71%;
+        top: 63%;       
+        font-size: 15px;
     }
 
     .trophies-pic {
-        height: 79px;
-        padding-left: 22%;
-        padding-top: 0%;
-
+        position: absolute;
+        height: 45px;
+        left: 15%;
+        top: 17%;
     }
 
     .rankings-pic {
-        width: 84px;
-        height: 79px;
-        padding-left: 95px;
-        left: 50%;
-
+        position: absolute;
+        width: 60px;
+        height: 55px;
+        left: 60%;
+        top: 15%
     }
 
     .learn-more {
+        position:absolute;
         text-align: center;
         position: relative;
-        left: -32.5%;
-        top: 7%;
-        width: 337px;
+        left: 20%;
+        top: 125%;
+        width: 90px;
         padding: 1.5px;
-        font-size: 20px;
+        font-size: 15px;
         border-radius: 10px;
         background-color: #FAF7F7;
         font-style: italic;
@@ -1223,7 +1239,7 @@
 
     .vl {
         border-left: 1px solid rgb(215, 215, 215);
-        height: 77%;
+        height: 70%;
         position: absolute;
         left: 50%;
         top: 5%;
@@ -1233,9 +1249,9 @@
         display: flex;
         position: absolute;
         border-radius: 10px;
-        top: 26%;
-        left: 88px;
-        font-size: 60px;
+        top: 25%;
+        left: 70px;
+        font-size: 45px;
     }
 
     .update {
@@ -1243,10 +1259,10 @@
         position: absolute;
         border-radius: 20px;
         width: 70%;
-        top: 14%;
-        left: 357%;
-        font-size: 30px;
-        padding: 10px;
+        top: 10%;
+        left: 230%;
+        font-size: 25px;
+        padding: 8px;
         padding-left: 15%;
         color: white;
         background-color: #DFAFAD;
@@ -1259,159 +1275,159 @@
     .blood-glucose-words {
         display: flex;
         position: absolute;
-        top: 41%;
-        left: 4.5%;
-        font-size: 32px;
+        top: 38%;
+        left: 7%;
+        font-size: 23px;
         font-weight: bold;
     }
 
     .blood-glucose-data {
         display: flex;
         position: absolute;
-        left: 23%;
-        top: 427px;
+        left: 33%;
+        top: 37%;
         width: 320px;
-        font-size: 50px;
+        font-size: 32px;
         font-weight: 100;
     }
 
     .blood-glucose-arrow {
         position: absolute;
-        width: 80px;
-        left: 40%;
-        top: 38%;
+        width: 50px;
+        left: 43%;
+        top: 36%;
     }
 
     .weight {
         display: flex;
         position: absolute;
-        top: 40%;
-        left: 55.5%;
-        font-size: 32px;
+        top: 38%;
+        left: 54%;
+        font-size: 23px;
         font-weight: bold;
     }
 
     .weight-data {
         display: flex;
         position: absolute;
-        top: -35%;
-        left: 250%;
+        top: -25%;
+        left: 220%;
         width: 250%;
-        font-size: 50px;
+        font-size: 32px;
         font-weight: 100;
 
     }
 
     .weight-arrow {
         position: absolute;
-        width: 80px;
-        left: 354%;
-        top: -50%;
+        width: 50px;
+        left: 272%;
+        top: -55%;
     }
 
     .insulin-taken-word {
         display: flex;
         position: absolute;
-        top: 59%;
-        left: 92px;
-        font-size: 32px;
+        top: 55%;
+        left: 72px;
+        font-size: 23px;
         font-weight: bolder;
     }
 
     .insulin-taken-data {
         display: flex;
         position: absolute;
-        left: 23%;
-        top: 58%;
-        font-size: 50px;
+        left: 28%;
+        top: 54%;
+        font-size: 32px;
         font-weight: 100;
     }
 
     .insulin-taken-arrow {
         position: absolute;
-        width: 80px;
-        left: 40%;
-        top: 57%;
+        width: 50px;
+        left: 43%;
+        top: 53%;
     }
 
     .exercise {
         display: flex;
         position: absolute;
-        top: 59%;
-        left: 55.5%;
+        top: 55%;
+        left: 54%;
         width: 40%;
-        font-size: 32px;
+        font-size: 23px;
         font-weight: bold;
     }
 
     .exercise-data {
         display: flex;
         position: absolute;
-        left: 41%;
+        left: 49%;
         top: -34%;
         width: 250%;
-        font-size: 50px;
+        font-size: 32px;
         font-weight: 100;
     }
 
     .exercise-arrow {
         position: absolute;
-        width: 80px;
-        left: 85%;
-        top: -45%;
+        width: 50px;
+        left: 84%;
+        top: -65%;
     }
 
     .first-hr {
         border: 1px solid rgb(219, 219, 219);
-        width: 40%;
+        width: 42%;
         position: absolute;
-        top: 45%;
-        left: 90px;
+        top: 43%;
+        left: 70px;
     }
 
     .sec-hr {
         border: 1px solid rgb(219, 219, 219);
-        width: 40%;
+        width: 42%;
         position: absolute;
-        top: 45%;
-        left: 55.5%;
+        top: 43%;
+        left: 54%;
     }
 
     .third-hr {
         border: 1px solid rgb(219, 219, 219);
-        width: 40%;
+        width: 42%;
         position: absolute;
-        top: 64%;
-        left: 90px;
+        top: 60%;
+        left: 70px;
     }
 
     .forth-hr {
         border: 1px solid rgb(219, 219, 219);
-        width: 40%;
+        width: 42%;
         position: absolute;
-        top: 64%;
-        left: 55.5%;
+        top: 60%;
+        left: 54%;
     }
 
     .date {
         display: flex;
         position: absolute;
-        top: 83%;
-        left: 75%;
+        top: 78%;
+        left: 65%;
         color: gray;
-        font-size: 30px;
+        font-size: 20px;
     }
 
     .text {
         display: flex;
         position: absolute;
-        top: 90%;
-        left: 25%;
+        top: 86%;
+        left: 10%;
         /* padding-left: 10px;
         padding-right: 10px; */
         text-align: center;
         color: #A22929;
-        font-size: 35px;
+        font-size: 30px;
     }
 
     .blur {
