@@ -25,7 +25,6 @@ hbs.handlebars.registerHelper("findExercise", function(data) {
 });
 
 hbs.handlebars.registerHelper("findBloodGlucose", function(data) {
-
     return data[data.length -1].value;
 });
 
