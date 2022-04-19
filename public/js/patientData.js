@@ -68,7 +68,7 @@ function setCommentWindow3() {
     document.getElementById('pen3').style.display = 'none';
 }
 
-function submit() {
+function submit0() {
     document.getElementById('text-block').style.display = 'none';
     document.getElementById('comment').style.display = 'flex';
     document.getElementById('butn1').style.display = 'flex';
