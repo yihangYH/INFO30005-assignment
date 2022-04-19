@@ -320,7 +320,7 @@
         left: 10px;
     }
 
-    .date {
+    .exercise-date {
         font-size: medium;
         display: flex;
         position: absolute;
@@ -848,7 +848,7 @@
         left: 55.5%;
     }
 
-    .date {
+    .exercise-date {
         display: flex;
         position: absolute;
         top: 83%;
@@ -1408,7 +1408,7 @@
         left: 54%;
     }
 
-    .date {
+    .exercise-date {
         display: flex;
         position: absolute;
         top: 78%;
