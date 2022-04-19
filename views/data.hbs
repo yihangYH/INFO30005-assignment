@@ -68,7 +68,11 @@
                 BLOOD GLUCOSE
             </div>
             <div class="blood-glucose-data">
-                <p id="blood-glucose-data">No data today</p>
+                {{#if this.healthyData}}
+                    <P id="blood-glucose-data">{{findBloodGlucose this.healthyData}} &nbsp nml/L </P>
+                {{else}}
+                    <P id="blood-glucose-data">No Data Yet</P>
+                {{/if}}
             </div>
             <div class="blood-glucose-arrow">
                 <img class="blood-glucose-arrow" src="../res/arrow.png" alt="arrow">
@@ -80,7 +84,11 @@
                 WEIGHT
             </div>
             <div class="weight-data">
-                <P id="weight-data">80.1 &nbsp kg</P>
+                {{#if this.healthyData}}
+                    <P id="weight-data">{{findWeight this.healthyData}} &nbsp KG </P>
+                {{else}}
+                    <P id="weight-data">No Data Yet</P>
+                {{/if}}
             </div>
             <div class="weight-arrow">
                 <img class="weight-arrow" src="../res/arrow.png" alt="arrow">
@@ -92,7 +100,11 @@
                 INSULIN TAKEN
             </div>
             <div class="insulin-taken-data">
-                <P id="insulin-taken-data">5 &nbsp Doses</P>
+                {{#if this.healthyData}}
+                    <P id="insulin-taken-data">{{findInsulinTaken this.healthyData}} &nbsp Kg </P>
+                {{else}}
+                    <P id="insulin-taken-data">No Data Yet</P>
+                {{/if}}
             </div>
             <div class="insulin-taken-arrow">
                 <img class="insulin-taken-arrow" src="../res/arrow.png" alt="arrow">
@@ -104,7 +116,11 @@
                 EXERCISE
             </div>
             <div class="exercise-data">
-                <P id="exercise-data">5000 &nbsp Steps</P>
+                {{#if this.healthyData}}
+                    <P id="exercise-data">{{findExercise this.healthyData}} &nbsp Steps </P>
+                {{else}}
+                    <P id="exercise-data">No Data Yet</P>
+                {{/if}}
             </div>
             <div class="exercise-arrow">
                 <img class="exercise-arrow" src="../res/arrow.png" alt="arrow">
@@ -114,12 +130,16 @@
     </div>
     
     <div class="date" id="date">
-        <div class="date-text">
-            <P>Updated on:&nbsp</P>
-        </div>
-        <div class="date-data">
-            <P>2022.2.22&nbsp13:00</P>
-        </div>
+
+        {{#if this.healthyData}}
+                <div class="date-text">
+                    <P>Updated on:&nbsp {{findTime this.healthyData}}</P>
+                </div>
+        {{else}}
+                <div class="date-text">
+                    <P>Updated on:&nbsp No Record</P>
+                </div>
+        {{/if}}
     </div>
     <div class="text" id="text">
         "Joy is healthy, a happy
@@ -196,22 +216,9 @@
 {{/with}}
 <script>
     {{#with patientInfo}}
-        var blood_glucose, exericse, insulin_taken, weight;
-        {{#each this.healthyData}}
-            blood_glucose = "{{this.blood_glucose}}"
-            exericse = "{{this.exericse}}"
-            insulin_taken = "{{this.insulin_taken}}"
-            weight = "{{this.weight}}"
-            time = "{{this.time}}"
-        {{/each}}
         var data = []
         data.push({{ this.healthyData_required }})
-        setPatientDataValue(blood_glucose, exericse, insulin_taken, weight, data)
-        if(time==""){
-            document.getElementById("date").innerHTML = "Not updated"
-        }else{
-            document.getElementById("date").innerHTML = "Updated on:&nbsp" + time
-        }
+        setPatientDataValue(data)
     {{/with}}
 </script>
 
