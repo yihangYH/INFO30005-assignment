@@ -135,7 +135,7 @@
 <img class="blur" id="blur" src="../res/blur.jpeg" alt="">
 <button type="button" onclick="cancel()"><img class="cancel" id="cancel" src="../res/cancel.jpg" alt=""></button>
 <div class="container" id="container">
-    <form action="/data/{{this._id}}" method="post">
+    <form action="/data/{{this._id}}" method="post" onsubmit="return validation()">
         <div class="dialog">
             <p class="insert-data">Enter today's data</p>
             <div class="item">

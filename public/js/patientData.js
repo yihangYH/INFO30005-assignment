@@ -24,15 +24,53 @@ function reloadUpdatePage(){
     
 }
 
+function validation(){
+    console.log(document.getElementById('blood-glucose-input').value == "");
+    console.log(document.getElementById('insulin-taken-input').value == "Not required");
+    if(document.getElementById('blood-glucose-input').value != "Not required" && document.getElementById('blood-glucose-input').value == ""){
+        alert("please enter data before Update")
+        return false;
+    }
+    if(document.getElementById('weight-input').value != "Not required" && document.getElementById('weight-input').value == ""){
+        alert("please enter data before Update")
+        return false;
+    }
+    if(document.getElementById('insulin-taken-input').value != "Not required" && document.getElementById('insulin-taken-input').value == ""){
+        alert("please enter data before Update")
+        return false;
+    }
+    if(document.getElementById('exericse-input').value != "Not required" && document.getElementById('exericse-input').value == ""){
+        alert("please enter data before Update")
+        return false;
+    }
+    
+
+    return true;
+}
 
 function updatePlusClick() {
-    document.getElementById('main-body').style.display = 'flex';
-    document.getElementById('date').style.display = 'flex';
-    document.getElementById('text').style.display = 'flex';
-    document.getElementById('blur').style.display = 'none';
-    document.getElementById('cancel').style.display = 'none';
-    document.getElementById('container').style.display = 'none';
+    var validator = true;
+    if(document.getElementById('blood-glucose-input').value != "Not required" && document.getElementById('blood-glucose-input').value == ""){
+        validator = false;
+    }
+    if(document.getElementById('weight-input').value != "Not required" && document.getElementById('weight-input').value == ""){
+        validator = false;
+    }
+    if(document.getElementById('insulin-taken-input').value != "Not required" && document.getElementById('insulin-taken-input').value == ""){
+        validator = false;
+    }
+    if(document.getElementById('exericse-input').value != "Not required" && document.getElementById('exericse-input').value == ""){
+        validator = false;
+    }
+    if(validator){
+        document.getElementById('main-body').style.display = 'flex';
+        document.getElementById('date').style.display = 'flex';
+        document.getElementById('text').style.display = 'flex';
+        document.getElementById('blur').style.display = 'none';
+        document.getElementById('cancel').style.display = 'none';
+        document.getElementById('container').style.display = 'none';
 }
+    }
 
 
 function setCommentWindow() {
