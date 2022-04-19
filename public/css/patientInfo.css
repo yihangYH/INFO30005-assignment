@@ -517,7 +517,6 @@
     .header {
         display: flex;
         background: linear-gradient(to bottom, #DFAFAD, #FDF9F8);
-        width: 1980px;
         height: 200px;
     }
 
@@ -805,7 +804,7 @@
         position: absolute;
         left: 41%;
         top: -34%;
-        width: 250%;
+        width: 65%;
         font-size: 50px;
         font-weight: 100;
     }
