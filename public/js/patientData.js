@@ -25,8 +25,6 @@ function reloadUpdatePage(){
 }
 
 function validation(){
-    console.log(document.getElementById('blood-glucose-input').value == "");
-    console.log(document.getElementById('insulin-taken-input').value == "Not required");
     if(document.getElementById('blood-glucose-input').value != "Not required" && document.getElementById('blood-glucose-input').value != ""){
 
         return true;
@@ -44,23 +42,23 @@ function validation(){
         return true;
     }
     
-
+    alert("please enter at least one data before update")
     return false;
 }
 
 function updatePlusClick() {
-    var validator = true;
-    if(document.getElementById('blood-glucose-input').value != "Not required" && document.getElementById('blood-glucose-input').value == ""){
-        validator = false;
+    var validator = false;
+    if(document.getElementById('blood-glucose-input').value != "Not required" && document.getElementById('blood-glucose-input').value != ""){
+        validator = true;
     }
-    if(document.getElementById('weight-input').value != "Not required" && document.getElementById('weight-input').value == ""){
-        validator = false;
+    if(document.getElementById('weight-input').value != "Not required" && document.getElementById('weight-input').value != ""){
+        validator = true;
     }
-    if(document.getElementById('insulin-taken-input').value != "Not required" && document.getElementById('insulin-taken-input').value == ""){
-        validator = false;
+    if(document.getElementById('insulin-taken-input').value != "Not required" && document.getElementById('insulin-taken-input').value != ""){
+        validator = true;
     }
-    if(document.getElementById('exericse-input').value != "Not required" && document.getElementById('exericse-input').value == ""){
-        validator = false;
+    if(document.getElementById('exericse-input').value != "Not required" && document.getElementById('exericse-input').value != ""){
+        validator = true;
     }
     if(validator){
         document.getElementById('main-body').style.display = 'flex';
