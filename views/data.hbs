@@ -55,8 +55,8 @@
             BLOOD GLUCOSE
         </div>
         <div class="blood-glucose-data">
-            {{#if this.healthyData}}
-            <P id="blood-glucose-data">{{findBloodGlucose this.healthyData}} &nbsp nml/L </P>
+            {{#if this.bloodGlucose}}
+            <P id="blood-glucose-data">{{findBloodGlucose this.bloodGlucose}} &nbsp nml/L </P>
             {{else}}
             <P id="blood-glucose-data">No Data Yet</P>
             {{/if}}
@@ -71,11 +71,12 @@
             WEIGHT
         </div>
         <div class="weight-data">
-            {{#if this.healthyData}}
-            <P id="weight-data">{{findWeight this.healthyData}} &nbsp KG </P>
+            {{#if this.weight:}}
+            <P id="weight-data">{{findWeight this.weight}} &nbsp KG </P>
             {{else}}
             <P id="weight-data">No Data Yet</P>
             {{/if}}
+            
         </div>
         <div class="weight-arrow">
             <img class="weight-arrow" src="../res/arrow.png" alt="arrow">
@@ -87,8 +88,8 @@
             INSULIN TAKEN
         </div>
         <div class="insulin-taken-data">
-            {{#if this.healthyData}}
-            <P id="insulin-taken-data">{{findInsulinTaken this.healthyData}} &nbsp Kg </P>
+            {{#if this.insulinTaken}}
+            <P id="insulin-taken-data"> {{findInsulinTaken this.insulinTaken}} &nbsp Doses </P>
             {{else}}
             <P id="insulin-taken-data">No Data Yet</P>
             {{/if}}
@@ -103,8 +104,8 @@
             EXERCISE
         </div>
         <div class="exercise-data">
-            {{#if this.healthyData}}
-            <P id="exercise-data">{{findExercise this.healthyData}} &nbsp Steps </P>
+            {{#if this.exercise}}
+            <P id="exercise-data">{{findExercise this.exercise}} &nbsp Steps </P>
             {{else}}
             <P id="exercise-data">No Data Yet</P>
             {{/if}}
@@ -118,7 +119,7 @@
 
 <div class="date" id="date">
 
-    {{#if this.healthyData}}
+    {{!-- {{#if this.healthyData}}
     <div class="date-text">
         <P>Updated on:&nbsp {{findTime this.healthyData}}</P>
     </div>
@@ -126,7 +127,7 @@
     <div class="date-text">
         <P>Updated on:&nbsp No Record</P>
     </div>
-    {{/if}}
+    {{/if}} --}}
 </div>
 <div class="text" id="text">
     "Joy is healthy, a happy
@@ -211,5 +212,6 @@
     var data = []
     data.push({{ this.healthyData_required }})
     setPatientDataValue(data)
+    
     {{/with}}
 </script>

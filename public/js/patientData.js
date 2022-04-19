@@ -27,25 +27,25 @@ function reloadUpdatePage(){
 function validation(){
     console.log(document.getElementById('blood-glucose-input').value == "");
     console.log(document.getElementById('insulin-taken-input').value == "Not required");
-    if(document.getElementById('blood-glucose-input').value != "Not required" && document.getElementById('blood-glucose-input').value == ""){
-        alert("please enter data before Update")
-        return false;
+    if(document.getElementById('blood-glucose-input').value != "Not required" && document.getElementById('blood-glucose-input').value != ""){
+
+        return true;
     }
-    if(document.getElementById('weight-input').value != "Not required" && document.getElementById('weight-input').value == ""){
-        alert("please enter data before Update")
-        return false;
+    if(document.getElementById('weight-input').value != "Not required" && document.getElementById('weight-input').value != ""){
+
+        return true;
     }
-    if(document.getElementById('insulin-taken-input').value != "Not required" && document.getElementById('insulin-taken-input').value == ""){
-        alert("please enter data before Update")
-        return false;
+    if(document.getElementById('insulin-taken-input').value != "Not required" && document.getElementById('insulin-taken-input').value != ""){
+
+        return true;
     }
-    if(document.getElementById('exericse-input').value != "Not required" && document.getElementById('exericse-input').value == ""){
-        alert("please enter data before Update")
-        return false;
+    if(document.getElementById('exericse-input').value != "Not required" && document.getElementById('exericse-input').value != ""){
+
+        return true;
     }
     
 
-    return true;
+    return false;
 }
 
 function updatePlusClick() {

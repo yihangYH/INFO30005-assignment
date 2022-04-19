@@ -39,8 +39,8 @@ app.get('/aboutThisWebsite', (req, res) => {
 // get specific patient's data page
 // will move to patientRouter later
 app.get('/data/:id', async (req, res) => {
-    const patient = await Patient.findOne({_id:req.params.id}).populate('healthyData').lean();
-    // const healthyData = await Patient.findOne({first_name:"Pat"}).populate('healthyData').lean();
+    const patient = await Patient.findOne({_id:req.params.id}).populate("weight").populate("exercise").populate("bloodGlucose").populate("insulinTaken").lean();
+    // console.log(patient)
     res.render('data.hbs', {patientInfo: patient})
 })
 
