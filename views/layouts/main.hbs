@@ -1,16 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {{!-- <link rel = "stylesheet" href = "../css/stylesheet.css" media = " all" /> --}}
     <link rel="icon" type="image/x-icon" href="../res/favicon.ico">
-    {{!-- <title>{{page.title}}</title> --}}
+    <link id="style" rel="stylesheet" href="" media=" all" />
+    <script src="../js/patientData.js"></script>
+    <script src="../js/login.js"></script>
+    <script>
+        var path = window.location.pathname;
+        if (path.includes("login")) {
+            document.getElementById("style").href = "../css/login.css";
+            document.title = "Login";
+        } else if (path.includes("data")) {
+            document.getElementById("style").href = "../css/patientInfo.css";
+            document.title = "Your Data";
+        } else if (path.includes("welcome") || path.includes("Welcome")) {
+            document.getElementById("style").href = "../css/stylesheet.css";
+            document.title = "Welcome";
+        } else if (path.includes("aboutDiabetes")) {
+            document.getElementById("style").href = "../css/stylesheet.css";
+            document.title = "About Diabetes";
+        } else if (path.includes("aboutThisWebsite")) {
+            document.getElementById("style").href = "../css/stylesheet.css";
+            document.title = "About This Website";
+        }
+    </script>
 </head>
+
 <body>
     <main>
         {{{body}}}
     </main>
 </body>
+
 </html>

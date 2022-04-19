@@ -6,7 +6,7 @@ const patientSchema = new mongoose.Schema({
     last_name: String,
     screen_name: String,
     bio: String,
-    brithday: String,
+    birthday: String,
     healthyData_required: [Boolean], 
     healthyData:[{type:mongoose.Schema.Types.ObjectId, ref:'healthyData'}],
 })

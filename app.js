@@ -5,6 +5,7 @@ require('./models')
 // Set your app up as an express app
 const app = express()
 const exphbs = require('express-handlebars')
+require('./helper/hbsHelper.js')
 app.use(express.json()) // needed if POST data is in JSON format
 app.use(express.urlencoded({ extended: true })) // only needed for URL-encoded input
 const {Patient} = require('./models/patient.js')
