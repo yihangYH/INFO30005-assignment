@@ -8,6 +8,8 @@
     <link rel="icon" type="image/x-icon" href="/res/favicon.ico">
 </head>
 <body>
+
+    <script type="text/javascript" src="../JavaScript/Dashboard.js"></script>
     <header>
         <div class="topBar">
 
@@ -32,8 +34,8 @@
                 <div id="clinicianName">
                     <p>Michael Gu</p>
                     <div id="sideBar">
-                        <img id="triangle" src="/res/triangle.png" alt="triangle">
-                        <div class="sideButton">
+                        <img id="triangle" src="/res/triangle.png" alt="triangle" onclick="click_sideBtn()">
+                        <div class="sideButton" style="display: none;">
                             <p><a href="Create new patient.html">Create new patient</a></p>
                             <p><a href="Log.html">Log out</a></p>
                         </div>

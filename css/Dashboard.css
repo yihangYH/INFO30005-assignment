@@ -98,6 +98,7 @@ body{
     margin-bottom:0px;
 }
 
+/* TODO: can't scroll*/
 #dashboard{
     overflow-y: auto;
     height: 8px;
