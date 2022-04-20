@@ -8,34 +8,26 @@ hbs.handlebars.registerHelper("Json", function(data) {
 });
 
 
-hbs.handlebars.registerHelper("ifEmpty", function(data) {
-    console.log(data)
-    if(data.length == 0){
-        return "No Data Yet";
-    }
-});
 
 hbs.handlebars.registerHelper("findWeight", function(data) {
 
-    return data[data.length-1].weight;
+    return data[data.length -1].value;
 });
 
 hbs.handlebars.registerHelper("findInsulinTaken", function(data) {
 
-    return data[data.length-1].insulin_taken;
+    return data[data.length -1].value;
 });
 
 hbs.handlebars.registerHelper("findExercise", function(data) {
 
-    return data[data.length-1].exericse;
+    return data[data.length -1].value;
 });
 
 hbs.handlebars.registerHelper("findBloodGlucose", function(data) {
-
-    return data[data.length-1].blood_glucose;
+    return data[data.length -1].value;
 });
 
 hbs.handlebars.registerHelper("findTime", function(data) {
-
     return data[data.length-1].time;
 });

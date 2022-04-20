@@ -8,31 +8,78 @@ function updateBtnclick() {
     document.getElementById('cancel').style.display = 'flex';
     document.getElementById('container').style.display = 'block';
     // the comment out function is for detecting if patient has already uploaded the data
-    // reloadUpdatePage();
+    reloadUpdatePage();
 }
 
 function reloadUpdatePage(){
-    var date = document.getElementById('date').innerHTML
+    var date = document.getElementById('blood-glucose-date').innerHTML
     date = date.substring(17, date.length - 10).split('/')
     let today = new Date();
     if(today.getDate() == date[1] && today.getMonth() == date[0] - 1){
         document.getElementById('blood-glucose-input').value = document.getElementById('blood-glucose-data').innerHTML.split('&')[0];
+    }
+    date = document.getElementById('weight-date').innerHTML
+    date = date.substring(17, date.length - 10).split('/')
+    if(today.getDate() == date[1] && today.getMonth() == date[0] - 1){
         document.getElementById('weight-input').value = document.getElementById('weight-data').innerHTML.split('&')[0];
+    }
+    date = document.getElementById('insulin-taken-date').innerHTML
+    date = date.substring(17, date.length - 10).split('/')
+    if(today.getDate() == date[1] && today.getMonth() == date[0] - 1){
         document.getElementById('insulin-taken-input').value = document.getElementById('insulin-taken-data').innerHTML.split('&')[0];
+    }
+    date = document.getElementById('exercise-date').innerHTML
+    date = date.substring(17, date.length - 10).split('/')
+    if(today.getDate() == date[1] && today.getMonth() == date[0] - 1){
         document.getElementById('exericse-input').value = document.getElementById('exercise-data').innerHTML.split('&')[0];
     }
-    
 }
 
+function validation(){
+    if(document.getElementById('blood-glucose-input').value != "Not required" && document.getElementById('blood-glucose-input').value != ""){
+
+        return true;
+    }
+    if(document.getElementById('weight-input').value != "Not required" && document.getElementById('weight-input').value != ""){
+
+        return true;
+    }
+    if(document.getElementById('insulin-taken-input').value != "Not required" && document.getElementById('insulin-taken-input').value != ""){
+
+        return true;
+    }
+    if(document.getElementById('exericse-input').value != "Not required" && document.getElementById('exericse-input').value != ""){
+
+        return true;
+    }
+    
+    alert("please enter at least one data before update")
+    return false;
+}
 
 function updatePlusClick() {
-    document.getElementById('main-body').style.display = 'flex';
-    document.getElementById('date').style.display = 'flex';
-    document.getElementById('text').style.display = 'flex';
-    document.getElementById('blur').style.display = 'none';
-    document.getElementById('cancel').style.display = 'none';
-    document.getElementById('container').style.display = 'none';
+    var validator = false;
+    if(document.getElementById('blood-glucose-input').value != "Not required" && document.getElementById('blood-glucose-input').value != ""){
+        validator = true;
+    }
+    if(document.getElementById('weight-input').value != "Not required" && document.getElementById('weight-input').value != ""){
+        validator = true;
+    }
+    if(document.getElementById('insulin-taken-input').value != "Not required" && document.getElementById('insulin-taken-input').value != ""){
+        validator = true;
+    }
+    if(document.getElementById('exericse-input').value != "Not required" && document.getElementById('exericse-input').value != ""){
+        validator = true;
+    }
+    if(validator){
+        document.getElementById('main-body').style.display = 'flex';
+        document.getElementById('date').style.display = 'flex';
+        document.getElementById('text').style.display = 'flex';
+        document.getElementById('blur').style.display = 'none';
+        document.getElementById('cancel').style.display = 'none';
+        document.getElementById('container').style.display = 'none';
 }
+    }
 
 
 function setCommentWindow() {
@@ -68,7 +115,7 @@ function setCommentWindow3() {
     document.getElementById('pen3').style.display = 'none';
 }
 
-function submit() {
+function submit0() {
     document.getElementById('text-block').style.display = 'none';
     document.getElementById('comment').style.display = 'flex';
     document.getElementById('butn1').style.display = 'flex';
@@ -307,7 +354,7 @@ function cancel() {
     document.getElementById('blur').style.display = 'none';
     document.getElementById('cancel').style.display = 'none';
     document.getElementById('container').style.display = 'none';
-    window.location.reload();
+    // window.location.reload();
 }
 
 function weightFunction(){
@@ -341,21 +388,25 @@ function setPatientDataValue(data){
         if(i == 0 ){
             if(!data[0]){
                 document.getElementById("blood-glucose-data").innerHTML = "Not required"
+                document.getElementById("blood-glucose-date").innerHTML = "Updated on: No Record"
                 bloodGlucose()
             }
         }else if(i==1 ){
             if(!data[1]){
                 document.getElementById("weight-data").innerHTML = "Not required"
+                document.getElementById("weight-date").innerHTML = "Updated on: No Record"
                 weightFunction()
             }
         }else if(i==2){
             if(!data[2]){
                 document.getElementById("insulin-taken-data").innerHTML = "Not required"
+                document.getElementById("insulin-taken-date").innerHTML = "Updated on: No Record"
                 insulin()
             }
         }else{
             if(!data[3]){
                 document.getElementById("exercise-data").innerHTML = "Not required"
+                document.getElementById("exercise-date").innerHTML = "Updated on: No Record"
                 exericseFunction()
             }
         }

@@ -55,8 +55,8 @@
             BLOOD GLUCOSE
         </div>
         <div class="blood-glucose-data">
-            {{#if this.healthyData}}
-            <P id="blood-glucose-data">{{findBloodGlucose this.healthyData}} &nbsp nml/L </P>
+            {{#if this.bloodGlucose}}
+            <P id="blood-glucose-data">{{findBloodGlucose this.bloodGlucose}} &nbsp nml/L </P>
             {{else}}
             <P id="blood-glucose-data">No Data Yet</P>
             {{/if}}
@@ -71,11 +71,12 @@
             WEIGHT
         </div>
         <div class="weight-data">
-            {{#if this.healthyData}}
-            <P id="weight-data">{{findWeight this.healthyData}} &nbsp KG </P>
+            {{#if this.weight}}
+            <P id="weight-data">{{findWeight this.weight}} &nbsp KG </P>
             {{else}}
             <P id="weight-data">No Data Yet</P>
             {{/if}}
+            
         </div>
         <div class="weight-arrow">
             <img class="weight-arrow" src="../res/arrow.png" alt="arrow">
@@ -87,8 +88,8 @@
             INSULIN TAKEN
         </div>
         <div class="insulin-taken-data">
-            {{#if this.healthyData}}
-            <P id="insulin-taken-data">{{findInsulinTaken this.healthyData}} &nbsp Kg </P>
+            {{#if this.insulinTaken}}
+            <P id="insulin-taken-data"> {{findInsulinTaken this.insulinTaken}} &nbsp Doses </P>
             {{else}}
             <P id="insulin-taken-data">No Data Yet</P>
             {{/if}}
@@ -103,8 +104,8 @@
             EXERCISE
         </div>
         <div class="exercise-data">
-            {{#if this.healthyData}}
-            <P id="exercise-data">{{findExercise this.healthyData}} &nbsp Steps </P>
+            {{#if this.exercise}}
+            <P id="exercise-data">{{findExercise this.exercise}} &nbsp Steps </P>
             {{else}}
             <P id="exercise-data">No Data Yet</P>
             {{/if}}
@@ -115,18 +116,46 @@
     </div>
     <hr class="forth-hr">
 </div>
+<div class="blood-glucose-date" id="date">
 
-<div class="date" id="date">
+        {{#if this.bloodGlucose}}
+            <P id="blood-glucose-date">Updated on:&nbsp {{findTime this.bloodGlucose}}</P>
+        {{else}}
+            <P id="blood-glucose-date">Updated on:&nbsp No Record</P>
+        {{/if}}
 
-    {{#if this.healthyData}}
-    <div class="date-text">
-        <P>Updated on:&nbsp {{findTime this.healthyData}}</P>
-    </div>
+</div>
+<div class="weight-date" id="date">
+
+        {{#if this.weight}}
+            <P id= "weight-date">Updated on:&nbsp {{findTime this.weight}}</P>
+        {{else}}
+            <P id= "weight-date">Updated on:&nbsp No Record</P>
+        {{/if}}
+
+</div>
+<div class="insulin-taken-date" id="date">
+
+        {{#if this.insulinTaken}}
+            <P id="insulin-taken-date" >Updated on:&nbsp {{findTime this.insulinTaken}}</P>
+        {{else}}
+            <P id="insulin-taken-date">Updated on:&nbsp No Record</P>
+        {{/if}}
+
+
+</div>
+<div class="exercise-date" id="date">
+
+    {{#if this.exercise}}
+ 
+        <P id ="exercise-date" >Updated on:&nbsp {{findTime this.exercise}}</P>
+
     {{else}}
-    <div class="date-text">
-        <P>Updated on:&nbsp No Record</P>
-    </div>
+ 
+        <P id ="exercise-date">Updated on:&nbsp No Record</P>
+
     {{/if}}
+
 </div>
 <div class="text" id="text">
     "Joy is healthy, a happy
@@ -135,7 +164,7 @@
 <img class="blur" id="blur" src="../res/blur.jpeg" alt="">
 <button type="button" onclick="cancel()"><img class="cancel" id="cancel" src="../res/cancel.jpg" alt=""></button>
 <div class="container" id="container">
-    <form action="/data/{{this._id}}" method="post">
+    <form action="/data/{{this._id}}" method="post" onsubmit="return validation()">
         <div class="dialog">
             <p class="insert-data">Enter today's data</p>
             <div class="item">
@@ -149,7 +178,8 @@
                 <div class="submit-div" id="submit-div">
                     <button type="button" class="comment-clear" id="comment-clear"
                         onclick="commentClear()">clear</button>
-                    <button type="button" class="comment-submit" id="comment-submit" onclick="submit()">submit</button>
+                    <button type="button" class="comment-submit" id="comment-submit"
+                        onclick="submit0()">submit</button>
                 </div>
             </div>
             <div class="item">
@@ -184,7 +214,7 @@
             </div>
             <div class="item">
                 <p>EXERICSE</p>
-                <input name="exericse" id="exericse-input" type="text" placeholder="(Steps)" />
+                <input name="exercise" id="exericse-input" type="text" placeholder="(Steps)" />
                 <button type="button" class="butn" id="butn4" onclick="setCommentWindow3()">
                     <p class="comment" id="comment3">+ Comment<img class="pen" id="pen3" src="../res/pen.png" alt="">
                     </p>
@@ -210,5 +240,6 @@
     var data = []
     data.push({{ this.healthyData_required }})
     setPatientDataValue(data)
+    
     {{/with}}
 </script>
