@@ -61,7 +61,6 @@ app.post('/data/:id', async (req, res) => {
     const currentDay = dateString.split('/')[0]
     const patient = await Patient.findOne({_id:req.params.id}).populate("weight").populate("exercise").populate("bloodGlucose").populate("insulinTaken").lean();
     if(req.body.blood_glucose != "" && req.body.blood_glucose != "Not required"){
-        const patientBloodGlucose = await Patient.findOne({_id:req.params.id}).populate("bloodGlucose").lean();
         const leastValue = patient.bloodGlucose[patient.bloodGlucose.length - 1].value;
         const leastTime = patient.bloodGlucose[patient.bloodGlucose.length - 1].time;
         const data = new bloodGlucose({
@@ -69,10 +68,9 @@ app.post('/data/:id', async (req, res) => {
             time:dateString,
         })
         if(leastTime.split('/')[1] == currentMonth && leastTime.split('/')[0] == currentDay && req.body.blood_glucose!= leastValue){
-            console.log(patient.bloodGlucose[patient.bloodGlucose.length - 1]._id)
             await bloodGlucose.findOneAndUpdate(
                 {_id:patient.bloodGlucose[patient.bloodGlucose.length - 1]._id}, 
-                {value: req.body.blood_glucose, time:dateString}
+                {value: leastValue, time:leastTime}
             )
         }else{
             await Patient.findOneAndUpdate({_id:req.params.id}, {$push: {bloodGlucose: data._id}});
@@ -80,28 +78,57 @@ app.post('/data/:id', async (req, res) => {
         }
     }
     if(req.body.weight != "" && req.body.weight != "Not required" ){
+        const leastValue = patient.weight[patient.weight.length - 1].value;
+        const leastTime = patient.weight[patient.weight.length - 1].time;
         const data = new weight({
             value: req.body.weight,
             time:dateString,
         })
-        // await Patient.findOneAndUpdate({_id:req.params.id}, {$push: {weight: data._id}});
-        // data.save() 
+        if(leastTime.split('/')[1] == currentMonth && leastTime.split('/')[0] == currentDay && req.body.weight!= leastValue){
+            await weight.findOneAndUpdate(
+                {_id:patient.weight[patient.weight.length - 1]._id}, 
+                {value: leastValue, time:leastTime}
+            )
+        }else{
+            await Patient.findOneAndUpdate({_id:req.params.id}, {$push: {weight: data._id}});
+            data.save() 
+        }
     }
     if(req.body.insulin_taken != "" && req.body.insulin_taken != "Not required" ){
+        const leastValue = patient.insulinTaken[patient.insulinTaken.length - 1].value;
+        const leastTime = patient.insulinTaken[patient.insulinTaken.length - 1].time;
         const data = new insulinTaken({
             value: req.body.insulin_taken,
             time:dateString,
         })
-        // await Patient.findOneAndUpdate({_id:req.params.id}, {$push: {insulinTaken: data._id}});
-        // data.save() 
+        if(leastTime.split('/')[1] == currentMonth && leastTime.split('/')[0] == currentDay && req.body.insulin_taken!= leastValue){
+            console.log(patient.insulinTaken[patient.insulinTaken.length - 1]._id)
+            await insulinTaken.findOneAndUpdate(
+                {_id:patient.insulinTaken[patient.insulinTaken.length - 1]._id}, 
+                {value: leastValue, time:leastTime}
+            )
+        }else{
+            await Patient.findOneAndUpdate({_id:req.params.id}, {$push: {insulinTaken: data._id}});
+            data.save()
+        }
     }
     if(req.body.exercise != "" && req.body.exercise != "Not required" ){
+        const leastValue = patient.exercise[patient.exercise.length - 1].value;
+        const leastTime = patient.exercise[patient.exercise.length - 1].time;
         const data = new exercise({
             value: req.body.exercise,
             time:dateString,
         })
-        // await Patient.findOneAndUpdate({_id:req.params.id}, {$push: {exercise: data._id}});
-        // data.save() 
+        if(leastTime.split('/')[1] == currentMonth && leastTime.split('/')[0] == currentDay && req.body.exercise!= leastValue){
+            console.log(patient.insulinTaken[patient.insulinTaken.length - 1]._id)
+            await exercise.findOneAndUpdate(
+                {_id:patient.exercise[patient.exercise.length - 1]._id}, 
+                {value: leastValue, time:leastTime}
+            )
+        }else{
+            await Patient.findOneAndUpdate({_id:req.params.id}, {$push: {exercise: data._id}});
+            data.save() 
+        }
     }
     // redirect to patient's data page
     res.redirect('../data/' + req.params.id);
