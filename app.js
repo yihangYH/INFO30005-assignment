@@ -67,12 +67,12 @@ app.post('/data/:id', async (req, res) => {
             value: req.body.blood_glucose,
             time:dateString,
         })
-        if(leastTime.split('/')[1] == currentMonth && leastTime.split('/')[0] == currentDay && req.body.blood_glucose!= leastValue){
+        if(leastTime.split('/')[1] == currentMonth && leastTime.split('/')[0] == currentDay && req.body.blood_glucose.replace(/\s/g,'')!= leastValue){
             await bloodGlucose.findOneAndUpdate(
                 {_id:patient.bloodGlucose[patient.bloodGlucose.length - 1]._id}, 
-                {value: leastValue, time:leastTime}
+                {value: req.body.blood_glucose, time:dateString}
             )
-        }else{
+        }else if(leastTime.split('/')[1] != currentMonth && leastTime.split('/')[0] != currentDay){
             await Patient.findOneAndUpdate({_id:req.params.id}, {$push: {bloodGlucose: data._id}});
             data.save() 
         }
@@ -84,12 +84,12 @@ app.post('/data/:id', async (req, res) => {
             value: req.body.weight,
             time:dateString,
         })
-        if(leastTime.split('/')[1] == currentMonth && leastTime.split('/')[0] == currentDay && req.body.weight!= leastValue){
+        if(leastTime.split('/')[1] == currentMonth && leastTime.split('/')[0] == currentDay && req.body.weight.replace(/\s/g,'')!= leastValue){
             await weight.findOneAndUpdate(
                 {_id:patient.weight[patient.weight.length - 1]._id}, 
-                {value: leastValue, time:leastTime}
+                {value: req.body.weight, time:dateString}
             )
-        }else{
+        }else if(leastTime.split('/')[1] != currentMonth && leastTime.split('/')[0] != currentDay){
             await Patient.findOneAndUpdate({_id:req.params.id}, {$push: {weight: data._id}});
             data.save() 
         }
@@ -101,13 +101,13 @@ app.post('/data/:id', async (req, res) => {
             value: req.body.insulin_taken,
             time:dateString,
         })
-        if(leastTime.split('/')[1] == currentMonth && leastTime.split('/')[0] == currentDay && req.body.insulin_taken!= leastValue){
+        if(leastTime.split('/')[1] == currentMonth && leastTime.split('/')[0] == currentDay && req.body.insulin_taken.replace(/\s/g,'')!= leastValue){
             console.log(patient.insulinTaken[patient.insulinTaken.length - 1]._id)
             await insulinTaken.findOneAndUpdate(
                 {_id:patient.insulinTaken[patient.insulinTaken.length - 1]._id}, 
-                {value: leastValue, time:leastTime}
+                {value: req.body.insulin_taken, time:dateString}
             )
-        }else{
+        }else if(leastTime.split('/')[1] != currentMonth && leastTime.split('/')[0] != currentDay){
             await Patient.findOneAndUpdate({_id:req.params.id}, {$push: {insulinTaken: data._id}});
             data.save()
         }
@@ -120,12 +120,13 @@ app.post('/data/:id', async (req, res) => {
             time:dateString,
         })
         if(leastTime.split('/')[1] == currentMonth && leastTime.split('/')[0] == currentDay && req.body.exercise!= leastValue){
-            console.log(patient.insulinTaken[patient.insulinTaken.length - 1]._id)
+            console.log("check")
             await exercise.findOneAndUpdate(
                 {_id:patient.exercise[patient.exercise.length - 1]._id}, 
-                {value: leastValue, time:leastTime}
+                {value: req.body.exercise, time:dateString}
             )
-        }else{
+        }else if(leastTime.split('/')[1] != currentMonth && leastTime.split('/')[0] != currentDay){
+            console.log("hit")
             await Patient.findOneAndUpdate({_id:req.params.id}, {$push: {exercise: data._id}});
             data.save() 
         }
