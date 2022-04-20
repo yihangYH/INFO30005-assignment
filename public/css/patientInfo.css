@@ -856,6 +856,32 @@
         color: gray;
         font-size: 30px;
     }
+    .insulin-taken-date{
+        display: flex;
+        position: absolute;
+        top: 83%;
+        left: 19%;
+        color: gray;
+        font-size: 30px;
+    }
+
+    .weight-date{
+        display: flex;
+        position: absolute;
+        top: 64%;
+        left: 70%;
+        color: gray;
+        font-size: 30px;
+    }
+    .blood-glucose-date{
+        display: flex;
+        position: absolute;
+        top: 64%;
+        left: 19%;
+        color: gray;
+        font-size: 30px;
+
+    }
 
     .text {
         display: flex;

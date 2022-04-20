@@ -59,30 +59,34 @@ app.post('/data/:id', async (req, res) => {
     let AuDate = new Date().toLocaleString("en-US", {timeZone: "Australia/Sydney"});
     let dateString = AuDate.toString().replace(',', ' ')
     const patient = await Patient.findOne({_id:req.params.id}).lean();
-    if(req.body.blood_glucose != "" && req.body.blood_glucose != "Not Required"){
+    if(req.body.blood_glucose != "" && req.body.blood_glucose != "Not required"){
         const data = new bloodGlucose({
             value: req.body.blood_glucose,
+            time:dateString,
         })
         await Patient.findOneAndUpdate({_id:req.params.id}, {$push: {bloodGlucose: data._id}});
         data.save() 
     }
-    if(req.body.weight != "" && req.body.weight != "Not Required" ){
+    if(req.body.weight != "" && req.body.weight != "Not required" ){
         const data = new weight({
-            value: req.body.weight
+            value: req.body.weight,
+            time:dateString,
         })
         await Patient.findOneAndUpdate({_id:req.params.id}, {$push: {weight: data._id}});
         data.save() 
     }
-    if(req.body.insulinTaken != "" && req.body.insulinTaken != "Not Required" ){
+    if(req.body.insulin_taken != "" && req.body.insulin_taken != "Not required" ){
         const data = new insulinTaken({
-            value: req.body.insulinTaken
+            value: req.body.insulin_taken,
+            time:dateString,
         })
         await Patient.findOneAndUpdate({_id:req.params.id}, {$push: {insulinTaken: data._id}});
         data.save() 
     }
-    if(req.body.exercise != "" && req.body.exercise != "Not Required" ){
+    if(req.body.exercise != "" && req.body.exercise != "Not required" ){
         const data = new exercise({
-            value: req.body.exercise
+            value: req.body.exercise,
+            time:dateString,
         })
         await Patient.findOneAndUpdate({_id:req.params.id}, {$push: {exercise: data._id}});
         data.save() 

@@ -116,26 +116,45 @@
     </div>
     <hr class="forth-hr">
 </div>
+<div class="blood-glucose-date" id="date">
 
+        {{#if this.bloodGlucose}}
+            <P id="blood-glucose-date">Updated on:&nbsp {{findTime this.bloodGlucose}}</P>
+        {{else}}
+            <P id="blood-glucose-date">Updated on:&nbsp No Record</P>
+        {{/if}}
+
+</div>
+<div class="weight-date" id="date">
+
+        {{#if this.weight}}
+            <P id= "weight-date">Updated on:&nbsp {{findTime this.weight}}</P>
+        {{else}}
+            <P id= "weight-date">Updated on:&nbsp No Record</P>
+        {{/if}}
+
+</div>
+<div class="insulin-taken-date" id="date">
+
+        {{#if this.insulinTaken}}
+            <P id="insulin-taken-date" >Updated on:&nbsp {{findTime this.insulinTaken}}</P>
+        {{else}}
+            <P id="insulin-taken-date">Updated on:&nbsp No Record</P>
+        {{/if}}
+
+
+</div>
 <div class="exercise-date" id="date">
 
-    {{!-- {{#if this.healthyData}}
-    <div class="date-text">
-        <P>Updated on:&nbsp {{findTime this.healthyData}}</P>
-    </div>
+    {{#if this.exercise}}
+ 
+        <P id ="exercise-date" >Updated on:&nbsp {{findTime this.exercise}}</P>
+
     {{else}}
-    <div class="date-text">
-        <P>Updated on:&nbsp No Record</P>
-    </div>
-    {{/if}} --}}
+ 
+        <P id ="exercise-date">Updated on:&nbsp No Record</P>
 
-    <div class="date-text">
-        <P>Updated on:&nbsp </P>
-    </div>
-
-    <div class="date-text">
-        <P>Updated on:&nbsp No Record</P>
-    </div>
+    {{/if}}
 
 </div>
 <div class="text" id="text">

@@ -29,6 +29,5 @@ hbs.handlebars.registerHelper("findBloodGlucose", function(data) {
 });
 
 hbs.handlebars.registerHelper("findTime", function(data) {
-
     return data[data.length-1].time;
 });

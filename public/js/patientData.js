@@ -377,21 +377,25 @@ function setPatientDataValue(data){
         if(i == 0 ){
             if(!data[0]){
                 document.getElementById("blood-glucose-data").innerHTML = "Not required"
+                document.getElementById("blood-glucose-date").innerHTML = "Updated on: No Record"
                 bloodGlucose()
             }
         }else if(i==1 ){
             if(!data[1]){
                 document.getElementById("weight-data").innerHTML = "Not required"
+                document.getElementById("weight-date").innerHTML = "Updated on: No Record"
                 weightFunction()
             }
         }else if(i==2){
             if(!data[2]){
                 document.getElementById("insulin-taken-data").innerHTML = "Not required"
+                document.getElementById("insulin-taken-date").innerHTML = "Updated on: No Record"
                 insulin()
             }
         }else{
             if(!data[3]){
                 document.getElementById("exercise-data").innerHTML = "Not required"
+                document.getElementById("exercise-date").innerHTML = "Updated on: No Record"
                 exericseFunction()
             }
         }
