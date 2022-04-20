@@ -55,41 +55,53 @@ app.use((req, res, next) => {
 
 // post method for patient adding new data
 app.post('/data/:id', async (req, res) => {
-
     let AuDate = new Date().toLocaleString("en-US", {timeZone: "Australia/Sydney"});
     let dateString = AuDate.toString().replace(',', ' ')
-    const patient = await Patient.findOne({_id:req.params.id}).lean();
+    const currentMonth = dateString.split('/')[1]
+    const currentDay = dateString.split('/')[0]
+    const patient = await Patient.findOne({_id:req.params.id}).populate("weight").populate("exercise").populate("bloodGlucose").populate("insulinTaken").lean();
     if(req.body.blood_glucose != "" && req.body.blood_glucose != "Not required"){
+        const patientBloodGlucose = await Patient.findOne({_id:req.params.id}).populate("bloodGlucose").lean();
+        const leastValue = patient.bloodGlucose[patient.bloodGlucose.length - 1].value;
+        const leastTime = patient.bloodGlucose[patient.bloodGlucose.length - 1].time;
         const data = new bloodGlucose({
             value: req.body.blood_glucose,
             time:dateString,
         })
-        await Patient.findOneAndUpdate({_id:req.params.id}, {$push: {bloodGlucose: data._id}});
-        data.save() 
+        if(leastTime.split('/')[1] == currentMonth && leastTime.split('/')[0] == currentDay && req.body.blood_glucose!= leastValue){
+            console.log(patient.bloodGlucose[patient.bloodGlucose.length - 1]._id)
+            await bloodGlucose.findOneAndUpdate(
+                {_id:patient.bloodGlucose[patient.bloodGlucose.length - 1]._id}, 
+                {value: req.body.blood_glucose, time:dateString}
+            )
+        }else{
+            await Patient.findOneAndUpdate({_id:req.params.id}, {$push: {bloodGlucose: data._id}});
+            data.save() 
+        }
     }
     if(req.body.weight != "" && req.body.weight != "Not required" ){
         const data = new weight({
             value: req.body.weight,
             time:dateString,
         })
-        await Patient.findOneAndUpdate({_id:req.params.id}, {$push: {weight: data._id}});
-        data.save() 
+        // await Patient.findOneAndUpdate({_id:req.params.id}, {$push: {weight: data._id}});
+        // data.save() 
     }
     if(req.body.insulin_taken != "" && req.body.insulin_taken != "Not required" ){
         const data = new insulinTaken({
             value: req.body.insulin_taken,
             time:dateString,
         })
-        await Patient.findOneAndUpdate({_id:req.params.id}, {$push: {insulinTaken: data._id}});
-        data.save() 
+        // await Patient.findOneAndUpdate({_id:req.params.id}, {$push: {insulinTaken: data._id}});
+        // data.save() 
     }
     if(req.body.exercise != "" && req.body.exercise != "Not required" ){
         const data = new exercise({
             value: req.body.exercise,
             time:dateString,
         })
-        await Patient.findOneAndUpdate({_id:req.params.id}, {$push: {exercise: data._id}});
-        data.save() 
+        // await Patient.findOneAndUpdate({_id:req.params.id}, {$push: {exercise: data._id}});
+        // data.save() 
     }
     // redirect to patient's data page
     res.redirect('../data/' + req.params.id);

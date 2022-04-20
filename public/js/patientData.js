@@ -8,20 +8,31 @@ function updateBtnclick() {
     document.getElementById('cancel').style.display = 'flex';
     document.getElementById('container').style.display = 'block';
     // the comment out function is for detecting if patient has already uploaded the data
-    // reloadUpdatePage();
+    reloadUpdatePage();
 }
 
 function reloadUpdatePage(){
-    var date = document.getElementById('date').innerHTML
+    var date = document.getElementById('blood-glucose-date').innerHTML
     date = date.substring(17, date.length - 10).split('/')
     let today = new Date();
     if(today.getDate() == date[1] && today.getMonth() == date[0] - 1){
         document.getElementById('blood-glucose-input').value = document.getElementById('blood-glucose-data').innerHTML.split('&')[0];
+    }
+    date = document.getElementById('weight-date').innerHTML
+    date = date.substring(17, date.length - 10).split('/')
+    if(today.getDate() == date[1] && today.getMonth() == date[0] - 1){
         document.getElementById('weight-input').value = document.getElementById('weight-data').innerHTML.split('&')[0];
+    }
+    date = document.getElementById('insulin-taken-date').innerHTML
+    date = date.substring(17, date.length - 10).split('/')
+    if(today.getDate() == date[1] && today.getMonth() == date[0] - 1){
         document.getElementById('insulin-taken-input').value = document.getElementById('insulin-taken-data').innerHTML.split('&')[0];
+    }
+    date = document.getElementById('exercise-date').innerHTML
+    date = date.substring(17, date.length - 10).split('/')
+    if(today.getDate() == date[1] && today.getMonth() == date[0] - 1){
         document.getElementById('exericse-input').value = document.getElementById('exercise-data').innerHTML.split('&')[0];
     }
-    
 }
 
 function validation(){
