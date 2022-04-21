@@ -138,7 +138,7 @@ app.post('/data/:id', async (req, res) => {
 // implement patient login logic but not using Passport, will redo it later
 app.post('/login', async(req, res) => {
     if(typeof req.body.isDoctor == "object"){
-        const patient = await Patient.findOne({userid:req.body.userid}).populate('healthyData').lean();
+        const patient = await Patient.findOne({userid:req.body.userid}).lean();
         if(patient != null && patient.password == req.body.password){
             res.status("202")
             res.statusMessage = patient._id
