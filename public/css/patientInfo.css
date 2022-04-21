@@ -6,7 +6,7 @@
     font-family: 'Open Sans ', sans-serif;
 }
 
-@media screen and (min-width: 300px) and (max-width:420px) {
+@media screen and (min-width: 300px) and (max-width:400px) {
 
     .header {
         display: flex;
@@ -584,7 +584,7 @@
       }
 }
 
-@media screen and (min-width: 1920px) {
+@media screen and (min-width: 1900px) {
 
     .header {
         display: flex;
@@ -1193,7 +1193,7 @@
 
 }
 
-@media screen and (min-width: 1024px) and (max-width: 1366px) {
+@media screen and (min-width: 1000px) and (max-width: 1200px) {
 
     .header {
         display: flex;

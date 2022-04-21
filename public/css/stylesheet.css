@@ -6,7 +6,7 @@
   font-family: 'Open Sans ';
 }
 
-@media screen and (min-width: 300px) and (max-width:420px) {
+@media screen and (min-width: 300px) and (max-width:400px) {
   .about-diabetes-gestational-li h1 {
     width: 120%;
   }
@@ -361,7 +361,7 @@
   }
 }
 
-@media screen and (min-width: 1920px) {
+@media screen and (min-width: 1900px) {
   .topBar input {
     visibility: hidden;
   }
@@ -744,7 +744,7 @@
   }
 }
 
-@media screen and (min-device-width: 700px) and (max-device-width: 1300px) {
+@media screen and (min-device-width: 1000px) and (max-device-width: 1200px) {
   .topBar input {
     visibility: hidden;
   }
