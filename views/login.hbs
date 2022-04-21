@@ -1,40 +1,57 @@
- <div class="main">
-        <div>
-            <div class="header">
-                <div class="logo">
-                    <img src="../res/logo.png" alt="logo">
-                </div>
-            </div>
-            <div class="side-pic-div">
-                <img class="side-picture" src="../res/login.png" alt="picture">
+<div class="main">
+    <div>
+        <div class="header">
+            <div class="logo">
+                <img src="../res/logo.png" alt="logo">
             </div>
         </div>
-        <div class="bottom">
-            <form action="/login" method="post">
-                <div class="login-content">
-                    <h1>Welcome back!</h1>
-                    <h2>
-                        I am a <input id="patient" type="button" name="patient" value="Patient"
-                            onclick="identity_patient()" /> /
-                        <input id="doctor" type="button" value="Doctor" name="doctor" style="color: grey;"
-                            onclick="identity_doctor()" />
-                    </h2>
-                    <ul>
-                        <li> <input name="userID" type="text" id="username" placeholder="User id"></li>
-                        <li> <input type="password" name="password" id="password" placeholder="Password"></li>
-                        <li>
-                            <label class="container">Show Password
-                                <input type="checkbox" onclick="myFunction()">
-                                <span class="checkmark"></span>
-                            </label>
-                        </li>
-                        <li>Forgot Password</li>
-                        <li><button id="login-box" type="button" onclick="validate()">Login</button></li>
-                        <li>
-                            <div id="errorMessage" ,></div>
-                        </li>
-                    </ul>
-                </div>
-            </form>
+        <div class="side-pic-div">
+            <img class="side-picture" src="../res/login.png" alt="picture">
         </div>
     </div>
+    <div class="bottom">
+        <form action="/login" method="post">
+            <div class="login-content">
+                <h1>Welcome back!</h1>
+                <h2>
+                    I am a <input id="patient" type="button" name="patient" value="Patient"
+                        onclick="identity_patient()" /> /
+                    <input id="doctor" type="button" value="Doctor" name="doctor" style="color: grey;"
+                        onclick="identity_doctor()" />
+                </h2>
+                <ul>
+                    <li> <input name="userID" type="text" id="username" placeholder="User id"></li>
+                    <li> <input type="password" name="password" id="password" placeholder="Password"></li>
+                    <li>
+                        <label class="container">Show Password
+                            <input type="checkbox" onclick="myFunction()">
+                            <span class="checkmark"></span>
+                        </label>
+                    </li>
+                    <li>Forgot Password</li>
+                    <li><button id="login-box" type="button" onclick="validate()">Login</button></li>
+                </ul>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="myModal" class="modal">
+
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p id="error-message">Some text in the Modal..</p>
+    </div>
+
+</div>
+
+<script>
+    document.getElementsByClassName("close")[0].onclick = function () {
+        document.getElementById("myModal").style.display = "none";
+    }
+    window.onclick = function (event) {
+        if (event.target == document.getElementById("myModal")) {
+            document.getElementById("myModal").style.display = "none";
+        }
+    }
+</script>
