@@ -233,13 +233,27 @@
         </div>
     </form>
 </div>
+<div id="myModal" class="modal">
 
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p id="error-message">Some text in the Modal..</p>
+  </div>
+
+</div>
 {{/with}}
 <script>
     {{#with patientInfo}}
     var data = []
     data.push({{ this.healthyData_required }})
     setPatientDataValue(data)
-    
     {{/with}}
+    document.getElementsByClassName("close")[0].onclick = function() {
+        document.getElementById("myModal").style.display = "none";
+    }
+    window.onclick = function(event) {
+        if (event.target == document.getElementById("myModal")) {
+            document.getElementById("myModal").style.display = "none";
+        }
+    }
 </script>

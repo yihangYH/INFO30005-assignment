@@ -53,7 +53,9 @@ function validation(){
         return true;
     }
     
-    alert("please enter at least one data before update")
+    // alert("please enter at least one data before update")
+    document.getElementById("myModal").style.display = "block";
+    document.getElementById("error-message").innerHTML ="Please enter at least one data before update"
     return false;
 }
 
