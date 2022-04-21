@@ -9,11 +9,10 @@ require('./helper/hbsHelper.js')
 app.use(express.json()) // needed if POST data is in JSON format
 app.use(express.urlencoded({ extended: true })) // only needed for URL-encoded input
 const {Patient} = require('./models/patient.js')
-const {healthyData} = require('./models/patient.js')
-const {weight} = require('./models/patient.js')
-const {exercise} = require('./models/patient.js')
-const {insulinTaken} = require('./models/patient.js')
-const {bloodGlucose} = require('./models/patient.js')
+const {weight} = require('./models/data.js')
+const {exercise} = require('./models/data.js')
+const {insulinTaken} = require('./models/data.js')
+const {bloodGlucose} = require('./models/data.js')
 app.engine(
     'hbs',
     exphbs.engine({
@@ -61,6 +60,7 @@ app.post('/data/:id', async (req, res) => {
     const currentDay = dateString.split('/')[0]
     const patient = await Patient.findOne({_id:req.params.id}).populate("weight").populate("exercise").populate("bloodGlucose").populate("insulinTaken").lean();
     if(req.body.blood_glucose != "" && req.body.blood_glucose != "Not required"){
+        console.log("hit1")
         const leastValue = patient.bloodGlucose[patient.bloodGlucose.length - 1].value;
         const leastTime = patient.bloodGlucose[patient.bloodGlucose.length - 1].time;
         const data = new bloodGlucose({
@@ -72,7 +72,7 @@ app.post('/data/:id', async (req, res) => {
                 {_id:patient.bloodGlucose[patient.bloodGlucose.length - 1]._id}, 
                 {value: req.body.blood_glucose, time:dateString}
             )
-        }else if(leastTime.split('/')[1] != currentMonth && leastTime.split('/')[0] != currentDay){
+        }else if(leastTime.split('/')[1] != currentMonth || leastTime.split('/')[0] != currentDay){
             await Patient.findOneAndUpdate({_id:req.params.id}, {$push: {bloodGlucose: data._id}});
             data.save() 
         }
@@ -89,7 +89,7 @@ app.post('/data/:id', async (req, res) => {
                 {_id:patient.weight[patient.weight.length - 1]._id}, 
                 {value: req.body.weight, time:dateString}
             )
-        }else if(leastTime.split('/')[1] != currentMonth && leastTime.split('/')[0] != currentDay){
+        }else if(leastTime.split('/')[1] != currentMonth || leastTime.split('/')[0] != currentDay){
             await Patient.findOneAndUpdate({_id:req.params.id}, {$push: {weight: data._id}});
             data.save() 
         }
@@ -107,7 +107,7 @@ app.post('/data/:id', async (req, res) => {
                 {_id:patient.insulinTaken[patient.insulinTaken.length - 1]._id}, 
                 {value: req.body.insulin_taken, time:dateString}
             )
-        }else if(leastTime.split('/')[1] != currentMonth && leastTime.split('/')[0] != currentDay){
+        }else if(leastTime.split('/')[1] != currentMonth || leastTime.split('/')[0] != currentDay){
             await Patient.findOneAndUpdate({_id:req.params.id}, {$push: {insulinTaken: data._id}});
             data.save()
         }
@@ -125,7 +125,7 @@ app.post('/data/:id', async (req, res) => {
                 {_id:patient.exercise[patient.exercise.length - 1]._id}, 
                 {value: req.body.exercise, time:dateString}
             )
-        }else if(leastTime.split('/')[1] != currentMonth && leastTime.split('/')[0] != currentDay){
+        }else if(leastTime.split('/')[1] != currentMonth || leastTime.split('/')[0] != currentDay){
             console.log("hit")
             await Patient.findOneAndUpdate({_id:req.params.id}, {$push: {exercise: data._id}});
             data.save() 

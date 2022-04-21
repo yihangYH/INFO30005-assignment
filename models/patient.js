@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+require('./data.js')
 const patientSchema = new mongoose.Schema({
     userid: String,
     password: String,
@@ -8,7 +9,6 @@ const patientSchema = new mongoose.Schema({
     bio: String,
     birthday: String,
     healthyData_required: [Boolean], 
-    healthyData:[{type:mongoose.Schema.Types.ObjectId, ref:'healthyData'}],
     weight: [{type:mongoose.Schema.Types.ObjectId, ref:'weight'}],
     exercise: [{type:mongoose.Schema.Types.ObjectId, ref:'exercise'}],
     insulinTaken: [{type:mongoose.Schema.Types.ObjectId, ref:'insulinTaken'}],
@@ -18,43 +18,6 @@ const patientSchema = new mongoose.Schema({
 
 const Patient = mongoose.model('patient', patientSchema, 'patient')
 
-const healthyDataSchema = new mongoose.Schema({
-    blood_glucose: String,
-    exericse: String,
-    insulin_taken: String,
-    time: String,
-    weight: String,
-})
-const weightSchema = new mongoose.Schema({
-    value:String,
-    time:String,
-})
-const exerciseSchema = new mongoose.Schema({
-    value:String,
-    time:String
-})
-const insulinTakenSchema = new mongoose.Schema({
-    value:String,
-    time:String,
-})
-
-const bloodGlucoseSchema = new mongoose.Schema({
-    value:String,
-    time:String
-})
-
-
-const healthyData = mongoose.model('healthyData', healthyDataSchema, 'healthyData')
-const weight = mongoose.model("weight", weightSchema, 'weight');
-const exercise = mongoose.model("exercise", exerciseSchema, "exercise")
-const insulinTaken = mongoose.model("insulinTaken", insulinTakenSchema, "insulinTaken")
-const bloodGlucose = mongoose.model("bloodGlucose", bloodGlucoseSchema, "bloodGlucose")
-
 module.exports = {
-    Patient,
-    healthyData,
-    weight,
-    exercise,
-    insulinTaken,
-    bloodGlucose,
+    Patient
 }
