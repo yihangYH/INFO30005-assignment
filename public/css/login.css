@@ -268,7 +268,7 @@ body {
       
 }
 
-@media screen and (min-width: 1000px) and (max-width:1200px) {
+@media screen and (min-width: 900px) and (max-width:1200px) {
     .logo img {
         width: 25%;
     }
