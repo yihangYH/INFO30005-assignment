@@ -210,7 +210,7 @@
         top: 41%;
         left: 10px;
     }
-    
+
 
     .weight {
         font-weight: bold;
@@ -884,7 +884,8 @@
         color: gray;
         font-size: 30px;
     }
-    .insulin-taken-date{
+
+    .insulin-taken-date {
         display: flex;
         position: absolute;
         top: 83%;
@@ -893,7 +894,7 @@
         font-size: 30px;
     }
 
-    .weight-date{
+    .weight-date {
         display: flex;
         position: absolute;
         top: 64%;
@@ -901,7 +902,8 @@
         color: gray;
         font-size: 30px;
     }
-    .blood-glucose-date{
+
+    .blood-glucose-date {
         display: flex;
         position: absolute;
         top: 64%;
@@ -1150,7 +1152,7 @@
     .log-out {
         position: absolute;
         left: 81%;
-        top:  7%;
+        top: 7%;
         width: 120px;
         height: 35px;
         font-size: 28px;
@@ -1253,10 +1255,10 @@
     }
 
     .rankings p {
-        position:absolute;
+        position: absolute;
         text-align: center;
         left: 71%;
-        top: 63%;       
+        top: 63%;
         font-size: 15px;
     }
 
@@ -1276,7 +1278,7 @@
     }
 
     .learn-more {
-        position:absolute;
+        position: absolute;
         text-align: center;
         position: relative;
         left: 20%;
@@ -1471,7 +1473,7 @@
         font-size: 20px;
     }
 
-    
+
     .blood-glucose-date {
         display: flex;
         position: absolute;
@@ -1480,8 +1482,8 @@
         color: gray;
         font-size: 20px;
     }
-    
-    
+
+
     .weight-date {
         display: flex;
         position: absolute;

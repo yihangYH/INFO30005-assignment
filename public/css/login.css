@@ -1,230 +1,654 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans");
+
 * {
-	padding: 0;
-	margin: 0;
+    padding: 0;
+    margin: 0;
     font-family: 'Open Sans ';
 }
+
 body {
     height: 100%;
     overflow: hidden;
 }
-.main {
-    display: flex;
-}
-#missing {
-    display: none;
-}
-#missing-indentity{
-    font-size: 20px;
-}
-.logo img{
-    width: 25%;
-}
-.side-picture{
-    height: 100%;
-}
-.header {
-    background:linear-gradient(to bottom,#DFAFAD,#FDF9F8);
-    height: 10%; 
-    position: relative;
-    z-index: 0;
-    width: 100%;
-}
-.bottom {
-    width: 100%;
-    background-color:#FDF9F8;
-    position: relative;
-    height: 89.5%;
-    text-align: center;
-}
-.login-content{
-    height: 60%;
-    width: 60%;
-    background-color: white;
-    border-radius: 15%;
-    display: inline-block;
-    position: absolute;
-    right: 20%;
-    top:20%;
-}
-.login-content ul li {
-    list-style: none;
-}
-.login-content h1 {
-    text-align: center;
-    margin-top: 10%;
-    font-size: 42px;
-    font-weight: normal;
-}
-.login-content h2{
-    margin-top: 5%;
-    font-weight: normal;
-}
-.login-content ul li:nth-child(1){
-    text-align: center;
-}
-.login-content ul li:nth-child(2){
-    text-align: center;
-}
-.login-content ul li:nth-child(4){
-    display: inline;
-    float: right;
-    margin-right: 7%;
-    margin-top: 3%;
-}
 
-.login-content ul li:nth-child(3){
-    display: inline;
-    float: left;
-    margin-left: 8%;
-    margin-top: 2%;
-}
-.login-content ul li:nth-child(5){
-    text-align: center;
-}
-.login-content ul li:nth-child(6){
-    text-align: center;
-    margin-top: 5%;
-    font-size: 20px;
-}
-.login-content ul li:nth-child(7){
-    text-align: center;
-    margin-top: 5%;
-    font-size: 20px;
-}
+@media screen and (min-width: 1900px) {
+    .logo img {
+        width: 25%;
+    }
 
-#username {
-    margin-top: 10%;
-    background-color: #F3DFD6;
-    border: 0px;
-    border-radius: 10px;
-    width: 80%;
-    padding: 15px;
-}
-input::-webkit-input-placeholder{
-    font-size: 20px;
-    color: gray;
-    text-align: left;
-}
-#password {
-    margin-top: 10%;
-    background-color:#F3DFD6;
-    border: 0px;
-    border-radius: 10px;
-    width: 80%;
-    padding: 15px;
-}
+    .side-picture {
+        height: 100%;
+        display: flex;
+        position: absolute;
+        top: 0%;
+        left: 47%;
+    }
 
-.show-password{
-    margin-top: 5%;
-    
-}
+    .header {
+        background: linear-gradient(to bottom, #DFAFAD, #FDF9F8);
+        height: 10%;
+        position: relative;
+        z-index: 0;
+        width: 100%;
+        display: flex;
+    }
 
-#login-box {
-    margin-top:15%;
-    background-color: #DF9FA0;
-    border: 0px;
-    border-radius: 20px;
-    width: 86%;
-    padding: 13px;
-    color: white;
-    font-size: 32px;
-    cursor: pointer;
-    display: flex;
-    position: relative;
-    left: 7%;
-    padding-top: 3%;
-    padding-bottom: 3%;
-    padding-left: 35%;
-}
+    .bottom {
+        width: 47%;
+        background-color: #FDF9F8;
+        position: absolute;
+        height: 89.5%;
+        text-align: center;
+        display: flex;
+    }
 
-input[type="text"]
-{
-    font-size:20px;
-    padding: 15px;
-}
-#patient {
-    background: none;
-    border: none;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-    color: black;
-}
-#doctor {
-    background: none;
-    border: none;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-    color: black;
-}
+    .login-content {
+        height: 60%;
+        width: 60%;
+        background-color: white;
+        border-radius: 15%;
+        display: inline-block;
+        position: absolute;
+        right: 20%;
+        top: 20%;
+    }
+
+    .login-content ul li {
+        list-style: none;
+    }
+
+    .login-content h1 {
+        text-align: center;
+        margin-top: 10%;
+        font-size: 42px;
+        font-weight: bold;
+    }
+
+    .login-content h2 {
+        margin-top: 5%;
+        font-weight: normal;
+    }
+
+    .login-content ul li:nth-child(1) {
+        text-align: center;
+    }
+
+    .login-content ul li:nth-child(2) {
+        text-align: center;
+    }
+
+    .login-content ul li:nth-child(4) {
+        display: inline;
+        float: right;
+        margin-right: 7%;
+        margin-top: 3%;
+    }
+
+    .login-content ul li:nth-child(3) {
+        display: inline;
+        float: left;
+        margin-left: 8%;
+        margin-top: 2%;
+    }
+
+    .login-content ul li:nth-child(5) {
+        text-align: center;
+    }
+
+    #username {
+        margin-top: 10%;
+        background-color: #F3DFD6;
+        border: 0px;
+        border-radius: 10px;
+        width: 80%;
+        padding: 15px;
+    }
+
+    input::-webkit-input-placeholder {
+        font-size: 20px;
+        color: gray;
+        text-align: left;
+    }
+
+    #password {
+        margin-top: 10%;
+        background-color: #F3DFD6;
+        border: 0px;
+        border-radius: 10px;
+        width: 80%;
+        padding: 15px;
+    }
+
+    .show-password {
+        margin-top: 5%;
+    }
+
+    #login-box {
+        margin-top: 10%;
+        background-color: #DF9FA0;
+        border: 0px;
+        border-radius: 10px;
+        width: 89%;
+        padding: 13px;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    input[type="text"] {
+        font-size: 20px;
+        padding: 15px;
+    }
+
+    #patient {
+        background: none;
+        border: none;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        color: black;
+    }
+
+    #doctor {
+        background: none;
+        border: none;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        color: black;
+    }
 
 
-/* Customize the label (the container) */
-.container {
-    display: block;
-    position: relative;
-    padding-left: 20px;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    margin-top: 3%;
-  }
-  
-  /* Hide the browser's default radio button */
-  .container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-  }
-  
-  /* Create a custom radio button */
-  .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 15px;
-    width: 15px;
-    background-color: #eee;
-    border-radius: 50%;
-  }
-  
-  /* On mouse-over, add a grey background color */
-  .container:hover input ~ .checkmark {
-    background-color: #ccc;
-  }
-  
-  /* When the radio button is checked, add a blue background */
-  .container input:checked ~ .checkmark {
-    background-color: #2196F3;
-  }
-  
-  /* Create the indicator (the dot/circle - hidden when not checked) */
-  .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-  }
- input[type='password'] {
-    font-size: 20px;
-    padding: 15px;
+
+    .container {
+        display: block;
+        position: relative;
+        padding-left: 20px;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        margin-top: 3%;
+    }
+
+
+    .container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 15px;
+        width: 15px;
+        background-color: #eee;
+        border-radius: 50%;
+    }
+
+
+    .container:hover input~.checkmark {
+        background-color: #ccc;
+    }
+
+
+    .container input:checked~.checkmark {
+        background-color: #2196F3;
+    }
+
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    input[type='password'] {
+        font-size: 20px;
+        padding: 15px;
+    }
+
+    .container input:checked~.checkmark:after {
+        display: block;
+    }
+
+
+    .container .checkmark:after {
+        top: 5px;
+        left: 5px;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: white;
+    }
 }
-  /* Show the indicator (dot/circle) when checked */
-  .container input:checked ~ .checkmark:after {
-    display: block;
-  }
-  
-  /* Style the indicator (dot/circle) */
-  .container .checkmark:after {
-    top: 5px;
-    left: 5px;
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: white;
-  }
+
+@media screen and (min-width: 1000px) and (max-width:1100px) {
+    .logo img {
+        width: 25%;
+    }
+
+    .side-picture {
+        display: none;
+    }
+
+    .header {
+        background: linear-gradient(to bottom, #DFAFAD, #FDF9F8);
+        height: 10%;
+        position: relative;
+        z-index: 0;
+        width: 100%;
+        display: flex;
+    }
+
+    .bottom {
+        width: 100%;
+        background-color: #FDF9F8;
+        position: absolute;
+        height: 89.5%;
+        text-align: center;
+        overflow: auto;
+    }
+
+    .login-content {
+        height: 75%;
+        width: 60%;
+        background-color: white;
+        border-radius: 10%;
+        display: inline-block;
+        position: absolute;
+        right: 20%;
+        top: 10%;
+    }
+
+    .login-content ul li {
+        list-style: none;
+    }
+
+    .login-content h1 {
+        text-align: center;
+        margin-top: 5%;
+        font-size: 42px;
+        font-weight: bold;
+    }
+
+    .login-content h2 {
+        margin-top: 2%;
+        font-weight: normal;
+    }
+
+    .login-content ul li:nth-child(1) {
+        text-align: center;
+    }
+
+    .login-content ul li:nth-child(2) {
+        text-align: center;
+    }
+
+    .login-content ul li:nth-child(4) {
+        display: inline;
+        float: right;
+        margin-right: 7%;
+        margin-top: 3%;
+    }
+
+    .login-content ul li:nth-child(3) {
+        display: inline;
+        float: left;
+        margin-left: 8%;
+        margin-top: 2%;
+    }
+
+    .login-content ul li:nth-child(5) {
+        text-align: center;
+    }
+
+    #username {
+        margin-top: 8%;
+        background-color: #F3DFD6;
+        border: 0px;
+        border-radius: 10px;
+        width: 80%;
+        padding: 15px;
+    }
+
+    input::-webkit-input-placeholder {
+        font-size: 20px;
+        color: gray;
+        text-align: left;
+    }
+
+    #password {
+        margin-top: 8%;
+        background-color: #F3DFD6;
+        border: 0px;
+        border-radius: 10px;
+        width: 80%;
+        padding: 15px;
+    }
+
+    .show-password {
+        margin-top: 5%;
+    }
+
+    #login-box {
+        margin-top: 6%;
+        background-color: #DF9FA0;
+        border: 0px;
+        border-radius: 10px;
+        width: 89%;
+        padding: 13px;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    input[type="text"] {
+        font-size: 20px;
+        padding: 15px;
+    }
+
+    #patient {
+        background: none;
+        border: none;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        color: black;
+    }
+
+    #doctor {
+        background: none;
+        border: none;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        color: black;
+    }
+
+
+    .container {
+        display: block;
+        position: relative;
+        padding-left: 20px;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        margin-top: 3%;
+    }
+
+
+    .container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 15px;
+        width: 15px;
+        background-color: #eee;
+        border-radius: 50%;
+    }
+
+
+    .container:hover input~.checkmark {
+        background-color: #ccc;
+    }
+
+
+    .container input:checked~.checkmark {
+        background-color: #2196F3;
+    }
+
+
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    input[type='password'] {
+        font-size: 20px;
+        padding: 15px;
+    }
+
+    .container input:checked~.checkmark:after {
+        display: block;
+    }
+
+
+    .container .checkmark:after {
+        top: 5px;
+        left: 5px;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: white;
+    }
+}
+
+@media screen and (min-width: 350px) and (max-width:400px) {
+    .logo img {
+        width: 45%;
+    }
+
+    .side-picture {
+        display: none;
+    }
+
+    .header {
+        background: linear-gradient(to bottom, #DFAFAD, #FDF9F8);
+        height: 100%;
+        position: relative;
+        z-index: 0;
+        width: 100%;
+    }
+
+    .bottom {
+        width: 100%;
+        background-color: #FDF9F8;
+        position: absolute;
+        height: 91%;
+        text-align: center;
+        overflow: auto;
+    }
+
+    .login-content {
+        height: 55%;
+        width: 80%;
+        background-color: white;
+        border-radius: 10%;
+        display: inline-block;
+        position: absolute;
+        right: 10%;
+        top: 15%;
+    }
+
+    .login-content ul li {
+        list-style: none;
+    }
+
+    .login-content h1 {
+        text-align: center;
+        margin-top: 5%;
+        font-size: 30px;
+        font-weight: bold;
+    }
+
+    .login-content h2 {
+        margin-top: 5%;
+        font-weight: normal;
+        font-size: medium;
+    }
+
+    .login-content ul li:nth-child(1) {
+        text-align: center;
+    }
+
+    .login-content ul li:nth-child(2) {
+        text-align: center;
+    }
+
+    .login-content ul li:nth-child(4) {
+        display: inline;
+        float: right;
+        margin-right: 7%;
+        margin-top: 3%;
+        font-size: 75%;
+    }
+
+    .login-content ul li:nth-child(3) {
+        display: inline;
+        float: left;
+        margin-left: 8%;
+        margin-top: 2%;
+    }
+
+    .login-content ul li:nth-child(5) {
+        text-align: center;
+    }
+
+    #username {
+        margin-top: 10%;
+        background-color: #F3DFD6;
+        border: 0px;
+        border-radius: 10px;
+        width: 80%;
+        padding: 15px;
+    }
+
+    input::-webkit-input-placeholder {
+        font-size: 75%;
+        color: gray;
+        text-align: left;
+    }
+
+    #password {
+        margin-top: 10%;
+        background-color: #F3DFD6;
+        border: 0px;
+        border-radius: 10px;
+        width: 80%;
+        padding: 15px;
+    }
+
+    .show-password {
+        margin-top: 5%;
+    }
+
+    #login-box {
+        margin-top: 10%;
+        background-color: #DF9FA0;
+        border: 0px;
+        border-radius: 10px;
+        width: 89%;
+        padding: 13px;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    input[type="text"] {
+        font-size: 20px;
+        padding: 15px;
+    }
+
+    #patient {
+        background: none;
+        border: none;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        color: black;
+    }
+
+    #doctor {
+        background: none;
+        border: none;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+        color: black;
+    }
+
+
+
+    .container {
+        display: block;
+        position: relative;
+        padding-left: 20px;
+        cursor: pointer;
+        margin-top: 3%;
+        font-size: 75%;
+    }
+
+
+    .container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 15px;
+        width: 15px;
+        background-color: #eee;
+        border-radius: 50%;
+    }
+
+
+    .container:hover input~.checkmark {
+        background-color: #ccc;
+    }
+
+
+    .container input:checked~.checkmark {
+        background-color: #2196F3;
+    }
+
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    input[type='password'] {
+        font-size: 20px;
+        padding: 15px;
+    }
+
+    .container input:checked~.checkmark:after {
+        display: block;
+    }
+
+
+    .container .checkmark:after {
+        top: 5px;
+        left: 5px;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: white;
+    }
+
+}
