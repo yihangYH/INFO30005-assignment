@@ -64,6 +64,13 @@
         </div>
     </div>
     <hr class="first-hr">
+    <div class="blood-glucose-date" id="date">
+            {{#if this.bloodGlucose}}
+                <P id="blood-glucose-date">Updated on:&nbsp {{findTime this.bloodGlucose}}</P>
+            {{else}}
+                <P id="blood-glucose-date">Updated on:&nbsp No Record</P>
+            {{/if}}
+        </div>
     <div class="weight">
         <div>
             WEIGHT
@@ -81,6 +88,13 @@
         </div>
     </div>
     <hr class="sec-hr">
+    <div class="weight-date" id="date">
+        {{#if this.weight}}
+            <P id= "weight-date">Updated on:&nbsp {{findTime this.weight}}</P>
+        {{else}}
+            <P id= "weight-date">Updated on:&nbsp No Record</P>
+        {{/if}}
+    </div>
     <div class="insulin-taken">
         <div class="insulin-taken-word">
             INSULIN TAKEN
@@ -97,6 +111,13 @@
         </div>
     </div>
     <hr class="third-hr">
+    <div class="insulin-taken-date" id="date">
+        {{#if this.insulinTaken}}
+            <P id="insulin-taken-date" >Updated on:&nbsp {{findTime this.insulinTaken}}</P>
+        {{else}}
+            <P id="insulin-taken-date">Updated on:&nbsp No Record</P>
+        {{/if}}
+    </div>
     <div class="exercise">
         <div>
             EXERCISE
@@ -113,48 +134,15 @@
         </div>
     </div>
     <hr class="forth-hr">
-</div>
-<div class="blood-glucose-date" id="date">
-
-        {{#if this.bloodGlucose}}
-            <P id="blood-glucose-date">Updated on:&nbsp {{findTime this.bloodGlucose}}</P>
+    <div class="exercise-date" id="date">
+        {{#if this.exercise}}
+            <P id ="exercise-date" >Updated on:&nbsp {{findTime this.exercise}}</P>
         {{else}}
-            <P id="blood-glucose-date">Updated on:&nbsp No Record</P>
+            <P id ="exercise-date">Updated on:&nbsp No Record</P>
         {{/if}}
-
+    </div>
 </div>
-<div class="weight-date" id="date">
 
-        {{#if this.weight}}
-            <P id= "weight-date">Updated on:&nbsp {{findTime this.weight}}</P>
-        {{else}}
-            <P id= "weight-date">Updated on:&nbsp No Record</P>
-        {{/if}}
-
-</div>
-<div class="insulin-taken-date" id="date">
-
-        {{#if this.insulinTaken}}
-            <P id="insulin-taken-date" >Updated on:&nbsp {{findTime this.insulinTaken}}</P>
-        {{else}}
-            <P id="insulin-taken-date">Updated on:&nbsp No Record</P>
-        {{/if}}
-
-
-</div>
-<div class="exercise-date" id="date">
-
-    {{#if this.exercise}}
- 
-        <P id ="exercise-date" >Updated on:&nbsp {{findTime this.exercise}}</P>
-
-    {{else}}
- 
-        <P id ="exercise-date">Updated on:&nbsp No Record</P>
-
-    {{/if}}
-
-</div>
 <div class="text" id="text">
     "Joy is healthy, a happy
     mood is the best secret to be longevity"
