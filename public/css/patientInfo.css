@@ -360,7 +360,7 @@
     .text {
         display: flex;
         position: absolute;
-        top: 85.5%;
+        top: 75.5%;
         padding-left: 10px;
         padding-right: 10px;
         text-align: center;
@@ -960,10 +960,8 @@
     .text {
         display: flex;
         position: absolute;
-        top: 90%;
+        top: 72%;
         left: 25%;
-        /* padding-left: 10px;
-        padding-right: 10px; */
         text-align: center;
         color: #A22929;
         font-size: 35px;
@@ -1574,7 +1572,7 @@
     .text {
         display: flex;
         position: absolute;
-        top: 86%;
+        top: 70%;
         left: 10%;
         /* padding-left: 10px;
         padding-right: 10px; */
