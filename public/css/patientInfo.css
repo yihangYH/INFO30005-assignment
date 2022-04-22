@@ -66,6 +66,7 @@
         left: 10px;
         top: 15%;
         color: #DFAFAD;
+        z-index: 1;
     }
 
     .trophies-and-rankings {
@@ -95,14 +96,17 @@
 
     .learn-more {
         text-align: center;
-        position: relative;
-        width: 284%;
-        left: -174%;
-        top: 5%;
+        position: absolute;
+        width: 97%;
+        left: 0;
+        top: 82%;
         font-style: italic;
         background-color: #FAF7F7;
-        padding: 1.5px;
-        border-radius: 10%;
+        border-radius: 15%;
+        display: block;
+    }
+    .learn-more p{
+        width: 100%;
     }
 
     .trophies-pic {
@@ -661,6 +665,7 @@
         top: 16%;
         list-style: none;
         color: #DFAFAD;
+        z-index: 1;
     }
 
     .album {
@@ -715,7 +720,7 @@
     .rankings p {
         text-align: center;
         position: relative;
-        left: -10%;
+        left: 25%;
         font-size: 20px;
     }
 
@@ -736,16 +741,19 @@
 
     .learn-more {
         text-align: center;
-        position: relative;
-        left: -32.5%;
-        top: 7%;
-        width: 337px;
-        padding: 1.5px;
+        position: absolute;
+        left: 0;
+        top: 85%;
+        width: 100%;
         font-size: 20px;
-        border-radius: 10px;
+        border-radius: 15%;
         background-color: #FAF7F7;
         font-style: italic;
+        display: block;
 
+    }
+    .learn-more p {
+        width: 100%;
     }
 
     .vl {
@@ -1268,6 +1276,7 @@
         top: 18%;
         list-style: none;
         color: #DFAFAD;
+        z-index: 1;
     }
 
     .album {
@@ -1347,16 +1356,19 @@
     .learn-more {
         position: absolute;
         text-align: center;
-        position: relative;
-        left: 20%;
-        top: 125%;
-        width: 90px;
+        left: 0;
+        top: 79%;
+        width: 98%;
         padding: 1.5px;
         font-size: 15px;
-        border-radius: 10px;
+        border-radius: 15%;
         background-color: #FAF7F7;
         font-style: italic;
+        display: block;
 
+    }
+    .learn-more p{
+        width: 100%;
     }
 
     .vl {
