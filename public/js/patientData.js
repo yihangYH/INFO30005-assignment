@@ -36,6 +36,32 @@ function reloadUpdatePage(){
 }
 
 function validation(){
+    console.log(document.getElementById('text-block').value)
+    if(document.getElementById('blood-glucose-input').value != "" && document.getElementById('text-block').value =="" ){
+        try {
+            Swal.fire(
+                'Please update comment as well',
+                'please close',
+                'error'
+              )
+        } catch (error) {
+            document.getElementById("myModal").style.display = "block";
+            document.getElementById("error-message").innerHTML ="Please update comment as well"
+        }
+        return false;
+    }else if(document.getElementById('blood-glucose-input').value == "" && document.getElementById('text-block').value !=""){
+        try {
+            Swal.fire(
+                'Please update data as well',
+                'please close',
+                'error'
+              )
+        } catch (error) {
+            document.getElementById("myModal").style.display = "block";
+            document.getElementById("error-message").innerHTML ="Please update data as well"
+        }
+        return false;
+    }
     if(document.getElementById('weight-input').readOnly && document.getElementById('weight-input').readOnly
         && document.getElementById('insulin-taken-input').readOnly && document.getElementById('exericse-input').readOnly){
             try {
@@ -51,19 +77,19 @@ function validation(){
             return false;
     }
     if(document.getElementById('blood-glucose-input').value != "Not Required" && document.getElementById('blood-glucose-input').value != ""){
-
+        updatePlusClick();
         return true;
     }
     if(document.getElementById('weight-input').value != "Not Required" && document.getElementById('weight-input').value != ""){
-
+        updatePlusClick();
         return true;
     }
     if(document.getElementById('insulin-taken-input').value != "Not Required" && document.getElementById('insulin-taken-input').value != ""){
-
+        updatePlusClick();
         return true;
     }
     if(document.getElementById('exericse-input').value != "Not Required" && document.getElementById('exericse-input').value != ""){
-
+        updatePlusClick();
         return true;
     }
     try {
