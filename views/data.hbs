@@ -159,8 +159,11 @@
                 <p>BLOOD GLUCOSE</p>
                 <input name="blood_glucose" id="blood-glucose-input" type="text" placeholder="(nml/L)" />
                 <button type="button" class="butn" id="butn1" onclick="setCommentWindow()">
-                    <p class="comment" id="comment">+ Comment <img class="pen" id="pen" src="../res/pen.png" alt="">
-                    </p>
+                    {{#if this.bloodGlucose}}
+                        <p class="comment" id="comment">{{findComment this.bloodGlucose}} <img class="pen" id="pen" src="../res/pen.png" alt=""></p>
+                    {{else}}
+                        <p class="comment" id="comment">+ Comment <img class="pen" id="pen" src="../res/pen.png" alt=""></p>
+                    {{/if}}
                 </button>
                 <textarea class="text-block" id="text-block" name = "blood_glucose_comment" placeholder="Add comments"></textarea>
                 <div class="submit-div" id="submit-div">
@@ -174,8 +177,11 @@
                 <p>Weight</p>
                 <input name="weight" id="weight-input" type="text" placeholder="(Kg)" />
                 <button type="button" class="butn" id="butn2" onclick="setCommentWindow1()">
-                    <p class="comment" id="comment1">+ Comment <img class="pen" id="pen1" src="../res/pen.png" alt="">
-                    </p>
+                    {{#if this.weight}}
+                        <p class="comment" id="comment1">{{findComment this.weight}} <img class="pen" id="pen1" src="../res/pen.png" alt=""></p>
+                    {{else}}
+                        <p class="comment" id="comment1">+ Comment <img class="pen" id="pen1" src="../res/pen.png" alt=""></p>
+                    {{/if}}
                 </button>
                 <textarea class="text-block" id="text-block1" name = "weight_comment" placeholder="Add comments"></textarea>
                 <div class="submit-div" id="submit-div1">
@@ -189,8 +195,11 @@
                 <p>INSULIN TAKEN</p>
                 <input name="insulin_taken" id="insulin-taken-input" type="text" placeholder="(DOSES)" />
                 <button type="button" class="butn" id="butn3" onclick="setCommentWindow2()">
-                    <p class="comment" id="comment2">+ Comment <img class="pen" id="pen2" src="../res/pen.png" alt="">
-                    </p>
+                    {{#if this.insulinTaken}}
+                        <p class="comment" id="comment2">{{findComment this.insulinTaken}} <img class="pen" id="pen2" src="../res/pen.png" alt=""></p>
+                    {{else}}
+                        <p class="comment" id="comment2">{{findComment this.insulinTaken}} <img class="pen" id="pen2" src="../res/pen.png" alt=""></p>
+                    {{/if}}
                 </button>
                 <textarea class="text-block" id="text-block2" name = "inssulin_comment" placeholder="Add comments"></textarea>
                 <div class="submit-div" id="submit-div2">
@@ -204,8 +213,11 @@
                 <p>EXERICSE</p>
                 <input name="exercise" id="exericse-input" type="text" placeholder="(Steps)" />
                 <button type="button" class="butn" id="butn4" onclick="setCommentWindow3()">
-                    <p class="comment" id="comment3">+ Comment<img class="pen" id="pen3" src="../res/pen.png" alt="">
-                    </p>
+                    {{#if this.exercise}}
+                        <p class="comment" id="comment3">{{findComment this.exercise}}<img class="pen" id="pen3" src="../res/pen.png" alt=""></p>
+                    {{else}}
+                        <p class="comment" id="comment3">{{findComment this.exercise}}<img class="pen" id="pen3" src="../res/pen.png" alt=""></p>
+                    {{/if}}
                 </button>
                 <textarea class="text-block" id="text-block3" name = "exercise_comment" placeholder="Add comments"></textarea>
                 <div class="submit-div" id="submit-div3">
@@ -234,8 +246,8 @@
     {{#with patientInfo}}
     var data = []
     data.push({{ this.healthyData_required }})
-    setPatientDataValue(data)
     checkUpdated();
+    setPatientDataValue(data)
     {{/with}}
     document.getElementsByClassName("close")[0].onclick = function() {
         document.getElementById("myModal").style.display = "none";

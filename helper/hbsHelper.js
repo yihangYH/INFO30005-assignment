@@ -31,3 +31,14 @@ hbs.handlebars.registerHelper("findBloodGlucose", function(data) {
 hbs.handlebars.registerHelper("findTime", function(data) {
     return data[data.length-1].time;
 });
+
+hbs.handlebars.registerHelper("findComment", function(data){
+    if(data[data.length-1].comment == "Not Required"){
+        return "+ Comment"
+    }
+    const comment = data[data.length-1].comment
+    if(comment.length>35){
+        return comment.substring(0, 35) + "...";
+    }
+    return comment;
+});

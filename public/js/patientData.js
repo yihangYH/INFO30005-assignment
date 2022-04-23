@@ -407,6 +407,18 @@ function exerciseFunction(){
 }
 
 function setPatientDataValue(data){
+    if(document.getElementById('blood-glucose-input').readOnly){
+        document.getElementById('pen').style.display = "none"
+    }
+    if(document.getElementById('weight-input').readOnly){
+        document.getElementById('pen1').style.display = "none"
+    }
+    if(document.getElementById('insulin-taken-input').readOnly){
+        document.getElementById('pen2').style.display = "none"
+    }
+    if(document.getElementById('exericse-input').readOnly){
+        document.getElementById('pen3').style.display = "none"
+    }
     for(let i = 0; i < 4; i++){
         if(i == 0 ){
             if(!data[0]){
