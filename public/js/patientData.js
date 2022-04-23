@@ -144,6 +144,61 @@ function checkComment(){
         }
         return false;
     }
+    if(!document.getElementById('comment').innerHTML.includes("+ Comment") && document.getElementById('blood-glucose-input').value == ""){
+        try {
+            Swal.fire(
+                'Please enter blood glucose data before update',
+                'please check',
+                'error'
+              )
+        } catch (error) {
+            document.getElementById("myModal").style.display = "block";
+            document.getElementById("error-message").innerHTML ="Please enter blood glucose data before update"
+        }
+        return false;
+    }
+    if(!document.getElementById('comment1').innerHTML.includes("+ Comment") && document.getElementById('weight-input').value == ""){
+        try {
+            Swal.fire(
+                'Please enter weight data before update',
+                'please check',
+                'error'
+              )
+        } catch (error) {
+            document.getElementById("myModal").style.display = "block";
+            document.getElementById("error-message").innerHTML ="Please enter weight data before update"
+        }
+        return false;
+    }
+
+    if(!document.getElementById('comment2').innerHTML.includes("+ Comment") && document.getElementById('insulin-taken-input').value == "" ){
+        try {
+            Swal.fire(
+                'Please enter insulin taken data before update',
+                'please check',
+                'error'
+              )
+        } catch (error) {
+            document.getElementById("myModal").style.display = "block";
+            document.getElementById("error-message").innerHTML ="Please enter insulin taken data before update"
+        }
+        return false;
+    }
+
+    if(!document.getElementById('comment3').innerHTML.includes("+ Comment") &&  document.getElementById('exericse-input').value == ""){
+        try {
+            Swal.fire(
+                'Please enter exericse data before update',
+                'please check',
+                'error'
+              )
+        } catch (error) {
+            document.getElementById("myModal").style.display = "block";
+            document.getElementById("error-message").innerHTML ="Please enter exericse data before update"
+        }
+        return false;
+    }
+
     return true;
 }
 
