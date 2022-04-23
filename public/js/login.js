@@ -29,8 +29,16 @@ async function validate() {
     }
     // error message if user not enter either username of password
     if (document.getElementById("username").value == "" || document.getElementById("password").value == "") {
-      document.getElementById("myModal").style.display = "block";
-      document.getElementById('error-message').innerHTML = "please enter a username and password";
+      try {
+        Swal.fire(
+          'userID and password',
+          'please enter',
+          'error'
+        )
+      } catch (error) {
+        document.getElementById("myModal").style.display = "block";
+        document.getElementById('error-message').innerHTML = "please enter a userID and password";
+      }
       return
     }
     // post method for login
@@ -46,11 +54,27 @@ async function validate() {
     if (response.status == 202) {
       window.location.href = "./data/" + response.statusText;
     } else if (response.status == 201) {
-      document.getElementById("myModal").style.display = "block";
-      document.getElementById('error-message').innerHTML = "Invalid identity, username or password";
+      try {
+        Swal.fire(
+          'Invalid identity, userID or password',
+          'please check',
+          'error'
+        )
+      } catch (error) {
+        document.getElementById("myModal").style.display = "block";
+        document.getElementById('error-message').innerHTML = "Invalid identity, userID or password";
+      }
     } else if(response.status == 200){
-      document.getElementById("myModal").style.display = "block";
-      document.getElementById('error-message').innerHTML = "Invalid identity, username or password";
+      try {
+        Swal.fire(
+          'Invalid identity, userID or password',
+          'please check',
+          'error'
+        )
+      } catch (error) {
+        document.getElementById("myModal").style.display = "block";
+        document.getElementById('error-message').innerHTML = "Invalid identity, userID or password";
+      }
     }
   } catch (err) {
     console.error(`Error: ${err}`);
