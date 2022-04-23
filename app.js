@@ -40,11 +40,11 @@ app.get('/aboutThisWebsite', (req, res) => {
 
 // get specific patient's data page
 // will move to patientRouter later
-app.get('/data/:id', async (req, res) => {
-    const patient = await Patient.findOne({_id:req.params.id}).populate("weight").populate("exercise").populate("bloodGlucose").populate("insulinTaken").lean();
+// app.get('/data/:id', async (req, res) => {
+//     const patient = await Patient.findOne({_id:req.params.id}).populate("weight").populate("exercise").populate("bloodGlucose").populate("insulinTaken").lean();
 
-    res.render('data.hbs', {patientInfo: patient})
-})
+//     res.render('data.hbs', {patientInfo: patient})
+// })
 
 // log different resquests for debug purposes
 app.use((req, res, next) => {
@@ -155,6 +155,8 @@ app.get('/login', async (req, res) => {
     res.render('login.hbs')
 })
 app.use(express.static('public'))
+const patientRouter = require('./routes/patientRouter.js')
+app.use('',patientRouter)
 // Tells the app to listen on port 3000 and logs tha tinformation to the console.
 app.listen(process.env.PORT || 3000, () => {
     console.log('Demo app is listening on port 3000!')
