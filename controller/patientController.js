@@ -27,7 +27,7 @@ const updateData  = async(req,res,next) =>{
     const currentMonth = dateString.split('/')[1]
     const currentDay = dateString.split('/')[0]
     const patient = await Patient.findOne({_id:req.params.id}).populate("weight").populate("exercise").populate("bloodGlucose").populate("insulinTaken").lean();
-    if(req.body.blood_glucose != "" && req.body.blood_glucose != "Not required"){
+    if(req.body.blood_glucose != "" && req.body.blood_glucose != "Not Required"){
         const leastValue = patient.bloodGlucose[patient.bloodGlucose.length - 1].value;
         const leastTime = patient.bloodGlucose[patient.bloodGlucose.length - 1].time;
         const data = new bloodGlucose({
@@ -46,7 +46,7 @@ const updateData  = async(req,res,next) =>{
             data.save() 
         }
     }
-    if(req.body.weight != "" && req.body.weight != "Not required" ){
+    if(req.body.weight != "" && req.body.weight != "Not Required" ){
         const leastValue = patient.weight[patient.weight.length - 1].value;
         const leastTime = patient.weight[patient.weight.length - 1].time;
         const data = new weight({
@@ -64,7 +64,7 @@ const updateData  = async(req,res,next) =>{
             data.save() 
         }
     }
-    if(req.body.insulin_taken != "" && req.body.insulin_taken != "Not required" ){
+    if(req.body.insulin_taken != "" && req.body.insulin_taken != "Not Required" ){
         const leastValue = patient.insulinTaken[patient.insulinTaken.length - 1].value;
         const leastTime = patient.insulinTaken[patient.insulinTaken.length - 1].time;
         const data = new insulinTaken({
@@ -82,7 +82,7 @@ const updateData  = async(req,res,next) =>{
             data.save()
         }
     }
-    if(req.body.exercise != "" && req.body.exercise != "Not required" ){
+    if(req.body.exercise != "" && req.body.exercise != "Not Required" ){
         const leastValue = patient.exercise[patient.exercise.length - 1].value;
         const leastTime = patient.exercise[patient.exercise.length - 1].time;
         const data = new exercise({
@@ -96,7 +96,6 @@ const updateData  = async(req,res,next) =>{
             //     {value: req.body.exercise, time:dateString}
             // )
         }else if(leastTime.split('/')[1] != currentMonth || leastTime.split('/')[0] != currentDay){
-            console.log("hit")
             await Patient.findOneAndUpdate({_id:req.params.id}, {$push: {exercise: data._id}});
             data.save() 
         }

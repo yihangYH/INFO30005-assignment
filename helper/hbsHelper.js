@@ -33,12 +33,21 @@ hbs.handlebars.registerHelper("findTime", function(data) {
 });
 
 hbs.handlebars.registerHelper("findComment", function(data){
+    let AuDate = new Date().toLocaleString("en-US", {timeZone: "Australia/Sydney"});
+    let dateString = AuDate.toString().replace(',', ' ');
+    const currentMonth = dateString.split('/')[1];
+    const currentDay = dateString.split('/')[0];
+    let time = data[data.length-1].time.split('/')
     if(data[data.length-1].comment == "Not Required"){
         return "+ Comment"
     }
+    if(time[0] != currentDay || time[1] != currentMonth){
+        return ""
+    }
     const comment = data[data.length-1].comment
-    if(comment.length>35){
-        return comment.substring(0, 35) + "...";
+
+    if(comment.length>30){
+        return comment.substring(0, 30) + "...";
     }
     return comment;
 });

@@ -50,19 +50,19 @@ function validation(){
             }
             return false;
     }
-    if(document.getElementById('blood-glucose-input').value != "Not required" && document.getElementById('blood-glucose-input').value != ""){
+    if(document.getElementById('blood-glucose-input').value != "Not Required" && document.getElementById('blood-glucose-input').value != ""){
 
         return true;
     }
-    if(document.getElementById('weight-input').value != "Not required" && document.getElementById('weight-input').value != ""){
+    if(document.getElementById('weight-input').value != "Not Required" && document.getElementById('weight-input').value != ""){
 
         return true;
     }
-    if(document.getElementById('insulin-taken-input').value != "Not required" && document.getElementById('insulin-taken-input').value != ""){
+    if(document.getElementById('insulin-taken-input').value != "Not Required" && document.getElementById('insulin-taken-input').value != ""){
 
         return true;
     }
-    if(document.getElementById('exericse-input').value != "Not required" && document.getElementById('exericse-input').value != ""){
+    if(document.getElementById('exericse-input').value != "Not Required" && document.getElementById('exericse-input').value != ""){
 
         return true;
     }
@@ -82,16 +82,16 @@ function validation(){
 
 function updatePlusClick() {
     var validator = false;
-    if(document.getElementById('blood-glucose-input').value != "Not required" && document.getElementById('blood-glucose-input').value != ""){
+    if(document.getElementById('blood-glucose-input').value != "Not Required" && document.getElementById('blood-glucose-input').value != ""){
         validator = true;
     }
-    if(document.getElementById('weight-input').value != "Not required" && document.getElementById('weight-input').value != ""){
+    if(document.getElementById('weight-input').value != "Not Required" && document.getElementById('weight-input').value != ""){
         validator = true;
     }
-    if(document.getElementById('insulin-taken-input').value != "Not required" && document.getElementById('insulin-taken-input').value != ""){
+    if(document.getElementById('insulin-taken-input').value != "Not Required" && document.getElementById('insulin-taken-input').value != ""){
         validator = true;
     }
-    if(document.getElementById('exericse-input').value != "Not required" && document.getElementById('exericse-input').value != ""){
+    if(document.getElementById('exericse-input').value != "Not Required" && document.getElementById('exericse-input').value != ""){
         validator = true;
     }
     if(validator){
@@ -382,26 +382,26 @@ function cancel() {
 
 function weightFunction(){
     document.getElementById('weight-input').readOnly = true
-    document.getElementById('weight-input').value = "Not required"
+    document.getElementById('weight-input').value = "Not Required"
     document.getElementById('butn2').disabled = true
     document.getElementById('butn2').style.cursor = "none"
 }
 function bloodGlucose(){
     document.getElementById('blood-glucose-input').readOnly = true
-    document.getElementById('blood-glucose-input').value = "Not required"
+    document.getElementById('blood-glucose-input').value = "Not Required"
     document.getElementById('butn1').disabled = true
     document.getElementById('butn1').style.cursor = "none"
 }
 function insulin(){
     document.getElementById('insulin-taken-input').readOnly = true
-    document.getElementById('insulin-taken-input').value = "Not required"
+    document.getElementById('insulin-taken-input').value = "Not Required"
     document.getElementById('butn3').disabled = true
     document.getElementById('butn3').style.cursor = "none"
 }
 
 function exerciseFunction(){
     document.getElementById('exericse-input').readOnly = true
-    document.getElementById('exericse-input').value = "Not required"
+    document.getElementById('exericse-input').value = "Not Required"
     document.getElementById('butn4').disabled = true
     document.getElementById('butn4').style.cursor = "none"
 }
@@ -422,25 +422,25 @@ function setPatientDataValue(data){
     for(let i = 0; i < 4; i++){
         if(i == 0 ){
             if(!data[0]){
-                document.getElementById("blood-glucose-data").innerHTML = "Not required"
+                document.getElementById("blood-glucose-data").innerHTML = "Not Required"
                 document.getElementById("blood-glucose-date").innerHTML = "Updated on: No Record"
                 bloodGlucose()
             }
         }else if(i==1 ){
             if(!data[1]){
-                document.getElementById("weight-data").innerHTML = "Not required"
+                document.getElementById("weight-data").innerHTML = "Not Required"
                 document.getElementById("weight-date").innerHTML = "Updated on: No Record"
                 weightFunction()
             }
         }else if(i==2){
             if(!data[2]){
-                document.getElementById("insulin-taken-data").innerHTML = "Not required"
+                document.getElementById("insulin-taken-data").innerHTML = "Not Required"
                 document.getElementById("insulin-taken-date").innerHTML = "Updated on: No Record"
                 insulin()
             }
         }else{
             if(!data[3]){
-                document.getElementById("exercise-data").innerHTML = "Not required"
+                document.getElementById("exercise-data").innerHTML = "Not Required"
                 document.getElementById("exercise-date").innerHTML = "Updated on: No Record"
                 exericseFunction()
             }
@@ -465,6 +465,10 @@ function checkUpdated(){
                 document.getElementById('blood-glucose-input').value = document.getElementById('blood-glucose-input').innerHTML
                 document.getElementById('butn1').disabled = true
                 document.getElementById('butn1').style.cursor = "none"
+            }else{
+                if(!document.getElementById('blood-glucose-data').innerHTML.includes("Not")){
+                    document.getElementById('comment').innerHTML="+ Comment" + document.getElementById('comment').innerHTML
+                }
             }
         }else if(i == 1){
             const currentMonth = dateString.split('/')[1];
@@ -478,6 +482,11 @@ function checkUpdated(){
                 document.getElementById('weight-input').value = document.getElementById('weight-input').innerHTML
                 document.getElementById('butn2').disabled = true
                 document.getElementById('butn2').style.cursor = "none"
+            }else{
+                if(!document.getElementById('weight-data').innerHTML.includes("Not")){
+                    document.getElementById('comment1').innerHTML="+ Comment" + document.getElementById('comment1').innerHTML
+                }
+                
             }
         }else if(i == 2){
             const currentMonth = dateString.split('/')[1];
@@ -491,6 +500,11 @@ function checkUpdated(){
                 document.getElementById('insulin-taken-input').value = document.getElementById('insulin-taken-input').innerHTML
                 document.getElementById('butn3').disabled = true
                 document.getElementById('butn3').style.cursor = "none"
+            }else{
+                if(!document.getElementById('insulin-taken-data').innerHTML.includes("Not")){
+                    document.getElementById('comment2').innerHTML="+ Comment" + document.getElementById('comment2').innerHTML
+                }
+
             }
         }else{
             const currentMonth = dateString.split('/')[1];
@@ -504,6 +518,10 @@ function checkUpdated(){
                 document.getElementById('exericse-input').value = document.getElementById('exericse-input').innerHTML
                 document.getElementById('butn4').disabled = true
                 document.getElementById('butn4').style.cursor = "none"
+            }else{
+                if(!document.getElementById('exercise-data').innerHTML.includes("Not")){
+                    document.getElementById('comment3').innerHTML="+ Comment" + document.getElementById('comment3').innerHTML
+                }
             }
         }
     }
