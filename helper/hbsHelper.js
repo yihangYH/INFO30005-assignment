@@ -7,8 +7,6 @@ hbs.handlebars.registerHelper("Json", function(data) {
     // console.log(Object(data)[0]);
 });
 
-
-
 hbs.handlebars.registerHelper("findWeight", function(data) {
 
     return data[data.length -1].value;
@@ -38,16 +36,20 @@ hbs.handlebars.registerHelper("findComment", function(data){
     const currentMonth = dateString.split('/')[1];
     const currentDay = dateString.split('/')[0];
     let time = data[data.length-1].time.split('/')
+
     if(data[data.length-1].comment == "Not Required"){
         return "+ Comment"
     }
+
     if(time[0] != currentDay || time[1] != currentMonth){
         return ""
     }
+
     const comment = data[data.length-1].comment
 
     if(comment.length>30){
         return comment.substring(0, 30) + "...";
     }
+    
     return comment;
 });

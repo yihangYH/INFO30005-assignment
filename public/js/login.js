@@ -6,6 +6,7 @@ function myFunction() {
     x.type = "password";
   }
 }
+
 async function validate() {
   var patient = document.getElementById("patient");
   var doctor = document.getElementById("doctor");
@@ -15,11 +16,13 @@ async function validate() {
   var patient;
   const password = document.getElementById("password").value;
   const username = document.getElementById("username").value;
+
   if (patient_style.color == "rgb(0, 0, 0)") {
     patient = true;
   } else if (doctor_style.color == "rgb(0, 0, 0)") {
     doctor = true;
   }
+
   try {
     let patientInfo = {
       userid: username,
@@ -27,6 +30,7 @@ async function validate() {
       isDoctor: doctor,
       isPatient: patient
     }
+
     // error message if user not enter either username of password
     if (document.getElementById("username").value == "" || document.getElementById("password").value == "") {
       try {
@@ -41,6 +45,7 @@ async function validate() {
       }
       return
     }
+
     // post method for login
     const response = await fetch('/login', {
       method: 'POST',
@@ -49,7 +54,9 @@ async function validate() {
       },
       body: JSON.stringify(patientInfo)
     });
+
     console.log(response);
+
     // based on the response, redirect to data page for patient, or showing error meesage
     if (response.status == 202) {
       window.location.href = "./data/" + response.statusText;
@@ -79,26 +86,22 @@ async function validate() {
   } catch (err) {
     console.error(`Error: ${err}`);
   }
-
 }
-
-
 
 function identity_patient() {
   var patient = document.getElementById("patient");
   var doctor = document.getElementById("doctor");
   const doctor_style = getComputedStyle(doctor);
   const patient_style = getComputedStyle(patient);
+
   if (patient_style.color == "rgb(0, 0, 0)") {
     document.getElementById("doctor").style.color = "grey";
   }
+
   if (patient_style.color == "rgb(128, 128, 128)" && doctor_style.color == "rgb(0, 0, 0)") {
     document.getElementById("patient").style.color = "black";
     document.getElementById("doctor").style.color = "grey";
   }
-
-
-
 }
 
 function identity_doctor() {
@@ -106,13 +109,13 @@ function identity_doctor() {
   var doctor = document.getElementById("doctor");
   const doctor_style = getComputedStyle(doctor);
   const patient_style = getComputedStyle(patient);
+
   if (patient_style.color == "rgb(0, 0, 0)") {
     document.getElementById("doctor").style.color = "grey";
   }
+
   if (doctor_style.color == "rgb(128, 128, 128)" && patient_style.color == "rgb(0, 0, 0)") {
     document.getElementById("patient").style.color = "grey";
     document.getElementById("doctor").style.color = "black";
   }
-
-
 }

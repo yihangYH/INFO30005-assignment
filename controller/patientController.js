@@ -27,6 +27,7 @@ const updateData  = async(req,res,next) =>{
     const currentMonth = dateString.split('/')[1]
     const currentDay = dateString.split('/')[0]
     const patient = await Patient.findOne({_id:req.params.id}).populate("weight").populate("exercise").populate("bloodGlucose").populate("insulinTaken").lean();
+
     if(req.body.blood_glucose != "" && req.body.blood_glucose != "Not Required"){
         const leastValue = patient.bloodGlucose[patient.bloodGlucose.length - 1].value;
         const leastTime = patient.bloodGlucose[patient.bloodGlucose.length - 1].time;
@@ -41,6 +42,7 @@ const updateData  = async(req,res,next) =>{
             data.save() 
         }
     }
+
     if(req.body.weight != "" && req.body.weight != "Not Required" ){
         const leastValue = patient.weight[patient.weight.length - 1].value;
         const leastTime = patient.weight[patient.weight.length - 1].time;
@@ -54,6 +56,7 @@ const updateData  = async(req,res,next) =>{
             data.save() 
         }
     }
+
     if(req.body.insulin_taken != "" && req.body.insulin_taken != "Not Required" ){
         const leastValue = patient.insulinTaken[patient.insulinTaken.length - 1].value;
         const leastTime = patient.insulinTaken[patient.insulinTaken.length - 1].time;
@@ -67,6 +70,7 @@ const updateData  = async(req,res,next) =>{
             data.save()
         }
     }
+
     if(req.body.exercise != "" && req.body.exercise != "Not Required" ){
         const leastValue = patient.exercise[patient.exercise.length - 1].value;
         const leastTime = patient.exercise[patient.exercise.length - 1].time;
@@ -80,6 +84,7 @@ const updateData  = async(req,res,next) =>{
             data.save() 
         }
     }
+    
     // redirect to patient's data page
     res.redirect('../data/' + req.params.id)
     } catch (error) {

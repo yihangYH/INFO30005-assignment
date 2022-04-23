@@ -1,5 +1,3 @@
-
-
 function updateBtnclick() {
     document.getElementById('main-body').style.display = 'none';
     document.getElementById('date').style.display = 'none';
@@ -7,6 +5,7 @@ function updateBtnclick() {
     document.getElementById('blur').style.display = 'flex';
     document.getElementById('cancel').style.display = 'flex';
     document.getElementById('container').style.display = 'block';
+
     // the comment out function is for detecting if patient has already uploaded the data
     reloadUpdatePage();
 }
@@ -18,16 +17,19 @@ function reloadUpdatePage(){
     if(today.getDate() == date[1] && today.getMonth() == date[0] - 1){
         document.getElementById('blood-glucose-input').value = document.getElementById('blood-glucose-data').innerHTML.split('&')[0];
     }
+
     date = document.getElementById('weight-date').innerHTML
     date = date.substring(17, date.length - 10).split('/')
     if(today.getDate() == date[1] && today.getMonth() == date[0] - 1){
         document.getElementById('weight-input').value = document.getElementById('weight-data').innerHTML.split('&')[0];
     }
+
     date = document.getElementById('insulin-taken-date').innerHTML
     date = date.substring(17, date.length - 10).split('/')
     if(today.getDate() == date[1] && today.getMonth() == date[0] - 1){
         document.getElementById('insulin-taken-input').value = document.getElementById('insulin-taken-data').innerHTML.split('&')[0];
     }
+
     date = document.getElementById('exercise-date').innerHTML
     date = date.substring(17, date.length - 10).split('/')
     if(today.getDate() == date[1] && today.getMonth() == date[0] - 1){
@@ -43,6 +45,7 @@ function validation(){
         updatePlusClick();
         return true;
     }
+
     if(document.getElementById('weight-input').value != "Not Required" && document.getElementById('weight-input').value != "" && !document.getElementById('weight-input').readOnly){
         if(!checkComment()){
             return false;
@@ -50,6 +53,7 @@ function validation(){
         updatePlusClick();
         return true;
     }
+
     if(document.getElementById('insulin-taken-input').value != "Not Required" && document.getElementById('insulin-taken-input').value != "" && !document.getElementById('insulin-taken-input').readOnly){
         if(!checkComment()){
             return false;
@@ -57,6 +61,7 @@ function validation(){
         updatePlusClick();
         return true;
     }
+
     if(document.getElementById('exericse-input').value != "Not Required" && document.getElementById('exericse-input').value != "" && !document.getElementById('exericse-input').readOnly){
         if(!checkComment()){
             return false;
@@ -77,6 +82,7 @@ function validation(){
         }
         return false;
     }
+
     try {
         Swal.fire(
             'Please enter at least one data before update',
@@ -87,7 +93,7 @@ function validation(){
         document.getElementById("myModal").style.display = "block";
         document.getElementById("error-message").innerHTML ="Please enter at least one data before update"
     }
-    
+
     return false;
 }
 
@@ -105,6 +111,7 @@ function checkComment(){
         }
         return false;
     }
+
     if(document.getElementById('weight-input').value != "" && document.getElementById('comment1').innerHTML.includes("+ Comment") && document.getElementById('weight-input').value != "Not Required"){
         try {
             Swal.fire(
@@ -118,6 +125,7 @@ function checkComment(){
         }
         return false;
     }
+
     if(document.getElementById('insulin-taken-input').value != "Not Required" && document.getElementById('insulin-taken-input').value != "" &&  document.getElementById('comment2').innerHTML.includes("+ Comment")){
         try {
             Swal.fire(
@@ -131,6 +139,7 @@ function checkComment(){
         }
         return false;
     }
+
     if(document.getElementById('exericse-input').value != "Not Required" && document.getElementById('exericse-input').value != "" &&  document.getElementById('comment3').innerHTML.includes("+ Comment") ){
         try {
             Swal.fire(
@@ -144,6 +153,7 @@ function checkComment(){
         }
         return false;
     }
+
     if(!document.getElementById('comment').innerHTML.includes("+ Comment") && document.getElementById('blood-glucose-input').value == ""){
         try {
             Swal.fire(
@@ -157,6 +167,7 @@ function checkComment(){
         }
         return false;
     }
+
     if(!document.getElementById('comment1').innerHTML.includes("+ Comment") && document.getElementById('weight-input').value == ""){
         try {
             Swal.fire(
@@ -207,15 +218,19 @@ function updatePlusClick() {
     if(document.getElementById('blood-glucose-input').value != "Not Required" && document.getElementById('blood-glucose-input').value != ""){
         validator = true;
     }
+
     if(document.getElementById('weight-input').value != "Not Required" && document.getElementById('weight-input').value != ""){
         validator = true;
     }
+
     if(document.getElementById('insulin-taken-input').value != "Not Required" && document.getElementById('insulin-taken-input').value != ""){
         validator = true;
     }
+
     if(document.getElementById('exericse-input').value != "Not Required" && document.getElementById('exericse-input').value != ""){
         validator = true;
     }
+
     if(validator){
         document.getElementById('main-body').style.display = 'flex';
         document.getElementById('date').style.display = 'flex';
@@ -225,7 +240,6 @@ function updatePlusClick() {
         document.getElementById('container').style.display = 'none';
     }
 }   
-
 
 function setCommentWindow() {
     document.getElementById('text-block').style.display = 'flex';
@@ -266,9 +280,11 @@ function submit0() {
     document.getElementById('butn1').style.display = 'flex';
     document.getElementById('submit-div').style.display = 'none';
     var text = document.getElementById('text-block').value;
+
     if (text == "") {
         document.getElementById('pen').style.display = 'flex';
     }
+
     if (/\p{L}/u.test(text)) {
         if (String(text).length > 22) {
             document.getElementById('comment').innerHTML = text.substring(0, 22) + "...";
@@ -284,8 +300,6 @@ function submit0() {
                 document.getElementById('pen').style.left = '98%';
             }
             // document.getElementById('pen').style.left='122%';
-
-
         } else {
             document.getElementById('comment').innerHTML = text;
             imgp = document.createElement("IMG");
@@ -294,6 +308,7 @@ function submit0() {
             imgp.setAttribute('id', 'pen');
             document.getElementById('comment').appendChild(imgp);
             document.getElementById('pen').style.position = 'absolute';
+
             if (window.innerWidth == 375) {
                 document.getElementById('pen').style.left = '122%';
             } else if (window.innerWidth == 1980) {
@@ -309,9 +324,11 @@ function submit1() {
     document.getElementById('butn2').style.display = 'flex';
     document.getElementById('submit-div1').style.display = 'none';
     var text = document.getElementById('text-block1').value;
+
     if (text == "") {
         document.getElementById('pen1').style.display = 'flex';
     }
+
     if (/\p{L}/u.test(text)) {
         if (String(text).length > 22) {
             document.getElementById('comment1').innerHTML = text.substring(0, 22) + "...";
@@ -341,7 +358,6 @@ function submit1() {
             }
         }
     }
-
 }
 
 
@@ -351,9 +367,11 @@ function submit2() {
     document.getElementById('butn3').style.display = 'flex';
     document.getElementById('submit-div2').style.display = 'none';
     var text = document.getElementById('text-block2').value;
+
     if (text == "") {
         document.getElementById('pen2').style.display = 'flex';
     }
+
     if (/\p{L}/u.test(text)) {
         // const comment = document.getElementById('text-block1').value;
         if (String(text).length > 22) {
@@ -364,6 +382,7 @@ function submit2() {
             imgp.setAttribute('id', 'pen2');
             document.getElementById('comment2').appendChild(imgp);
             document.getElementById('pen2').style.position = 'absolute';
+            
             if (window.innerWidth == 375) {
                 document.getElementById('pen2').style.left = '120%';
             } else if (window.innerWidth == 1980) {

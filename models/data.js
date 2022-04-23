@@ -5,11 +5,13 @@ const weightSchema = new mongoose.Schema({
     time:String,
     comment:String,
 })
+
 const exerciseSchema = new mongoose.Schema({
     value:String,
     time:String,
     comment:String,
 })
+
 const insulinTakenSchema = new mongoose.Schema({
     value:String,
     time:String,

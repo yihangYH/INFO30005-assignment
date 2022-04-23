@@ -2,7 +2,6 @@ const mongoose = require('mongoose')
 
 const {Patient} = require('../models/patient.js')
 
-
 const login = async(req,res,next) => {
     try {
         res.render('login.hbs')
@@ -10,6 +9,7 @@ const login = async(req,res,next) => {
         return next(err)
     }
 }
+
 const loginToData = async(req,res,next) => {
     try {
         if(typeof req.body.isDoctor == "object"){
@@ -30,6 +30,5 @@ const loginToData = async(req,res,next) => {
         return next(err)
     }
 }
-
 
 module.exports = {login, loginToData}
