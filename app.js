@@ -133,30 +133,35 @@ app.use((req, res, next) => {
 // })
 
 // implement patient login logic but not using Passport, will redo it later
-app.post('/login', async(req, res) => {
-    if(typeof req.body.isDoctor == "object"){
-        const patient = await Patient.findOne({userid:req.body.userid}).lean();
-        if(patient != null && patient.password == req.body.password){
-            res.status("202")
-            res.statusMessage = patient._id
-        }else if(patient != null && patient.password != req.body.password){
-            res.status("201")
-        }
-       res.send()
-    }else if(typeof req.body.isPatient == "object"){
+// app.post('/login', async(req, res) => {
+//     if(typeof req.body.isDoctor == "object"){
+//         const patient = await Patient.findOne({userid:req.body.userid}).lean();
+//         if(patient != null && patient.password == req.body.password){
+//             res.status("202")
+//             res.statusMessage = patient._id
+//         }else if(patient != null && patient.password != req.body.password){
+//             res.status("201")
+//         }
+//        res.send()
+//     }else if(typeof req.body.isPatient == "object"){
 
-        res.status("201")
-        res.send()
-    }
-})
+//         res.status("201")
+//         res.send()
+//     }
+// })
 
 // get method for patient and doctor login
-app.get('/login', async (req, res) => {
-    res.render('login.hbs')
-})
+// app.get('/login', async (req, res) => {
+//     res.render('login.hbs')
+// })
+
+
 app.use(express.static('public'))
 const patientRouter = require('./routes/patientRouter.js')
 app.use('',patientRouter)
+
+const loginRouter = require('./routes/loginRouter.js')
+app.use('',loginRouter)
 // Tells the app to listen on port 3000 and logs tha tinformation to the console.
 app.listen(process.env.PORT || 3000, () => {
     console.log('Demo app is listening on port 3000!')
