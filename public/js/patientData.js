@@ -36,143 +36,46 @@ function reloadUpdatePage(){
 }
 
 function validation(){
-    console.log(document.getElementById('text-block').value)
-    if(document.getElementById('blood-glucose-input').value != "" && document.getElementById('text-block').value =="" 
-    && !document.getElementById('blood-glucose-input').value.includes("Not")){
-        try {
-            Swal.fire(
-                'Please update comment as well',
-                'please close',
-                'error'
-              )
-        } catch (error) {
-            document.getElementById("myModal").style.display = "block";
-            document.getElementById("error-message").innerHTML ="Please update comment as well"
-        }
-        return false;
-    }else if(document.getElementById('blood-glucose-input').value == "" && document.getElementById('text-block').value !=""
-    && !document.getElementById('blood-glucose-input').value.includes("Not")){
-        try {
-            Swal.fire(
-                'Please update data as well',
-                'please close',
-                'error'
-              )
-        } catch (error) {
-            document.getElementById("myModal").style.display = "block";
-            document.getElementById("error-message").innerHTML ="Please update data as well"
-        }
-        return false;
-    }if(document.getElementById('weight-input').value != "" && document.getElementById('text-block').value =="" &&
-     !document.getElementById('weight-input').value.includes("Not")){
-        try {
-            Swal.fire(
-                'Please update comment as well',
-                'please close',
-                'error'
-              )
-        } catch (error) {
-            document.getElementById("myModal").style.display = "block";
-            document.getElementById("error-message").innerHTML ="Please update comment as well"
-        }
-        return false;
-    }else if(document.getElementById('weight-input').value == "" && document.getElementById('text-block').value !="" &&  
-    !document.getElementById('weight-input').value.includes("Not")){
-        try {
-            Swal.fire(
-                'Please update data as well',
-                'please close',
-                'error'
-              )
-        } catch (error) {
-            document.getElementById("myModal").style.display = "block";
-            document.getElementById("error-message").innerHTML ="Please update data as well"
-        }
-        return false;
-    }if(document.getElementById('insulin-taken-input').value != "" && document.getElementById('text-block').value =="" &&
-    !document.getElementById('insulin-taken-input').value.includes("Not")){
-        try {
-            Swal.fire(
-                'Please update comment as well',
-                'please close',
-                'error'
-              )
-        } catch (error) {
-            document.getElementById("myModal").style.display = "block";
-            document.getElementById("error-message").innerHTML ="Please update comment as well"
-        }
-        return false;
-    }else if(document.getElementById('insulin-taken-input').value == "" && document.getElementById('text-block').value !=""&&
-    !document.getElementById('insulin-taken-input').value.includes("Not")){
-        try {
-            Swal.fire(
-                'Please update data as well',
-                'please close',
-                'error'
-              )
-        } catch (error) {
-            document.getElementById("myModal").style.display = "block";
-            document.getElementById("error-message").innerHTML ="Please update data as well"
-        }
-        return false;
-    }if(document.getElementById('exericse-input').value != "" && document.getElementById('text-block').value =="" &&
-    !document.getElementById('exericse-input').value.includes("Not")){
-        try {
-            Swal.fire(
-                'Please update comment as well',
-                'please close',
-                'error'
-              )
-        } catch (error) {
-            document.getElementById("myModal").style.display = "block";
-            document.getElementById("error-message").innerHTML ="Please update comment as well"
-        }
-        return false;
-    }else if(document.getElementById('exericse-input').value == "" && document.getElementById('text-block').value !="" &&
-    !document.getElementById('exericse-input').value.includes("Not")){
-        try {
-            Swal.fire(
-                'Please update data as well',
-                'please close',
-                'error'
-              )
-        } catch (error) {
-            document.getElementById("myModal").style.display = "block";
-            document.getElementById("error-message").innerHTML ="Please update data as well"
-        }
-        return false;
-    }
-
-    
-    if(document.getElementById('weight-input').readOnly && document.getElementById('weight-input').readOnly
-        && document.getElementById('insulin-taken-input').readOnly && document.getElementById('exericse-input').readOnly){
-            try {
-                Swal.fire(
-                    'You already update all datas',
-                    'please close',
-                    'error'
-                  )
-            } catch (error) {
-                document.getElementById("myModal").style.display = "block";
-                document.getElementById("error-message").innerHTML ="You already update all datas"
-            }
+    if(document.getElementById('blood-glucose-input').value != "Not Required" && document.getElementById('blood-glucose-input').value != "" && !document.getElementById('blood-glucose-input').readOnly){
+        if(!checkComment()){
             return false;
-    }
-    if(document.getElementById('blood-glucose-input').value != "Not Required" && document.getElementById('blood-glucose-input').value != ""){
+        }
         updatePlusClick();
         return true;
     }
-    if(document.getElementById('weight-input').value != "Not Required" && document.getElementById('weight-input').value != ""){
+    if(document.getElementById('weight-input').value != "Not Required" && document.getElementById('weight-input').value != "" && !document.getElementById('weight-input').readOnly){
+        if(!checkComment()){
+            return false;
+        }
         updatePlusClick();
         return true;
     }
-    if(document.getElementById('insulin-taken-input').value != "Not Required" && document.getElementById('insulin-taken-input').value != ""){
+    if(document.getElementById('insulin-taken-input').value != "Not Required" && document.getElementById('insulin-taken-input').value != "" && !document.getElementById('insulin-taken-input').readOnly){
+        if(!checkComment()){
+            return false;
+        }
         updatePlusClick();
         return true;
     }
-    if(document.getElementById('exericse-input').value != "Not Required" && document.getElementById('exericse-input').value != ""){
+    if(document.getElementById('exericse-input').value != "Not Required" && document.getElementById('exericse-input').value != "" && !document.getElementById('exericse-input').readOnly){
+        if(!checkComment()){
+            return false;
+        }
         updatePlusClick();
         return true;
+    }
+    if(document.getElementById('blood-glucose-input').readOnly && document.getElementById('weight-input').readOnly && document.getElementById('insulin-taken-input').readOnly && document.getElementById('exericse-input').readOnly ){
+        try {
+            Swal.fire(
+                'All data has been updated',
+                'please close',
+                'error'
+              )
+        } catch (error) {
+            document.getElementById("myModal").style.display = "block";
+            document.getElementById("error-message").innerHTML ="All data has been updated"
+        }
+        return false;
     }
     try {
         Swal.fire(
@@ -186,6 +89,62 @@ function validation(){
     }
     
     return false;
+}
+
+function checkComment(){
+    if(document.getElementById('blood-glucose-input').value != "Not Required" && document.getElementById('blood-glucose-input').value != "" && document.getElementById('comment').innerHTML.includes("+ Comment")){
+        try {
+            Swal.fire(
+                'Please enter blood glucose comment before update',
+                'please check',
+                'error'
+              )
+        } catch (error) {
+            document.getElementById("myModal").style.display = "block";
+            document.getElementById("error-message").innerHTML ="Please enter blood glucose comment before update"
+        }
+        return false;
+    }
+    if(document.getElementById('weight-input').value != "" && document.getElementById('comment1').innerHTML.includes("+ Comment") && document.getElementById('weight-input').value != "Not Required"){
+        try {
+            Swal.fire(
+                'Please enter weight comment before update',
+                'please check',
+                'error'
+              )
+        } catch (error) {
+            document.getElementById("myModal").style.display = "block";
+            document.getElementById("error-message").innerHTML ="Please enter weight comment before update"
+        }
+        return false;
+    }
+    if(document.getElementById('insulin-taken-input').value != "Not Required" && document.getElementById('insulin-taken-input').value != "" &&  document.getElementById('comment2').innerHTML.includes("+ Comment")){
+        try {
+            Swal.fire(
+                'Please enter insulin taken comment before update',
+                'please check',
+                'error'
+              )
+        } catch (error) {
+            document.getElementById("myModal").style.display = "block";
+            document.getElementById("error-message").innerHTML ="Please enter insulin taken comment before update"
+        }
+        return false;
+    }
+    if(document.getElementById('exericse-input').value != "Not Required" && document.getElementById('exericse-input').value != "" &&  document.getElementById('comment3').innerHTML.includes("+ Comment") ){
+        try {
+            Swal.fire(
+                'Please enter exericse comment before update',
+                'please check',
+                'error'
+              )
+        } catch (error) {
+            document.getElementById("myModal").style.display = "block";
+            document.getElementById("error-message").innerHTML ="Please enter exericse comment before update"
+        }
+        return false;
+    }
+    return true;
 }
 
 function updatePlusClick() {
@@ -209,8 +168,8 @@ function updatePlusClick() {
         document.getElementById('blur').style.display = 'none';
         document.getElementById('cancel').style.display = 'none';
         document.getElementById('container').style.display = 'none';
-}
     }
+}   
 
 
 function setCommentWindow() {

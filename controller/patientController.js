@@ -42,8 +42,8 @@ const updateData  = async(req,res,next) =>{
             //     {value: req.body.blood_glucose, time:dateString}
             // )
         }else if(leastTime.split('/')[1] != currentMonth || leastTime.split('/')[0] != currentDay){
-            // await Patient.findOneAndUpdate({_id:req.params.id}, {$push: {bloodGlucose: data._id}});
-            // data.save() 
+            await Patient.findOneAndUpdate({_id:req.params.id}, {$push: {bloodGlucose: data._id}});
+            data.save() 
         }
     }
     if(req.body.weight != "" && req.body.weight != "Not Required" ){
@@ -60,8 +60,8 @@ const updateData  = async(req,res,next) =>{
             //     {value: req.body.weight, time:dateString}
             // )
         }else if(leastTime.split('/')[1] != currentMonth || leastTime.split('/')[0] != currentDay){
-            // await Patient.findOneAndUpdate({_id:req.params.id}, {$push: {weight: data._id}});
-            // data.save() 
+            await Patient.findOneAndUpdate({_id:req.params.id}, {$push: {weight: data._id}});
+            data.save() 
         }
     }
     if(req.body.insulin_taken != "" && req.body.insulin_taken != "Not Required" ){
@@ -78,8 +78,8 @@ const updateData  = async(req,res,next) =>{
             //     {value: req.body.insulin_taken, time:dateString}
             // )
         }else if(leastTime.split('/')[1] != currentMonth || leastTime.split('/')[0] != currentDay){
-            // await Patient.findOneAndUpdate({_id:req.params.id}, {$push: {insulinTaken: data._id}});
-            // data.save()
+            await Patient.findOneAndUpdate({_id:req.params.id}, {$push: {insulinTaken: data._id}});
+            data.save()
         }
     }
     if(req.body.exercise != "" && req.body.exercise != "Not Required" ){
@@ -96,8 +96,8 @@ const updateData  = async(req,res,next) =>{
             //     {value: req.body.exercise, time:dateString}
             // )
         }else if(leastTime.split('/')[1] != currentMonth || leastTime.split('/')[0] != currentDay){
-            // await Patient.findOneAndUpdate({_id:req.params.id}, {$push: {exercise: data._id}});
-            // data.save() 
+            await Patient.findOneAndUpdate({_id:req.params.id}, {$push: {exercise: data._id}});
+            data.save() 
         }
     }
     // redirect to patient's data page
