@@ -235,6 +235,7 @@
     var data = []
     data.push({{ this.healthyData_required }})
     setPatientDataValue(data)
+    checkUpdated();
     {{/with}}
     document.getElementsByClassName("close")[0].onclick = function() {
         document.getElementById("myModal").style.display = "none";

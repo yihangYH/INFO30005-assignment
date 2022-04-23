@@ -36,6 +36,20 @@ function reloadUpdatePage(){
 }
 
 function validation(){
+    if(document.getElementById('weight-input').readOnly && document.getElementById('weight-input').readOnly
+        && document.getElementById('insulin-taken-input').readOnly && document.getElementById('exericse-input').readOnly){
+            try {
+                Swal.fire(
+                    'You already update all datas',
+                    'please close',
+                    'error'
+                  )
+            } catch (error) {
+                document.getElementById("myModal").style.display = "block";
+                document.getElementById("error-message").innerHTML ="You already update all datas"
+            }
+            return false;
+    }
     if(document.getElementById('blood-glucose-input').value != "Not required" && document.getElementById('blood-glucose-input').value != ""){
 
         return true;
@@ -52,7 +66,6 @@ function validation(){
 
         return true;
     }
-    
     try {
         Swal.fire(
             'Please enter at least one data before update',
@@ -422,4 +435,64 @@ function setPatientDataValue(data){
         }
     }
 
+}
+
+function checkUpdated(){
+    let AuDate = new Date().toLocaleString("en-US", {timeZone: "Australia/Sydney"});
+    let dateString = AuDate.toString().replace(',', ' ');
+    for(let i = 0 ; i < 4; i++){
+        if(i == 0){
+            const currentMonth = dateString.split('/')[1];
+            const currentDay = dateString.split('/')[0];
+            const updateTime = document.getElementById('blood-glucose-date').innerHTML;
+            let time = updateTime.substring(18).split(' ')[0].split('/');
+            const day = time[0];
+            const month = time[1];
+            if(day == currentDay && month == currentMonth){
+                document.getElementById('blood-glucose-input').readOnly = true
+                document.getElementById('blood-glucose-input').value = document.getElementById('blood-glucose-input').innerHTML
+                document.getElementById('butn1').disabled = true
+                document.getElementById('butn1').style.cursor = "none"
+            }
+        }else if(i == 1){
+            const currentMonth = dateString.split('/')[1];
+            const currentDay = dateString.split('/')[0];
+            const updateTime = document.getElementById('weight-date').innerHTML;
+            let time = updateTime.substring(18).split(' ')[0].split('/');
+            const day = time[0];
+            const month = time[1];
+            if(day == currentDay && month == currentMonth){
+                document.getElementById('weight-input').readOnly = true
+                document.getElementById('weight-input').value = document.getElementById('weight-input').innerHTML
+                document.getElementById('butn2').disabled = true
+                document.getElementById('butn2').style.cursor = "none"
+            }
+        }else if(i == 2){
+            const currentMonth = dateString.split('/')[1];
+            const currentDay = dateString.split('/')[0];
+            const updateTime = document.getElementById('insulin-taken-date').innerHTML;
+            let time = updateTime.substring(18).split(' ')[0].split('/');
+            const day = time[0];
+            const month = time[1];
+            if(day == currentDay && month == currentMonth){
+                document.getElementById('insulin-taken-input').readOnly = true
+                document.getElementById('insulin-taken-input').value = document.getElementById('insulin-taken-input').innerHTML
+                document.getElementById('butn3').disabled = true
+                document.getElementById('butn3').style.cursor = "none"
+            }
+        }else{
+            const currentMonth = dateString.split('/')[1];
+            const currentDay = dateString.split('/')[0];
+            const updateTime = document.getElementById('exercise-date').innerHTML;
+            let time = updateTime.substring(18).split(' ')[0].split('/');
+            const day = time[0];
+            const month = time[1];
+            if(day == currentDay && month == currentMonth){
+                document.getElementById('exericse-input').readOnly = true
+                document.getElementById('exericse-input').value = document.getElementById('exericse-input').innerHTML
+                document.getElementById('butn4').disabled = true
+                document.getElementById('butn4').style.cursor = "none"
+            }
+        }
+    }
 }
