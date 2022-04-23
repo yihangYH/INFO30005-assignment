@@ -33,7 +33,9 @@ const updateData  = async(req,res,next) =>{
         const data = new bloodGlucose({
             value: req.body.blood_glucose,
             time:dateString,
+            comment:req.body.blood_glucose_comment,
         })
+
         if(leastTime.split('/')[1] == currentMonth && leastTime.split('/')[0] == currentDay && req.body.blood_glucose.replace(/\s/g,'')!= leastValue){
             // await bloodGlucose.findOneAndUpdate(
             //     {_id:patient.bloodGlucose[patient.bloodGlucose.length - 1]._id}, 
@@ -50,6 +52,7 @@ const updateData  = async(req,res,next) =>{
         const data = new weight({
             value: req.body.weight,
             time:dateString,
+            comment:req.body.weight_comment,
         })
         if(leastTime.split('/')[1] == currentMonth && leastTime.split('/')[0] == currentDay && req.body.weight.replace(/\s/g,'')!= leastValue){
             // await weight.findOneAndUpdate(
@@ -67,6 +70,7 @@ const updateData  = async(req,res,next) =>{
         const data = new insulinTaken({
             value: req.body.insulin_taken,
             time:dateString,
+            comment:req.body.insulin_comment,
         })
         if(leastTime.split('/')[1] == currentMonth && leastTime.split('/')[0] == currentDay && req.body.insulin_taken.replace(/\s/g,'')!= leastValue){
             // await insulinTaken.findOneAndUpdate(
@@ -84,6 +88,7 @@ const updateData  = async(req,res,next) =>{
         const data = new exercise({
             value: req.body.exercise,
             time:dateString,
+            comment:req.body.exercise_comment,
         })
         if(leastTime.split('/')[1] == currentMonth && leastTime.split('/')[0] == currentDay && req.body.exercise!= leastValue){
             // await exercise.findOneAndUpdate(
