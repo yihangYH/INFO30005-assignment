@@ -13,6 +13,7 @@ const patientSchema = new mongoose.Schema({
     exercise: [{type:mongoose.Schema.Types.ObjectId, ref:'exercise'}],
     insulinTaken: [{type:mongoose.Schema.Types.ObjectId, ref:'insulinTaken'}],
     bloodGlucose: [{type:mongoose.Schema.Types.ObjectId, ref:'bloodGlucose'}],
+    supportMessage: String,
 
 })
 
