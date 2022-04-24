@@ -1,3 +1,10 @@
+const datas = ['blood-glucose-data', 'weight-data', 'insulin-taken-data', 'exercise-data'];
+const dates = ['blood-glucose-date', 'weight-date', 'insulin-taken-date', 'exercise-date'];
+const inputs = ['blood-glucose-input', 'weight-input', 'insulin-taken-input', 'exericse-input'];
+const pens = ['pen', 'pen1', 'pen2', 'pen3'];
+const butns = ['butn1', 'butn2', 'butn3', 'butn4'];
+const comments = ['comment', 'comment1', 'comment2', 'comment3'];
+
 function updateBtnclick() {
     document.getElementById('main-body').style.display = 'none';
     document.getElementById('date').style.display = 'none';
@@ -521,33 +528,33 @@ function cancel() {
     // window.location.reload();
 }
 
-function weightFunction() {
-    document.getElementById('weight-input').readOnly = true
-    document.getElementById('weight-input').value = "Not Required"
-    document.getElementById('butn2').disabled = true
-    document.getElementById('butn2').style.cursor = "none"
-}
+// function weightFunction() {
+//     document.getElementById('weight-input').readOnly = true
+//     document.getElementById('weight-input').value = "Not Required"
+//     document.getElementById('butn2').disabled = true
+//     document.getElementById('butn2').style.cursor = "none"
+// }
 
-function bloodGlucose() {
-    document.getElementById('blood-glucose-input').readOnly = true
-    document.getElementById('blood-glucose-input').value = "Not Required"
-    document.getElementById('butn1').disabled = true
-    document.getElementById('butn1').style.cursor = "none"
-}
+// function bloodGlucose() {
+//     document.getElementById('blood-glucose-input').readOnly = true
+//     document.getElementById('blood-glucose-input').value = "Not Required"
+//     document.getElementById('butn1').disabled = true
+//     document.getElementById('butn1').style.cursor = "none"
+// }
 
-function insulin() {
-    document.getElementById('insulin-taken-input').readOnly = true
-    document.getElementById('insulin-taken-input').value = "Not Required"
-    document.getElementById('butn3').disabled = true
-    document.getElementById('butn3').style.cursor = "none"
-}
+// function insulin() {
+//     document.getElementById('insulin-taken-input').readOnly = true
+//     document.getElementById('insulin-taken-input').value = "Not Required"
+//     document.getElementById('butn3').disabled = true
+//     document.getElementById('butn3').style.cursor = "none"
+// }
 
-function exerciseFunction() {
-    document.getElementById('exericse-input').readOnly = true
-    document.getElementById('exericse-input').value = "Not Required"
-    document.getElementById('butn4').disabled = true
-    document.getElementById('butn4').style.cursor = "none"
-}
+// function exerciseFunction() {
+//     document.getElementById('exericse-input').readOnly = true
+//     document.getElementById('exericse-input').value = "Not Required"
+//     document.getElementById('butn4').disabled = true
+//     document.getElementById('butn4').style.cursor = "none"
+// }
 
 function setPatientDataValue(data) {
     // if (document.getElementById('blood-glucose-input').readOnly) {
@@ -562,10 +569,7 @@ function setPatientDataValue(data) {
     // if (document.getElementById('exericse-input').readOnly) {
     //     document.getElementById('pen3').style.display = "none"
     // }
-    const datas = ['blood-glucose-data', 'weight-data', 'insulin-taken-data', 'exercise-data'];
-    const dates = ['blood-glucose-date', 'weight-date', 'insulin-taken-date', 'exercise-date'];
-    const inputs = ['blood-glucose-input', 'weight-input', 'insulin-taken-input', 'exericse-input'];
-    const pens = ['pen', 'pen1', 'pen2', 'pen3'];
+
     for (let i = 0; i < 4; i++) {
         if (document.getElementById(inputs[i]).readOnly) {
             document.getElementById(pens[i]).style.display = "none"
@@ -573,8 +577,12 @@ function setPatientDataValue(data) {
         if (!data[i]) {
             document.getElementById(datas[i]).innerHTML = "Not Required"
             document.getElementById(dates[i]).innerHTML = "Updated on: No Record"
-            bloodGlucose()
+            document.getElementById(inputs[i]).readOnly = true
+            document.getElementById(inputs[i]).value = "Not Required"
+            document.getElementById(butns[i]).disabled = true
+            document.getElementById(butns[i]).style.cursor = "none"
         }
+
         // if (i == 0) {
         //     if (!data[0]) {
         //         document.getElementById("blood-glucose-data").innerHTML = "Not Required"
@@ -609,11 +617,6 @@ function checkUpdated() {
         timeZone: "Australia/Sydney"
     });
     let dateString = AuDate.toString().replace(',', ' ');
-    const inputs = ['blood-glucose-input', 'weight-input', 'insulin-taken-input', 'exericse-input'];
-    const dates = ['blood-glucose-date', 'weight-date', 'insulin-taken-date', 'exercise-date'];
-    const datas = ['blood-glucose-data', 'weight-data', 'insulin-taken-data', 'exercise-data'];
-    const butns = ['butn1', 'butn2', 'butn3', 'butn4'];
-    const comments = ['comment', 'comment1', 'comment2', 'comment3'];
     for (let i = 0; i < 4; i++) {
         const currentMonth = dateString.split('/')[1];
         const currentDay = dateString.split('/')[0];
