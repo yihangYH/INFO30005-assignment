@@ -363,14 +363,17 @@
     }
 
     .text {
-        position: absolute;
-        top: 71%;
-        left: 0%;
-        padding: 50px 20px;
-        text-align: center;
+        position: relative;
+        top: 75%;
+        padding-left: 5%;
+        padding-right: 5%;
         color: #A22929;
-        font-size: xx-large;
+        font-size: x-large;
         font-weight: lighter;
+    }
+    .text p{
+        width: 100%;
+        text-align: center;
     }
 
     .blur {
@@ -969,13 +972,16 @@
 
     .text {
         display: flex;
-        position: absolute;
-        top: 71%;
-        left: 33.5%;
-        padding: 50px 20px;
-        text-align: center;
+        position: relative;
+        top: 70%;
+        padding-right: 20%;
+        padding-left: 20%;
         color: #A22929;
         font-size: 35px;
+    }
+    .text p{
+        text-align: center;
+        width: 100%;
     }
 
     .blur {
@@ -1587,13 +1593,16 @@
 
     .text {
         display: flex;
-        position: absolute;
+        position: relative;
         top: 68%;
-        left: 38%;
-        padding: 50px 20p;
-        text-align: center;
+        padding-left: 20%;
+        padding-right: 20%;
         color: #A22929;
         font-size: 30px;
+    }
+    .text p{
+        text-align: center;
+        width: 100%;
     }
 
     .blur {
