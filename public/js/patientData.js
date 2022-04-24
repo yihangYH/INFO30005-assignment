@@ -19,8 +19,6 @@ function updateBtnclick() {
 
 function reloadUpdatePage() {
     let today = new Date();
-
-
     for (let i = 0; i < 4; i++) {
         var date = document.getElementById(dates[i]).innerHTML
         date = date.substring(17, date.length - 10).split('/')
@@ -57,7 +55,7 @@ function reloadUpdatePage() {
 
 function validation() {
     for (let i = 0; i < 4; i++) {
-        if (document.getElementById(indexedDB[i]).value != "Not Required" && document.getElementById(inputs[i]).value != "" && !document.getElementById(inputs[i]).readOnly) {
+        if (document.getElementById(inputs[i]).value != "Not Required" && document.getElementById(inputs[i]).value != "" && !document.getElementById(inputs[i]).readOnly) {
             if (!checkComment()) {
                 return false;
             }
@@ -274,7 +272,7 @@ function updatePlusClick() {
     // }
 
     if (validator) {
-        document.getElementById('main-body').style.display = '';
+        document.getElementById('main-body').style.display = 'flex';
         document.getElementById('date').style.display = 'flex';
         document.getElementById('text').style.display = 'block';
         document.getElementById('blur').style.display = 'none';
@@ -553,7 +551,7 @@ function commentClear3() {
 
 
 function cancel() {
-    document.getElementById('main-body').style.display = '';
+    document.getElementById('main-body').style.display = 'flex';
     document.getElementById('date').style.display = 'flex';
     document.getElementById('text').style.display = 'block';
     document.getElementById('blur').style.display = 'none';
