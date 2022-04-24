@@ -550,22 +550,26 @@ function exerciseFunction() {
 }
 
 function setPatientDataValue(data) {
-    if (document.getElementById('blood-glucose-input').readOnly) {
-        document.getElementById('pen').style.display = "none"
-    }
-    if (document.getElementById('weight-input').readOnly) {
-        document.getElementById('pen1').style.display = "none"
-    }
-    if (document.getElementById('insulin-taken-input').readOnly) {
-        document.getElementById('pen2').style.display = "none"
-    }
-    if (document.getElementById('exericse-input').readOnly) {
-        document.getElementById('pen3').style.display = "none"
-    }
+    // if (document.getElementById('blood-glucose-input').readOnly) {
+    //     document.getElementById('pen').style.display = "none"
+    // }
+    // if (document.getElementById('weight-input').readOnly) {
+    //     document.getElementById('pen1').style.display = "none"
+    // }
+    // if (document.getElementById('insulin-taken-input').readOnly) {
+    //     document.getElementById('pen2').style.display = "none"
+    // }
+    // if (document.getElementById('exericse-input').readOnly) {
+    //     document.getElementById('pen3').style.display = "none"
+    // }
     const datas = ['blood-glucose-data', 'weight-data', 'insulin-taken-data', 'exercise-data'];
     const dates = ['blood-glucose-date', 'weight-date', 'insulin-taken-date', 'exercise-date'];
-    
+    const inputs = ['blood-glucose-input', 'weight-input', 'insulin-taken-input', 'exericse-input'];
+    const pens = ['pen', 'pen1', 'pen2', 'pen3'];
     for (let i = 0; i < 4; i++) {
+        if (document.getElementById(inputs[i]).readOnly) {
+            document.getElementById(pens[i]).style.display = "none"
+        }
         if (!data[i]) {
             document.getElementById(datas[i]).innerHTML = "Not Required"
             document.getElementById(dates[i]).innerHTML = "Updated on: No Record"
