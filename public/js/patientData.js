@@ -274,7 +274,7 @@ function updatePlusClick() {
     // }
 
     if (validator) {
-        document.getElementById('main-body').style.display = 'flex';
+        document.getElementById('main-body').style.display = '';
         document.getElementById('date').style.display = 'flex';
         document.getElementById('text').style.display = 'block';
         document.getElementById('blur').style.display = 'none';
@@ -553,7 +553,7 @@ function commentClear3() {
 
 
 function cancel() {
-    document.getElementById('main-body').style.display = 'flex';
+    document.getElementById('main-body').style.display = '';
     document.getElementById('date').style.display = 'flex';
     document.getElementById('text').style.display = 'block';
     document.getElementById('blur').style.display = 'none';
