@@ -1,8 +1,8 @@
 <h1>Displaying all data</h1>
 
 <ul>
-    {{#each data}}
-    {{log data}}
+    {{#with data}}
+    
     <li>{{this._id}},{{this.first_name}}</li>
-    {{/each}}
+    {{/with}}
 </ul>

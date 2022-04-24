@@ -10,7 +10,7 @@ const schema = new mongoose.Schema({
     patients: [{type:mongoose.Schema.Types.ObjectId, ref:'patient'}]
 })
 
-const Clinician = mongoose.model('Clinician', schema)
+const Clinician = mongoose.model('Clinician', schema, 'clinician')
 
 
 // const Clinician = [
