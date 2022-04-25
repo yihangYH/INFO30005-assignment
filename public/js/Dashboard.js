@@ -11,3 +11,11 @@ function click_sideBtn (){
         sideBtn.style.transform = "none"
     }
 }
+
+window.onload = function(){
+    let AuDate = new Date().toLocaleString("en-US", {
+        timeZone: "Australia/Sydney"
+    });
+    let dateString = AuDate.toString().replace(',', ' ');
+    document.getElementById("tableTime").innerHTML = dateString.split(" ")[0]
+}

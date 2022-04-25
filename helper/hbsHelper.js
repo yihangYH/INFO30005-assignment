@@ -11,7 +11,8 @@ hbs.handlebars.registerHelper("getTime", function(data) {
     const latest = data[data.length-1].time
     if (latest){
         const time = latest.split(" ")[2].split(":")
-        return twoDigit(time[0])+":"+twoDigit(time[1])+" "+latest.split(" ")[3]
+        const date = latest.split(" ")[0].split("/")
+        return twoDigit(date[0])+"/"+twoDigit(date[1])+"/"+twoDigit(date[2])+" "+twoDigit(time[0])+":"+twoDigit(time[1])+" "+latest.split(" ")[3]
     }
     else{
         return latest

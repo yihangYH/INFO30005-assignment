@@ -1,3 +1,4 @@
+{{#with data}}
 <header>
     <div class="topBar">
 
@@ -20,7 +21,7 @@
             <img class = "line" src="/res/Line.png" alt="line">
 
             <div id="clinicianName">
-                <p>Michael Gu</p>
+                <p>{{this.screen_name}}</p>
                 <div id="sideBar">
                     <img id="triangle" src="/res/triangle.png" alt="triangle" onclick="click_sideBtn()">
                     <div class="sideButton" style="display: none;">
@@ -40,7 +41,7 @@
         <table>
             <caption>
                 <p id = "tableTitle">Dashboard</p>
-                <p id="tableTime">2022.1.10</p>
+                <p id="tableTime"></p>
             </caption>
             <tr class = "tableHeading">
                 <th>Name</th>
@@ -50,15 +51,6 @@
                 <th>Exercise(steps)</th>
             </tr>
 
-
-            {{!-- <tr>
-                <td>Alan</td>
-                <td>130 <span>13:00</span></td>
-                <td>80 <span>13:00</span></td>
-                <td>2 <span>13:00</span></td>
-                <td>8000 <span>13:00</span></td>
-            </tr> --}}
-            {{#with data}}
             {{#each patient}}
             <tr>
             <td>{{this.first_name}}</td>
@@ -68,8 +60,8 @@
             <td style="{{checkSafety this.safety_threshold this.exercise "3"}}">{{getValue this.exercise}}<span>{{getTime this.exercise}}</span></td>
             </tr>
             {{/each}}
-            {{/with}}
         </table>
     </div>
 </main>
+{{/with}}
 

@@ -1,7 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans");
+
 * {
     padding: 0;
     margin: 0;
+    font-family: 'Open Sans ';
 }
+
 body{
     background-color:#FDF9F8;
 }
@@ -35,7 +39,7 @@ body{
 }
 
 .topButton>a{
-    font-size: 130%;
+    font-size: 150%;
     text-decoration: none;
     color: #000;
 
@@ -133,9 +137,10 @@ td,th{
 #dashboard span{
     position:absolute;
     top:69%;
-    left:73%;
+    left:53%;
     font-size: 80%;
     color: #707070;
     text-align: right;
+    font-style: normal;
 }
 
