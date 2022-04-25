@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-
+require('./patient.js')
 const schema = new mongoose.Schema({
     userid: String,
     password: String,
@@ -7,7 +7,7 @@ const schema = new mongoose.Schema({
     last_name: String,
     screen_name: String,
     bio: String,
-    patients: [{type:mongoose.Schema.Types.ObjectId, ref:'patient'}]
+    patient: [{type:mongoose.Schema.Types.ObjectId, ref:'patient'}]
 })
 
 const Clinician = mongoose.model('Clinician', schema, 'clinician')
