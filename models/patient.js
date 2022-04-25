@@ -8,13 +8,13 @@ const patientSchema = new mongoose.Schema({
     screen_name: String,
     bio: String,
     birthday: String,
-    healthyData_required: [Boolean], 
+    healthyData_required: [Boolean],
+    safety_threshold: [String],
     weight: [{type:mongoose.Schema.Types.ObjectId, ref:'weight'}],
     exercise: [{type:mongoose.Schema.Types.ObjectId, ref:'exercise'}],
     insulinTaken: [{type:mongoose.Schema.Types.ObjectId, ref:'insulinTaken'}],
     bloodGlucose: [{type:mongoose.Schema.Types.ObjectId, ref:'bloodGlucose'}],
     supportMessage: String,
-
 })
 
 const patient = mongoose.model('patient', patientSchema, 'patient')

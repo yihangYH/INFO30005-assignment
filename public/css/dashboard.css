@@ -75,16 +75,21 @@ body{
     color: #000;
 }
 
+#sideBar p{
+    margin-bottom: 7%;
+}
+
 
 .sideButton{
     position: absolute;
-    width: 500%;
+    width: 600%;
     top:90%;
-    left:-430%;
-    font-size: 20%;
+    left:-550%;
+    font-size: 30%;
     font-weight: normal;
     text-decoration: underline;
     text-align: right;
+    z-index:9;
 }
 
 .line{
@@ -120,6 +125,7 @@ td,th{
     padding-top: 2%;
     padding-bottom:2%;
     position: relative;
+    font-size: 130%;
 }
 
 #dashboard>table{    
@@ -138,9 +144,10 @@ td,th{
     position:absolute;
     top:69%;
     left:53%;
-    font-size: 80%;
+    font-size: 60%;
     color: #707070;
     text-align: right;
-    font-style: normal;
+    font-weight: normal !important;
+    font-style: normal !important;
 }
 
