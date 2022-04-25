@@ -112,7 +112,7 @@ function updatePlusClick() {
     }
 
     if (validator) {
-        document.getElementById('main-body').style.display = 'flex';
+        document.getElementById('main-body').style.display = '';
         document.getElementById('date').style.display = 'flex';
         document.getElementById('text').style.display = 'block';
         document.getElementById('blur').style.display = 'none';
@@ -176,7 +176,9 @@ function submit0() {
             document.getElementById('pen').style.position = 'absolute';
             if (window.innerWidth == 375) {
                 document.getElementById('pen').style.left = '122%';
-            } else if (window.innerWidth == 1980) {
+            } else if (window.innerWidth > 1900) {
+                document.getElementById('pen').style.left = '98%';
+            } else if( window.innerWidth > 1000 && window.innerWidth < 1200){
                 document.getElementById('pen').style.left = '98%';
             }
             // document.getElementById('pen').style.left='122%';
@@ -191,7 +193,9 @@ function submit0() {
 
             if (window.innerWidth == 375) {
                 document.getElementById('pen').style.left = '122%';
-            } else if (window.innerWidth == 1980) {
+            } else if (window.innerWidth > 1900) {
+                document.getElementById('pen').style.left = '98%';
+            } else if( window.innerWidth > 1000 && window.innerWidth < 1200){
                 document.getElementById('pen').style.left = '98%';
             }
         }
@@ -220,7 +224,9 @@ function submit1() {
             document.getElementById('pen1').style.position = 'absolute';
             if (window.innerWidth == 375) {
                 document.getElementById('pen1').style.left = '120%';
-            } else if (window.innerWidth == 1980) {
+            } else if (window.innerWidth > 1900) {
+                document.getElementById('pen1').style.left = '98%';
+            } else if( window.innerWidth > 1000 && window.innerWidth < 1200){
                 document.getElementById('pen1').style.left = '98%';
             }
         } else {
@@ -233,7 +239,9 @@ function submit1() {
             document.getElementById('pen1').style.position = 'absolute';
             if (window.innerWidth == 375) {
                 document.getElementById('pen1').style.left = '120%';
-            } else if (window.innerWidth == 1980) {
+            } else if (window.innerWidth > 1900) {
+                document.getElementById('pen1').style.left = '98%';
+            } else if( window.innerWidth > 1000 && window.innerWidth < 1200){
                 document.getElementById('pen1').style.left = '98%';
             }
         }
@@ -265,6 +273,8 @@ function submit2() {
                 document.getElementById('pen2').style.left = '120%';
             } else if (window.innerWidth == 1980) {
                 document.getElementById('pen2').style.left = '98%';
+            } else if( window.innerWidth > 1000 && window.innerWidth < 1200){
+                document.getElementById('pen2').style.left = '98%';
             }
         } else {
             document.getElementById('comment2').innerHTML = text;
@@ -276,7 +286,9 @@ function submit2() {
             document.getElementById('pen2').style.position = 'absolute';
             if (window.innerWidth == 375) {
                 document.getElementById('pen2').style.left = '120%';
-            } else if (window.innerWidth == 1980) {
+            } else if (window.innerWidth > 1900) {
+                document.getElementById('pen2').style.left = '98%';
+            } else if( window.innerWidth > 1000 && window.innerWidth < 1200){
                 document.getElementById('pen2').style.left = '98%';
             }
         }
@@ -303,7 +315,9 @@ function submit3() {
             document.getElementById('pen3').style.position = 'absolute';
             if (window.innerWidth == 375) {
                 document.getElementById('pen3').style.left = '120%';
-            } else if (window.innerWidth == 1980) {
+            } else if (window.innerWidth >1900) {
+                document.getElementById('pen3').style.left = '98%';
+            } else if( window.innerWidth > 1000 && window.innerWidth < 1200){
                 document.getElementById('pen3').style.left = '98%';
             }
         } else {
@@ -316,7 +330,9 @@ function submit3() {
             document.getElementById('pen3').style.position = 'absolute';
             if (window.innerWidth == 375) {
                 document.getElementById('pen3').style.left = '120%';
-            } else if (window.innerWidth == 1980) {
+            } else if (window.innerWidth > 1900) {
+                document.getElementById('pen3').style.left = '98%';
+            } else if( window.innerWidth > 1000 && window.innerWidth < 1200){
                 document.getElementById('pen3').style.left = '98%';
             }
         }
@@ -335,7 +351,9 @@ function commentClear() {
     document.getElementById('pen').style.position = 'absolute';
     if (window.innerWidth == 375) {
         document.getElementById('pen').style.left = '122%';
-    } else if (window.innerWidth == 1980) {
+    } else if (window.innerWidth > 1900) {
+        document.getElementById('pen').style.left = '98%';
+    } else if( window.innerWidth > 1000 && window.innerWidth < 1200){
         document.getElementById('pen').style.left = '98%';
     }
 }
@@ -351,7 +369,9 @@ function commentClear1() {
     document.getElementById('pen1').style.position = 'absolute';
     if (window.innerWidth == 375) {
         document.getElementById('pen1').style.left = '122%';
-    } else if (window.innerWidth == 1980) {
+    } else if (window.innerWidth > 1900) {
+        document.getElementById('pen1').style.left = '98%';
+    } else if( window.innerWidth > 1000 && window.innerWidth < 1200){
         document.getElementById('pen1').style.left = '98%';
     }
 }
@@ -367,7 +387,9 @@ function commentClear2() {
     document.getElementById('pen2').style.position = 'absolute';
     if (window.innerWidth == 375) {
         document.getElementById('pen2').style.left = '122%';
-    } else if (window.innerWidth == 1980) {
+    } else if (window.innerWidth > 1900) {
+        document.getElementById('pen2').style.left = '98%';
+    } else if( window.innerWidth > 1000 && window.innerWidth < 1200){
         document.getElementById('pen2').style.left = '98%';
     }
 }
@@ -383,14 +405,16 @@ function commentClear3() {
     document.getElementById('pen3').style.position = 'absolute';
     if (window.innerWidth == 375) {
         document.getElementById('pen3').style.left = '122%';
-    } else if (window.innerWidth == 1980) {
+    } else if (window.innerWidth > 1900) {
+        document.getElementById('pen3').style.left = '98%';
+    } else if( window.innerWidth > 1000 && window.innerWidth < 1200){
         document.getElementById('pen3').style.left = '98%';
     }
 }
 
 
 function cancel() {
-    document.getElementById('main-body').style.display = 'flex';
+    document.getElementById('main-body').style.display = '';
     document.getElementById('date').style.display = 'flex';
     document.getElementById('text').style.display = 'block';
     document.getElementById('blur').style.display = 'none';
