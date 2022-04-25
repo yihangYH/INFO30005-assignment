@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const {Patient} = require('../models/patient.js')
+const {patient} = require('../models/patient.js')
 
 const login = async(req,res,next) => {
     try {
@@ -13,11 +13,11 @@ const login = async(req,res,next) => {
 const loginToData = async(req,res,next) => {
     try {
         if(typeof req.body.isDoctor == "object"){
-            const patient = await Patient.findOne({userid:req.body.userid}).lean();
-            if(patient != null && patient.password == req.body.password){
+            const patientData = await patient.findOne({userid:req.body.userid}).lean();
+            if(patientData != null &&patientData.password == req.body.password){
                 res.status("202")
-                res.statusMessage = patient._id
-            }else if(patient != null && patient.password != req.body.password){
+                res.statusMessage = patientData._id
+            }else if(patientData != null && patientData.password != req.body.password){
                 res.status("201")
             }
            res.send()
