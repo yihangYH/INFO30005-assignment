@@ -26,3 +26,17 @@ function twoDigit(data){
         return data
     }
 }
+
+
+hbs.handlebars.registerHelper("checkSafety", function(safety,value,index) {
+    const bound =  safety[index];
+    if(!bound.includes("Not Required")){
+        const lower = Number(bound.split("-")[0])
+        const upper = Number(bound.split("-")[1])
+        const latestValue = value[value.length-1].value
+        if(latestValue<=lower || latestValue>=upper){
+            return "color: red; font-style: italic; font-weight: bold; "
+        }
+    }
+    return ""
+});
