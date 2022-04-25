@@ -19,11 +19,16 @@ function updateBtnclick() {
 }
 
 function reloadUpdatePage() {
-    let today = new Date();
     for (let i = 0; i < 4; i++) {
         var date = document.getElementById(dates[i]).innerHTML
         date = date.substring(17, date.length - 10).split('/')
-        if (today.getDate() == date[1] && today.getMonth() == date[0] - 1) {
+        let AuDate = new Date().toLocaleString("en-US", {
+            timeZone: "Australia/Sydney"
+        });
+        let dateString = AuDate.toString().replace(',', ' ');
+        const currentMonth = dateString.split('/')[0];
+        const currentDay = dateString.split('/')[1];
+        if (currentDay == date[1].replace(/\s/g, '') && currentMonth == date[0].replace(/\s/g, '')) {
             document.getElementById(inputs[i]).value = document.getElementById(datas[i]).innerHTML.split('&')[0];
         }
     }
@@ -447,12 +452,12 @@ function checkUpdated() {
     });
     let dateString = AuDate.toString().replace(',', ' ');
     for (let i = 0; i < 4; i++) {
-        const currentMonth = dateString.split('/')[1];
-        const currentDay = dateString.split('/')[0];
+        const currentMonth = dateString.split('/')[0];
+        const currentDay = dateString.split('/')[1];
         const updateTime = document.getElementById(dates[i]).innerHTML;
         let time = updateTime.substring(18).split(' ')[0].split('/');
-        const day = time[0];
-        const month = time[1];
+        const day = time[1];
+        const month = time[0];
         if (day == currentDay && month == currentMonth) {
             document.getElementById(inputs[i]).readOnly = true
             document.getElementById(inputs[i]).value = document.getElementById(inputs[i]).innerHTML
