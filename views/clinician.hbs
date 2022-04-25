@@ -1,0 +1,69 @@
+{{#with data}}
+<header>
+    <div class="topBar">
+        <div class="logo">
+            <a href=""> 
+                <img src="../res/logo.png" alt="logo">
+            </a>
+        </div>
+        <div>
+
+            <div class="topButton">
+                <a href="/dashboard/{{this._id}}">Dashboard</a>
+            </div>
+
+            <div class="topButton">
+                <a href="">Comment</a>
+                {{!-- TODO: --}}
+            </div>
+
+            <img class = "line" src="/res/Line.png" alt="line">
+
+            <div id="clinicianName">
+                <p>{{this.screen_name}}</p>
+                <div id="sideBar">
+                    <img id="triangle" src="/res/triangle.png" alt="triangle" onclick="click_sideBtn()">
+                    <div class="sideButton" style="display: none;">
+                        <p><a href="">Create new patient</a></p>
+                        {{!-- TODO: --}}
+                        <p><a href="/login">Log out</a></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</header>
+
+<main>
+    <div id="dashboard">
+        <table>
+            <caption>
+                <p id = "tableTitle">Dashboard</p>
+                <p id="tableTime"></p>
+            </caption>
+            <tr class = "tableHeading">
+                <th>Name</th>
+                <th>Blood glucose level(nmol/L)</th>
+                <th>Weight(kg)</th>
+                <th>Insulin taken(does)</th>
+                <th>Exercise(steps)</th>
+            </tr>
+
+            {{#each patient}}
+            <tr>
+            <td>{{this.first_name}}</td>
+            <td style="{{checkSafety this.safety_threshold this.bloodGlucose "0"}}">{{getValue this.bloodGlucose}}<span>{{getTime this.bloodGlucose}}</span></td>
+            <td style="{{checkSafety this.safety_threshold this.weight "1"}}">{{getValue this.weight}}<span>{{getTime this.weight}}</span></td>
+            <td style="{{checkSafety this.safety_threshold this.insulinTaken "2"}}">{{getValue this.insulinTaken}}<span>{{getTime this.insulinTaken}}</span></td>
+            <td style="{{checkSafety this.safety_threshold this.exercise "3"}}">{{getValue this.exercise}}<span>{{getTime this.exercise}}</span></td>
+            </tr>
+            {{/each}}
+        </table>
+    </div>
+</main>
+{{/with}}
+<script>
+    getCurrentTime()
+</script>
