@@ -129,8 +129,9 @@ td,th{
 #dashboard span{
     position:absolute;
     top:69%;
-    left:80%;
+    left:73%;
     font-size: 80%;
     color: #707070;
+    text-align: right;
 }
 
