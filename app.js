@@ -14,6 +14,7 @@ app.use(express.static('public'))
 const exphbs = require('express-handlebars')
 
 app.engine('hbs', exphbs.engine({
+    helpers: require('./helper/hbsHelper.js').helpers,
     defaultlayout: 'main',
     extname: 'hbs'
 }))
