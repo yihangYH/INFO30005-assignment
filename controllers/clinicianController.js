@@ -15,7 +15,7 @@ const getClinician = async (req,res, next) =>{
             clinician.patient[i].insulinTaken = patientData.insulinTaken
             clinician.patient[i].exercise = patientData.exercise
         }
-        console.log(clinician.patient[0])
+        
         return res.render('allPatient.hbs', {data: clinician})
     }catch(err){
         return next(err)

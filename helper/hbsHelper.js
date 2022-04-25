@@ -3,5 +3,5 @@ var hbs = exphbs.create({});
 
 
 hbs.handlebars.registerHelper("test", function(data) {
-    console.log(data)
+    console.log(data[0].weight)
 });
