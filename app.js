@@ -17,6 +17,7 @@ app.engine(
     'hbs',
     exphbs.engine({
         // configure Handlebars
+        helpers: require('./helper/hbsHelper.js').helpers,
         defaultlayout: 'main',
         extname: 'hbs',
     })
@@ -39,9 +40,12 @@ app.use('',loginRouter)
 const welcomeRouter = require('./routes/welcomeRouter.js')
 app.use('',welcomeRouter)
 
+const clinicianRouter = require('./routes/clinicianRouter.js')
+app.use('',clinicianRouter)
+
 // Tells the app to listen on port 3000 and logs tha tinformation to the console.
 app.listen(process.env.PORT || 3000, () => {
-    console.log('Demo app is listening on port 3000!')
+    console.log('App is listening on port 3000!')
 })
 
 
