@@ -21,15 +21,17 @@ function updateBtnclick() {
 function reloadUpdatePage() {
     for (let i = 0; i < 4; i++) {
         var date = document.getElementById(dates[i]).innerHTML
-        date = date.substring(17, date.length - 10).split('/')
-        let AuDate = new Date().toLocaleString("en-US", {
-            timeZone: "Australia/Sydney"
-        });
-        let dateString = AuDate.toString().replace(',', ' ');
-        const currentMonth = dateString.split('/')[0];
-        const currentDay = dateString.split('/')[1];
-        if (currentDay == date[1].replace(/\s/g, '') && currentMonth == date[0].replace(/\s/g, '')) {
-            document.getElementById(inputs[i]).value = document.getElementById(datas[i]).innerHTML.split('&')[0];
+        if(!date.includes("No")){
+            date = date.substring(17, date.length - 10).split('/')
+            let AuDate = new Date().toLocaleString("en-US", {
+                timeZone: "Australia/Sydney"
+            });
+            let dateString = AuDate.toString().replace(',', ' ');
+            const currentMonth = dateString.split('/')[0];
+            const currentDay = dateString.split('/')[1];
+            if (currentDay == date[1].replace(/\s/g,'') && currentMonth == date[0].replace(/\s/g,'')) {
+                document.getElementById(inputs[i]).value = document.getElementById(datas[i]).innerHTML.split('&')[0];
+            }
         }
     }
 }
