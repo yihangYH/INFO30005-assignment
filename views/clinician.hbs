@@ -49,78 +49,26 @@
                 <th>Insulin taken(does)</th>
                 <th>Exercise(steps)</th>
             </tr>
-            <tr>
+
+
+            {{!-- <tr>
                 <td>Alan</td>
                 <td>130 <span>13:00</span></td>
                 <td>80 <span>13:00</span></td>
                 <td>2 <span>13:00</span></td>
                 <td>8000 <span>13:00</span></td>
-            </tr>
+            </tr> --}}
+            {{#with data}}
+            {{#each patient}}
             <tr>
-                <td>Alan</td>
-                <td>130 <span>13:00</span></td>
-                <td>80 <span>13:00</span></td>
-                <td>2 <span>13:00</span></td>
-                <td>8000 <span>13:00</span></td>
+            <td>{{this.first_name}}</td>
+            <td>{{getValue this.bloodGlucose}}<span>{{getTime this.bloodGlucose}}</span></td>
+            <td>{{getValue this.weight}}<span>{{getTime this.weight}}</span></td>
+            <td>{{getValue this.insulinTaken}}<span>{{getTime this.insulinTaken}}</span></td>
+            <td>{{getValue this.exercise}}<span>{{getTime this.exercise}}</span></td>
             </tr>
-            <tr>
-                <td>Alan</td>
-                <td>130 <span>13:00</span></td>
-                <td>80 <span>13:00</span></td>
-                <td>2 <span>13:00</span></td>
-                <td>8000 <span>13:00</span></td>
-            </tr>
-
-            <tr>
-                <td>Alan</td>
-                <td>130 <span>13:00</span></td>
-                <td>80 <span>13:00</span></td>
-                <td>2 <span>13:00</span></td>
-                <td>8000 <span>13:00</span></td>
-            </tr>
-
-            <tr>
-                <td>Alan</td>
-                <td>130 <span>13:00</span></td>
-                <td>80 <span>13:00</span></td>
-                <td>2 <span>13:00</span></td>
-                <td>8000 <span>13:00</span></td>
-            </tr>
-
-            <tr>
-                <td>Alan</td>
-                <td>130 <span>13:00</span></td>
-                <td>80 <span>13:00</span></td>
-                <td>2 <span>13:00</span></td>
-                <td>8000 <span>13:00</span></td>
-            </tr>
-
-            <tr>
-                <td>Alan</td>
-                <td>130 <span>13:00</span></td>
-                <td>80 <span>13:00</span></td>
-                <td>2 <span>13:00</span></td>
-                <td>8000 <span>13:00</span></td>
-            </tr>
-
-            <tr>
-                <td>Alan</td>
-                <td>130 <span>13:00</span></td>
-                <td>80 <span>13:00</span></td>
-                <td>2 <span>13:00</span></td>
-                <td>8000 <span>13:00</span></td>
-            </tr>
-
-            <tr>
-                <td>Alan</td>
-                <td>130 <span>13:00</span></td>
-                <td>80 <span>13:00</span></td>
-                <td>2 <span>13:00</span></td>
-                <td>8000 <span>13:00</span></td>
-            </tr>
-
-
-
+            {{/each}}
+            {{/with}}
         </table>
     </div>
 </main>

@@ -13,9 +13,4 @@ const schema = new mongoose.Schema({
 const Clinician = mongoose.model('Clinician', schema, 'clinician')
 
 
-// const Clinician = [
-//     {id: '1000', first_name: 'Demo'},
-//     {id: '2000', first_name: 'Demo'}
-// ]
-
 module.exports = Clinician
