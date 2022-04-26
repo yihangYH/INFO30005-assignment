@@ -14,10 +14,8 @@
     <div class="information">
         <ul>
             <li class="word-welcome">Welcome:</li>
-
             <li class="user-name">{{this.first_name}}</li>
             <li class="details"> {{this.screen_name}} {{this.last_name}} ({{this.birthday}}) </li>
-
         </ul>
     </div>
     <div class="trophies-and-rankings">
@@ -43,12 +41,9 @@
     <div class="your-data">
         <P>Your Data:</P>
         <button class="update" id="update-btn" onclick="updateBtnclick()">
-
             Update +
-
         </button>
     </div>
-
     <div class="blood-glucose">
         <div class="blood-glucose-words">
             BLOOD GLUCOSE
@@ -81,8 +76,7 @@
             <P id="weight-data">{{findWeight this.weight}} &nbsp KG </P>
             {{else}}
             <P id="weight-data">No Data Yet</P>
-            {{/if}}
-            
+            {{/if}}   
         </div>
         <div class="weight-arrow">
             <img class="weight-arrow" src="../res/arrow.png" alt="arrow">
@@ -144,8 +138,6 @@
     </div>
     <div class="text" id="text"><p>{{this.supportMessage}}</p></div>
 </div>
-
-
 <img class="blur" id="blur" src="../res/blur.jpeg" alt="">
 <button type="button" onclick="cancel()"><img class="cancel" id="cancel" src="../res/cancel.jpg" alt=""></button>
 <div class="container" id="container">
@@ -231,12 +223,10 @@
     </form>
 </div>
 <div id="myModal" class="modal">
-
   <div class="modal-content">
     <span class="close">&times;</span>
     <p id="error-message"></p>
   </div>
-
 </div>
 {{/with}}
 <script>
