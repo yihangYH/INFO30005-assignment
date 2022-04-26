@@ -2,17 +2,24 @@
 const express = require('express')
 const mongoose = require('mongoose')
 require('./models')
+
 // Set your app up as an express app
 const app = express()
 const exphbs = require('express-handlebars')
 require('./helper/hbsHelper.js')
-app.use(express.json()) // needed if POST data is in JSON format
-app.use(express.urlencoded({ extended: true })) // only needed for URL-encoded input
+
+// needed if POST data is in JSON format
+app.use(express.json()) 
+
+// only needed for URL-encoded input
+app.use(express.urlencoded({ extended: true }))
+
 const {Patient} = require('./models/patient.js')
 const {weight} = require('./models/data.js')
 const {exercise} = require('./models/data.js')
 const {insulinTaken} = require('./models/data.js')
 const {bloodGlucose} = require('./models/data.js')
+
 app.engine(
     'hbs',
     exphbs.engine({
