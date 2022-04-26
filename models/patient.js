@@ -1,3 +1,4 @@
+//patient's data storing stucture
 const mongoose = require('mongoose')
 require('./data.js')
 const patientSchema = new mongoose.Schema({

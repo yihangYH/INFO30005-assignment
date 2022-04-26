@@ -1,3 +1,5 @@
+//Clinician's data storing structure
+
 const mongoose = require('mongoose')
 require('./patient.js')
 const schema = new mongoose.Schema({

@@ -1,3 +1,5 @@
+//info to connect to mongodb
+
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config()
 }
