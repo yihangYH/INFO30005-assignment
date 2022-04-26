@@ -1,3 +1,5 @@
+//helper functions for .hbs files
+
 const exphbs = require('express-handlebars')
 var hbs = exphbs.create({});
 
@@ -35,7 +37,8 @@ hbs.handlebars.registerHelper("findComment", function(data){
     if(data[data.length-1].comment == "Not Required"){
         return "+ Comment"
     }
-
+    
+    //if the time period not matching, do not return
     if(time[0] != currentDay || time[1] != currentMonth){
         return ""
     }
@@ -48,8 +51,6 @@ hbs.handlebars.registerHelper("findComment", function(data){
     
     return comment;
 });
-
-
 
 hbs.handlebars.registerHelper("getValue", function(data) {
     const latest = data[data.length-1]
@@ -69,6 +70,7 @@ hbs.handlebars.registerHelper("getTime", function(data) {
     
 });
 
+//add a 0 prior to single digit data info
 function twoDigit(data){
     if (data.length<2){
         return "0"+data
@@ -77,6 +79,7 @@ function twoDigit(data){
     }
 }
 
+// check patient's safty threshold
 hbs.handlebars.registerHelper("checkSafety", function(safety,value,index) {
     const bound =  safety[index];
     if(!bound.includes("Not Required")){
