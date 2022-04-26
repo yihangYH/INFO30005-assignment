@@ -1,8 +1,9 @@
 const clinicianData = require("../models/clinician")
 const {patient} = require("../models/patient")
 require('../models/data')
+
+//This function is used to render clinician's handlebar files
 const getClinician = async (req,res, next) =>{
-    
     try{
         const clinician = 
             await clinicianData.findOne({_id: req.params.id}).populate("patient").lean()

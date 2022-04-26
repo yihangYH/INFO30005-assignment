@@ -20,6 +20,7 @@ const getPatient = async(req,res,next) => {
     }
 }
 
+//update data in data base
 const updateData  = async(req,res,next) =>{
     try {
         let AuDate = new Date().toLocaleString("en-US", {timeZone: "Australia/Sydney"});
@@ -28,7 +29,9 @@ const updateData  = async(req,res,next) =>{
     const currentDay = dateString.split('/')[0]
     const patientData = await patient.findOne({_id:req.params.id}).populate("weight").populate("exercise").populate("bloodGlucose").populate("insulinTaken").lean();
 
+    //below we have logic set for updating data include blood glucose, body weight, insulin taken and exercise
     if(req.body.blood_glucose != "" && req.body.blood_glucose != "Not Required"){
+        //constrains
         const leastValue = patientData.bloodGlucose[patientData.bloodGlucose.length - 1].value;
         const leastTime = patientData.bloodGlucose[patientData.bloodGlucose.length - 1].time;
         const data = new bloodGlucose({
@@ -37,6 +40,7 @@ const updateData  = async(req,res,next) =>{
             comment:req.body.blood_glucose_comment,
         })
 
+        //update to database
         if(leastTime.split('/')[1] != currentMonth || leastTime.split('/')[0] != currentDay){
             await patient.findOneAndUpdate({_id:req.params.id}, {$push: {bloodGlucose: data._id}});
             data.save() 
