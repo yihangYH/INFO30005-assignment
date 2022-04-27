@@ -1,4 +1,5 @@
 function click_sideBtn (){
+    // unfold side bar when clicked
     var sideBtn = document.getElementById("triangle")
     var sideBar = sideBtn.parentElement.lastElementChild
     
