@@ -231,11 +231,14 @@
 {{/with}}
 <script>
     {{#with patientInfo}}
+    // get data reuiqred from patientInfo object
     var data = []
     data.push({{ this.healthyData_required }})
+    // call checkUpdated() and setPatientDatavalue when page load
     checkUpdated();
     setPatientDataValue(data)
     {{/with}}
+    // the code below is for closing alter box
     document.getElementsByClassName("close")[0].onclick = function() {
         document.getElementById("myModal").style.display = "none";
     }
