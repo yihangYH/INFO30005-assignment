@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
-
 const {patient} = require('../models/patient.js')
 
+// render login.hbs
 const login = async(req,res,next) => {
     try {
         res.render('login.hbs')
@@ -12,8 +12,10 @@ const login = async(req,res,next) => {
 
 const loginToData = async(req,res,next) => {
     try {
-        //if is patient
+        //check if is patient
+        //when patient is selected req.body.isDoctor will be equal to object
         if(typeof req.body.isDoctor == "object"){
+            // find patient info from db
             const patientData = await patient.findOne({userid:req.body.userid}).lean();
             //if password matches with data in database
             if(patientData != null &&patientData.password == req.body.password){

@@ -1,3 +1,4 @@
+// render 3 static pages
 const mongoose = require('mongoose')
 
 const welcome = async(req,res,next) => {

@@ -1,29 +1,25 @@
 // Import express
 const express = require('express')
 const mongoose = require('mongoose')
+// import models
 require('./models')
 
-// Set your app up as an express app
+// Set app as an express app
 const app = express()
 const exphbs = require('express-handlebars')
+// import habHelper
 require('./helper/hbsHelper.js')
 
-// needed if POST data is in JSON format
+// for JSON format
 app.use(express.json()) 
 
 // only needed for URL-encoded input
 app.use(express.urlencoded({ extended: true }))
 
-const {Patient} = require('./models/patient.js')
-const {weight} = require('./models/data.js')
-const {exercise} = require('./models/data.js')
-const {insulinTaken} = require('./models/data.js')
-const {bloodGlucose} = require('./models/data.js')
-
 app.engine(
     'hbs',
     exphbs.engine({
-        // configure Handlebars
+        // configure Handlebars with helper 
         helpers: require('./helper/hbsHelper.js').helpers,
         defaultlayout: 'main',
         extname: 'hbs',
@@ -38,6 +34,8 @@ app.use((req, res, next) => {
 })
 
 app.use(express.static('public'))
+
+// import all the routers 
 const patientRouter = require('./routes/patientRouter.js')
 app.use('',patientRouter)
 
@@ -50,7 +48,8 @@ app.use('',welcomeRouter)
 const clinicianRouter = require('./routes/clinicianRouter.js')
 app.use('',clinicianRouter)
 
-// Tells the app to listen on port 3000 and logs tha tinformation to the console.
+// listen on port 3000 and logs tha tinformation to the console.
+// in the local env
 app.listen(process.env.PORT || 3000, () => {
     console.log('App is listening on port 3000!')
 })

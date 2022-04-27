@@ -1,3 +1,4 @@
+// this function is to show and hide password
 function myFunction() {
   var x = document.getElementById("password");
   if (x.type === "password") {
@@ -7,16 +8,19 @@ function myFunction() {
   }
 }
 
+// thie function is used to validate login info
 async function validate() {
   var patient = document.getElementById("patient");
   var doctor = document.getElementById("doctor");
+  // get doctor and patient style to help to identify which one has been selected
   const doctor_style = getComputedStyle(doctor);
   const patient_style = getComputedStyle(patient);
   var doctor;
   var patient;
+  // get password and username value 
   const password = document.getElementById("password").value;
   const username = document.getElementById("username").value;
-
+  // based on the style, check which one has been selected
   if (patient_style.color == "rgb(0, 0, 0)") {
     patient = true;
   } else if (doctor_style.color == "rgb(0, 0, 0)") {
@@ -24,6 +28,7 @@ async function validate() {
   }
 
   try {
+    // create new patitent info object
     let patientInfo = {
       userid: username,
       password: password,
@@ -40,6 +45,7 @@ async function validate() {
           'error'
         )
       } catch (error) {
+        // if sweetalert2 not working in the current moment, use defulat alert
         document.getElementById("myModal").style.display = "block";
         document.getElementById('error-message').innerHTML = "please enter a userID and password";
       }
@@ -68,6 +74,7 @@ async function validate() {
           'error'
         )
       } catch (error) {
+        // if sweetalert2 not working in the current moment, use defulat alert
         document.getElementById("myModal").style.display = "block";
         document.getElementById('error-message').innerHTML = "Invalid identity, userID or password";
       }
@@ -79,6 +86,7 @@ async function validate() {
           'error'
         )
       } catch (error) {
+        // if sweetalert2 not working in the current moment, use defulat alert
         document.getElementById("myModal").style.display = "block";
         document.getElementById('error-message').innerHTML = "Invalid identity, userID or password";
       }
@@ -88,12 +96,13 @@ async function validate() {
   }
 }
 
+// this function is used for change the color for patient and doctore when patient is selected
 function identity_patient() {
   var patient = document.getElementById("patient");
   var doctor = document.getElementById("doctor");
   const doctor_style = getComputedStyle(doctor);
   const patient_style = getComputedStyle(patient);
-
+  // if patient is black, cheng doctor to grey
   if (patient_style.color == "rgb(0, 0, 0)") {
     document.getElementById("doctor").style.color = "grey";
   }
@@ -104,12 +113,13 @@ function identity_patient() {
   }
 }
 
+// this function is used for change the color for doctore and doctore when doctor is selected
 function identity_doctor() {
   var patient = document.getElementById("patient");
   var doctor = document.getElementById("doctor");
   const doctor_style = getComputedStyle(doctor);
   const patient_style = getComputedStyle(patient);
-
+  // same logic as above 
   if (patient_style.color == "rgb(0, 0, 0)") {
     document.getElementById("doctor").style.color = "grey";
   }
