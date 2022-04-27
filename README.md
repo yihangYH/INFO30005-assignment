@@ -24,7 +24,11 @@ So, if Pat Blood Glucose data is <= 3.9 or >= 6.1, the Blood Glucose field will 
 
 #### Other patient in dashboard page:
 
-Except Pat, the rest patients in dashboard is fake data, only for display purpose, no really meanning.
+<p align="center">
+  <img src="README_res/fake-information.jpeg"  width="600" >
+</p>
+
+Except Pat, the rest patients in dashboard is fake data(cirlced in red), only for display purpose, no really meanning.
 
 ### Functionalities implemented but not required for Deliverable2:
 
@@ -50,7 +54,7 @@ We set patient Pat's **Insulin Taken** as not required for functionality testing
   <img src="README_res/patient-homepage.jpeg"  width="600" >
 </p>
 
-In patient side, the function leaderboard and achievement which has been circled in red, we have designed it in deliverable 1 but not required in deliverable 2, we have not implemented it yet.
+In patient side, the function leaderboard and achievement which has been circled in red, we have designed it in deliverable 1 but not required in deliverable 2, we have not implemented it yet. And the function of edit bio(the pan icon circled in red) has not been implemented yet.
 
 If click on the data which have been circled in red, patient should be able to look at the past data. It is not required in deliverable 2, so we have not implemented it yet.
 
