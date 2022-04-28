@@ -799,7 +799,7 @@
     .blood-glucose-words {
         display: flex;
         position: absolute;
-        top: 41%;
+        top: 40%;
         left: 4.5%;
         font-size: 32px;
         font-weight: bold;
@@ -809,7 +809,7 @@
         display: flex;
         position: absolute;
         left: 23%;
-        top: 427px;
+        top: 39%;
         width: 320px;
         font-size: 50px;
         font-weight: 100;
