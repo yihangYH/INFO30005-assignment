@@ -796,7 +796,7 @@
 
     }
 
-    .blood-glucose-words {
+    .blood-glucose {
         display: flex;
         position: absolute;
         top: 41%;
@@ -808,8 +808,8 @@
     .blood-glucose-data {
         display: flex;
         position: absolute;
-        left: 23%;
-        top: 427px;
+        left: 125%;
+        top: -35%;
         width: 320px;
         font-size: 50px;
         font-weight: 100;
@@ -818,8 +818,8 @@
     .blood-glucose-arrow {
         position: absolute;
         width: 80px;
-        left: 40%;
-        top: 38%;
+        left: 198%;
+        top: -75%;
     }
 
     .weight {
