@@ -50,7 +50,7 @@
         </div>
         <div class="blood-glucose-data">
             {{#if this.bloodGlucose}}
-            <P id="blood-glucose-data">{{findBloodGlucose this.bloodGlucose}} &nbsp nml/L </P>
+            <P id="blood-glucose-data">{{findBloodGlucose this.bloodGlucose}} &nbsp  </P>
             {{else}}
             <P id="blood-glucose-data">No Data Yet</P>
             {{/if}}
@@ -146,7 +146,7 @@
             <p class="insert-data">Enter today's data</p>
             <div class="item">
                 <p>BLOOD GLUCOSE</p>
-                <input name="blood_glucose" id="blood-glucose-input" type="text" placeholder="(nml/L)" />
+                <input name="blood_glucose" id="blood-glucose-input" type="text" placeholder="(nmol/L)" />
                 <button type="button" class="butn" id="butn1" onclick="setCommentWindow()">
                     {{#if this.bloodGlucose}}
                         <p class="comment" id="comment">{{findComment this.bloodGlucose}} <img class="pen" id="pen" src="../res/pen.png" alt=""></p>
