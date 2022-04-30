@@ -1,0 +1,286 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans");
+* {
+	padding: 0;
+	margin: 0;
+    font-family: 'Open Sans ';
+}
+body {
+    height: 100%;
+    overflow: hidden;
+}
+.main {
+    display: flex;
+}
+
+.logo{
+    width: 20%;
+    display: flex;
+    position: relative;
+    left: 20%;
+}
+.back {
+    width: 5%;
+    display: flex;
+    position: absolute;
+    top: 12%;
+    left: 5%;
+}
+
+.header {
+    display: flex;
+    background:linear-gradient(to bottom,#DFAFAD,#FDF9F8);
+    height: 10%; 
+    position: relative;
+    z-index: 0;
+    width: 100%;
+}
+
+.body-register{
+    display: flex;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 12%;
+    background-color:#FDF9F8;
+}
+.title {
+    padding-left: 45%;
+    display: flex;
+    position: absolute;
+    font-size: 50px;
+    width: 55%;
+    font-weight: bold;
+    top: 2%;
+}
+
+.login-info {
+    display: block;
+    position: absolute;
+    top: 12%;
+    left: 5%;
+    height: 50%;
+}
+
+
+.screenName , .password , .userId , .brith {
+    width: 100%;
+    height: 10%;
+}
+
+.login-info input{
+    border: none;
+    font-size: 25px;
+    border-radius:15px;
+    background-color: #F3DFD6;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 2%;
+}
+
+.firstName{
+    width: 45%;
+}
+.lastName {
+    position: relative;
+    left: 6%;
+    width: 45%;
+}
+.login-info li{
+    line-height: 120px;
+}
+
+ul {
+    list-style: none;
+}
+
+.data-info{
+    display: block;
+    position: absolute;
+    top: 14%;
+    left: 38%;
+    height: 50%;
+}
+
+.data-info p {
+    font-weight: bolder;
+    font-size: 25px;
+    width: 8%;
+    padding-top: 5%;
+    display: inline-block;
+
+}
+
+.data-info li:nth-child(2) {
+    display: block;
+    margin-top: 25px;
+}
+.data-info li:nth-child(3) {
+    display: block;
+    margin-top: 25px;
+}
+.data-info li:nth-child(4) {
+    display: block;
+    margin-top: 25px;
+}
+.data-check-box{
+    display: inline-block;
+    position: relative;
+    left: 10%;
+    width: 40px;
+    height: 40px;
+    outline: 3px solid gray
+}
+.lower-value {
+    display: inline-flex;
+    position: relative;
+    left: 20%;
+    width: 80px;
+    top:-5%;
+    height: 40px;
+    bottom: 9px;
+    font-size: 35px;
+    border:none;
+    border-bottom: 4px solid #000;
+    outline: none;
+    background: none;
+}
+
+.lower-time-value {
+    display: inline-flex;
+    position: relative;
+    left: 38%;
+    width: 135px;
+    top:-5%;
+    height: 40px;
+    bottom: 9px;
+    font-size: 35px;
+    border:none;
+    border-bottom: 4px solid #000;
+    outline: none;
+    background: none;
+}
+
+.upper-value {
+    display: inline-flex;
+    position: relative;
+    left: 20%;
+    width: 80px;
+    top:-5%;
+    height: 40px;
+    bottom: 9px;
+    font-size: 35px;
+    border:none;
+    border-bottom: 4px solid #000;
+    background: none;
+    outline: none;
+}
+
+.upper-time-value{
+    display: inline-flex;
+    position: relative;
+    left: 40%;
+    width: 135px;
+    top:-5%;
+    height: 40px;
+    bottom: 9px;
+    font-size: 35px;
+    border:none;
+    border-bottom: 4px solid #000;
+    background: none;
+    outline: none;
+}
+.sign {
+    position: relative;
+    left: 23%;
+    bottom: 10px;
+}
+
+.timeSign{
+    position: relative;
+    left: 42%;
+    bottom: 10px;
+}
+
+.AMPMSign {
+    position: relative;
+    left: 34%;
+    bottom: -3px;
+}
+
+.unit {
+    position: relative;
+    left: 22%;
+    bottom: 10px;
+}
+hr{
+    width: 125%;
+    margin-top: 2%;
+}
+
+.create {
+    display: flex;
+    position: absolute;
+    top: 75%;
+    left: 35%;
+    width: 30%;
+}
+.create button{
+    font-size: 35px;
+    width: 100%;
+    padding-left: 15%;
+    padding-right: 15%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    background-color: #DF9FA0;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    font-weight: 300;
+}
+
+.required{
+    display: block;
+    position: absolute;
+    top: 13%;
+    left: 45%;
+}
+
+.safety-threhold{
+    display: block;
+    position: absolute;
+    top: 13%;
+    left: 58%;
+}
+
+.time-series{
+    display: block;
+    position: absolute;
+    top: 13%;
+    left: 82%;
+}
+
+.AMbtn {
+    display: inline-block;
+    position: relative;
+    left: 33%;
+    top:10%;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 40px;
+    font-weight: normal;
+}
+
+.PMbtn {
+    display: inline-block;
+    position: relative;
+    left: 29%;
+    top:10%;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 40px;
+    font-weight: normal;
+    color: gray;
+}
+
