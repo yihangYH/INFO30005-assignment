@@ -31,7 +31,7 @@ const getClinician = async (req,res, next) =>{
 
 const CreatePatient = async(req,res,next) => {
     try {
-        res.render('createPatient.hbs')
+        res.render('createPatient.hbs', {id: req.params.id})
     } catch (error) {
         return next(err)
     }
