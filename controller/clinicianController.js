@@ -29,4 +29,12 @@ const getClinician = async (req,res, next) =>{
     }
 }
 
-module.exports = { getClinician }
+const CreatePatient = async(req,res,next) => {
+    try {
+        res.render('createPatient.hbs')
+    } catch (error) {
+        return next(err)
+    }
+}
+
+module.exports = { getClinician, CreatePatient }
