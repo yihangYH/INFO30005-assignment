@@ -1,0 +1,93 @@
+<div class="main">
+            <div class="header">
+                <div >
+                    <a href="/dashboard/{{id}}">
+                        <img class="back" src="/res/back.jpg" alt="">
+                    </a>
+                    <img class ="logo" src="/res/logo.png" alt="logo">
+                </div>
+            </div>
+            <div class="body-register">
+                <p class="title">New patient</p>
+                <ul class="login-info">
+                    <li> 
+                        <input type="text" class="firstName" id="firstName" placeholder="First name"> 
+                        <input type="text" class="lastName" id="lastName" placeholder="Last name">
+                    </li>
+                    <li > <input type="text" class="screenName" id="screenName" placeholder="Screen name"></li>
+                    <li > <input type="text" class="brith" id="brith" placeholder="Year of birth                       DD/MM/YY"></li>
+                    <li > <input type="email" class="userId" id="userId" placeholder="User id"></li>
+                    <li > <input type="text" class="password" id="password" placeholder="Password"></li>
+                </ul>
+                <h1 class="required">Required</h1>
+                    <h1 class="safety-threhold">Safety thredhold</h1>
+                    <h1 class="time-series">Time series</h1>
+                <ul class="data-info">
+                    <li> 
+                       <p>BLOOD GLUCOSE</p>
+                       <input class ="data-check-box" id="bloodGlucoseCheckbox" type="checkbox" name="" id="">
+                       <input class = "lower-value" id = "bloodGlucoseLowerValue" type="number" readonly>
+                       <p class="sign"> ~ </p>
+                       <input class = "upper-value" id = "bloodGlucoseUpperValue" type="number" readonly>
+                       <p class="unit" style="font-size: 40px; font-weight: normal;">nmol/L</p>
+                       <input class = "lower-time-value" id = "bloodGlucoseTimeLowerValue" type="time" readonly>
+                       <p class="timeSign"> ~ </p>
+                       <input class = "upper-time-value" id = "bloodGlucoseTimeUpperValue" type="time" readonly>
+                       <!-- <input type="button" value="AM" class="AMbtn" readonly>
+                       <p class="AMPMSign" style="font-size: 50px;">/</p>
+                       <input type="button" value="PM" class="PMbtn" readonly> -->
+                       <hr>
+                    </li>
+                    <li>
+                        <p>WEIGHT</p>
+                        <input class ="data-check-box" id="weightCheckbox" type="checkbox" name="" id="">
+                        <input class = "lower-value" id="weightLowerValue" type="number" readonly>
+                        <p class="sign"> ~ </p>
+                        <input class = "upper-value" id="weightUpperValue" type="number" readonly>
+                        <p class="unit" style="font-size: 40px; font-weight: normal;">kg</p>
+                        <input class = "lower-time-value" id = "weightTimeLowerValue" type="time" readonly>
+                        <p class="timeSign"> ~ </p>
+                        <input class = "upper-time-value" id = "weightTimeUpperValue" type="time" readonly>
+                        <!-- <input type="button" value="AM" class="AMbtn" readonly>
+                        <p class="AMPMSign" style="font-size: 50px;">/</p>
+                        <input type="button" value="PM" class="PMbtn" readonly> -->
+                        <hr>
+                    </li>
+                    <li>
+                        <p>INSULIN TAKEN</p>
+                        <input class ="data-check-box" id="insulinTakenCheckbox" type="checkbox" name="" id="">
+                        <input class = "lower-value" id="insulinTakenLowerValue" type="number" readonly>
+                        <p class="sign"> ~ </p>
+                        <input class = "upper-value" id="insulinTakenUpperValue" type="number" readonly>
+                        <p class="unit" style="font-size: 40px; font-weight: normal;">dose(s)</p>
+                        <input class = "lower-time-value" id = "insulinTakenTimeLowerValue" type="time" readonly>
+                        <p class="timeSign"> ~ </p>
+                        <input class = "upper-time-value" id = "insulinTakenTimeUpperValue" type="time" readonly>
+                        <!-- <input type="button" value="AM" class="AMbtn" readonly>
+                        <p class="AMPMSign" style="font-size: 50px;">/</p>
+                        <input type="button" value="PM" class="PMbtn" readonly> -->
+                        <hr>
+                    </li>
+                    <li>
+                        <p>EXERCISE</p>
+                        <input class ="data-check-box" id="exerciseCheckbox" type="checkbox" name="" id="">
+                        <input class = "lower-value" id="exerciseLowerBalue" type="number" readonly>
+                        <p class="sign"> ~ </p>
+                        <input class = "upper-value" id="exerciseUpperValue" type="number" readonly>
+                        <p class="unit" style="font-size: 40px; font-weight: normal;">stpes</p>
+                        <input class = "lower-time-value" id = "exerciseTimeLowerValue" type="time" readonly>
+                        <p class="timeSign"> ~ </p>
+                        <input class = "upper-time-value" id = "exerciseTimeUpperValue" type="time" readonly>
+                        <!-- <input type="button" value="AM" class="AMbtn" readonly>
+                        <p class="AMPMSign" style="font-size: 50px;">/</p>
+                        <input type="button" value="PM" class="PMbtn" readonly> -->
+                        <hr>
+                    </li>
+                </ul>
+                <div class="create">
+                    <button type="submit"  onclick="checkInput()">Create</button>
+                </div>
+                
+            </div>
+    </div>
+</div>
