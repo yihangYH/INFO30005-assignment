@@ -29,7 +29,7 @@ const getClinician = async (req,res, next) =>{
     }
 }
 
-const CreatePatient = async(req,res,next) => {
+const getPage = async(req,res,next) => {
     try {
         res.render('createPatient.hbs', {id: req.params.id})
     } catch (error) {
@@ -37,4 +37,8 @@ const CreatePatient = async(req,res,next) => {
     }
 }
 
-module.exports = { getClinician, CreatePatient }
+const CreatePatient = async(req,res,next) => {
+    console.log(req.body)
+}
+
+module.exports = { getClinician, getPage, CreatePatient }

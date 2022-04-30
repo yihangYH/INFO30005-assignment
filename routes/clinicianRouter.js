@@ -6,6 +6,8 @@ const clinicianController = require('../controller/clinicianController')
 
 clinicianRouter.get('/dashboard/:id', clinicianController.getClinician)
 
-clinicianRouter.get('/:id/newPatient', clinicianController.CreatePatient)
+clinicianRouter.get('/:id/newPatient', clinicianController.getPage)
+
+clinicianRouter.post('/:id/newPatient', clinicianController.CreatePatient)
 
 module.exports = clinicianRouter
