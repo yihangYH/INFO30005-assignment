@@ -11,7 +11,7 @@
     <script src="../js/login.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/dashboard.js"></script>
-    <script src="../js/newPatient.js"></script>
+    <script src="../js/createPatient.js"></script>
     <script>
         var path = window.location.pathname;
         if (path.includes("login")) {
@@ -33,7 +33,7 @@
             document.getElementById("style").href = "../css/dashboard.css";
             document.title = "Dashboard";
         } else if (path.includes("newPatient")){
-            document.getElementById("style").href = "../css/newPatient.css";
+            document.getElementById("style").href = "../css/createPatient.css";
             document.title = "Create patient";
         }
     </script>
