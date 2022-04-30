@@ -71,17 +71,71 @@ document.addEventListener("DOMContentLoaded", function(){
 
 function checkInput(){
     if(document.getElementById('firstName').value == ""){
-        alert("firstName please")
+        try {
+            Swal.fire(
+                'Please enter Frist name',
+                'please check',
+                'error'
+            )
+        } catch (error) {
+            alert("Please enter Last name")
+        }
+        return
     }else if (document.getElementById('lastName').value == ""){
-        alert("lastName please")
+        try {
+            Swal.fire(
+                'Please enter Last name',
+                'please check',
+                'error'
+            )
+        } catch (error) {
+            alert("Please enter Last name")
+        }
+        return
     }else if(document.getElementById('screenName').value == ""){
-        alert("screenName please")
+        try {
+            Swal.fire(
+                'Please enter Screen name',
+                'please check',
+                'error'
+            )
+        } catch (error) {
+            alert("Please enter Screen name")
+        }
+        return
     }else if(document.getElementById('brith').value == ""){
-        alert("birth please")
+        try {
+            Swal.fire(
+                'Please enter birth',
+                'please check',
+                'error'
+            )
+        } catch (error) {
+            alert("Please enter birth")
+        }
+        return
     }else if(document.getElementById('userId').value == ""){
-        alert("userId please")
+        try {
+            Swal.fire(
+                'Please enter User id',
+                'please check',
+                'error'
+            )
+        } catch (error) {
+            alert("Please enter User id")
+        }
+        return
     }else if(document.getElementById('password').value == ""){
-        alert("password please")
+        try {
+            Swal.fire(
+                'Please enter Password',
+                'please check',
+                'error'
+            )
+        } catch (error) {
+            alert("Please enter Password")
+        }
+        return
     }
     checkDataInput();
 }
@@ -92,53 +146,134 @@ function checkDataInput(){
     !document.getElementById("weightCheckbox").checked &&
     !document.getElementById("insulinTakenCheckbox").checked &&
     !document.getElementById("exerciseCheckbox").checked ){
-        alert("please select at least one data ")
+        try {
+            Swal.fire(
+                'Please select at least one data',
+                'please check',
+                'error'
+            )
+        } catch (error) {
+            alert("Please select at least one data")
+        }
+        return
     }
     if(document.getElementById("bloodGlucoseCheckbox").checked && 
     (document.getElementById('bloodGlucoseLowerValue').value == "" || 
     document.getElementById('bloodGlucoseUpperValue').value == "")){
-        alert("please enter blood glucose safetythreshold")
+        try {
+            Swal.fire(
+                'please enter blood glucose safety threshold',
+                'please check',
+                'error'
+            )
+        } catch (error) {
+            alert("please enter blood glucose safety threshold")
+        }
+        return
     }
 
     if(document.getElementById("weightCheckbox").checked && 
     (document.getElementById('weightLowerValue').value == "" || 
     document.getElementById('weightUpperValue').value == "")){
-        alert("please enter weight safetythreshold")
+        try {
+            Swal.fire(
+                'please enter weight safety threshold',
+                'please check',
+                'error'
+            )
+        } catch (error) {
+            alert("please enter weight safety threshold")
+        }
+        return
     }
 
     if(document.getElementById("insulinTakenCheckbox").checked && 
     (document.getElementById('insulinTakenLowerValue').value == "" || 
     document.getElementById('insulinTakenUpperValue').value == "")){
-        alert("please enter insulin taken safetythreshold")
+        try {
+            Swal.fire(
+                'please enter insulin taken safety threshold',
+                'please check',
+                'error'
+            )
+        } catch (error) {
+            alert("please enter insulin taken safety threshold")
+        }
+        return
     }
     
     if(document.getElementById("exerciseCheckbox").checked && 
     (document.getElementById('exerciseLowerValue').value == "" || 
     document.getElementById('exerciseUpperValue').value == "")){
-        alert("please enter exercise safetythreshold")
+        try {
+            Swal.fire(
+                'please enter exercise safety threshold',
+                'please check',
+                'error'
+            )
+        } catch (error) {
+            alert("please enter exercise safety threshold")
+        }
+        return
     }
 
     if(document.getElementById("bloodGlucoseCheckbox").checked && 
     (document.getElementById('bloodGlucoseTimeLowerValue').value == "" || 
     document.getElementById('bloodGlucoseTimeUpperValue').value == "")){
-        alert("please selct time series for blood glucose")
+        try {
+            Swal.fire(
+                'please selct time series for blood glucose',
+                'please check',
+                'error'
+            )
+        } catch (error) {
+            alert("please selct time series for blood glucose")
+        }
+        return
     }
 
     if(document.getElementById("weightCheckbox").checked && 
     (document.getElementById('weightTimeLowerValue').value == "" || 
     document.getElementById('weightTimeUpperValue').value == "")){
-        alert("please selct time series for weight")
+        try {
+            Swal.fire(
+                'please selct time series for weight',
+                'please check',
+                'error'
+            )
+        } catch (error) {
+            alert("please selct time series for weight")
+        }
+        return
     }
 
     if(document.getElementById("insulinTakenCheckbox").checked && 
     (document.getElementById('insulinTakenTimeLowerValue').value == "" || 
     document.getElementById('insulinTakenTimeUpperValue').value == "")){
-        alert("please selct time series for insulin taken")
+        try {
+            Swal.fire(
+                'please selct time series for insulin taken',
+                'please check',
+                'error'
+            )
+        } catch (error) {
+            alert("please selct time series for insulin taken")
+        }
+        return
     }
 
     if(document.getElementById("exerciseCheckbox").checked && 
     (document.getElementById('exerciseTimeLowerValue').value == "" || 
     document.getElementById('exerciseTimeUpperValue').value == "")){
-        alert("please selct time series for exercise")
+        try {
+            Swal.fire(
+                'please selct time series for exercise',
+                'please check',
+                'error'
+            )
+        } catch (error) {
+            alert("please selct time series for exercise")
+        }
+        return
     }
 }
