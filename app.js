@@ -44,8 +44,8 @@ app.use(express.static('public'))
 const patientRouter = require('./routes/patientRouter.js')
 app.use('',patientRouter)
 
-const loginRouter = require('./routes/loginRouter.js')
-app.use('',loginRouter)
+// const loginRouter = require('./routes/loginRouter.js')
+// app.use('',loginRouter)
 
 const welcomeRouter = require('./routes/welcomeRouter.js')
 app.use('',welcomeRouter)
@@ -80,7 +80,7 @@ if (app.get('env') === 'production') {
 
 app.use(passport.authenticate('session'))
 
-const authRouter = require('./routes/auth') 
+const authRouter = require('./routes/loginRouter') 
 app.use(authRouter)
 
 

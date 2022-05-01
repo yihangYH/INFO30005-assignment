@@ -30,7 +30,7 @@ async function validate() {
   try {
     // create new patitent info object
     let patientInfo = {
-      userid: username,
+      username: username,
       password: password,
       isDoctor: doctor,
       isPatient: patient
@@ -65,7 +65,7 @@ async function validate() {
 
     // based on the response, redirect to data page for patient, or showing error meesage
     if (response.status == 202) {
-      window.location.href = "./data/" + response.statusText;
+      window.location.href = "./data/" + username;
     } else if (response.status == 201) {
       try {
         Swal.fire(
