@@ -10,4 +10,6 @@ clinicianRouter.get('/:id/newPatient', clinicianController.getPage)
 
 clinicianRouter.post('/:id/newPatient', clinicianController.CreatePatient)
 
+clinicianRouter.get('/:id/updatePatient', clinicianController.updatePatient)
+
 module.exports = clinicianRouter

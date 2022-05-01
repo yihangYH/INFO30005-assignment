@@ -38,7 +38,6 @@ const getPage = async(req,res,next) => {
 }
 
 const CreatePatient = async(req,res,next) => {
-    console.log(req.body.bloodGlucoseCheckbox == 'on')
     const healthyData_required = [true,true,true,true];
     if(req.body.bloodGlucoseCheckbox != 'on'){healthyData_required[0] = false}
     if(req.body.weightCheckbox != 'on'){healthyData_required[1] =false}
@@ -61,6 +60,11 @@ const CreatePatient = async(req,res,next) => {
 
     }
     console.log(body)
+    res.send(body)
 }
 
-module.exports = { getClinician, getPage, CreatePatient }
+const updatePatient = async(req,res,next) => {
+    res.render('updatePatient.hbs')
+}
+
+module.exports = { getClinician, getPage, CreatePatient, updatePatient }

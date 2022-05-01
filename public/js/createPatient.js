@@ -69,8 +69,7 @@ document.addEventListener("DOMContentLoaded", function(){
     });
 });
 
-function checkInput(){
-}
+
 
 function checkDataInput(){
     console.log(document.getElementById("bloodGlucoseCheckbox").checked)
@@ -277,6 +276,18 @@ function createPatientValidation(){
             alert("Please enter Password")
         }
         return false
+    }
+    var password = document.getElementById('password').value
+    if(password.length < 8){
+        try {
+            Swal.fire(
+                'The Password at least at least 8 characters long.',
+                'please check',
+                'error'
+            )
+        } catch (error) {
+            alert("The Password at least at least 8 characters long.")
+        }
     }
     return checkDataInput();
 }
