@@ -64,7 +64,7 @@ const CreatePatient = async(req,res,next) => {
 }
 
 const updatePatient = async(req,res,next) => {
-    res.render('updatePatient.hbs')
+    res.render('updatePatient.hbs', {id: req.params.id})
 }
 
 module.exports = { getClinician, getPage, CreatePatient, updatePatient }
