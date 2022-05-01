@@ -38,7 +38,29 @@ const getPage = async(req,res,next) => {
 }
 
 const CreatePatient = async(req,res,next) => {
-    console.log(req.body)
+    console.log(req.body.bloodGlucoseCheckbox == 'on')
+    const healthyData_required = [true,true,true,true];
+    if(req.body.bloodGlucoseCheckbox != 'on'){healthyData_required[0] = false}
+    if(req.body.weightCheckbox != 'on'){healthyData_required[1] =false}
+    if(req.body.insulinTakenCheckbox !='on') {healthyData_required[2] =false}
+    if(req.body.exerciseCheckbox != 'on') {healthyData_required[3] = false}
+    const body = {
+        'first_name': req.body.first_name,
+        'last_name': req.body.last_name,
+        'screen_name': req.body.screen_name,
+        'birth': req.body.birthday,
+        'userid':req.body.userid,
+        'bio': "enter your bio!!!",
+        'supportMessage': "keep going",
+        'bloodGlucose':[],
+        'weight':[],
+        'insulinTaken':[],
+        'exercise':[],
+        'healthyData_required': healthyData_required,
+
+
+    }
+    console.log(body)
 }
 
 module.exports = { getClinician, getPage, CreatePatient }

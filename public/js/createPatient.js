@@ -70,74 +70,6 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 
 function checkInput(){
-    if(document.getElementById('firstName').value == ""){
-        try {
-            Swal.fire(
-                'Please enter Frist name',
-                'please check',
-                'error'
-            )
-        } catch (error) {
-            alert("Please enter Last name")
-        }
-        return
-    }else if (document.getElementById('lastName').value == ""){
-        try {
-            Swal.fire(
-                'Please enter Last name',
-                'please check',
-                'error'
-            )
-        } catch (error) {
-            alert("Please enter Last name")
-        }
-        return
-    }else if(document.getElementById('screenName').value == ""){
-        try {
-            Swal.fire(
-                'Please enter Screen name',
-                'please check',
-                'error'
-            )
-        } catch (error) {
-            alert("Please enter Screen name")
-        }
-        return
-    }else if(document.getElementById('brith').value == ""){
-        try {
-            Swal.fire(
-                'Please enter birth',
-                'please check',
-                'error'
-            )
-        } catch (error) {
-            alert("Please enter birth")
-        }
-        return
-    }else if(document.getElementById('userId').value == ""){
-        try {
-            Swal.fire(
-                'Please enter User id',
-                'please check',
-                'error'
-            )
-        } catch (error) {
-            alert("Please enter User id")
-        }
-        return
-    }else if(document.getElementById('password').value == ""){
-        try {
-            Swal.fire(
-                'Please enter Password',
-                'please check',
-                'error'
-            )
-        } catch (error) {
-            alert("Please enter Password")
-        }
-        return
-    }
-    checkDataInput();
 }
 
 function checkDataInput(){
@@ -155,7 +87,7 @@ function checkDataInput(){
         } catch (error) {
             alert("Please select at least one data")
         }
-        return
+        return false
     }
     if(document.getElementById("bloodGlucoseCheckbox").checked && 
     (document.getElementById('bloodGlucoseLowerValue').value == "" || 
@@ -169,7 +101,7 @@ function checkDataInput(){
         } catch (error) {
             alert("please enter blood glucose safety threshold")
         }
-        return
+        return false
     }
 
     if(document.getElementById("weightCheckbox").checked && 
@@ -184,7 +116,7 @@ function checkDataInput(){
         } catch (error) {
             alert("please enter weight safety threshold")
         }
-        return
+        return false
     }
 
     if(document.getElementById("insulinTakenCheckbox").checked && 
@@ -199,7 +131,7 @@ function checkDataInput(){
         } catch (error) {
             alert("please enter insulin taken safety threshold")
         }
-        return
+        return false
     }
     
     if(document.getElementById("exerciseCheckbox").checked && 
@@ -214,7 +146,7 @@ function checkDataInput(){
         } catch (error) {
             alert("please enter exercise safety threshold")
         }
-        return
+        return false
     }
 
     if(document.getElementById("bloodGlucoseCheckbox").checked && 
@@ -229,7 +161,7 @@ function checkDataInput(){
         } catch (error) {
             alert("please selct time series for blood glucose")
         }
-        return
+        return false
     }
 
     if(document.getElementById("weightCheckbox").checked && 
@@ -244,7 +176,7 @@ function checkDataInput(){
         } catch (error) {
             alert("please selct time series for weight")
         }
-        return
+        return false
     }
 
     if(document.getElementById("insulinTakenCheckbox").checked && 
@@ -259,7 +191,7 @@ function checkDataInput(){
         } catch (error) {
             alert("please selct time series for insulin taken")
         }
-        return
+        return false
     }
 
     if(document.getElementById("exerciseCheckbox").checked && 
@@ -274,6 +206,77 @@ function checkDataInput(){
         } catch (error) {
             alert("please selct time series for exercise")
         }
-        return
+        return false
     }
+}
+
+function createPatientValidation(){
+    if(document.getElementById('firstName').value == ""){
+        try {
+            Swal.fire(
+                'Please enter Frist name',
+                'please check',
+                'error'
+            )
+        } catch (error) {
+            alert("Please enter Last name")
+        }
+        return false
+    }else if (document.getElementById('lastName').value == ""){
+        try {
+            Swal.fire(
+                'Please enter Last name',
+                'please check',
+                'error'
+            )
+        } catch (error) {
+            alert("Please enter Last name")
+        }
+        return false
+    }else if(document.getElementById('screenName').value == ""){
+        try {
+            Swal.fire(
+                'Please enter Screen name',
+                'please check',
+                'error'
+            )
+        } catch (error) {
+            alert("Please enter Screen name")
+        }
+        return false
+    }else if(document.getElementById('brith').value == ""){
+        try {
+            Swal.fire(
+                'Please enter birth',
+                'please check',
+                'error'
+            )
+        } catch (error) {
+            alert("Please enter birth")
+        }
+        return false
+    }else if(document.getElementById('userId').value == ""){
+        try {
+            Swal.fire(
+                'Please enter User id',
+                'please check',
+                'error'
+            )
+        } catch (error) {
+            alert("Please enter User id")
+        }
+        return false
+    }else if(document.getElementById('password').value == ""){
+        try {
+            Swal.fire(
+                'Please enter Password',
+                'please check',
+                'error'
+            )
+        } catch (error) {
+            alert("Please enter Password")
+        }
+        return false
+    }
+    return checkDataInput();
 }

@@ -9,7 +9,7 @@
             </div>
             <div class="body-register">
                 <p class="title">New patient</p>
-                <form action="/{{id}}/newPatient" method="post">
+                <form action="/{{id}}/newPatient" method="post" onsubmit="return createPatientValidation()">
                     <ul class="login-info">
                         <li> 
                             <input type="text" class="firstName" id="firstName" placeholder="First name" name="first_name"> 
@@ -26,7 +26,7 @@
                     <ul class="data-info">
                         <li> 
                         <p>BLOOD GLUCOSE</p>
-                        <input class ="data-check-box" id="bloodGlucoseCheckbox" type="checkbox" name="" id="" name="bloodGlucoseCheckbox">
+                        <input class ="data-check-box" id="bloodGlucoseCheckbox" type="checkbox" id="" name="bloodGlucoseCheckbox">
                         <input class = "lower-value" id = "bloodGlucoseLowerValue" type="number" name="bloodGlucoseLowerValue" readonly>
                         <p class="sign"> ~ </p>
                         <input class = "upper-value" id = "bloodGlucoseUpperValue" type="number" name="bloodGlucoseUpperValue" readonly>
@@ -41,14 +41,14 @@
                         </li>
                         <li>
                             <p>WEIGHT</p>
-                            <input class ="data-check-box" id="weightCheckbox" type="checkbox" name="" id="">
-                            <input class = "lower-value" id="weightLowerValue" type="number" readonly>
+                            <input class ="data-check-box" id="weightCheckbox" type="checkbox" name="weightCheckbox" id="">
+                            <input class = "lower-value" id="weightLowerValue" type="number" name="weightLowerValue" readonly>
                             <p class="sign"> ~ </p>
-                            <input class = "upper-value" id="weightUpperValue" type="number" readonly>
+                            <input class = "upper-value" id="weightUpperValue" type="number" name="weightUpperValue" readonly>
                             <p class="unit" style="font-size: 40px; font-weight: normal;">kg</p>
-                            <input class = "lower-time-value" id = "weightTimeLowerValue" type="time" readonly>
+                            <input class = "lower-time-value" id = "weightTimeLowerValue" type="time" name = "weightTimeLowerValue" readonly>
                             <p class="timeSign"> ~ </p>
-                            <input class = "upper-time-value" id = "weightTimeUpperValue" type="time" readonly>
+                            <input class = "upper-time-value" id = "weightTimeUpperValue" type="time" name="weightTimeUpperValue" readonly>
                             <!-- <input type="button" value="AM" class="AMbtn" readonly>
                             <p class="AMPMSign" style="font-size: 50px;">/</p>
                             <input type="button" value="PM" class="PMbtn" readonly> -->
@@ -56,14 +56,14 @@
                         </li>
                         <li>
                             <p>INSULIN TAKEN</p>
-                            <input class ="data-check-box" id="insulinTakenCheckbox" type="checkbox" name="" id="">
-                            <input class = "lower-value" id="insulinTakenLowerValue" type="number" readonly>
+                            <input class ="data-check-box" id="insulinTakenCheckbox" type="checkbox" name="insulinTakenCheckbox" id="">
+                            <input class = "lower-value" id="insulinTakenLowerValue" type="number" name="insulinTakenLowerValue" readonly>
                             <p class="sign"> ~ </p>
-                            <input class = "upper-value" id="insulinTakenUpperValue" type="number" readonly>
+                            <input class = "upper-value" id="insulinTakenUpperValue" type="number" name="insulinTakenUpperValue" readonly>
                             <p class="unit" style="font-size: 40px; font-weight: normal;">dose(s)</p>
-                            <input class = "lower-time-value" id = "insulinTakenTimeLowerValue" type="time" readonly>
+                            <input class = "lower-time-value" id = "insulinTakenTimeLowerValue" type="time" name="insulinTakenTimeLowerValue" readonly>
                             <p class="timeSign"> ~ </p>
-                            <input class = "upper-time-value" id = "insulinTakenTimeUpperValue" type="time" readonly>
+                            <input class = "upper-time-value" id = "insulinTakenTimeUpperValue" type="time" name="insulinTakenTimeUpperValue" readonly>
                             <!-- <input type="button" value="AM" class="AMbtn" readonly>
                             <p class="AMPMSign" style="font-size: 50px;">/</p>
                             <input type="button" value="PM" class="PMbtn" readonly> -->
@@ -71,14 +71,14 @@
                         </li>
                         <li>
                             <p>EXERCISE</p>
-                            <input class ="data-check-box" id="exerciseCheckbox" type="checkbox" name="" id="">
-                            <input class = "lower-value" id="exerciseLowerBalue" type="number" readonly>
+                            <input class ="data-check-box" id="exerciseCheckbox" type="checkbox" name="exerciseCheckbox" >
+                            <input class = "lower-value" id="exerciseLowerBalue" type="number" name="exerciseLowerBalue" readonly>
                             <p class="sign"> ~ </p>
-                            <input class = "upper-value" id="exerciseUpperValue" type="number" readonly>
+                            <input class = "upper-value" id="exerciseUpperValue" type="number" name="exerciseUpperValue" readonly>
                             <p class="unit" style="font-size: 40px; font-weight: normal;">stpes</p>
-                            <input class = "lower-time-value" id = "exerciseTimeLowerValue" type="time" readonly>
+                            <input class = "lower-time-value" id = "exerciseTimeLowerValue" type="time" name="exerciseTimeLowerValue" readonly>
                             <p class="timeSign"> ~ </p>
-                            <input class = "upper-time-value" id = "exerciseTimeUpperValue" type="time" readonly>
+                            <input class = "upper-time-value" id = "exerciseTimeUpperValue" type="time" name="exerciseTimeUpperValue" readonly>
                             <!-- <input type="button" value="AM" class="AMbtn" readonly>
                             <p class="AMPMSign" style="font-size: 50px;">/</p>
                             <input type="button" value="PM" class="PMbtn" readonly> -->
@@ -86,7 +86,7 @@
                         </li>
                     </ul>
                     <div class="create">
-                        <button type="submit"  onclick="checkInput()">Create</button>
+                        <button type="submit">Create</button>
                     </div>
                 </form>
             </div>
