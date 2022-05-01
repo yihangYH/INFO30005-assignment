@@ -65,7 +65,7 @@ async function validate() {
 
     // based on the response, redirect to data page for patient, or showing error meesage
     if (response.status == 202) {
-      // window.location.href = "./data/" ;
+      window.location.href = "./data/" + response.statusText;
     } else if (response.status == 201) {
       try {
         Swal.fire(

@@ -5,6 +5,7 @@ const {patient} = require('./models/patient')
 
 passport.serializeUser((user, done) => {
     // Use id to serialize user
+
     done(undefined, user._id)
 })
 
@@ -41,6 +42,7 @@ passport.use(
                         message: 'Incorrect username or password', 
                     })
                 }
+                
                 return done(undefined, user)
             })
         })

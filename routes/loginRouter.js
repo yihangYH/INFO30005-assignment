@@ -25,8 +25,9 @@ loginRouter.post('/login',
     function(req, res) {
         console.log(req.user._id)
         res.status("202")
-        // res.send()
-        res.redirect("./data/" + req.user._id)
+        res.statusMessage = req.user._id
+        res.send()
+        // res.redirect("./data/" + req.user._id)
     });
 
 
