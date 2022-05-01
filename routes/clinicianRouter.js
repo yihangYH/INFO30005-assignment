@@ -1,5 +1,5 @@
 const express = require('express')
-
+const passport = require('passport') 
 const clinicianRouter = express.Router()
 
 const clinicianController = require('../controller/clinicianController')

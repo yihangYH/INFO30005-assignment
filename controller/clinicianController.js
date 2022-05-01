@@ -60,7 +60,25 @@ const CreatePatient = async(req,res,next) => {
 
 
     }
-    console.log(body)
+    patient.create({
+        'first_name': req.body.first_name,
+        'last_name': req.body.last_name,
+        'screen_name': req.body.screen_name,
+        'birth': req.body.birthday,
+        'userid':req.body.userid,
+        'password':req.body.password,
+        'bio': "enter your bio!!!",
+        'supportMessage': "keep going",
+        'bloodGlucose':[],
+        'weight':[],
+        'insulinTaken':[],
+        'exercise':[],
+        'healthyData_required': healthyData_required,
+    }, function(err, newPatient){
+        if (err) { console.log(err); return; }
+        console.log('Dummy user inserted')
+        console.log(newPatient._id)
+    })
     res.send(body)
 }
 

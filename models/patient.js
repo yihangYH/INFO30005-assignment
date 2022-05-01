@@ -1,5 +1,6 @@
 //patient's data storing stucture
 const mongoose = require('mongoose')
+const bcrypt = require('bcryptjs')
 require('./data.js')
 const patientSchema = new mongoose.Schema({
     userid: String,
@@ -17,6 +18,31 @@ const patientSchema = new mongoose.Schema({
     bloodGlucose: [{type:mongoose.Schema.Types.ObjectId, ref:'bloodGlucose'}],
     supportMessage: String,
 })
+
+patientSchema.methods.verifyPassword = function (password, callback) {
+        bcrypt.compare(password, this.password, (err, valid) => {
+        callback(err, valid) 
+    })
+}
+const SALT_FACTOR = 10
+
+patientSchema.pre('save', function save(next) {
+    const user = this
+    // Go to next if password field has not been modified 
+    if (!user.isModified('password')) {
+        return next() 
+    }
+    // Automatically generate salt, and calculate hash
+    bcrypt.hash(user.password, SALT_FACTOR, (err, hash) => { 
+        if (err) {
+            return next(err) 
+        }
+        // Replace password with hash
+        user.password = hash
+        next() 
+    })
+})
+
 
 const patient = mongoose.model('patient', patientSchema, 'patient')
 
