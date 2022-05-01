@@ -11,8 +11,17 @@
     <script src="../js/login.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../js/dashboard.js"></script>
-    <script src="../js/createPatient.js"></script>
-    <script>
+</head>
+
+<body>
+    <main>
+        {{{body}}}
+    </main>
+</body>
+
+</html>
+
+<script>
         var path = window.location.pathname;
         if (path.includes("login")) {
             document.getElementById("style").href = "../css/login.css";
@@ -40,12 +49,3 @@
             document.title = "Update patient";
         }
     </script>
-</head>
-
-<body>
-    <main>
-        {{{body}}}
-    </main>
-</body>
-
-</html>
