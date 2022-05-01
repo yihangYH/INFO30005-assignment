@@ -49,6 +49,7 @@ const CreatePatient = async(req,res,next) => {
         'screen_name': req.body.screen_name,
         'birth': req.body.birthday,
         'userid':req.body.userid,
+        'password':req.body.password,
         'bio': "enter your bio!!!",
         'supportMessage': "keep going",
         'bloodGlucose':[],
