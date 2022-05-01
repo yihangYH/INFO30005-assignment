@@ -15,7 +15,7 @@ const getPatient = async(req,res,next) => {
         .populate("insulinTaken").lean();
         res.render('data.hbs', {patientInfo: patientData})
     } catch (error) {
-        return next(err)
+        return next(error)
     }
 }
 

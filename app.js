@@ -20,7 +20,6 @@ app.use(express.json())
 
 // only needed for URL-encoded input
 app.use(express.urlencoded({ extended: true }))
-app.use(flash())
 app.engine(
     'hbs',
     exphbs.engine({
@@ -74,6 +73,7 @@ app.use(
         store: MongoStore.create({ clientPromise: mongooseClient }),
     })
 )
+app.use(flash())
 if (app.get('env') === 'production') {
     app.set('trust proxy', 1); // Trust first proxy 
 }

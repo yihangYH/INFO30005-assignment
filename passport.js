@@ -5,12 +5,10 @@ const {patient} = require('./models/patient')
 
 passport.serializeUser((user, done) => {
     // Use id to serialize user
-    console.log(user)
     done(undefined, user._id)
 })
 
 passport.deserializeUser((userId, done) => {
-    console.log(userId)
     patient.findOne({ _id: userId },  (err, user) => {
         if (err) {
             return done(err, undefined) 

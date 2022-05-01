@@ -95,3 +95,4 @@ hbs.handlebars.registerHelper("checkSafety", function(safety,value,index) {
     }
     return ""
 });
+
