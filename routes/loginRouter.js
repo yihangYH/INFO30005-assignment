@@ -4,12 +4,12 @@ const loginRouter = express.Router()
 const isAuthenticated = (req, res, next) => {
     // If user is not authenticated via passport, redirect to login page 
     if (!req.isAuthenticated()) {
-        return res.redirect('/login1') 
+        return res.redirect('/login') 
     }
     return next() 
 }
 loginRouter.get('/', isAuthenticated, (req, res) => {
-    res.render('login') 
+    res.redirect('/login') 
 })
 
 
@@ -27,12 +27,9 @@ loginRouter.post('/login',
         res.status("202")
         res.statusMessage = req.user._id
         res.send()
-        // res.redirect("./data/" + req.user._id)
     });
 
 
-loginRouter.post('/logout', (req, res) => { req.logout()
-    res.redirect('/') 
-})
+
 
 module.exports = loginRouter
