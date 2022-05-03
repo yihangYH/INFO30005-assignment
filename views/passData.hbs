@@ -13,15 +13,30 @@
         <div class="big-title">Past Seven Days</div>
     </div>
     <div class="pass-data">
-       
-            {{#each this.bloodGlucose}}
-            <div class="day1">
-                <div class="data1">Blood Glucose level: <div class="data1-number">{{find this.bloodGlucose}}</div> mmol/L </div>
+        <ul class="pastData">
+        {{#each this.bloodGlucose}}
+            <li>
+                <div class="day1">
+                <div class="data1">Blood Glucose level: <div class="data1-number">{{find this.value}}</div> mmol/L </div>
                 <p class="date1">03/15</p>
             </div>
-            {{/each}}
+            </li>
+        {{/each}}
+            {{!-- <li>
+                <div class="day1">
+                <div class="data1">Blood Glucose level: <div class="data1-number">{{find this.value}}</div> mmol/L </div>
+                <p class="date1">03/15</p>
+            </div>
+            </li>
+            <li>
+                <div class="day1">
+                <div class="data1">Blood Glucose level: <div class="data1-number">{{find this.value}}</div> mmol/L </div>
+                <p class="date1">03/15</p>
+            </div>
+            </li> --}}
+        </ul>
 
-        <div class="day2">
+        {{!-- <div class="day2">
             <div class="data2">Blood Glucose level: <div class="data2-number">4.6</div> mmol/L </div>
             <p class="date2">03/15</p>
         </div>
@@ -45,7 +60,7 @@
         <div class="day7">
             <div class="data7">Blood Glucose level: <div class="data7-number">4.6</div> mmol/L </div>
             <p class="date7">03/15</p>
-        </div>
+        </div> --}}
     </div>
     <!-- <div class = "graph">
             <div class = "graph-title">Historical Data</div>

@@ -572,8 +572,15 @@
         left: 5%;
         top: 19%;
     }
-    .day1 {
+    .pastData {
+        list-style: none;
+        display: block;
         position: absolute;
+        top: 40%;
+        left: 10%;
+    }
+    .day1 {
+        
         width: 32%;
         height: 7.5%;
         left: 10%;
@@ -584,7 +591,7 @@
     }
 
     .data1 {
-        position: relative;
+        
         left: 9%;
         top: 30%;
         width: 60%;
@@ -595,8 +602,11 @@
         display: inline;
     }
 
+    .pastData li{
+        padding-bottom: 10%;
+    }
     .date1 {
-        position: relative;
+        
         left: 78%;
         top: -6%;
         width: 8%;
