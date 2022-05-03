@@ -3,6 +3,10 @@
 const exphbs = require('express-handlebars')
 var hbs = exphbs.create({});
 
+hbs.handlebars.registerHelper("find", function(data){
+    console.log(data)
+    return ""
+});
 
 hbs.handlebars.registerHelper("findWeight", function(data) {
     // get the latest value 

@@ -94,7 +94,17 @@ const updateData  = async(req,res,next) =>{
 }
 
 const getPassData = async(req,res,next)=>{
-    res.render("passData.hbs")
+    try {
+        const patientData = await patient.findOne({_id:req.params.id})
+        .populate("weight")
+        .populate("exercise")
+        .populate("bloodGlucose")
+        .populate("insulinTaken").lean();
+        
+        res.render('passData.hbs', {patientInfo: patientData})
+    } catch (error) {
+        return next(error)
+    }
 }
 
 module.exports = {getPatient, updateData, getPassData}

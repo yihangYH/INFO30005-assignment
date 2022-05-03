@@ -1,49 +1,56 @@
 <link rel="stylesheet" href="/css/pastData.css">
+
+{{#with patientInfo}}
 <div class="main">
-        <div class="header">
-            <div>
-                <img class="logo" src="/res/logo.png" alt="logo">
-            </div>
-            <div class="logout">Log out</div>
+    <div class="header">
+        <div>
+            <img class="logo" src="/res/logo.png" alt="logo">
         </div>
-        <div class ="title"> 
-            <img class="back" src="/res/back.jpg" alt="">
-            <div class="big-title">Past Seven Days</div>
+        <div class="logout">Log out</div>
+    </div>
+    <div class="title">
+        <img class="back" src="/res/back.jpg" alt="">
+        <div class="big-title">Past Seven Days</div>
+    </div>
+    <div class="pass-data">
+       
+            {{#each this.bloodGlucose}}
+            <div class="day1">
+                <div class="data1">Blood Glucose level: <div class="data1-number">{{find this.bloodGlucose}}</div> mmol/L </div>
+                <p class="date1">03/15</p>
+            </div>
+            {{/each}}
+
+        <div class="day2">
+            <div class="data2">Blood Glucose level: <div class="data2-number">4.6</div> mmol/L </div>
+            <p class="date2">03/15</p>
         </div>
-        <div class="pass-data">
-            <div class = "day1">
-                <div class = "data1">Blood Glucose level: <div class="data1-number">4.6</div> mmol/L </div>
-                <p class = "date1">03/15</p>
-            </div>
-            <div class = "day2">
-                <div class = "data2">Blood Glucose level: <div class="data2-number">4.6</div> mmol/L </div>
-                <p class = "date2">03/15</p>
-            </div>
-            <div class = "day3">
-                <div class = "data3">Blood Glucose level: <div class="data3-number">4.6</div> mmol/L </div>
-                <p class = "date3">03/15</p>
-            </div>
-            <div class = "day4">
-                <div class = "data4">Blood Glucose level: <div class="data4-number">4.6</div> mmol/L </div>
-                <p class = "date4">03/15</p>
-            </div>
-            <div class = "day5">
-                <div class = "data3">Blood Glucose level: <div class="data5-number">4.6</div> mmol/L </div>
-                <p class = "date3">03/15</p>
-            </div>
-            
-            <div class = "day6">
-                <div class = "data6">Blood Glucose level: <div class="data6-number">4.6</div> mmol/L </div>
-                <p class = "date6">03/15</p>
-            </div>
-            <div class = "day7">
-                <div class = "data7">Blood Glucose level: <div class="data7-number">4.6</div> mmol/L </div>
-                <p class = "date7">03/15</p>
-            </div>
+        <div class="day3">
+            <div class="data3">Blood Glucose level: <div class="data3-number">4.6</div> mmol/L </div>
+            <p class="date3">03/15</p>
         </div>
-        <!-- <div class = "graph">
+        <div class="day4">
+            <div class="data4">Blood Glucose level: <div class="data4-number">4.6</div> mmol/L </div>
+            <p class="date4">03/15</p>
+        </div>
+        <div class="day5">
+            <div class="data3">Blood Glucose level: <div class="data5-number">4.6</div> mmol/L </div>
+            <p class="date3">03/15</p>
+        </div>
+
+        <div class="day6">
+            <div class="data6">Blood Glucose level: <div class="data6-number">4.6</div> mmol/L </div>
+            <p class="date6">03/15</p>
+        </div>
+        <div class="day7">
+            <div class="data7">Blood Glucose level: <div class="data7-number">4.6</div> mmol/L </div>
+            <p class="date7">03/15</p>
+        </div>
+    </div>
+    <!-- <div class = "graph">
             <div class = "graph-title">Historical Data</div>
             <div class ="graph-data"><img class="graph" src="/res/logo.png" alt="data-graph"></div>
         </div> -->
-        
-    </div>
+
+</div>
+{{/with}}
