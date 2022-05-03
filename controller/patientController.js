@@ -93,4 +93,8 @@ const updateData  = async(req,res,next) =>{
     }
 }
 
-module.exports = {getPatient, updateData}
+const getPassData = async(req,res,next)=>{
+    res.render("passData.hbs")
+}
+
+module.exports = {getPatient, updateData, getPassData}

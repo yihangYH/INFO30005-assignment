@@ -1,0 +1,785 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans");
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans ', sans-serif;
+}
+
+@media screen and (min-width: 300px) and (max-width:400px) {
+
+    .header {
+        display: flex;
+        background: linear-gradient(to bottom, #DFAFAD, #FDF9F8);
+        height: 84.711px;
+    }
+
+    .logo {
+        width: 150px;
+    }
+
+    .logout {
+        position: absolute;
+        left: 77%;
+        top: 4%;
+        border-radius: 25px;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        padding-left: 2%;
+        padding-right: 2%;
+        background-color: #DFAFAD;
+        color: white;
+    }
+
+    .big-title {
+        position: absolute;
+        font-size: 26px;
+        font-weight: bold;
+        left: 24%;
+        top: 12%;
+    }
+
+    .back {
+        position: absolute;
+        width: 11%;
+        left: 7%;
+        top: 11%;
+    }
+
+    .day1 {
+        position: absolute;
+        width: 85%;
+        height: 5.5%;
+        left: 7%;
+        top: 20%;
+        font-size: 12px;
+        border: 1px solid grey;
+        border-radius: 16px;
+    }
+
+    .data1 {
+        position: relative;
+        left: 12%;
+        top: 35%;
+        width: 60%;
+
+    }
+
+    .data1-number {
+        display: inline;
+    }
+
+    .date1 {
+        position: relative;
+        left: 80%;
+        top: 6%;
+        width: 16%;
+    }
+
+    .day2 {
+        position: absolute;
+        width: 85%;
+        height: 5.5%;
+        left: 7%;
+        top: 28%;
+        font-size: 12px;
+        border: 1px solid grey;
+        border-radius: 16px;
+    }
+
+    .data2 {
+        position: relative;
+        left: 12%;
+        top: 35%;
+        width: 60%;
+
+    }
+
+    .data2-number {
+        display: inline;
+    }
+
+    .date2 {
+        position: relative;
+        left: 80%;
+        top: 6%;
+        width: 16%;
+    }
+
+    .day3 {
+        position: absolute;
+        width: 85%;
+        height: 5.5%;
+        left: 7%;
+        top: 36%;
+        font-size: 12px;
+        border: 1px solid grey;
+        border-radius: 16px;
+    }
+
+    .data3 {
+        position: relative;
+        left: 12%;
+        top: 35%;
+        width: 60%;
+
+    }
+
+    .data3-number {
+        display: inline;
+    }
+
+    .date3 {
+        position: relative;
+        left: 80%;
+        top: 6%;
+        width: 16%;
+    }
+
+    .day4 {
+        position: absolute;
+        width: 85%;
+        height: 5.5%;
+        left: 7%;
+        top: 44%;
+        font-size: 12px;
+        border: 1px solid grey;
+        border-radius: 16px;
+    }
+
+    .data4 {
+        position: relative;
+        left: 12%;
+        top: 35%;
+        width: 60%;
+
+    }
+
+    .data4-number {
+        display: inline;
+    }
+
+    .date4 {
+        position: relative;
+        left: 80%;
+        top: 6%;
+        width: 16%;
+    }
+
+    .day5 {
+        position: absolute;
+        width: 85%;
+        height: 5.5%;
+        left: 7%;
+        top: 52%;
+        font-size: 12px;
+        border: 1px solid grey;
+        border-radius: 16px;
+    }
+
+    .data5 {
+        position: relative;
+        left: 12%;
+        top: 35%;
+        width: 60%;
+
+    }
+
+    .data5-number {
+        display: inline;
+    }
+
+    .date5 {
+        position: relative;
+        left: 80%;
+        top: 6%;
+        width: 16%;
+    }
+
+    .day6 {
+        position: absolute;
+        width: 85%;
+        height: 5.5%;
+        left: 7%;
+        top: 60%;
+        font-size: 12px;
+        border: 1px solid grey;
+        border-radius: 16px;
+    }
+
+    .data6 {
+        position: relative;
+        left: 12%;
+        top: 35%;
+        width: 60%;
+
+    }
+
+    .data6-number {
+        display: inline;
+    }
+
+    .date6 {
+        position: relative;
+        left: 80%;
+        top: 6%;
+        width: 16%;
+    }
+
+    .day7 {
+        position: absolute;
+        width: 85%;
+        height: 5.5%;
+        left: 7%;
+        top: 68%;
+        font-size: 12px;
+        border: 1px solid grey;
+        border-radius: 16px;
+    }
+
+    .data7 {
+        position: relative;
+        left: 12%;
+        top: 35%;
+        width: 60%;
+
+    }
+
+    .data7-number {
+        display: inline;
+    }
+
+    .date7 {
+        position: relative;
+        left: 80%;
+        top: 6%;
+        width: 16%;
+    }
+
+
+
+}
+
+@media screen and (min-device-width: 1000px) and (max-device-width: 1200px) {
+    .header {
+        display: flex;
+        background: linear-gradient(to bottom, #DFAFAD, #FDF9F8);
+        width: 100%;
+        height: 125px;
+    }
+
+    .logo {
+        position: absolute;
+        width: 250px;
+        left: 18px;
+
+    }
+
+    .body {
+        height: 100%;
+        width: 100%;
+    }
+
+    .logout {
+        position: absolute;
+        right: 5%;
+        top: 6%;
+        font-size: 26px;
+        border-radius: 25px;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        padding-left: 2%;
+        padding-right: 2%;
+        background-color: #DFAFAD;
+        color: white;
+    }
+
+    .big-title {
+        position: absolute;
+        font-size: 35px;
+        font-weight: bold;
+        left: 36%;
+        top: 22%;
+    }
+
+    .back {
+        position: absolute;
+        width: 6%;
+        left: 8%;
+        top: 20%;
+    }
+    .day1{
+        position: absolute;
+        width: 38%;
+        height: 7.5%;
+        left: 7%;
+        top: 35%;
+        font-size: 20px;
+        border: 1px solid grey;
+        border-radius: 16px;
+    }
+
+    .data1 {
+        position: relative;
+        left: 5%;
+        top: 30%;
+        width: 88%;
+
+    }
+
+    .data1-number {
+        display: inline;
+    }
+
+    .date1 {
+        position: relative;
+        left: 83%;
+        top: -10%;
+        width: 8%;
+    }
+
+    .day2 {
+        position: absolute;
+        width: 38%;
+        height: 7.5%;
+        left: 7%;
+        top: 48%;
+        font-size: 20px;
+        border: 1px solid grey;
+        border-radius: 16px;
+    }
+
+    .data2 {
+        position: relative;
+        left: 5%;
+        top: 30%;
+        width: 88%;
+
+    }
+
+    .data2-number {
+        display: inline;
+    }
+
+    .date2 {
+       position: relative;
+        left: 82%;
+        top: -10%;
+        width: 8%;
+    }
+
+    .day3 {
+        position: absolute;
+        width: 38%;
+        height: 7.5%;
+        left: 7%;
+        top: 61%;
+        font-size: 20px;
+        border: 1px solid grey;
+        border-radius: 16px;
+    }
+
+    .data3 {
+        position: relative;
+        left: 5%;
+        top: 30%;
+        width: 88%;
+
+    }
+
+    .data3-number {
+        display: inline;
+    }
+
+    .date3 {
+        position: relative;
+        left: 82%;
+        top: -10%;
+        width: 8%;
+    }
+
+    .day4 {
+        position: absolute;
+        width: 38%;
+        height: 7.5%;
+        left: 7%;
+        top: 74%;
+        font-size: 20px;
+        border: 1px solid grey;
+        border-radius: 16px;
+    }
+
+    .data4 {
+        position: relative;
+        left: 5%;
+        top: 30%;
+        width: 88%;
+
+    }
+
+    .data4-number {
+        display: inline;
+    }
+
+    .date4 {
+        position: relative;
+        left: 82%;
+        top: -10%;
+        width: 8%;
+    }
+
+    .day5 {
+        position: absolute;
+        width: 38%;
+        height: 7.5%;
+        left: 7%;
+        top: 87%;
+        font-size: 20px;
+        border: 1px solid grey;
+        border-radius: 16px;
+    }
+
+    .data5 {
+        position: relative;
+        left: 5%;
+        top: 30%;
+        width: 88%;
+
+    }
+
+    .data5-number {
+        display: inline;
+    }
+
+    .date5 {
+        position: relative;
+        left: 82%;
+        top: -10%;
+        width: 8%;
+    }
+
+    .day6 {
+        position: absolute;
+        width: 38%;
+        height: 7.5%;
+        left: 55%;
+        top: 35%;
+        font-size: 20px;
+        border: 1px solid grey;
+        border-radius: 16px;
+    }
+
+    .data6 {
+        position: relative;
+        left: 5%;
+        top: 30%;
+        width: 88%;
+
+    }
+
+    .data6-number {
+        display: inline;
+    }
+
+    .date6 {
+        position: relative;
+        left: 82%;
+        top: -10%;
+        width: 8%;
+    }
+
+    .day7 {
+        position: absolute;
+        width: 38%;
+        height: 7.5%;
+        left: 55%;
+        top: 48%;
+        font-size: 20px;
+        border: 1px solid grey;
+        border-radius: 16px;
+    }
+
+    .data7 {
+        position: relative;
+        left: 5%;
+        top: 30%;
+        width: 88%;
+
+    }
+
+    .data7-number {
+        display: inline;
+    }
+
+    .date7 {
+        position: relative;
+        left: 82%;
+        top: -10%;
+        width: 8%;
+    }
+
+
+}
+
+@media screen and (min-width: 1900px) {
+
+    .header {
+        display: flex;
+        background: linear-gradient(to bottom, #DFAFAD, #FDF9F8);
+        height: 200px;
+    }
+
+    .logo {
+        position: absolute;
+        width: 350px;
+        left: 25px;
+
+    }
+
+    body {
+        height: 100%;
+        width: 100%;
+    }
+
+    .logout {
+        position: absolute;
+        left: 86.5%;
+        top: 6%;
+        width: 150px;
+        height: 50px;
+        font-size: 38px;
+        text-align: center;
+        border-radius: 18px;
+        padding-top: 0.5%;
+        padding-bottom: 0.5%;
+        padding-left: 1%;
+        padding-right: 1%;
+        background-color: #DFAFAD;
+        color: white;
+    }
+
+    .big-title {
+        position: absolute;
+        font-size: 65px;
+        font-weight: bold;
+        left: 38%;
+        top: 24%;
+    }
+
+    .back {
+        position: absolute;
+        width: 5.5%;
+        left: 5%;
+        top: 19%;
+    }
+    .day1 {
+        position: absolute;
+        width: 32%;
+        height: 7.5%;
+        left: 10%;
+        top: 35%;
+        font-size: 25px;
+        border: 1px solid grey;
+        border-radius: 16px;
+    }
+
+    .data1 {
+        position: relative;
+        left: 9%;
+        top: 30%;
+        width: 60%;
+
+    }
+
+    .data1-number {
+        display: inline;
+    }
+
+    .date1 {
+        position: relative;
+        left: 78%;
+        top: -6%;
+        width: 8%;
+    }
+
+    .day2 {
+        position: absolute;
+        width: 32%;
+        height: 7.5%;
+        left: 10%;
+        top: 48%;
+        font-size: 25px;
+        border: 1px solid grey;
+        border-radius: 16px;
+    }
+
+    .data2 {
+        position: relative;
+        left: 12%;
+        top: 30%;
+        width: 60%;
+
+    }
+
+    .data2-number {
+        display: inline;
+    }
+
+    .date2 {
+        position: relative;
+        left: 78%;
+        top: -6%;
+        width: 8%;
+    }
+
+    .day3 {
+        position: absolute;
+        width: 32%;
+        height: 7.5%;
+        left: 10%;
+        top: 61%;
+        font-size: 25px;
+        border: 1px solid grey;
+        border-radius: 16px;
+    }
+
+    .data3 {
+        position: relative;
+        left: 12%;
+        top: 30%;
+        width: 60%;
+
+    }
+
+    .data3-number {
+        display: inline;
+    }
+
+    .date3 {
+        position: relative;
+        left: 78%;
+        top: -6%;
+        width: 8%;
+    }
+
+    .day4 {
+        position: absolute;
+        width: 32%;
+        height: 7.5%;
+        left: 10%;
+        top: 74%;
+        font-size: 25px;
+        border: 1px solid grey;
+        border-radius: 16px;
+    }
+
+    .data4 {
+        position: relative;
+        left: 12%;
+        top: 30%;
+        width: 60%;
+
+    }
+
+    .data4-number {
+        display: inline;
+    }
+
+    .date4 {
+        position: relative;
+        left: 78%;
+        top: -6%;
+        width: 8%;
+    }
+
+    .day5 {
+        position: absolute;
+        width: 32%;
+        height: 7.5%;
+        left: 10%;
+        top: 87%;
+        font-size: 25px;
+        border: 1px solid grey;
+        border-radius: 16px;
+    }
+
+    .data5 {
+        position: relative;
+        left: 12%;
+        top: 30%;
+        width: 60%;
+
+    }
+
+    .data5-number {
+        display: inline;
+    }
+
+    .date5 {
+        position: relative;
+        left: 78%;
+        top: -6%;
+        width: 8%;
+    }
+
+    .day6 {
+        position: absolute;
+        width: 32%;
+        height: 7.5%;
+        left: 59%;
+        top: 35%;
+        font-size: 25px;
+        border: 1px solid grey;
+        border-radius: 16px;
+    }
+
+    .data6 {
+        position: relative;
+        left: 12%;
+        top: 30%;
+        width: 60%;
+
+    }
+
+    .data6-number {
+        display: inline;
+    }
+
+    .date6 {
+        position: relative;
+        left: 78%;
+        top: -6%;
+        width: 8%;
+    }
+
+    .day7 {
+        position: absolute;
+        width: 32%;
+        height: 7.5%;
+        left: 59%;
+        top: 48%;
+        font-size: 25px;
+        border: 1px solid grey;
+        border-radius: 16px;
+    }
+
+    .data7 {
+        position: relative;
+        left: 12%;
+        top: 30%;
+        width: 60%;
+
+    }
+
+    .data7-number {
+        display: inline;
+    }
+
+    .date7 {
+        position: relative;
+        left: 78%;
+        top: -6%;
+        width: 8%;
+    }
+
+}
