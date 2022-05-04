@@ -100,7 +100,6 @@ const getPassData = async(req,res,next)=>{
         .populate("exercise")
         .populate("bloodGlucose")
         .populate("insulinTaken").lean();
-        
         res.render('passData.hbs', {patientInfo: patientData})
     } catch (error) {
         return next(error)

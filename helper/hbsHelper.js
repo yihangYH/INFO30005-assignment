@@ -3,9 +3,35 @@
 const exphbs = require('express-handlebars')
 var hbs = exphbs.create({});
 
-hbs.handlebars.registerHelper("find", function(data){
-    console.log(data)
+// Warning: untested code
+hbs.handlebars.registerHelper('each_upto', function(ary, max, options) {
+    if(!ary || ary.length == 0)
+        return options.inverse(this);
+    var result = [ ];
+    const newary = ary.slice(-7);
+    for(var i = 0; i < max && i < newary.length; ++i)
+        result.push(options.fn(newary[i]));
+    return result.join('');
+});
+
+hbs.handlebars.registerHelper('findlatest7', function(data) {
+    console.log(data.slice(-7))
     return ""
+});
+
+// hbs.handlebars.registerHelper('sort', function(data1, data2) {
+//     return data1.time - data2.time
+// });
+
+hbs.handlebars.registerHelper("findLastBloodGlucose", function(data){
+    return data
+});
+
+hbs.handlebars.registerHelper("findLastDate", function(data){
+
+    const lastDate = data.split(' ')[0];
+
+    return lastDate
 });
 
 hbs.handlebars.registerHelper("findWeight", function(data) {

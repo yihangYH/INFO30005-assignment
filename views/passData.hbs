@@ -8,64 +8,27 @@
         </div>
         <div class="logout">Log out</div>
     </div>
-    <div class="title">
-        <img class="back" src="/res/back.jpg" alt="">
-        <div class="big-title">Past Seven Days</div>
-    </div>
+
     <div class="pass-data">
+        <div class="title">
+            <a href="/data/{{this._id}}"><img class="back" src="/res/back.jpg" alt="backArrow"></a>
+            {{!-- <img class="back" src="/res/back.jpg" alt=""> --}}
+            <div class="big-title">Past Seven Days</div>
+        </div>
         <ul class="pastData">
-        {{#each this.bloodGlucose}}
+            {{#each_upto this.bloodGlucose 7}}
             <li>
-                <div class="day1">
-                <div class="data1">Blood Glucose level: <div class="data1-number">{{find this.value}}</div> mmol/L </div>
-                <p class="date1">03/15</p>
-            </div>
+                <div class="data1">Blood Glucose level: <div class="data1-number">{{findLastBloodGlucose this.value}}
+                    </div> mmol/L
+                </div>
+                <p class="date1">{{findLastDate this.time}}</p>
             </li>
-        {{/each}}
-            {{!-- <li>
-                <div class="day1">
-                <div class="data1">Blood Glucose level: <div class="data1-number">{{find this.value}}</div> mmol/L </div>
-                <p class="date1">03/15</p>
-            </div>
-            </li>
-            <li>
-                <div class="day1">
-                <div class="data1">Blood Glucose level: <div class="data1-number">{{find this.value}}</div> mmol/L </div>
-                <p class="date1">03/15</p>
-            </div>
-            </li> --}}
+            {{/each_upto}}
         </ul>
-
-        {{!-- <div class="day2">
-            <div class="data2">Blood Glucose level: <div class="data2-number">4.6</div> mmol/L </div>
-            <p class="date2">03/15</p>
+        <div class="graph">
+            <div class="graph-title">Historical Data</div>
+            <img class="graph-data" src="/res/dataGraph.png" alt="data-graph">
         </div>
-        <div class="day3">
-            <div class="data3">Blood Glucose level: <div class="data3-number">4.6</div> mmol/L </div>
-            <p class="date3">03/15</p>
-        </div>
-        <div class="day4">
-            <div class="data4">Blood Glucose level: <div class="data4-number">4.6</div> mmol/L </div>
-            <p class="date4">03/15</p>
-        </div>
-        <div class="day5">
-            <div class="data3">Blood Glucose level: <div class="data5-number">4.6</div> mmol/L </div>
-            <p class="date3">03/15</p>
-        </div>
-
-        <div class="day6">
-            <div class="data6">Blood Glucose level: <div class="data6-number">4.6</div> mmol/L </div>
-            <p class="date6">03/15</p>
-        </div>
-        <div class="day7">
-            <div class="data7">Blood Glucose level: <div class="data7-number">4.6</div> mmol/L </div>
-            <p class="date7">03/15</p>
-        </div> --}}
     </div>
-    <!-- <div class = "graph">
-            <div class = "graph-title">Historical Data</div>
-            <div class ="graph-data"><img class="graph" src="/res/logo.png" alt="data-graph"></div>
-        </div> -->
-
 </div>
 {{/with}}
