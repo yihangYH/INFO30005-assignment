@@ -26,9 +26,9 @@
         if (path.includes("login")) {
             document.getElementById("style").href = "../css/login.css";
             document.title = "Login";
-        } else if (path.includes("data")) {
-            {{!-- document.getElementById("style").href = "../css/patientInfo.css";
-            document.title = "Your Data"; --}}
+        } else if (path.includes("data") && !path.includes("bloodGlucose")) {
+            document.getElementById("style").href = "../css/patientInfo.css";
+            document.title = "Your Data";
         } else if (path.includes("welcome") || path.includes("Welcome")) {
             document.getElementById("style").href = "../css/stylesheet.css";
             document.title = "Welcome";
