@@ -7,7 +7,10 @@
 }
 /* and (min-width: 300px) */
 @media screen  and (max-width:400px) {
-
+    .body {
+        height: 100%;
+        width: 100%;
+    }
     .header {
         display: flex;
         background: linear-gradient(to bottom, #DFAFAD, #FDF9F8)
@@ -22,6 +25,8 @@
         left: 76%;
         top: 4%;
         border-radius: 25px;
+        text-align: center;
+        text-decoration:none;
         padding-top: 1%;
         padding-bottom: 1%;
         padding-left: 2%;
@@ -29,20 +34,33 @@
         background-color: #DFAFAD;
         color: white;
     }
+    .title{
+        z-index: 0;
+        width: 100%;
+        height: 10%;
+    }
+
 
     .big-title {
         position: absolute;
         font-size: 26px;
         font-weight: bold;
         left: 24%;
-        top: 14%;
+        top: 3%;
     }
 
     .back {
         position: absolute;
         width: 13%;
         left: 5%;
-        top: 12.5%;
+        top: 1.5%;
+    }
+    .pass-data{
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 90%;
+        background-color: #FDF9F8;
     }
     .pastData {
         list-style: none;
@@ -59,12 +77,12 @@
         display: block;
         width: 88%;
         height:6%;
-        left: 2.5%;
-        top: 11%;
+        left: 1.5%;
+        top: 0%;
         font-size: 15px;
         border: 1px solid grey;
         border-radius: 16px;
-        margin: 3.5%;
+        margin: 4.5%;
     }
     
     
@@ -80,14 +98,14 @@
     .date1 {
         position: relative;
         left: 75%;
-        top: -1%;
+        top: -11%;
         width: 8%;
     }
     .graph-title{
         font-size: 24px;
         font-weight: bold;
         position: absolute;
-        top: 74%;
+        top: 69%;
         left: 28%;
 
     }
@@ -95,7 +113,7 @@
         position: absolute;
         display: block;
         width: 85%;
-        top: 79%;
+        top: 75%;
         left: 8%;
     }
 
@@ -104,12 +122,17 @@
 }
 
 @media screen and (min-device-width: 400px) and (max-device-width: 1200px) {
+    .body {
+        height: 100%;
+        width: 100%;
+    }
     .header {
         display: flex;
         background: linear-gradient(to bottom, #DFAFAD, #FDF9F8);
         width: 100%;
         height: 125px;
     }
+    
 
     .logo {
         position: absolute;
@@ -117,17 +140,15 @@
         left: 18px;
 
     }
-
-    .body {
-        height: 100%;
-        width: 100%;
-    }
+    
 
     .logout {
         position: absolute;
         right: 5%;
         top: 6%;
         font-size: 26px;
+        text-align: center;
+        text-decoration:none;
         border-radius: 25px;
         padding-top: 1%;
         padding-bottom: 1%;
@@ -136,20 +157,32 @@
         background-color: #DFAFAD;
         color: white;
     }
+    .title{
+        z-index: 0;
+        width: 100%;
+        height: 20%;
+    }
 
     .big-title {
         position: absolute;
         font-size: 35px;
         font-weight: bold;
-        left: 36%;
-        top: 22%;
+        left: 38%;
+        top: 7%;
     }
 
     .back {
         position: absolute;
-        width: 7%;
-        left: 5%;
-        top: 20%;
+        width: 6%;
+        left: 7%;
+        top: 6%;
+    }
+    .pass-data{
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 80%;
+        background-color: #FDF9F8;
     }
 
     .pastData {
@@ -165,14 +198,14 @@
         list-style: none;
         position: relative;
         display: block;
-        width: 42%;
-        height:8%;
+        width: 40%;
+        height:11%;
         left: 5%;
-        top: 19%;
+        top: -1%;
         font-size: 18px;
         border: 1px solid grey;
         border-radius: 18px;
-        margin: 2%;
+        margin: 1.5%;
     }
     
     
@@ -188,23 +221,23 @@
     .date1 {
         position: relative;
         left: 75%;
-        top: -1%;
+        top: -6%;
         width: 8%;
     }
     .graph-title{
         font-size: 24px;
         font-weight: bold;
         position: absolute;
-        top: 36%;
-        left: 67%;
+        top: 24%;
+        left: 65%;
 
     }
     .graph-data{
         position: absolute;
         display: block;
         width: 42%;
-        top: 45%;
-        left: 54%;
+        top: 33%;
+        left: 52%;
     }
 
 
@@ -217,17 +250,10 @@
     }
     .header {
         display: flex;
-
         background: linear-gradient(to bottom, #DFAFAD, #FDF9F8);
         height: 200px;
     }
-    .main-body {
-        background-color: #FDF9F8;
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        /* overflow: hidden; */
-    }
+    
     
     .logo {
         position: absolute;
@@ -244,6 +270,7 @@
         height: 50px;
         font-size: 38px;
         text-align: center;
+        text-decoration:none;
         border-radius: 18px;
         padding-top: 0.5%;
         padding-bottom: 0.5%;
@@ -255,6 +282,8 @@
 
     .title{
         z-index: 0;
+        width: 100%;
+        height: 20%;
     }
 
     .big-title {
@@ -267,9 +296,9 @@
 
     .back {
         position: absolute;
-        width: 6%;
+        width: 5.5%;
         left: 5%;
-        top: 5%;
+        top: 3%;
     }
     .pass-data{
         display: block;
@@ -283,7 +312,8 @@
         display: block;
         position: absolute;
         width: 100%;
-        top:25%;
+        height: 80%;
+        top:20%;
     }
 
     .pastData li {
@@ -291,21 +321,24 @@
         position: relative;
         display: block;
         width: 40%;
-        height:9%;
+        height:12%;
         left: 6%;
-        top: 16%;
-        font-size: 28px;
+        top: 0%;
+        font-size: 30px;
         border: 1px solid grey;
         border-radius: 16px;
-        margin: 1%;
+        margin: 0.5%;
     }
     
     
     .data1 {
         position: relative;
+        display: flex;
         left: 6%;
         top: 30%;
         width: 70%;
+        height: 3%;
+
     }
     .data1-number {
         display: inline;
@@ -313,22 +346,22 @@
     .date1 {
         position: relative;
         left: 78%;
-        top: -3%;
+        top: 30%;
         width: 8%;
     }
     .graph-title{
         font-size: 50px;
         font-weight: bold;
         position: absolute;
-        top: 25%;
-        left: 62%;
+        top: 22%;
+        left: 64%;
 
     }
     .graph-data{
         position: absolute;
         display: block;
         width: 40%;
-        top: 35%;
+        top: 32%;
         left: 53%;
     }
 
