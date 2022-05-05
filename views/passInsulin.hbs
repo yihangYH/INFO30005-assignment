@@ -12,14 +12,13 @@
     <div class="pass-data">
         <div class="title">
             <a href="/data/{{this._id}}"><img class="back" src="/res/back.jpg" alt="backArrow"></a>
-            {{!-- <img class="back" src="/res/back.jpg" alt=""> --}}
             <div class="big-title">Past Seven Days</div>
         </div>
         <ul class="pastData">
-            {{#each_upto this.weight 7}}
+            {{#each_upto this.insulinTaken 7}}
             <li>
-                <div class="data1">Weight:&nbsp;<div class="data1-number">{{this.value}}
-                    </div> Kg
+                <div class="data1">Insulin Taken:&nbsp;<div class="data1-number">{{this.value}}
+                    </div> Dose(s)
                 </div>
                 <p class="date1">{{findLastDate this.time}}</p>
             </li>

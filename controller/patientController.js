@@ -117,5 +117,17 @@ const getPassWeight = async(req,res,next)=>{
         return next(error)
     }
 }
+const getPassInsulin = async(req,res,next)=>{
+    try {
+        const patientData = await patient.findOne({_id:req.params.id})
+        .populate("weight")
+        .populate("exercise")
+        .populate("bloodGlucose")
+        .populate("insulinTaken").lean();
+        res.render('passInsulin.hbs', {patientInfo: patientData})
+    } catch (error) {
+        return next(error)
+    }
+}
 
-module.exports = {getPatient, updateData, getPassBloodGlucose, getPassWeight}
+module.exports = {getPatient, updateData, getPassBloodGlucose, getPassWeight, getPassInsulin}
