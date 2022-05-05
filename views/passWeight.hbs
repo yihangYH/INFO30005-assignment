@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/css/pastData.css">
+<link rel="stylesheet" href="/css/passData.css">
 
 {{#with patientInfo}}
 <div class="main">
@@ -16,10 +16,10 @@
             <div class="big-title">Past Seven Days</div>
         </div>
         <ul class="pastData">
-            {{#each_upto this.bloodGlucose 7}}
+            {{#each_upto this.weight 7}}
             <li>
-                <div class="data1">Blood Glucose level: <div class="data1-number">{{findLastBloodGlucose this.value}}
-                    </div> mmol/L
+                <div class="data1">Weight: <div class="data1-number">{{this.value}}
+                    </div> Kg
                 </div>
                 <p class="date1">{{findLastDate this.time}}</p>
             </li>

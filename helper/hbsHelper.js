@@ -14,19 +14,6 @@ hbs.handlebars.registerHelper('each_upto', function(ary, max, options) {
     return result.join('');
 });
 
-hbs.handlebars.registerHelper('findlatest7', function(data) {
-    console.log(data.slice(-7))
-    return ""
-});
-
-// hbs.handlebars.registerHelper('sort', function(data1, data2) {
-//     return data1.time - data2.time
-// });
-
-hbs.handlebars.registerHelper("findLastBloodGlucose", function(data){
-    return data
-});
-
 hbs.handlebars.registerHelper("findLastDate", function(data){
 
     const lastDate = data.split(' ')[0];

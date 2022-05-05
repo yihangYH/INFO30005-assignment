@@ -93,17 +93,29 @@ const updateData  = async(req,res,next) =>{
     }
 }
 
-const getPassData = async(req,res,next)=>{
+const getPassBloodGlucose = async(req,res,next)=>{
     try {
         const patientData = await patient.findOne({_id:req.params.id})
         .populate("weight")
         .populate("exercise")
         .populate("bloodGlucose")
         .populate("insulinTaken").lean();
-        res.render('passData.hbs', {patientInfo: patientData})
+        res.render('passBloodGlucose.hbs', {patientInfo: patientData})
+    } catch (error) {
+        return next(error)
+    }
+}
+const getPassWeight = async(req,res,next)=>{
+    try {
+        const patientData = await patient.findOne({_id:req.params.id})
+        .populate("weight")
+        .populate("exercise")
+        .populate("bloodGlucose")
+        .populate("insulinTaken").lean();
+        res.render('passWeight.hbs', {patientInfo: patientData})
     } catch (error) {
         return next(error)
     }
 }
 
-module.exports = {getPatient, updateData, getPassData}
+module.exports = {getPatient, updateData, getPassBloodGlucose, getPassWeight}
