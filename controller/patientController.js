@@ -130,8 +130,12 @@ const getPassInsulin = async(req,res,next)=>{
         .populate("exercise")
         .populate("bloodGlucose")
         .populate("insulinTaken").lean();
-        updateArrow(passInsulin.hbs);
-        // res.render('passInsulin.hbs', {patientInfo: patientData})
+        // checkArrow(patientData.insulinTaken, data.hbs);
+        // if(patientData.insulinTaken[0].value == "Not Required"){
+        //     const changeTag = document.getElementsByClassName("insulin-taken-arrow").style;
+        //     console.log(changeTag)
+        // }
+        res.render('passInsulin.hbs', {patientInfo: patientData})
     } catch (error) {
         return next(error)
     }

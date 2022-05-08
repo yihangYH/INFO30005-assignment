@@ -15,11 +15,11 @@ hbs.handlebars.registerHelper('each_upto', function(ary, max, options) {
 });
 
 hbs.handlebars.registerHelper("findLastDate", function(data){
-
     const lastDate = data.split(' ')[0];
-
     return lastDate
 });
+
+
 
 hbs.handlebars.registerHelper("findWeight", function(data) {
     // get the latest value 
