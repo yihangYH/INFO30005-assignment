@@ -100,7 +100,13 @@ const getPassBloodGlucose = async(req,res,next)=>{
         .populate("exercise")
         .populate("bloodGlucose")
         .populate("insulinTaken").lean();
+        // if(req.body.blood_glucose == "Not Required"){
+        //     a.setAttribute("a", readonly);
+        // }else{
+        //     res.render('passBloodGlucose.hbs', {patientInfo: patientData})
+        // }
         res.render('passBloodGlucose.hbs', {patientInfo: patientData})
+        
     } catch (error) {
         return next(error)
     }
@@ -124,10 +130,24 @@ const getPassInsulin = async(req,res,next)=>{
         .populate("exercise")
         .populate("bloodGlucose")
         .populate("insulinTaken").lean();
-        res.render('passInsulin.hbs', {patientInfo: patientData})
+        updateArrow(passInsulin.hbs);
+        // res.render('passInsulin.hbs', {patientInfo: patientData})
     } catch (error) {
         return next(error)
     }
 }
 
-module.exports = {getPatient, updateData, getPassBloodGlucose, getPassWeight, getPassInsulin}
+const getPassExercise = async(req,res,next)=>{
+    try {
+        const patientData = await patient.findOne({_id:req.params.id})
+        .populate("weight")
+        .populate("exercise")
+        .populate("bloodGlucose")
+        .populate("insulinTaken").lean();
+        res.render('passExercise.hbs', {patientInfo: patientData})
+    } catch (error) {
+        return next(error)
+    }
+}
+
+module.exports = {getPatient, updateData, getPassBloodGlucose, getPassWeight, getPassInsulin, getPassExercise}

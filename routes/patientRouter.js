@@ -10,4 +10,11 @@ patientRouter.post('/data/:id', patientController.updateData)
 
 patientRouter.get('/data/:id/bloodGlucose', patientController.getPassBloodGlucose)
 
+patientRouter.get('/data/:id/weight', patientController.getPassWeight)
+
+patientRouter.get('/data/:id/insulinTaken', patientController.getPassInsulin)
+
+patientRouter.get('/data/:id/exercise', patientController.getPassExercise)
+
+
 module.exports = patientRouter
