@@ -51,44 +51,82 @@ async function validate() {
       }
       return
     }
-
     // post method for login
-    const response = await fetch('/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(patientInfo)
-    });
-
-    console.log(response);
-
-    // based on the response, redirect to data page for patient, or showing error meesage
-    if (response.status == 202) {
-      window.location.href = "./data/" + response.statusText;
-    } else if (response.status == 201) {
-      try {
-        Swal.fire(
-          'Invalid identity, userID or password',
-          'please check',
-          'error'
-        )
-      } catch (error) {
-        // if sweetalert2 not working in the current moment, use defulat alert
-        document.getElementById("myModal").style.display = "block";
-        document.getElementById('error-message').innerHTML = "Invalid identity, userID or password";
+    if(patient == true){
+      const response = await fetch('/patientlogin', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(patientInfo)
+      });
+      // based on the response, redirect to data page for patient, or showing error meesage
+      if (response.status == 202) {
+        window.location.href = "./data/" + response.statusText;
+        return
+      } else if (response.status == 201) {
+        try {
+          Swal.fire(
+            'Invalid identity, userID or password',
+            'please check',
+            'error'
+          )
+        } catch (error) {
+          // if sweetalert2 not working in the current moment, use defulat alert
+          document.getElementById("myModal").style.display = "block";
+          document.getElementById('error-message').innerHTML = "Invalid identity, userID or password";
+        }
+      } else if(response.status == 200){
+        try {
+          Swal.fire(
+            'Invalid identity, userID or password',
+            'please check',
+            'error'
+          )
+        } catch (error) {
+          // if sweetalert2 not working in the current moment, use defulat alert
+          document.getElementById("myModal").style.display = "block";
+          document.getElementById('error-message').innerHTML = "Invalid identity, userID or password";
+        }
       }
-    } else if(response.status == 200){
-      try {
-        Swal.fire(
-          'Invalid identity, userID or password',
-          'please check',
-          'error'
-        )
-      } catch (error) {
-        // if sweetalert2 not working in the current moment, use defulat alert
-        document.getElementById("myModal").style.display = "block";
-        document.getElementById('error-message').innerHTML = "Invalid identity, userID or password";
+    }
+    if(doctor == true){
+      const response = await fetch('/doctorLogin', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(patientInfo)
+      });
+  
+      // based on the response, redirect to data page for patient, or showing error meesage
+      if (response.status == 202) {
+        window.location.href = "./dashboard/" + response.statusText;
+        return
+      } else if (response.status == 201) {
+        try {
+          Swal.fire(
+            'Invalid identity, userID or password',
+            'please check',
+            'error'
+          )
+        } catch (error) {
+          // if sweetalert2 not working in the current moment, use defulat alert
+          document.getElementById("myModal").style.display = "block";
+          document.getElementById('error-message').innerHTML = "Invalid identity, userID or password";
+        }
+      } else if(response.status == 200){
+        try {
+          Swal.fire(
+            'Invalid identity, userID or password',
+            'please check',
+            'error'
+          )
+        } catch (error) {
+          // if sweetalert2 not working in the current moment, use defulat alert
+          document.getElementById("myModal").style.display = "block";
+          document.getElementById('error-message').innerHTML = "Invalid identity, userID or password";
+        }
       }
     }
   } catch (err) {

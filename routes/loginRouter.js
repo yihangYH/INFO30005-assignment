@@ -18,12 +18,21 @@ loginRouter.get('/login', (req, res) => {
         res.render('login', { flash: req.flash('error'), title: 'Login' })
 })
 
-loginRouter.post('/login', 
+loginRouter.post('/patientlogin', 
     passport.authenticate('local', {
         failureRedirect: '/login', failureFlash: true 
     }),
     function(req, res) {
-        console.log(req.user._id)
+        res.status("202")
+        res.statusMessage = req.user._id
+        res.send()
+    });
+
+loginRouter.post('/doctorLogin', 
+    passport.authenticate('client-login', {
+        failureRedirect: '/login', failureFlash: true 
+    }),
+    function(req, res) {
         res.status("202")
         res.statusMessage = req.user._id
         res.send()
