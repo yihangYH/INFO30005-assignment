@@ -8,6 +8,6 @@ patientRouter.get('/data/:id', patientController.getPatient)
 
 patientRouter.post('/data/:id', patientController.updateData)
 
-patientRouter.get('/data/:id/bloodGlucose', patientController.getPassData)
+patientRouter.get('/data/:id/bloodGlucose', patientController.getPassBloodGlucose)
 
 module.exports = patientRouter

@@ -82,8 +82,32 @@ const CreatePatient = async(req,res,next) => {
     res.send(body)
 }
 
+// to be remove, it used to create clinician
+const createTemp = async(req,res,next) => {
+    clinicianData.create({
+        'userid':req.body.userid,
+        'password':req.body.password,
+    }, function(err, newClinician){
+        if (err) { console.log(err); return; }
+        console.log('Dummy user inserted')
+        console.log(newClinician._id)
+    })
+}
+
+
+// to be removed get temp page for create clinician
+const getTemp = async(req,res,next) => {
+    try {
+        res.render('creatClincianTemp.hbs')
+    } catch (error) {
+        return next(err)
+    }
+}
+
+
 const updatePatient = async(req,res,next) => {
     res.render('updatePatient.hbs', {id: req.params.id})
 }
 
-module.exports = { getClinician, getPage, CreatePatient, updatePatient }
+// to be removed, getTemp,createTemp
+module.exports = { getClinician, getPage, CreatePatient, updatePatient,getTemp,createTemp }

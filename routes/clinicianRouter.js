@@ -12,4 +12,9 @@ clinicianRouter.post('/:id/newPatient', clinicianController.CreatePatient)
 
 clinicianRouter.get('/:id/updatePatient', clinicianController.updatePatient)
 
+// to be remove, it used to create clinician
+clinicianRouter.get('/creatClincianTemp', clinicianController.getTemp)
+// to be remove, it used to create clinician
+clinicianRouter.post('/creatClincianTemp', clinicianController.createTemp)
+
 module.exports = clinicianRouter
