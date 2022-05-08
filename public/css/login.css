@@ -272,7 +272,9 @@ body {
     .logo img {
         width: 25%;
     }
-
+    .identity{
+        display: none;
+    }
     .side-picture {
         display: none;
     }
@@ -523,7 +525,9 @@ body {
     .logo img {
         width: 45%;
     }
-
+    .identity{
+        display: none;
+    }
     .side-picture {
         display: none;
     }

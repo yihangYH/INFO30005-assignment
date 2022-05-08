@@ -13,10 +13,10 @@
         <form action="/login" method="post">
             <div class="login-content">
                 <h1>Welcome back!</h1>
-                <h2>
+                <h2 class="identity">
                     I am a <input id="patient" type="button" name="patient" value="Patient"
                         onclick="identity_patient()" /> /
-                    <input id="doctor" type="button" value="Doctor" name="doctor" style="color: grey;"
+                    <input id="doctor" type="button" value="Clinicain" name="doctor" style="color: grey;"
                         onclick="identity_doctor()" />
                 </h2>
                 <ul>
@@ -49,6 +49,12 @@
     window.onclick = function (event) {
         if (event.target == document.getElementById("myModal")) {
             document.getElementById("myModal").style.display = "none";
+        }
+    }
+    window.onload = function () {
+        if(window.innerWidth < 400 && window.innerWidth > 300){
+            document.getElementById('doctor').disabled = true;
+            console.log(window.innerWidth)
         }
     }
 </script>
