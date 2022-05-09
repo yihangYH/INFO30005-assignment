@@ -3,6 +3,7 @@ const express = require('express')
 const loginRouter = express.Router()
 const {patient} = require('../models/patient')
 const bcrypt = require('bcryptjs')
+const { redirect } = require('express/lib/response')
 const isAuthenticated = (req, res, next) => {
     // If user is not authenticated via passport, redirect to login page 
     if (!req.isAuthenticated()) {
@@ -25,18 +26,28 @@ loginRouter.post('/changePassword', function(req, res) {
       if (err) {
         res.json({ success: false, message: err }); // Return error
       } else {
-        bcrypt.hash(req.body.newpassword, 10, (err, hash) => { 
+        user.verifyPassword(req.body.oldpassword, (err, valid) => { 
             if (err) {
-                return next(err) 
+                console.log('Incorrect password')
+                return
             }
-            // Replace password with hash
-            patient.findOneAndUpdate({ userid: req.body.userid }, { password: hash }, (err, user) => {
+            if (!valid) {
+                console.log('Incorrect password')
+                return
+            }
+            bcrypt.hash(req.body.newpassword, 10, (err, hash) => { 
                 if (err) {
-                    res.json({ success: false, message: err }); // Return error
-                } else {
-                    res.json({ success: true, message: 'Password has been changed!' }); // Return success
+                    return next(err) 
                 }
-            });
+                // Replace password with hash
+                patient.findOneAndUpdate({ userid: req.body.userid }, { password: hash }, (err, user) => {
+                    if (err) {
+                        res.json({ success: false, message: err }); // Return error
+                    } else {
+                        res.json({ success: true, message: 'Password has been changed!' }); // Return success
+                    }
+                });
+            })
         })
       }
     }); 
