@@ -33,6 +33,7 @@ loginRouter.post('/changePassword', function(req, res) {
             }
             if (!valid) {
                 console.log('Incorrect password')
+                res.send('Incorrect password')
                 return
             }
             bcrypt.hash(req.body.newpassword, 10, (err, hash) => { 
