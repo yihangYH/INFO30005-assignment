@@ -17,4 +17,5 @@ patientRouter.get('/data/:id/insulinTaken', patientController.getPassInsulin)
 patientRouter.get('/data/:id/exercise', patientController.getPassExercise)
 
 
+
 module.exports = patientRouter
