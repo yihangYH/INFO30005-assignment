@@ -8,6 +8,12 @@ function myFunction() {
   }
 }
 
+function changePassword(){
+  document.getElementById("change-password-content").style.display = "inline-block"
+  
+}
+
+
 // thie function is used to validate login info
 async function validate() {
   var patient = document.getElementById("patient");

@@ -20,20 +20,37 @@
                         onclick="identity_doctor()" />
                 </h2>
                 <ul>
-                    <li> <input name="username" type="text" id="username" placeholder="User id"></li>
-                    <li> <input type="password" name="password" id="password" placeholder="Password"></li>
+                    <li> <input class="userID" name="username" type="text" id="username" placeholder="User id"></li>
+                    <li> <input class="password" type="password" name="password" id="password" placeholder="Password"></li>
                     <li>
                         <label class="container">Show Password
                             <input type="checkbox" onclick="myFunction()">
                             <span class="checkmark"></span>
                         </label>
                     </li>
-                    <li>Forgot Password</li>
+                    <li><button class="change-password-btn" onclick="changePassword()"  type="button">Change your password</button></li>
                     <li><button id="login-box" type="button" onclick="validate()">Login</button></li>
                 </ul>
             </div>
         </form>
     </div>
+    <div class="change-password">
+            <form action="/login" method="post">
+                <div class="change-password-content" id = "change-password-content">
+                    <h1>change your password</h1>
+                    <ul>
+                        <li> <input name="userID" class="change-userID" type="text" id="username" placeholder="User id"></li>
+                        <li> <input type="password" name="password" class="change-password" id="password" placeholder="Password"></li>
+                        <li> <input type="password" name="password" class="change-password" id="password" placeholder="new password"></li>
+                        <li> <input type="password" name="password" class="change-password" id="password" placeholder="confirm password"></li>
+                        <li><button id="login-box" type="submit" >Update</button></li>
+                        <li>
+                            <div id="errorMessage" ,></div>
+                        </li>
+                    </ul>
+                </div>
+            </form>
+        </div>
 </div>
 <div id="myModal" class="modal">
     <div class="modal-content">
