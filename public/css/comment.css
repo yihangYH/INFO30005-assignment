@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans");
+* {
+	padding: 0;
+	margin: 0;
+    font-family: 'Open Sans ';
+}
+body {
+    height: 100%;
+    overflow: hidden;
+}
+hr {
+    border-top: 10px solid gray;
+    width: 99%;
+}
+/* Box styles */
+.comment {
+    display: flex;
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    border: none;
+    padding: 5px;
+    font: 24px/36px;
+    width: 30%;
+    height: 65%;
+    overflow-y: scroll;
+    overflow-y: hidden;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    border: 1px solid none;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: pink;  
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: pink;  
+}
+
+ul {
+    list-style: none;
+}
+.comment ul{
+    width: 100%;
+}
+
+.comment li{
+    border: 1px solid black;
+    border-radius: 15px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    padding-left: 2%;
+    margin-bottom: 4%;
+}
+
+.comment li:last-child {
+    margin-bottom: 0;
+}
+
+.view-comment {
+    display: inline-block;
+    position: absolute;
+    top: 20%;
+    left: 45%;
+    border: none;
+    padding: 5px;
+    font: 24px/36px sans-serif;
+    width: 50%;
+    height: 65%;
+}
+.comment-detail{
+    border: 2px solid gray;
+    height: 65%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.comment ul {
+    width: 99%;
+}
+.comment-detail ul li{
+    width:99%;
+    word-wrap: break-word;
+}
+.comment-header{
+    border: 2px solid gray;
+}
+
+.comment-header li{
+    display: inline;
+}
+
+.comment-data {
+    float: right;
+}
+
+.enter-comment{
+    width: 98%;
+    height: 24%;
+}
+
+textarea {
+    padding-left: 2%;
+    font-size: 25px;
+    width: 100%;
+    height: 100%;
+    resize: none;
+    border: 2px solid gray;
+}
+
+.submit-comment{
+    display: flex;
+    position: absolute;
+    top: 103%;
+    left: 88%;
+
+}
+.clear-comment{
+    display: flex;
+    position: absolute;
+    top: 103%;
+    left: 0;
+}
+
+button{
+    background-color: white;
+    border-radius: 15px;
+    font-size: 35px;
+}
+

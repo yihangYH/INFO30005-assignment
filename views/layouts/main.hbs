@@ -39,9 +39,12 @@
         } else if (path.includes("aboutThisWebsite")) {
             document.getElementById("style").href = "../css/stylesheet.css";
             document.title = "About This Website";
-        } else if (path.includes("dashboard")){
+        } else if (path.includes("dashboard") && !path.includes("cooment")){
             document.getElementById("style").href = "../css/dashboard.css";
             document.title = "Dashboard";
+        }else if (path.includes("comment") ){
+            document.getElementById("style").href = "../css/comment.css";
+            document.title = "Comment";
         } else if (path.includes("newPatient")){
             document.getElementById("style").href = "../css/createPatient.css";
             document.title = "Create patient";

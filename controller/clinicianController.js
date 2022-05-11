@@ -94,6 +94,13 @@ const createTemp = async(req,res,next) => {
     })
 }
 
+const comment = async(req,res,next) => {
+    try {
+        res.render('comment.hbs')
+    } catch (error) {
+        return next(err)
+    }
+}
 
 // to be removed get temp page for create clinician
 const getTemp = async(req,res,next) => {
@@ -110,4 +117,4 @@ const updatePatient = async(req,res,next) => {
 }
 
 // to be removed, getTemp,createTemp
-module.exports = { getClinician, getPage, CreatePatient, updatePatient,getTemp,createTemp }
+module.exports = { getClinician, getPage, CreatePatient, updatePatient,getTemp,createTemp,comment }
