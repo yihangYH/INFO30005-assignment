@@ -233,6 +233,7 @@ function identity_patient() {
   if (patient_style.color == "rgb(128, 128, 128)" && doctor_style.color == "rgb(0, 0, 0)") {
     document.getElementById("patient").style.color = "black";
     document.getElementById("doctor").style.color = "grey";
+    document.getElementById("change-password-btn").disabled = false;
   }
 }
 
@@ -250,5 +251,6 @@ function identity_doctor() {
   if (doctor_style.color == "rgb(128, 128, 128)" && patient_style.color == "rgb(0, 0, 0)") {
     document.getElementById("patient").style.color = "grey";
     document.getElementById("doctor").style.color = "black";
+    document.getElementById("change-password-btn").disabled = true;
   }
 }

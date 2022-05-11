@@ -73,12 +73,6 @@ body {
     .login-content ul li:nth-child(2){
         text-align: center;
     }
-    .login-content ul li:nth-child(4){
-        display: inline;
-        float: right;
-        margin-right: 7%;
-        margin-top: 3%;
-    }
 
     .login-content ul li:nth-child(3){
         display: inline;
@@ -87,7 +81,13 @@ body {
         margin-top: 2%;
     }
     .login-content ul li:nth-child(4){
-        all: unset;
+        display: inline;
+        float: right;
+        margin-right: 7%;
+        margin-top: 3%;
+    }
+    .change-password-btn{
+        all:unset;
         cursor: pointer;
     }
     .login-content ul li:nth-child(5){
