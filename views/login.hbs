@@ -35,14 +35,14 @@
         </form>
     </div>
     <div class="change-password">
-            <form action="/login" method="post">
+            <form action="/changePassword" method="post" onsubmit="return validation()">
                 <div class="change-password-content" id = "change-password-content">
                     <h1>change your password</h1>
                     <ul>
-                        <li> <input name="userID" class="change-userID" type="text" id="username" placeholder="User id"></li>
-                        <li> <input type="password" name="password" class="change-password" id="password" placeholder="Password"></li>
-                        <li> <input type="password" name="password" class="change-password" id="password" placeholder="new password"></li>
-                        <li> <input type="password" name="password" class="change-password" id="password" placeholder="confirm password"></li>
+                        <li> <input name="userID" class="change-userID" type="text" id="userID" placeholder="User id"></li>
+                        <li> <input type="password" name="oldPassword" class="change-password" id="oldPassword" placeholder="Password"></li>
+                        <li> <input type="password" name="newPassword" class="change-password" id="newPassword" placeholder="new password"></li>
+                        <li> <input type="password" name="confirmPassword" class="change-password" id="confirmPassword" placeholder="confirm password"></li>
                         <li><button id="login-box" type="submit" >Update</button></li>
                         <li>
                             <div id="errorMessage" ,></div>

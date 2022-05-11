@@ -9,8 +9,87 @@ function myFunction() {
 }
 
 function changePassword(){
-  document.getElementById("change-password-content").style.display = "inline-block"
+    document.getElementById("change-password-content").style.display = "inline-block"
   
+}
+
+function validation(){
+  var userID = document.getElementById("userID").value;
+  var password = document.getElementById("oldPassword").value;
+  var newpassword = document.getElementById("newPassword").value;
+  var confirmpassword = document.getElementById("confirmPassword").value;
+  if(confirmpassword.length == 0 || newpassword.length == 0 || password.length == 0 || userID.length == 0){
+    try {
+      Swal.fire(
+        'Please enter all the information',
+        'please check',
+        'error'
+      )
+    } catch (error) {
+      // if sweetalert2 not working in the current moment, use defulat alert
+      document.getElementById("myModal").style.display = "block";
+      document.getElementById('error-message').innerHTML = "Please enter all the information";
+    }
+    return false;
+  }
+  if(password == newpassword){
+    try {
+      Swal.fire(
+        'new password cannot be same as old password',
+        'please check',
+        'error'
+      )
+    } catch (error) {
+      // if sweetalert2 not working in the current moment, use defulat alert
+      document.getElementById("myModal").style.display = "block";
+      document.getElementById('error-message').innerHTML = "new password cannot be same as old password";
+    }
+    return false;
+  }
+  document.getElementById("change-password-content").style.display = "none";
+  if(newpassword != confirmpassword){
+    try {
+      Swal.fire(
+        'new password does not match to confirm password',
+        'please check',
+        'error'
+      )
+    } catch (error) {
+      // if sweetalert2 not working in the current moment, use defulat alert
+      document.getElementById("myModal").style.display = "block";
+      document.getElementById('error-message').innerHTML = "new password does not match to confirm password";
+    }
+    return false;
+  }
+  if(newpassword.length < 8){
+    try {
+      Swal.fire(
+        'password must be at least 8 characters',
+        'please check',
+        'error'
+      )
+    } catch (error) {
+      // if sweetalert2 not working in the current moment, use defulat alert
+      document.getElementById("myModal").style.display = "block";
+      document.getElementById('error-message').innerHTML = "password must be at least 8 characters";
+    }
+    return false;
+  }
+
+  try {
+    Swal.fire(
+      'password changed successfully',
+      'please check',
+      'success'
+    )
+  } catch (error) {
+    // if sweetalert2 not working in the current moment, use defulat alert
+    document.getElementById("myModal").style.display = "block";
+    document.getElementById('error-message').innerHTML = "password must be at least 8 characters";
+  }
+
+
+  return true;
 }
 
 

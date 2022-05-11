@@ -20,32 +20,32 @@ loginRouter.get('/changePassword', (req, res) => {
 })
 
 loginRouter.post('/changePassword', function(req, res) {
-    console.log(req.body.userid)
-    patient.findOne({ userid: req.body.userid },(err, user) => {
+    console.log(req.body.oldPassword)
+    patient.findOne({ userid: req.body.userID },(err, user) => {
       // Check if error connecting
       if (err) {
-        res.json({ success: false, message: err }); // Return error
+        // res.json({ success: false, message: err }); // Return error
       } else {
-        user.verifyPassword(req.body.oldpassword, (err, valid) => { 
+        user.verifyPassword(req.body.oldPassword, (err, valid) => { 
             if (err) {
                 console.log('Incorrect password')
                 return
             }
             if (!valid) {
                 console.log('Incorrect password')
-                res.send('Incorrect password')
+                // res.send('Incorrect password')
                 return
             }
-            bcrypt.hash(req.body.newpassword, 10, (err, hash) => { 
+            bcrypt.hash(req.body.newPassword, 10, (err, hash) => { 
                 if (err) {
                     return next(err) 
                 }
                 // Replace password with hash
-                patient.findOneAndUpdate({ userid: req.body.userid }, { password: hash }, (err, user) => {
+                patient.findOneAndUpdate({ userid: req.body.userID }, { password: hash }, (err, user) => {
                     if (err) {
-                        res.json({ success: false, message: err }); // Return error
+                        // res.json({ success: false, message: err }); // Return error
                     } else {
-                        res.json({ success: true, message: 'Password has been changed!' }); // Return success
+                        // res.json({ success: true, message: 'Password has been changed!' }); // Return success
                     }
                 });
             })
