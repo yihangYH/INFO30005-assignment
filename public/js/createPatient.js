@@ -337,5 +337,14 @@ async function checkPatientExists(){
     } catch (err) {
         console.error(`Error: ${err}`);
     }
+    try {
+        Swal.fire(
+            'Account Created successfully',
+            'please check',
+            'success'
+        )
+    } catch (error) {
+        alert("Account Created successfully")
+    }
     return true;
 }

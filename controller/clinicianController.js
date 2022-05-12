@@ -62,7 +62,7 @@ const CreatePatient = async(req,res,next) => {
         console.log('Dummy user inserted')
         console.log(newPatient._id)
     })
-    // res.send(body)
+    res.redirect('/dashboard/'+req.params.id)
 }
 
 // to be remove, it used to create clinician
