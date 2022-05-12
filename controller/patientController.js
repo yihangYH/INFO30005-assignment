@@ -96,7 +96,7 @@ const updateData  = async(req,res,next) =>{
                 }
             }
         }
-        if(patientData.exercise.length == 0 && req.body.exercise != "Not Required"){
+        if(patientData.exercise.length == 0 && req.body.insulin_taken != "Not Required"){
             const data = new insulinTaken({
                 value: req.body.insulin_taken,
                 time:dateString,

@@ -47,7 +47,6 @@ hbs.handlebars.registerHelper("findTime", function(data) {
 });
 
 hbs.handlebars.registerHelper("findComment", function(data){
-    console.log(data)
     let AuDate = new Date().toLocaleString("en-US", {timeZone: "Australia/Sydney"});
     let dateString = AuDate.toString().replace(',', ' ');
     const currentMonth = dateString.split('/')[1];
@@ -68,6 +67,9 @@ hbs.handlebars.registerHelper("findComment", function(data){
 });
 
 hbs.handlebars.registerHelper("getValue", function(data) {
+    if(data.length == 0){
+        return "No data yet"
+    }
     // get the latest value 
     const latest = data[data.length-1]
     return latest.value
@@ -75,6 +77,9 @@ hbs.handlebars.registerHelper("getValue", function(data) {
 
 hbs.handlebars.registerHelper("getTime", function(data) {
     // get the data updated time, and do some formating
+    if(data.length == 0){
+        return "Not updated yet"
+    }
     const latest = data[data.length-1].time
     if (latest){
         const time = latest.split(" ")[2].split(":")
@@ -99,6 +104,9 @@ function twoDigit(data){
 
 // check patient's safty threshold
 hbs.handlebars.registerHelper("checkSafety", function(safety,value,index) {
+    if(value.length == 0){
+        return ""
+    }
     const bound =  safety[index];
     // if the data is required 
     if(!bound.includes("Not Required")){

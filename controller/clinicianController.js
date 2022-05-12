@@ -39,10 +39,32 @@ const getPage = async(req,res,next) => {
 
 const CreatePatient = async(req,res,next) => {
     const healthyData_required = [true,true,true,true];
-    if(req.body.bloodGlucoseCheckbox != 'on'){healthyData_required[0] = false}
-    if(req.body.weightCheckbox != 'on'){healthyData_required[1] =false}
-    if(req.body.insulinTakenCheckbox !='on') {healthyData_required[2] =false}
-    if(req.body.exerciseCheckbox != 'on') {healthyData_required[3] = false}
+    console.log(req.body)
+    const safety_threshold = [];
+    if(req.body.bloodGlucoseCheckbox != 'on'){
+        healthyData_required[0] = false
+        safety_threshold.push("Not Required")
+    }else{
+        safety_threshold.push(req.body.bloodGlucoseLowerValue + "-" + req.body.bloodGlucoseUpperValue );
+    }
+    if(req.body.weightCheckbox != 'on'){
+        healthyData_required[1] =false
+        safety_threshold.push("Not Required")
+    }else{
+        safety_threshold.push(req.body.weightLowerValue + "-" + req.body.weightUpperValue );
+    }
+    if(req.body.insulinTakenCheckbox !='on') {
+        healthyData_required[2] =false
+        safety_threshold.push("Not Required")
+    }else{
+        safety_threshold.push(req.body.insulinTakenLowerValue + "-" + req.body.insulinTakenUpperValue );
+    }
+    if(req.body.exerciseCheckbox != 'on') {
+        healthyData_required[3] = false
+        safety_threshold.push("Not Required")
+    }else{
+        safety_threshold.push(req.body.exerciseLowerBalue + "-" + req.body.exerciseUpperValue );
+    }
     patient.create({
         'first_name': req.body.first_name,
         'last_name': req.body.last_name,
@@ -57,11 +79,15 @@ const CreatePatient = async(req,res,next) => {
         'insulinTaken':[],
         'exercise':[],
         'healthyData_required': healthyData_required,
-    }, function(err, newPatient){
+        'safety_threshold':safety_threshold
+    }, async function(err, newPatient){
         if (err) { console.log(err); return; }
         console.log('Dummy user inserted')
         console.log(newPatient._id)
+        await clinicianData.findByIdAndUpdate({_id: req.params.id}, {$push: {patient: newPatient._id}})
     })
+    // await clinicianData.findByIdAndUpdate({_id: req.params.id}, {$push: {patient: newPatient_id}})
+    // console.log(req.params)
     res.redirect('/dashboard/'+req.params.id)
 }
 
