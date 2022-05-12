@@ -43,23 +43,6 @@ const CreatePatient = async(req,res,next) => {
     if(req.body.weightCheckbox != 'on'){healthyData_required[1] =false}
     if(req.body.insulinTakenCheckbox !='on') {healthyData_required[2] =false}
     if(req.body.exerciseCheckbox != 'on') {healthyData_required[3] = false}
-    const body = {
-        'first_name': req.body.first_name,
-        'last_name': req.body.last_name,
-        'screen_name': req.body.screen_name,
-        'birth': req.body.birthday,
-        'userid':req.body.userid,
-        'password':req.body.password,
-        'bio': "enter your bio!!!",
-        'supportMessage': "keep going",
-        'bloodGlucose':[],
-        'weight':[],
-        'insulinTaken':[],
-        'exercise':[],
-        'healthyData_required': healthyData_required,
-
-
-    }
     patient.create({
         'first_name': req.body.first_name,
         'last_name': req.body.last_name,
@@ -79,7 +62,7 @@ const CreatePatient = async(req,res,next) => {
         console.log('Dummy user inserted')
         console.log(newPatient._id)
     })
-    res.send(body)
+    // res.send(body)
 }
 
 // to be remove, it used to create clinician

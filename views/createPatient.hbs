@@ -10,7 +10,7 @@
             </div>
             <div class="body-register">
                 <p class="title">New patient</p>
-                <form action="/{{id}}/newPatient" method="post" onsubmit="return createPatientValidation()">
+                <form action="/{{id}}/newPatient" method="post" onsubmit="return createPatientValidation(event)">
                     <ul class="login-info">
                         <li> 
                             <input type="text" class="firstName" id="firstName" placeholder="First name" name="first_name"> 
@@ -87,7 +87,7 @@
                         </li>
                     </ul>
                     <div class="create">
-                        <button type="submit">Create</button>
+                        <button type="submit" >Create</button>
                     </div>
                 </form>
             </div>

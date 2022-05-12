@@ -207,9 +207,11 @@ function checkDataInput(){
         }
         return false
     }
+
+    return true;
 }
 
-function createPatientValidation(){
+async function createPatientValidation(e){
     if(document.getElementById('firstName').value == ""){
         try {
             Swal.fire(
@@ -220,6 +222,7 @@ function createPatientValidation(){
         } catch (error) {
             alert("Please enter Last name")
         }
+        
         return false
     }else if (document.getElementById('lastName').value == ""){
         try {
@@ -231,6 +234,7 @@ function createPatientValidation(){
         } catch (error) {
             alert("Please enter Last name")
         }
+        
         return false
     }else if(document.getElementById('screenName').value == ""){
         try {
@@ -242,6 +246,7 @@ function createPatientValidation(){
         } catch (error) {
             alert("Please enter Screen name")
         }
+        
         return false
     }else if(document.getElementById('brith').value == ""){
         try {
@@ -253,6 +258,7 @@ function createPatientValidation(){
         } catch (error) {
             alert("Please enter birth")
         }
+        
         return false
     }else if(document.getElementById('userId').value == ""){
         try {
@@ -264,6 +270,7 @@ function createPatientValidation(){
         } catch (error) {
             alert("Please enter User id")
         }
+        
         return false
     }else if(document.getElementById('password').value == ""){
         try {
@@ -275,6 +282,7 @@ function createPatientValidation(){
         } catch (error) {
             alert("Please enter Password")
         }
+        
         return false
     }
     var password = document.getElementById('password').value
@@ -288,6 +296,47 @@ function createPatientValidation(){
         } catch (error) {
             alert("The Password at least at least 8 characters long.")
         }
+        
+        return false
     }
-    return checkDataInput();
+    var userEmail = document.getElementById('userId').value
+    try {
+        let patient = {
+            userId: userEmail,
+        }
+        let response = await fetch('/checkPatient', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(patient)
+          });
+          if(response.status == 201){
+                try {
+                    Swal.fire(
+                        'Account already exists',
+                        'please check',
+                        'error'
+                    )
+                } catch (error) {
+                    alert("Account already exists.")
+                }
+                
+                return false;
+            }else{
+                if(!checkDataInput()){
+                    
+                    return false;
+                }
+            }
+    } catch (err) {
+        console.error(`Error: ${err}`);
+    }
+    console.log(checkDataInput())
+    // if(!checkDataInput()){
+    //     
+    //     return false;
+    // }
+    // 
+    return false;
 }

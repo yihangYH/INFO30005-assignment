@@ -19,6 +19,21 @@ const getPatient = async(req,res,next) => {
     }
 }
 
+const checkPatient = async(req,res,next)=>{
+    try {
+        const patientData = await patient.findOne({userid:req.body.userId}).lean()
+        if(patientData != null){
+            res.status(201);
+            res.send();
+        }else{
+            res.status(202);
+            res.send();
+        }
+    } catch (error) {
+        return next(error)
+    }
+}
+
 //when patient click update, the new data will be saved to DB after cerntain logic checking
 const updateData  = async(req,res,next) =>{
     try {
@@ -89,7 +104,7 @@ const updateData  = async(req,res,next) =>{
         // redirect to patient's data page
         res.redirect('../data/' + req.params.id)
     } catch (error) {
-        return next(err)
+        return next(error)
     }
 }
 
@@ -154,4 +169,12 @@ const getPassExercise = async(req,res,next)=>{
     }
 }
 
-module.exports = {getPatient, updateData, getPassBloodGlucose, getPassWeight, getPassInsulin, getPassExercise}
+module.exports = {
+    getPatient, 
+    updateData, 
+    getPassBloodGlucose, 
+    getPassWeight, 
+    getPassInsulin, 
+    getPassExercise,
+    checkPatient
+}
