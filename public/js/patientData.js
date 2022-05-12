@@ -470,9 +470,6 @@ function cancel() {
 // display not required if this data is not requried
 function setPatientDataValue(data) {
     for (let i = 0; i < 4; i++) {
-        if (document.getElementById(inputs[i]).readOnly) {
-            document.getElementById(pens[i]).style.display = "none"
-        }
         if (!data[i]) {
             document.getElementById(datas[i]).innerHTML = "Not Required"
             document.getElementById(dates[i]).innerHTML = "Updated on: No Record"
@@ -481,8 +478,12 @@ function setPatientDataValue(data) {
             document.getElementById(butns[i]).disabled = true
             document.getElementById(butns[i]).style.cursor = "none"
             document.getElementById(arrows[i]).style.pointerEvents = "none"
-            document.getElementById(comments[i]).style.display = "none"
+            // document.getElementById(comments[i]).style.display = "none"
            
+        }
+        if (document.getElementById(inputs[i]).readOnly) {
+            console.log(pens[i])
+            document.getElementById(pens[i]).style.display = "none"
         }
     }
 }

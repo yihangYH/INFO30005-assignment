@@ -47,13 +47,12 @@ hbs.handlebars.registerHelper("findTime", function(data) {
 });
 
 hbs.handlebars.registerHelper("findComment", function(data){
-    console.log(data)
     let AuDate = new Date().toLocaleString("en-US", {timeZone: "Australia/Sydney"});
     let dateString = AuDate.toString().replace(',', ' ');
     const currentMonth = dateString.split('/')[1];
     const currentDay = dateString.split('/')[0];
     let time = data[data.length-1].time.split('/')
-    if(data[data.length-1].comment == "Not Required"){
+    if(data[data.length-1].comment == "Not Required" || data[data.length-1].comment == ""){
         return "+ Comment"
     }
     //if the time period not matching, return null
