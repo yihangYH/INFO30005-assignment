@@ -13,7 +13,7 @@ function changePassword(){
   
 }
 
-function validation(){
+function loginValidation(){
   var userID = document.getElementById("userID").value;
   var password = document.getElementById("oldPassword").value;
   var newpassword = document.getElementById("newPassword").value;

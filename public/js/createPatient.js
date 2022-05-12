@@ -211,7 +211,8 @@ function checkDataInput(){
     return true;
 }
 
-async function createPatientValidation(e){
+async function createPatientValidation(){
+    return false;
     if(document.getElementById('firstName').value == ""){
         try {
             Swal.fire(
