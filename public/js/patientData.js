@@ -512,7 +512,7 @@ function checkUpdated() {
             // if data value contains Not means, this data is not reuqired
             // display orginal text
             if (!document.getElementById(datas[i]).innerHTML.includes("Not")) {
-                document.getElementById(comments[i]).innerHTML = "+ Comment" + document.getElementById(comments[i]).innerHTML
+                //document.getElementById(comments[i]).innerHTML = "+ Comment" + document.getElementById(comments[i]).innerHTML
             }
         }
 
