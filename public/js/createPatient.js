@@ -211,8 +211,8 @@ function checkDataInput(){
     return true;
 }
 
-async function createPatientValidation(){
-    return false;
+function createPatientValidation(){
+    // return false;
     if(document.getElementById('firstName').value == ""){
         try {
             Swal.fire(
@@ -300,6 +300,13 @@ async function createPatientValidation(){
         
         return false
     }
+    if(!checkPatientExists()){
+        return false;
+    }
+    return checkDataInput();
+}
+
+async function checkPatientExists(){
     var userEmail = document.getElementById('userId').value
     try {
         let patient = {
@@ -325,19 +332,10 @@ async function createPatientValidation(){
                 
                 return false;
             }else{
-                if(!checkDataInput()){
-                    
-                    return false;
-                }
+                
             }
     } catch (err) {
         console.error(`Error: ${err}`);
     }
-    console.log(checkDataInput())
-    // if(!checkDataInput()){
-    //     
-    //     return false;
-    // }
-    // 
-    return false;
+    return true;
 }
