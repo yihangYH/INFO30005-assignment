@@ -43,62 +43,103 @@ const updateData  = async(req,res,next) =>{
         const currentMonth = dateString.split('/')[1]
         const currentDay = dateString.split('/')[0]
         const patientData = await patient.findOne({_id:req.params.id}).populate("weight").populate("exercise").populate("bloodGlucose").populate("insulinTaken").lean();
-
+        console.log(patientData.bloodGlucose.length)
         //below we have logic set for updating data include blood glucose, body weight, insulin taken and exercise
         // need to check it data is not required or not empty first
-        if(req.body.blood_glucose != "" && req.body.blood_glucose != "Not Required"){
-            const leastTime = patientData.bloodGlucose[patientData.bloodGlucose.length - 1].time;
-            // new data object
+        if(patientData.bloodGlucose.length == 0 && req.body.blood_glucose != "Not Required"){
             const data = new bloodGlucose({
                 value: req.body.blood_glucose,
                 time:dateString,
                 comment:req.body.blood_glucose_comment,
             })
-
-            //update to data if the patient have not update today, 
-            // if patient already updated today, patient will not be able to update again
-            if(leastTime.split('/')[1] != currentMonth || leastTime.split('/')[0] != currentDay){
-                await patient.findOneAndUpdate({_id:req.params.id}, {$push: {bloodGlucose: data._id}});
-                data.save() 
+            await patient.findOneAndUpdate({_id:req.params.id}, {$push: {bloodGlucose: data._id}});
+            data.save() 
+        }else{
+            if(req.body.blood_glucose != "" && req.body.blood_glucose != "Not Required"){
+                const leastTime = patientData.bloodGlucose[patientData.bloodGlucose.length - 1].time;
+                // new data object
+                const data = new bloodGlucose({
+                    value: req.body.blood_glucose,
+                    time:dateString,
+                    comment:req.body.blood_glucose_comment,
+                })
+    
+                //update to data if the patient have not update today, 
+                // if patient already updated today, patient will not be able to update again
+                if(leastTime.split('/')[1] != currentMonth || leastTime.split('/')[0] != currentDay){
+                    await patient.findOneAndUpdate({_id:req.params.id}, {$push: {bloodGlucose: data._id}});
+                    data.save() 
+                }
             }
         }
-        // same logic as above but for weight
-        if(req.body.weight != "" && req.body.weight != "Not Required" ){
-            const leastTime = patientData.weight[patientData.weight.length - 1].time;
+
+        if(patientData.weight.length == 0 && req.body.weight != "Not Required" ){
             const data = new weight({
                 value: req.body.weight,
                 time:dateString,
                 comment:req.body.weight_comment,
             })
-            if(leastTime.split('/')[1] != currentMonth || leastTime.split('/')[0] != currentDay){
-                await patient.findOneAndUpdate({_id:req.params.id}, {$push: {weight: data._id}});
-                data.save() 
+            await patient.findOneAndUpdate({_id:req.params.id}, {$push: {weight: data._id}});
+            data.save() 
+        }else{
+            // same logic as above but for weight
+            if(req.body.weight != "" && req.body.weight != "Not Required" ){
+                const leastTime = patientData.weight[patientData.weight.length - 1].time;
+                const data = new weight({
+                    value: req.body.weight,
+                    time:dateString,
+                    comment:req.body.weight_comment,
+                })
+                if(leastTime.split('/')[1] != currentMonth || leastTime.split('/')[0] != currentDay){
+                    await patient.findOneAndUpdate({_id:req.params.id}, {$push: {weight: data._id}});
+                    data.save() 
+                }
             }
         }
-        // same logic as above but for insulin taken
-        if(req.body.insulin_taken != "" && req.body.insulin_taken != "Not Required" ){
-            const leastTime = patientData.insulinTaken[patientData.insulinTaken.length - 1].time;
+        if(patientData.exercise.length == 0 && req.body.exercise != "Not Required"){
             const data = new insulinTaken({
                 value: req.body.insulin_taken,
                 time:dateString,
                 comment:req.body.insulin_comment,
             })
-            if(leastTime.split('/')[1] != currentMonth || leastTime.split('/')[0] != currentDay){
-                await patient.findOneAndUpdate({_id:req.params.id}, {$push: {insulinTaken: data._id}});
-                data.save()
+            await patient.findOneAndUpdate({_id:req.params.id}, {$push: {insulinTaken: data._id}});
+            data.save()
+        }else{
+            // same logic as above but for insulin taken
+            if(req.body.insulin_taken != "" && req.body.insulin_taken != "Not Required" ){
+                const leastTime = patientData.insulinTaken[patientData.insulinTaken.length - 1].time;
+                const data = new insulinTaken({
+                    value: req.body.insulin_taken,
+                    time:dateString,
+                    comment:req.body.insulin_comment,
+                })
+                if(leastTime.split('/')[1] != currentMonth || leastTime.split('/')[0] != currentDay){
+                    await patient.findOneAndUpdate({_id:req.params.id}, {$push: {insulinTaken: data._id}});
+                    data.save()
+                }
             }
         }
-        // same logic as above but for exercise
-        if(req.body.exercise != "" && req.body.exercise != "Not Required" ){
-            const leastTime = patientData.exercise[patientData.exercise.length - 1].time;
+        if(patientData.bloodGlucose.length == 0 && req.body.blood_glucose != "Not Required"){
             const data = new exercise({
                 value: req.body.exercise,
                 time:dateString,
                 comment:req.body.exercise_comment,
             })
-            if(leastTime.split('/')[1] != currentMonth || leastTime.split('/')[0] != currentDay){
-                await patient.findOneAndUpdate({_id:req.params.id}, {$push: {exercise: data._id}});
-                data.save() 
+            await patient.findOneAndUpdate({_id:req.params.id}, {$push: {exercise: data._id}});
+            data.save() 
+        }else{
+            // same logic as above but for exercise
+            if(req.body.exercise != "" && req.body.exercise != "Not Required" ){
+                const leastTime = patientData.exercise[patientData.exercise.length - 1].time;
+                const data = new exercise({
+                    value: req.body.exercise,
+                    time:dateString,
+                    comment:req.body.exercise_comment,
+                })
+                if(leastTime.split('/')[1] != currentMonth || leastTime.split('/')[0] != currentDay){
+                    await patient.findOneAndUpdate({_id:req.params.id}, {$push: {exercise: data._id}});
+                    data.save() 
+                }
             }
         }
         // redirect to patient's data page
