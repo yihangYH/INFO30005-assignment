@@ -481,6 +481,7 @@ function setPatientDataValue(data) {
             document.getElementById(butns[i]).disabled = true
             document.getElementById(butns[i]).style.cursor = "none"
             document.getElementById(arrows[i]).style.pointerEvents = "none"
+            document.getElementById(comments[i]).style.display = "none"
            
         }
     }
@@ -512,7 +513,7 @@ function checkUpdated() {
             // if data value contains Not means, this data is not reuqired
             // display orginal text
             if (!document.getElementById(datas[i]).innerHTML.includes("Not")) {
-                //document.getElementById(comments[i]).innerHTML = "+ Comment" + document.getElementById(comments[i]).innerHTML
+                // document.getElementById(comments[i]).innerHTML = "+ Comment" + document.getElementById(comments[i]).innerHTML
             }
         }
 
