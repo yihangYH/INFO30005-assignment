@@ -47,6 +47,7 @@ hbs.handlebars.registerHelper("findTime", function(data) {
 });
 
 hbs.handlebars.registerHelper("findComment", function(data){
+    console.log(data)
     let AuDate = new Date().toLocaleString("en-US", {timeZone: "Australia/Sydney"});
     let dateString = AuDate.toString().replace(',', ' ');
     const currentMonth = dateString.split('/')[1];

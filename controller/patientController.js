@@ -96,11 +96,11 @@ const updateData  = async(req,res,next) =>{
                 }
             }
         }
-        if(patientData.exercise.length == 0 && req.body.insulin_taken != "Not Required"){
+        if(patientData.insulinTaken.length == 0 && req.body.insulin_taken != "Not Required"){
             const data = new insulinTaken({
                 value: req.body.insulin_taken,
                 time:dateString,
-                comment:req.body.insulin_comment,
+                comment:req.body.inssulin_comment,
             })
             await patient.findOneAndUpdate({_id:req.params.id}, {$push: {insulinTaken: data._id}});
             data.save()
@@ -111,7 +111,7 @@ const updateData  = async(req,res,next) =>{
                 const data = new insulinTaken({
                     value: req.body.insulin_taken,
                     time:dateString,
-                    comment:req.body.insulin_comment,
+                    comment:req.body.inssulin_comment,
                 })
                 if(leastTime.split('/')[1] != currentMonth || leastTime.split('/')[0] != currentDay){
                     await patient.findOneAndUpdate({_id:req.params.id}, {$push: {insulinTaken: data._id}});
@@ -119,7 +119,7 @@ const updateData  = async(req,res,next) =>{
                 }
             }
         }
-        if(patientData.bloodGlucose.length == 0 && req.body.blood_glucose != "Not Required"){
+        if(patientData.exercise.length == 0 && req.body.exercise != "Not Required"){
             const data = new exercise({
                 value: req.body.exercise,
                 time:dateString,
