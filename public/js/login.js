@@ -120,7 +120,6 @@ async function validate() {
       isDoctor: doctor,
       isPatient: patient
     }
-
     // error message if user not enter either username of password
     if (document.getElementById("username").value == "" || document.getElementById("password").value == "") {
       try {
@@ -138,6 +137,7 @@ async function validate() {
     }
     // post method for login
     if(patient == true){
+      console.log("chasd")
       const response = await fetch('/patientlogin', {
         method: 'POST',
         headers: {
