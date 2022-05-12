@@ -3,68 +3,68 @@ document.addEventListener("DOMContentLoaded", function(){
         if(this.checked){
             document.getElementById('bloodGlucoseLowerValue').readOnly = false
             document.getElementById('bloodGlucoseUpperValue').readOnly = false
-            document.getElementById('bloodGlucoseTimeLowerValue').readOnly = false;
-            document.getElementById('bloodGlucoseTimeUpperValue').readOnly = false;
+            // document.getElementById('bloodGlucoseTimeLowerValue').readOnly = false;
+            // document.getElementById('bloodGlucoseTimeUpperValue').readOnly = false;
         }else{
             document.getElementById('bloodGlucoseLowerValue').readOnly = true
             document.getElementById('bloodGlucoseUpperValue').readOnly = true
             document.getElementById('bloodGlucoseLowerValue').value = ""
             document.getElementById('bloodGlucoseUpperValue').value = ""
-            document.getElementById('bloodGlucoseTimeLowerValue').readOnly = true
-            document.getElementById('bloodGlucoseTimeUpperValue').readOnly = true
-            document.getElementById('bloodGlucoseTimeLowerValue').value = ""
-            document.getElementById('bloodGlucoseTimeUpperValue').value = ""
+            // document.getElementById('bloodGlucoseTimeLowerValue').readOnly = true
+            // document.getElementById('bloodGlucoseTimeUpperValue').readOnly = true
+            // document.getElementById('bloodGlucoseTimeLowerValue').value = ""
+            // document.getElementById('bloodGlucoseTimeUpperValue').value = ""
         }
     });
     document.getElementById("weightCheckbox").addEventListener("change", function() {
         if(this.checked){
             document.getElementById('weightLowerValue').readOnly = false
             document.getElementById('weightUpperValue').readOnly = false
-            document.getElementById('weightTimeLowerValue').readOnly = false
-            document.getElementById('weightTimeUpperValue').readOnly = false
+            // document.getElementById('weightTimeLowerValue').readOnly = false
+            // document.getElementById('weightTimeUpperValue').readOnly = false
         }else{
             document.getElementById('weightLowerValue').readOnly = true
             document.getElementById('weightUpperValue').readOnly = true
             document.getElementById('weightLowerValue').value = ""
             document.getElementById('weightUpperValue').value = ""
-            document.getElementById('weightTimeLowerValue').readOnly = true
-            document.getElementById('weightTimeUpperValue').readOnly = true
-            document.getElementById('weightTimeLowerValue').value = ""
-            document.getElementById('weightTimeUpperValue').value = ""
+            // document.getElementById('weightTimeLowerValue').readOnly = true
+            // document.getElementById('weightTimeUpperValue').readOnly = true
+            // document.getElementById('weightTimeLowerValue').value = ""
+            // document.getElementById('weightTimeUpperValue').value = ""
         }
     });
     document.getElementById("insulinTakenCheckbox").addEventListener("change", function() {
         if(this.checked){
             document.getElementById('insulinTakenLowerValue').readOnly = false
             document.getElementById('insulinTakenUpperValue').readOnly = false
-            document.getElementById('insulinTakenTimeLowerValue').readOnly = false
-            document.getElementById('insulinTakenTimeUpperValue').readOnly = false
+            // document.getElementById('insulinTakenTimeLowerValue').readOnly = false
+            // document.getElementById('insulinTakenTimeUpperValue').readOnly = false
         }else{
             document.getElementById('insulinTakenLowerValue').readOnly = true
             document.getElementById('insulinTakenUpperValue').readOnly = true
             document.getElementById('insulinTakenLowerValue').value = ""
             document.getElementById('insulinTakenUpperValue').value = ""
-            document.getElementById('insulinTakenTimeLowerValue').readOnly = true
-            document.getElementById('insulinTakenTimeUpperValue').readOnly = true
-            document.getElementById('insulinTakenTimeLowerValue').value = ""
-            document.getElementById('insulinTakenTimeUpperValue').value = ""
+            // document.getElementById('insulinTakenTimeLowerValue').readOnly = true
+            // document.getElementById('insulinTakenTimeUpperValue').readOnly = true
+            // document.getElementById('insulinTakenTimeLowerValue').value = ""
+            // document.getElementById('insulinTakenTimeUpperValue').value = ""
         }
     });
     document.getElementById("exerciseCheckbox").addEventListener("change", function() {
         if(this.checked){
             document.getElementById('exerciseLowerBalue').readOnly = false
             document.getElementById('exerciseUpperValue').readOnly = false
-            document.getElementById('exerciseTimeLowerValue').readOnly = false
-            document.getElementById('exerciseTimeUpperValue').readOnly = false
+            // document.getElementById('exerciseTimeLowerValue').readOnly = false
+            // document.getElementById('exerciseTimeUpperValue').readOnly = false
         }else{
             document.getElementById('exerciseLowerBalue').readOnly = true
             document.getElementById('exerciseUpperValue').readOnly = true
             document.getElementById('exerciseLowerBalue').value = ""
             document.getElementById('exerciseUpperValue').value = ""
-            document.getElementById('exerciseTimeLowerValue').readOnly = true
-            document.getElementById('exerciseTimeUpperValue').readOnly = true
-            document.getElementById('exerciseTimeLowerValue').value = ""
-            document.getElementById('exerciseTimeUpperValue').value = ""
+            // document.getElementById('exerciseTimeLowerValue').readOnly = true
+            // document.getElementById('exerciseTimeUpperValue').readOnly = true
+            // document.getElementById('exerciseTimeLowerValue').value = ""
+            // document.getElementById('exerciseTimeUpperValue').value = ""
         }
     });
 });
@@ -148,66 +148,74 @@ function checkDataInput(){
         return false
     }
 
-    if(document.getElementById("bloodGlucoseCheckbox").checked && 
-    (document.getElementById('bloodGlucoseTimeLowerValue').value == "" || 
-    document.getElementById('bloodGlucoseTimeUpperValue').value == "")){
-        try {
-            Swal.fire(
-                'please selct time series for blood glucose',
-                'please check',
-                'error'
-            )
-        } catch (error) {
-            alert("please selct time series for blood glucose")
-        }
-        return false
-    }
+    // if(document.getElementById("bloodGlucoseCheckbox").checked && 
+    // (document.getElementById('bloodGlucoseTimeLowerValue').value == "" || 
+    // document.getElementById('bloodGlucoseTimeUpperValue').value == "")){
+    //     try {
+    //         Swal.fire(
+    //             'please selct time series for blood glucose',
+    //             'please check',
+    //             'error'
+    //         )
+    //     } catch (error) {
+    //         alert("please selct time series for blood glucose")
+    //     }
+    //     return false
+    // }
 
-    if(document.getElementById("weightCheckbox").checked && 
-    (document.getElementById('weightTimeLowerValue').value == "" || 
-    document.getElementById('weightTimeUpperValue').value == "")){
-        try {
-            Swal.fire(
-                'please selct time series for weight',
-                'please check',
-                'error'
-            )
-        } catch (error) {
-            alert("please selct time series for weight")
-        }
-        return false
-    }
+    // if(document.getElementById("weightCheckbox").checked && 
+    // (document.getElementById('weightTimeLowerValue').value == "" || 
+    // document.getElementById('weightTimeUpperValue').value == "")){
+    //     try {
+    //         Swal.fire(
+    //             'please selct time series for weight',
+    //             'please check',
+    //             'error'
+    //         )
+    //     } catch (error) {
+    //         alert("please selct time series for weight")
+    //     }
+    //     return false
+    // }
 
-    if(document.getElementById("insulinTakenCheckbox").checked && 
-    (document.getElementById('insulinTakenTimeLowerValue').value == "" || 
-    document.getElementById('insulinTakenTimeUpperValue').value == "")){
-        try {
-            Swal.fire(
-                'please selct time series for insulin taken',
-                'please check',
-                'error'
-            )
-        } catch (error) {
-            alert("please selct time series for insulin taken")
-        }
-        return false
-    }
+    // if(document.getElementById("insulinTakenCheckbox").checked && 
+    // (document.getElementById('insulinTakenTimeLowerValue').value == "" || 
+    // document.getElementById('insulinTakenTimeUpperValue').value == "")){
+    //     try {
+    //         Swal.fire(
+    //             'please selct time series for insulin taken',
+    //             'please check',
+    //             'error'
+    //         )
+    //     } catch (error) {
+    //         alert("please selct time series for insulin taken")
+    //     }
+    //     return false
+    // }
 
-    if(document.getElementById("exerciseCheckbox").checked && 
-    (document.getElementById('exerciseTimeLowerValue').value == "" || 
-    document.getElementById('exerciseTimeUpperValue').value == "")){
-        try {
-            Swal.fire(
-                'please selct time series for exercise',
-                'please check',
-                'error'
-            )
-        } catch (error) {
-            alert("please selct time series for exercise")
-        }
-        return false
+    // if(document.getElementById("exerciseCheckbox").checked && 
+    // (document.getElementById('exerciseTimeLowerValue').value == "" || 
+    // document.getElementById('exerciseTimeUpperValue').value == "")){
+    //     try {
+    //         Swal.fire(
+    //             'please selct time series for exercise',
+    //             'please check',
+    //             'error'
+    //         )
+    //     } catch (error) {
+    //         alert("please selct time series for exercise")
+    //     }
+    //     return false
+    // }
+    try {
+        Swal.fire(
+            'Account Created successfully',
+            'please check',
+            'success'
+        )
+    } catch (error) {
+        alert("Account Created successfully")
     }
-
     return true;
 }
 
@@ -303,7 +311,10 @@ function createPatientValidation(){
     if(!checkPatientExists()){
         return false;
     }
-    return checkDataInput();
+    if(!checkDataInput()){
+        return false;
+    }
+    return false;
 }
 
 async function checkPatientExists(){
@@ -336,15 +347,6 @@ async function checkPatientExists(){
             }
     } catch (err) {
         console.error(`Error: ${err}`);
-    }
-    try {
-        Swal.fire(
-            'Account Created successfully',
-            'please check',
-            'success'
-        )
-    } catch (error) {
-        alert("Account Created successfully")
     }
     return true;
 }

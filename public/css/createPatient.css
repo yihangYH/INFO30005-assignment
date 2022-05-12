@@ -175,7 +175,7 @@ ul {
     outline: none;
 }
 
-.upper-time-value{
+/* .upper-time-value{
     display: inline-flex;
     position: relative;
     left: 40%;
@@ -188,24 +188,24 @@ ul {
     border-bottom: 4px solid #000;
     background: none;
     outline: none;
-}
+} */
 .sign {
     position: relative;
     left: 23%;
     bottom: 10px;
 }
 
-.timeSign{
+/* .timeSign{
     position: relative;
     left: 42%;
     bottom: 10px;
-}
+} */
 
-.AMPMSign {
+/* .AMPMSign {
     position: relative;
     left: 34%;
     bottom: -3px;
-}
+} */
 
 .unit {
     position: relative;
