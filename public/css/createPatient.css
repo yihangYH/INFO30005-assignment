@@ -48,16 +48,17 @@ body {
     display: flex;
     position: absolute;
     font-size: 50px;
-    width: 55%;
+    width: 20%;
     font-weight: bold;
-    top: 2%;
+    top: 4%;
+    left: 0%;
 }
 
 .login-info {
     display: block;
     position: absolute;
     top: 12%;
-    left: 5%;
+    left: 14%;
     height: 50%;
 }
 
@@ -96,8 +97,8 @@ ul {
 .data-info{
     display: block;
     position: absolute;
-    top: 14%;
-    left: 38%;
+    top: 22%;
+    left: 50%;
     height: 50%;
 }
 
@@ -125,7 +126,7 @@ ul {
 .data-check-box{
     display: inline-block;
     position: relative;
-    left: 10%;
+    left: 24%;
     width: 40px;
     height: 40px;
     outline: 3px solid gray
@@ -133,7 +134,7 @@ ul {
 .lower-value {
     display: inline-flex;
     position: relative;
-    left: 20%;
+    left: 44%;
     width: 80px;
     top:-5%;
     height: 40px;
@@ -163,7 +164,7 @@ ul {
 .upper-value {
     display: inline-flex;
     position: relative;
-    left: 20%;
+    left: 45%;
     width: 80px;
     top:-5%;
     height: 40px;
@@ -191,7 +192,7 @@ ul {
 } */
 .sign {
     position: relative;
-    left: 23%;
+    left: 47%;
     bottom: 10px;
 }
 
@@ -209,7 +210,7 @@ ul {
 
 .unit {
     position: relative;
-    left: 22%;
+    left: 48%;
     bottom: 10px;
 }
 hr{
@@ -241,15 +242,15 @@ hr{
 .required{
     display: block;
     position: absolute;
-    top: 13%;
-    left: 45%;
+    top: 16%;
+    left: 57.5%;
 }
 
 .safety-threhold{
     display: block;
     position: absolute;
-    top: 13%;
-    left: 58%;
+    top: 16%;
+    left: 68%;
 }
 
 .time-series{
