@@ -253,14 +253,14 @@ hr{
     left: 68%;
 }
 
-.time-series{
+/* .time-series{
     display: block;
     position: absolute;
     top: 13%;
     left: 82%;
-}
+} */
 
-.AMbtn {
+/* .AMbtn {
     display: inline-block;
     position: relative;
     left: 33%;
@@ -270,9 +270,9 @@ hr{
     border: none;
     font-size: 40px;
     font-weight: normal;
-}
+} */
 
-.PMbtn {
+/* .PMbtn {
     display: inline-block;
     position: relative;
     left: 29%;
@@ -283,5 +283,5 @@ hr{
     font-size: 40px;
     font-weight: normal;
     color: gray;
-}
+} */
 
