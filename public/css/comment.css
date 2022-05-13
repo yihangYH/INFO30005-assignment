@@ -7,7 +7,88 @@
 body {
     height: 100%;
     overflow: hidden;
+    background-color:#FDF9F8;
 }
+.topBar{
+    width:100%;
+    height:90px;
+    background:linear-gradient(to bottom,#DFAFAD,#FDF9F8);
+    transition: top 0.3s ease-in-out, transform 0.3s ease-in-out 0.3s;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logo{
+    display: flex;
+    width:15%;
+    align-items:center;
+}
+
+.logo img{
+    width: 100%;
+}
+.logo + div{
+    display: flex;
+    flex-direction: row;
+    justify-content:right; 
+    align-items:center; /* set elements to the same altitude*/
+    width:50%;
+}
+.topButton>a{
+    font-size: 150%;
+    text-decoration: none;
+    color: #000;
+
+}
+
+.topButton{
+    margin-right: 10%;
+}
+
+#clinicianName{
+    font-size:350%;
+    color: #a22929;
+    font-weight: bold;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#sideBar{
+    position: relative;
+}
+
+#triangle{
+    width:50%;
+}
+
+
+#sideBar a{
+    color: #000;
+}
+
+#sideBar p{
+    margin-bottom: 7%;
+}
+
+.sideButton{
+    position: absolute;
+    width: 600%;
+    top:90%;
+    left:-550%;
+    font-size: 30%;
+    font-weight: normal;
+    text-decoration: underline;
+    text-align: right;
+    z-index:9;
+}
+
+
 hr {
     border-top: 10px solid gray;
     width: 99%;
