@@ -113,8 +113,29 @@ function updatePatientValidation(){
                 }
                 return false;
             }
+            if(document.getElementById(lowervalue[i]).value >= document.getElementById(uppervalue[i]).value){
+                try {
+                    Swal.fire(
+                        valueName[i]+' lower value should be less than upper value',
+                        'please check',
+                        'error'
+                    )
+                } catch (error) {
+                    alert("Lower value should be less than upper value")
+                }
+                return false;
+            }
+            console.log("asd")
         }
     }
-    console.log("hit");
-    return true;
+    try {
+        Swal.fire(
+            'Account update successfully',
+            'please check',
+            'success'
+        )
+    } catch (error) {
+        alert("Account update successfully")
+    }
+    return false;
 }

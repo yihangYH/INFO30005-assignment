@@ -147,66 +147,63 @@ function checkDataInput(){
         }
         return false
     }
-
-    // if(document.getElementById("bloodGlucoseCheckbox").checked && 
-    // (document.getElementById('bloodGlucoseTimeLowerValue').value == "" || 
-    // document.getElementById('bloodGlucoseTimeUpperValue').value == "")){
-    //     try {
-    //         Swal.fire(
-    //             'please selct time series for blood glucose',
-    //             'please check',
-    //             'error'
-    //         )
-    //     } catch (error) {
-    //         alert("please selct time series for blood glucose")
-    //     }
-    //     return false
-    // }
-
-    // if(document.getElementById("weightCheckbox").checked && 
-    // (document.getElementById('weightTimeLowerValue').value == "" || 
-    // document.getElementById('weightTimeUpperValue').value == "")){
-    //     try {
-    //         Swal.fire(
-    //             'please selct time series for weight',
-    //             'please check',
-    //             'error'
-    //         )
-    //     } catch (error) {
-    //         alert("please selct time series for weight")
-    //     }
-    //     return false
-    // }
-
-    // if(document.getElementById("insulinTakenCheckbox").checked && 
-    // (document.getElementById('insulinTakenTimeLowerValue').value == "" || 
-    // document.getElementById('insulinTakenTimeUpperValue').value == "")){
-    //     try {
-    //         Swal.fire(
-    //             'please selct time series for insulin taken',
-    //             'please check',
-    //             'error'
-    //         )
-    //     } catch (error) {
-    //         alert("please selct time series for insulin taken")
-    //     }
-    //     return false
-    // }
-
-    // if(document.getElementById("exerciseCheckbox").checked && 
-    // (document.getElementById('exerciseTimeLowerValue').value == "" || 
-    // document.getElementById('exerciseTimeUpperValue').value == "")){
-    //     try {
-    //         Swal.fire(
-    //             'please selct time series for exercise',
-    //             'please check',
-    //             'error'
-    //         )
-    //     } catch (error) {
-    //         alert("please selct time series for exercise")
-    //     }
-    //     return false
-    // }
+    if(document.getElementById("bloodGlucoseCheckbox").checked &&
+    document.getElementById('bloodGlucoseLowerValue').value >= 
+    document.getElementById('bloodGlucoseUpperValue').value){
+        try {
+            Swal.fire(
+                'Blood Glucose Lower Value should be less than Upper Value',
+                'please check',
+                'error'
+            )
+        } catch (error) {
+            alert("Blood Glucose Lower Value should be less than Upper Value")
+        }
+        return false
+    }
+    if(document.getElementById("weightCheckbox").checked &&
+    document.getElementById('weightLowerValue').value >=
+    document.getElementById('weightUpperValue').value){
+        try {
+            Swal.fire(
+                'Weight Lower Value should be less than Upper Value',
+                'please check',
+                'error'
+            )
+        } catch (error) {
+            alert("Weight Lower Value should be less than Upper Value")
+        }
+        return false
+    }
+    if(document.getElementById("insulinTakenCheckbox").checked &&
+    document.getElementById('insulinTakenLowerValue').value >=
+    document.getElementById('insulinTakenUpperValue').value){
+        try {
+            Swal.fire(
+                'Insulin Taken Lower Value should be less than Upper Value',
+                'please check',
+                'error'
+            )
+        } catch (error) {
+            alert("Insulin Taken Lower Value should be less than Upper Value")
+        }
+        return false
+    }
+    if(document.getElementById("exerciseCheckbox").checked &&
+    document.getElementById('exerciseLowerValue').value >=
+    document.getElementById('exerciseUpperValue').value){
+        try {
+            Swal.fire(
+                'Exercise Lower Value should be less than Upper Value',
+                'please check',
+                'error'
+            )
+        } catch (error) {
+            alert("Exercise Lower Value should be less than Upper Value")
+        }
+        return false
+    }
+    
     try {
         Swal.fire(
             'Account Created successfully',
