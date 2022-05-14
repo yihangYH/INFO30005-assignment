@@ -1,14 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans");
+
 * {
-	padding: 0;
-	margin: 0;
+    padding: 0;
+    margin: 0;
     font-family: 'Open Sans ';
 }
-body {
-    height: 100%;
-    overflow: hidden;
+
+body{
     background-color:#FDF9F8;
 }
+
 .topBar{
     width:100%;
     height:90px;
@@ -28,6 +29,7 @@ body {
 .logo img{
     width: 100%;
 }
+
 .logo + div{
     display: flex;
     flex-direction: row;
@@ -35,6 +37,7 @@ body {
     align-items:center; /* set elements to the same altitude*/
     width:50%;
 }
+
 .topButton>a{
     font-size: 150%;
     text-decoration: none;
@@ -76,6 +79,7 @@ body {
     margin-bottom: 7%;
 }
 
+
 .sideButton{
     position: absolute;
     width: 600%;
@@ -88,132 +92,62 @@ body {
     z-index:9;
 }
 
-
-hr {
-    border-top: 10px solid gray;
-    width: 99%;
-}
-/* Box styles */
-.comment {
-    display: flex;
-    position: absolute;
-    top: 20%;
-    left: 10%;
-    border: none;
-    padding: 5px;
-    font: 24px/36px;
-    width: 30%;
-    height: 65%;
-    overflow-y: scroll;
-    overflow-y: hidden;
+.line{
+    height: 40%;
+    margin-right:3%;
 }
 
-/* Scrollbar styles */
-::-webkit-scrollbar {
-    height: 12px;
+#tableTitle{
+    text-align:center;
+    font-weight: bold;
+    font-size: 180%;
+    margin-bottom:0px;
 }
 
-::-webkit-scrollbar-track {
-    border: 1px solid none;
-    border-radius: 10px;
+#tableTime{
+    text-align:center;
+    font-size: 130%;
+    margin-top: 0px;
+    margin-bottom:0px;
 }
 
-::-webkit-scrollbar-thumb {
-    background: pink;  
-    border-radius: 10px;
+/* TODO: can't scroll*/
+#dashboard{
+    overflow-y: auto;
+    height: 8px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background: pink;  
-}
-
-ul {
-    list-style: none;
-}
-.comment ul{
-    width: 100%;
-}
-
-.comment li{
+#dashboard>table, td, th{
     border: 1px solid black;
-    border-radius: 15px;
+}
+
+td,th{
     padding-top: 2%;
-    padding-bottom: 2%;
-    padding-left: 2%;
-    margin-bottom: 4%;
+    padding-bottom:2%;
+    position: relative;
+    font-size: 130%;
 }
 
-.comment li:last-child {
-    margin-bottom: 0;
-}
-
-.view-comment {
-    display: inline-block;
+#dashboard>table{    
+    width: 80%;
+    border-collapse: collapse;
+    text-align: center;
     position: absolute;
-    top: 20%;
-    left: 45%;
-    border: none;
-    padding: 5px;
-    font: 24px/36px sans-serif;
-    width: 50%;
-    height: 65%;
-}
-.comment-detail{
-    border: 2px solid gray;
-    height: 65%;
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
-.comment ul {
-    width: 99%;
-}
-.comment-detail ul li{
-    width:99%;
-    word-wrap: break-word;
-}
-.comment-header{
-    border: 2px solid gray;
+    left:10%;
+    right:10%;
+    margin:auto;
+    table-layout:fixed;
+    font-size: 120%;
 }
 
-.comment-header li{
-    display: inline;
-}
-
-.comment-data {
-    float: right;
-}
-
-.enter-comment{
-    width: 98%;
-    height: 24%;
-}
-
-textarea {
-    padding-left: 2%;
-    font-size: 25px;
-    width: 100%;
-    height: 100%;
-    resize: none;
-    border: 2px solid gray;
-}
-
-.submit-comment{
-    display: flex;
-    position: absolute;
-    top: 103%;
-    left: 88%;
-
-}
-.clear-comment{
-    display: flex;
-    position: absolute;
-    top: 103%;
-    left: 0;
-}
-
-button{
-    background-color: white;
-    border-radius: 15px;
-    font-size: 35px;
+#dashboard span{
+    position:absolute;
+    top:69%;
+    left:53%;
+    font-size: 60%;
+    color: #707070;
+    text-align: right;
+    font-weight: normal !important;
+    font-style: normal !important;
 }
 

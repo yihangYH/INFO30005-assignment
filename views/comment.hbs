@@ -1,8 +1,8 @@
-{{#with clinicianInfo }}
+{{#with clinicianInfo}}
     <header>
         <div class="topBar">
             <div class="logo">
-                <a href="">
+                <a href=""> 
                     <img src="../res/logo.png" alt="logo">
                 </a>
             </div>
@@ -14,7 +14,7 @@
                     <a href="">Comment</a>
                     {{!-- TODO: href--}}
                 </div>
-                <img class="line" src="/res/Line.png" alt="line">
+                <img class = "line" src="/res/Line.png" alt="line">
                 <div id="clinicianName">
                     <p>{{this.screen_name}}</p>
                     <div id="sideBar">
@@ -30,48 +30,51 @@
         </div>
     </header>
 
-    <div class="comment">
-        <ul>
-            {{#each this.patient}}
-                <li>{{this.screen_name}} bloodGlucose  {{comment this.bloodGlucose}}</li>
-            {{/each}}
-        </ul>
-    </div>
-    {{!-- <div class="view-comment">
-        <div class="comment-header">
-            <ul>
-                <li class="comment-name">name</li>
-                <li class="comment-data">data</li>
-            </ul>
+    <main>
+        <div id="dashboard">
+            <table>
+                <caption>
+                    <p id = "tableTitle">Dashboard</p>
+                    <p id="tableTime"></p>
+                </caption>
+                <tr class = "tableHeading">
+                    <th>Name</th>
+                    <th>Data type</th>
+                    <th>Value</th>
+                    <th>Time</th>
+                    <th>Comment</th>
+                </tr>
+                {{#each this.patient}}
+                    <tr style="{{checkNotRequired this.bloodGlucose}};">
+                        <td>{{this.first_name}}</td>
+                        <td>bloodGlucose</td>
+                        <td style="{{checkSafety this.safety_threshold this.bloodGlucose "0"}}">{{value this.bloodGlucose}}</td>
+                        <td>{{getTime this.bloodGlucose}}</td>
+                        <td>{{comment this.bloodGlucose}}</td>
+                    </tr>
+                    <tr style="{{checkNotRequired this.weight}}">
+                        <td>{{this.first_name}}</td>
+                        <td>Weight</td>
+                        <td style="{{checkSafety this.safety_threshold this.weight "1"}}">{{value this.weight}}</td>
+                        <td>{{getTime this.weight}}</td>
+                        <td>{{comment this.weight}}</td>
+                    </tr>
+                    <tr style="{{checkNotRequired this.insulinTaken}}">
+                        <td>{{this.first_name}}</td>
+                        <td>Insulin taken</td>
+                        <td style="{{checkSafety this.safety_threshold this.insulinTaken "2"}}">{{value this.insulinTaken}}</td>
+                        <td>{{getTime this.insulinTaken}}</td>
+                        <td>{{comment this.insulinTaken}}</td>
+                    </tr>
+                    <tr style="{{checkNotRequired this.exercise}}">
+                        <td>{{this.first_name}}</td>
+                        <td>Exercise</td>
+                        <td style="{{checkSafety this.safety_threshold this.exercise "3"}}">{{value this.exercise}}</td>
+                        <td>{{getTime this.exercise}}</td>
+                        <td>{{comment this.exercise}}</td>
+                    </tr>
+                {{/each}}
+            </table>
         </div>
-        <div class="comment-detail">
-            <ul>
-                <li>this is very
-                    longgggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg
-                    my comment</li>
-                <li>this is my comment</li>
-                <li>this is my comment</li>
-                <li>this is my comment</li>
-                <li>this is my comment</li>
-                <li>this is my comment</li>
-                <li>this is my comment</li>
-                <li>this is my comment</li>
-                <li>this is my comment</li>
-                <li>this is my comment</li>
-                <li>this is my comment</li>
-            </ul>
-            <hr>
-            <ul>
-                <li>this doctor comment</li>
-            </ul>
-
-        </div>
-
-        <div class="enter-comment">
-            <textarea class="comment-text" name="comment" id=""></textarea>
-            <button class="clear-comment" id="submit" type="button">clear</button>
-            <button class="submit-comment" id="submit" type="button">submit</button>
-        </div>
-
-    </div> --}}
+    </main>
 {{/with}}

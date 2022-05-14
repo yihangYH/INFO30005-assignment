@@ -80,11 +80,22 @@ hbs.handlebars.registerHelper("findTime", function(data) {
     return data[data.length-1].time;
 });
 
+hbs.handlebars.registerHelper("value", function(data) {
+    if(data[data.length -1].value != "Not Required"){
+        return data[data.length -1].value ;
+    }
+});
+
 hbs.handlebars.registerHelper("comment", function(data) {
     if(data[data.length -1].value != "Not Required"){
-        console.log(data[data.length -1].value)
-        var output = data[data.length -1].value + " " + data[data.length -1].time
-        return output ;
+        return data[data.length -1].comment ;
+    }
+});
+
+
+hbs.handlebars.registerHelper("checkNotRequired", function(data) {
+    if(data[data.length -1].value == "Not Required"){
+        return "display:none"
     }
 });
 
