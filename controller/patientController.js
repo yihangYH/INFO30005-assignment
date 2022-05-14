@@ -217,8 +217,8 @@ const getLeaderboard = async(req,res,next)=>{
     .populate("bloodGlucose")
     .populate("insulinTaken").lean();
     var maxCount = findMacCountDataUpdated(currentPatient);
-    
-    console.log(maxCount)
+    var rate  = findRate(maxCount);
+    // console.log(maxCount)
     const updateCount = 0;
     // if(currentPatient.weight.length > updateCount){ updateCount = currentPatient.weight.length}
     // console.log(currentPatient)
@@ -233,6 +233,18 @@ const getLeaderboard = async(req,res,next)=>{
       });
     res.render("leaderBoard.hbs", {patientInfo: currentPatient});
 }
+function findRate(maxCount){
+    var fisrtTime = maxCount[1][0].time;
+    let AuDate = new Date().toLocaleString("en-US", {timeZone: "Australia/Sydney"});
+    let dateString = AuDate.toString().replace(',', ' ');
+    currDateString = dateString.split(" ")[0];
+    firstUpdate = fisrtTime.split(" ")[0];
+    var date1 = new Date(firstUpdate);
+    var date2 = new Date(currDateString);
+    var Difference_In_Time = date2.getTime() - date1.getTime();
+    var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+    return maxCount[0]/Difference_In_Days;
+};
 
 function findMacCountDataUpdated(currentPatient){
     var max = 0;
