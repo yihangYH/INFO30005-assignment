@@ -65,7 +65,9 @@
 <script>
     {{#with patientInfo}}
         var bloodGlucose= "{{this.bloodGlucose}}"
-        {{!-- console.log("{{this.bloodGlucose[0].value}}") --}}
-        findMaxDataRecorded(bloodGlucose.split(",").length);
+        var weight= "{{this.weight}}"
+        var exercise= "{{this.exercise}}"
+        var insulinTaken= "{{this.insulinTaken}}"
+        findMaxDataRecorded(bloodGlucose.split(",").length,weight.split(",",length,exercise.split(",").length,insulinTaken.split(",").length));
     {{/with}}
 </script>
