@@ -68,10 +68,11 @@
         var weight= "{{this.weight}}"
         var exercise= "{{this.exercise}}"
         var insulinTaken= "{{this.insulinTaken}}"
-        var conut = findMaxDataRecorded(bloodGlucose.split(",").length, weight.split(",").length, length,exercise.split(",").length, insulinTaken.split(",").length);
+        let conut = "";
+        count = findMaxDataRecorded(bloodGlucose.split(",").length, weight.split(",").length, length,exercise.split(",").length, insulinTaken.split(",").length);
+        let maxRate =""
         if(count == "bloodGlucose"){
-            var times = bloodGlucose.split(",").length
-            var maxRate = {{findMaxRate (this.bloodGlucose, times)}};
+            maxRate =  "{{findMaxRate this.bloodGlucose}}";
         }else if(count ==  "weight"){
             
         }else if(count == "exercise"){
