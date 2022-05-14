@@ -216,6 +216,9 @@ const getLeaderboard = async(req,res,next)=>{
     .populate("exercise")
     .populate("bloodGlucose")
     .populate("insulinTaken").lean();
+    var maxCount = findMacCountDataUpdated(currentPatient);
+    
+    console.log(maxCount)
     const updateCount = 0;
     // if(currentPatient.weight.length > updateCount){ updateCount = currentPatient.weight.length}
     // console.log(currentPatient)
@@ -231,6 +234,27 @@ const getLeaderboard = async(req,res,next)=>{
     res.render("leaderBoard.hbs", {patientInfo: currentPatient});
 }
 
+function findMacCountDataUpdated(currentPatient){
+    var max = 0;
+    var dataName = null;
+    if(currentPatient.bloodGlucose.length > max){
+        max = currentPatient.bloodGlucose.length;
+        dataName = currentPatient.bloodGlucose;
+    }
+    if(currentPatient.weight.length > max){
+        max = currentPatient.weight.length;
+        dataName = currentPatient.weight;
+    }
+    if(currentPatient.insulinTaken.length > max){
+        max = currentPatient.insulinTaken.length;
+        dataName = currentPatient.insulinTaken;
+    }
+    if(currentPatient.exercise.length > max){
+        max = currentPatient.exercise.length;
+        dataName = currentPatient.exercise;
+    }
+   return [max,dataName];
+}
 module.exports = {
     getPatient, 
     updateData, 
