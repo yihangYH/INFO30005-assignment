@@ -68,6 +68,7 @@
         var weight= "{{this.weight}}"
         var exercise= "{{this.exercise}}"
         var insulinTaken= "{{this.insulinTaken}}"
-        findMaxDataRecorded(bloodGlucose.split(",").length,weight.split(",",length,exercise.split(",").length,insulinTaken.split(",").length));
+        var conut = findMaxDataRecorded(bloodGlucose.split(",").length, weight.split(",").length, length,exercise.split(",").length, insulinTaken.split(",").length);
+        console.log(conut)
     {{/with}}
 </script>

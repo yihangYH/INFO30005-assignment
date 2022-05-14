@@ -1,12 +1,16 @@
-<<<<<<< Updated upstream
-function findMaxDataRecorded(bloodGlucose,) {
-    console.log(data);
-=======
 function findMaxDataRecorded(bloodGlucose,weight,exercise,insulinTaken) {
-    console.log(bloodGlucose);
-    console.log(weight);
-    console.log(exercise);
-    console.log(insulinTaken);
-
->>>>>>> Stashed changes
+    var count = 0;
+    if(bloodGlucose > count) {
+        count = bloodGlucose;
+    }
+    if(weight > count) {
+        count = weight;
+    }
+    if(exercise > count) {
+        count = exercise;
+    }
+    if(insulinTaken > count) {
+        count = insulinTaken;
+    }
+    return count;
 }
