@@ -282,6 +282,7 @@ body {
         height:7%;
         left:8%;
         top:20%;
+        z-index: 1;
     }
 }
 
@@ -344,7 +345,14 @@ body {
         margin-top: 3%;
         
     }
-
+    .back-icon{
+        display:none;
+        position:absolute;
+        height:7%;
+        left:8%;
+        top:20%;
+        z-index: 1;
+    }
     .change-password-btn{
         all: unset;
         cursor: pointer;
@@ -731,6 +739,14 @@ body {
         font-weight: bold;
         cursor: pointer;
         color: black;
+    }
+    .back-icon{
+        display:none;
+        position:absolute;
+        height:7%;
+        left:8%;
+        top:20%;
+        z-index: 1;
     }
 
 
