@@ -14,25 +14,25 @@
             <div class="leaderboard-rank">
                 <img class="leaderboard-pic" src="../../res/leaderboard.png" alt="leaderboard image">
                 <div class="rank-first">
-                    <p>George</p>
+                    <p>{{findRank this.rank 0}}</p>
                 </div>
                 <div class="rank-second">
-                    <p>Jack</p>
+                    <p>{{findRank this.rank 1}}</p>
                 </div>
                 <div class="rank-third">
-                    <p>Kris</p>
+                    <p>{{findRank this.rank 2}}</p>
                 </div>
                 <div class="rank-fourth-title">
                     <p>4th.</p>
                 </div>
                 <div class="rank-fourth">
-                    <p>Yeezy</p>
+                    <p>{{findRank this.rank 3}}</p>
                 </div>
                 <div class="rank-fifth-title">
                     <p>5th.</p>
                 </div>
                 <div class="rank-fifth">
-                    <p>Xdd</p>
+                    <p>{{findRank this.rank 4}}</p>
                 </div>     
             </div>
             <div class="leaderboard-comment">
@@ -49,7 +49,7 @@
                     <p>Your engagement rate is</p>
                 </div>
                 <div class="achievement-rate">
-                    <p>84%</p>
+                    <p>{{this.rate}}%</p>
                 </div>
                 <div class="encourage-word">
                     <p>Good Job!!</p>
@@ -63,7 +63,7 @@
 {{/with}}
 
 <script>
-    {{#with patientInfo}}
+    {{!-- {{#with patientInfo}}
         var bloodGlucose= "{{this.bloodGlucose}}"
         var weight= "{{this.weight}}"
         var exercise= "{{this.exercise}}"
@@ -81,5 +81,5 @@
 
         }
         
-    {{/with}}
+    {{/with}} --}}
 </script>

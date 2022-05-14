@@ -13,22 +13,15 @@ hbs.handlebars.registerHelper('each_upto', function(ary, max, options) {
         result.push(options.fn(newary[i]));
     return result.join('');
 });
-hbs.handlebars.registerHelper('findMaxRate', function(data) {
-    var countRecords = data.length;
-    var fisrtTime = data[0].time;
-    // let AuDate = new Date().toLocaleString("en-US", {timeZone: "Australia/Sydney"});
-    // let dateString = AuDate.toString().replace(',', ' ')
-    // const currentMonth = dateString.split('/')[0]
-    // const currentDay = dateString.split('/')[1]
-    // console.log(fisrtTime.split(" ")[0].split("/"));
-    // console.log(currentMonth);
-    // console.log(currentDay);
-    return "asd"
-});
 
 hbs.handlebars.registerHelper('convert', function(safety,index){
     // console.log(safety[index]);
     return String(safety[index])
+});
+
+hbs.handlebars.registerHelper('findRank', function(rank,index){
+    console.log(rank[index]);
+    return rank[index][0]
 });
 
 hbs.handlebars.registerHelper("findLastDate", function(data){
