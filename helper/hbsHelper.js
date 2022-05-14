@@ -80,6 +80,14 @@ hbs.handlebars.registerHelper("findTime", function(data) {
     return data[data.length-1].time;
 });
 
+hbs.handlebars.registerHelper("comment", function(data) {
+    if(data[data.length -1].value != "Not Required"){
+        console.log(data[data.length -1].value)
+        var output = data[data.length -1].value + " " + data[data.length -1].time
+        return output ;
+    }
+});
+
 hbs.handlebars.registerHelper("findComment", function(data){
     let AuDate = new Date().toLocaleString("en-US", {timeZone: "Australia/Sydney"});
     let dateString = AuDate.toString().replace(',', ' ');

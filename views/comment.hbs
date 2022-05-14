@@ -1,82 +1,77 @@
-<header>
-    <div class="topBar">
-        <div class="logo">
-            <a href="">
-                <img src="../res/logo.png" alt="logo">
-            </a>
-        </div>
-        <div>
-            <div class="topButton">
-                <a href="/dashboard/{{this._id}}">Dashboard</a>
+{{#with clinicianInfo }}
+    <header>
+        <div class="topBar">
+            <div class="logo">
+                <a href="">
+                    <img src="../res/logo.png" alt="logo">
+                </a>
             </div>
-            <div class="topButton">
-                <a href="">Comment</a>
-                {{!-- TODO: href--}}
-            </div>
-            <img class="line" src="/res/Line.png" alt="line">
-            <div id="clinicianName">
-                <p>{{this.screen_name}}</p>
-                <div id="sideBar">
-                    <img id="triangle" src="/res/triangle.png" alt="triangle" onclick="click_sideBtn()">
-                    <div class="sideButton" style="display: none;">
-                        <p><a href="/{{this._id}}/newPatient">Create new patient</a></p>
-                        {{!-- TODO: href--}}
-                        <p><a href="/login">Log out</a></p>
+            <div>
+                <div class="topButton">
+                    <a href="/dashboard/{{this._id}}">Dashboard</a>
+                </div>
+                <div class="topButton">
+                    <a href="">Comment</a>
+                    {{!-- TODO: href--}}
+                </div>
+                <img class="line" src="/res/Line.png" alt="line">
+                <div id="clinicianName">
+                    <p>{{this.screen_name}}</p>
+                    <div id="sideBar">
+                        <img id="triangle" src="/res/triangle.png" alt="triangle" onclick="click_sideBtn()">
+                        <div class="sideButton" style="display: none;">
+                            <p><a href="/{{this._id}}/newPatient">Create new patient</a></p>
+                            {{!-- TODO: href--}}
+                            <p><a href="/login">Log out</a></p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
 
-<div class="comment">
-    <ul>
-        <li>test1</li>
-        <li>test1</li>
-        <li>test1</li>
-        <li>test1</li>
-        <li>test1</li>
-        <li>test1</li>
-        <li>test1</li>
-        <li>test1</li>
-        <li>test1</li>
-        <li>test1</li>
-    </ul>
-</div>
-<div class="view-comment">
-    <div class="comment-header">
+    <div class="comment">
         <ul>
-            <li class="comment-name">name</li>
-            <li class="comment-data">data</li>
+            {{#each this.patient}}
+                <li>{{this.screen_name}} bloodGlucose  {{comment this.bloodGlucose}}</li>
+            {{/each}}
         </ul>
     </div>
-    <div class="comment-detail">
-        <ul>
-            <li>this is very
-                longgggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg
-                my comment</li>
-            <li>this is my comment</li>
-            <li>this is my comment</li>
-            <li>this is my comment</li>
-            <li>this is my comment</li>
-            <li>this is my comment</li>
-            <li>this is my comment</li>
-            <li>this is my comment</li>
-            <li>this is my comment</li>
-            <li>this is my comment</li>
-            <li>this is my comment</li>
-        </ul>
-        <hr>
-        <ul>
-            <li>this doctor comment</li>
-        </ul>
+    {{!-- <div class="view-comment">
+        <div class="comment-header">
+            <ul>
+                <li class="comment-name">name</li>
+                <li class="comment-data">data</li>
+            </ul>
+        </div>
+        <div class="comment-detail">
+            <ul>
+                <li>this is very
+                    longgggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg
+                    my comment</li>
+                <li>this is my comment</li>
+                <li>this is my comment</li>
+                <li>this is my comment</li>
+                <li>this is my comment</li>
+                <li>this is my comment</li>
+                <li>this is my comment</li>
+                <li>this is my comment</li>
+                <li>this is my comment</li>
+                <li>this is my comment</li>
+                <li>this is my comment</li>
+            </ul>
+            <hr>
+            <ul>
+                <li>this doctor comment</li>
+            </ul>
 
-    </div>
+        </div>
 
-    <div class="enter-comment">
-        <textarea class="comment-text" name="comment" id=""></textarea>
-        <button class="clear-comment" id="submit" type="button">clear</button>
-        <button class="submit-comment" id="submit" type="button">submit</button>
-    </div>
+        <div class="enter-comment">
+            <textarea class="comment-text" name="comment" id=""></textarea>
+            <button class="clear-comment" id="submit" type="button">clear</button>
+            <button class="submit-comment" id="submit" type="button">submit</button>
+        </div>
 
-</div>
+    </div> --}}
+{{/with}}

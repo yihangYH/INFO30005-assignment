@@ -109,7 +109,24 @@ const createTemp = async(req,res,next) => {
 
 const comment = async(req,res,next) => {
     try {
-        res.render('comment.hbs')
+        const clinician = 
+        await clinicianData.findOne({_id: req.params.id}).populate("patient").lean()
+        for(let i = 0; i < Object.keys(clinician.patient).length; i++){
+            const patientData = await patient.findById({_id:clinician.patient[i]._id})
+            .populate("weight")
+            .populate("exercise")
+            .populate("bloodGlucose")
+            .populate("insulinTaken").lean()
+            // assign found data to the JSON
+            clinician.patient[i].weight = patientData.weight
+            clinician.patient[i].bloodGlucose = patientData.bloodGlucose
+            clinician.patient[i].insulinTaken = patientData.insulinTaken
+            clinician.patient[i].exercise = patientData.exercise
+            // console.log(clinician.patient[i])
+            // break
+        }
+        // console.log(clinician)
+        res.render('comment.hbs',{clinicianInfo:clinician})
     } catch (error) {
         return next(err)
     }
