@@ -482,14 +482,13 @@ function setPatientDataValue(data) {
            
         }
         if (document.getElementById(inputs[i]).readOnly) {
-            console.log(pens[i])
             document.getElementById(pens[i]).style.display = "none"
         }
     }
 }
 
 // display value in update data page based on different logic
-function checkUpdated() {
+function checkUpdated(data) {
     // get current time
     let AuDate = new Date().toLocaleString("en-US", {
         timeZone: "Australia/Sydney"
@@ -513,8 +512,8 @@ function checkUpdated() {
         } else {
             // if data value contains Not means, this data is not reuqired
             // display orginal text
-            if (!document.getElementById(datas[i]).innerHTML.includes("Not")) {
-                // document.getElementById(comments[i]).innerHTML = "+ Comment" + document.getElementById(comments[i]).innerHTML
+            if (data[i]&&!document.getElementById(datas[i]).innerHTML.includes("Yet")) {
+                document.getElementById(comments[i]).innerHTML = "+ Comment" + document.getElementById(comments[i]).innerHTML
             }
         }
 

@@ -147,7 +147,7 @@
             <p class="insert-data">Enter today's data</p>
             <div class="item">
                 <p>BLOOD GLUCOSE</p>
-                <input name="blood_glucose" id="blood-glucose-input" type="text" placeholder="(nmol/L)" />
+                <input name="blood_glucose" id="blood-glucose-input" type="number" step="0.01" placeholder="(nmol/L)" />
                 <button type="button" class="butn" id="butn1" onclick="setCommentWindow()">
                     {{#if this.bloodGlucose}}
                         <p class="comment" id="comment">{{findComment this.bloodGlucose}} <img class="pen" id="pen" src="../res/pen.png" alt=""></p>
@@ -165,7 +165,7 @@
             </div>
             <div class="item">
                 <p>Weight</p>
-                <input name="weight" id="weight-input" type="text" placeholder="(Kg)" />
+                <input name="weight" id="weight-input" type="number" step="0.01" placeholder="(Kg)" />
                 <button type="button" class="butn" id="butn2" onclick="setCommentWindow1()">
                     {{#if this.weight}}
                         <p class="comment" id="comment1">{{findComment this.weight}} <img class="pen" id="pen1" src="../res/pen.png" alt=""></p>
@@ -183,7 +183,7 @@
             </div>
             <div class="item">
                 <p>INSULIN TAKEN</p>
-                <input name="insulin_taken" id="insulin-taken-input" type="text" placeholder="(DOSES)" />
+                <input name="insulin_taken" id="insulin-taken-input" type="number" step="0.01" placeholder="(DOSES)" />
                 <button type="button" class="butn" id="butn3" onclick="setCommentWindow2()">
                     {{#if this.insulinTaken}}
                         <p class="comment" id="comment2">{{findComment this.insulinTaken}} <img class="pen" id="pen2" src="../res/pen.png" alt=""></p>
@@ -201,7 +201,7 @@
             </div>
             <div class="item">
                 <p>EXERICSE</p>
-                <input name="exercise" id="exericse-input" type="text" placeholder="(Steps)" />
+                <input name="exercise" id="exericse-input" type="number" step="0.01" placeholder="(Steps)" />
                 <button type="button" class="butn" id="butn4" onclick="setCommentWindow3()">
                     {{#if this.exercise}}
                         <p class="comment" id="comment3">{{findComment this.exercise}}<img class="pen" id="pen3" src="../res/pen.png" alt=""></p>
@@ -236,7 +236,7 @@
     var data = []
     data.push({{ this.healthyData_required }})
     // call checkUpdated() and setPatientDatavalue when page load
-    checkUpdated();
+    checkUpdated(data);
     setPatientDataValue(data)
     {{/with}}
     // the code below is for closing alter box
