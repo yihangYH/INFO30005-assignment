@@ -23,7 +23,8 @@
                         <h1 class="required">Required</h1>
                             <h1 class="safety-threhold">Safety thredhold</h1>
                             {{!-- <h1 class="time-series">Time series</h1> --}}
-                    <form action="/{{id}}/{{patientID}}/newPatient" method="post" onsubmit="return updatePatientValidation()">
+                    {{!-- {{#with id}} --}}
+                    <form action="/{{this.clinicianID}}/{{this._id}}/updatePatient" method="post" onsubmit="return updatePatientValidation()">
                             <ul class="data-info">
                                 <li> 
                                 <p>BLOOD GLUCOSE</p>
@@ -42,7 +43,7 @@
                                 </li>
                                 <li>
                                     <p>WEIGHT</p>
-                                    <input class ="data-check-box" id="weightCheckboxUpdate" type="checkbox" name="weightCheckboxUpdate" id="">
+                                    <input class ="data-check-box" id="weightCheckboxUpdate" type="checkbox" name="weightCheckboxUpdate" >
                                     <input class = "lower-value" id="weightLowerValueUpdate" type="any" name="weightLowerValueUpdate" readonly>
                                     <p class="sign"> ~ </p>
                                     <input class = "upper-value" id="weightUpperValueUpdate" type="any" name="weightUpperValueUpdate" readonly>
@@ -90,6 +91,7 @@
                                 <button type="submit">Update</button>
                             </div>
                     </form>
+                    {{!-- {{/with}} --}}
                 </div>
         </div>
     </div>
@@ -103,4 +105,8 @@
         safety.push("{{ this.safety_threshold  }}")
         setRequired(data,"{{ this.safety_threshold  }}");
     {{/with}}
+
+    {{!-- {{#with id}}
+        console.log("{{this}}")
+    {{/with}} --}}
 </script>

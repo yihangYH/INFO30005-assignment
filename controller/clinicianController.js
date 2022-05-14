@@ -1,6 +1,11 @@
+const Clinician = require("../models/clinician")
 const clinicianData = require("../models/clinician")
 const {patient} = require("../models/patient")
 require('../models/data')
+
+checkBox = ["bloodGlucoseCheckboxUpdate","weightCheckboxUpdate","insulinTakenCheckboxUpdate", "exerciseCheckboxUpdate"]
+lowervalue= ["bloodGlucoseLowerValueUpdate","weightLowerValueUpdate", "insulinTakenLowerValueUpdate","exerciseLowerBalueUpdate"]
+uppervalue= ["bloodGlucoseUpperValueUpdate", "weightUpperValueUpdate", "insulinTakenUpperValueUpdate","exerciseUpperValueUpdate"]
 
 //get corresponding info from DB 
 // and populate with patient and 4 data
@@ -123,12 +128,48 @@ const getTemp = async(req,res,next) => {
 
 const getUpdatePatient = async(req,res,next) => {
     const patientInfo = await patient.findById({_id: req.params.patientID}).lean();
-    // console.log(patientInfo)
+    Object.assign(patientInfo, {clinicianID: req.params.patientID})
     res.render('updatePatient.hbs', {patient: patientInfo})
 }
 
 const updatePatient = async(req,res,next) => {
-    console.log("check");
+    const patientInfo = await patient.findById({_id: req.params.patientID}).lean();
+    console.log(req.body)
+    const healthyData_required = patientInfo.healthyData_required;
+    const safetyThreshold = patientInfo.safety_threshold;
+    if(req.body.bloodGlucoseCheckboxUpdate == undefined){
+        healthyData_required[0] = false
+        safetyThreshold[0] = "Not Required"
+    }else if(req.body.bloodGlucoseCheckboxUpdate == 'on'){
+        healthyData_required[0] = true
+        safetyThreshold[0] = req.body.bloodGlucoseLowerValueUpdate + "-" + req.body.bloodGlucoseUpperValueUpdate
+    }
+    if(req.body.weightCheckboxUpdate == undefined){
+        healthyData_required[1] = false
+        safetyThreshold[1] = "Not Required"
+    }else if(req.body.weightCheckboxUpdate == 'on'){
+        healthyData_required[1] = true
+        safetyThreshold[1] = req.body.weightLowerValueUpdate + "-" + req.body.weightUpperValueUpdate
+    }
+    if(req.body.insulinTakenCheckboxUpdate == undefined){
+        healthyData_required[2] = false
+        safetyThreshold[2] = "Not Required"
+    }else if(req.body.insulinTakenCheckboxUpdate == 'on'){
+        healthyData_required[2] = true
+        safetyThreshold[2] = req.body.insulinTakenLowerValueUpdate + "-" + req.body.insulinTakenUpperValueUpdate
+    }
+    if(req.body.exerciseCheckboxUpdate == undefined){
+        healthyData_required[3] = false
+        safetyThreshold[3] = "Not Required"
+    }
+    console.log(healthyData_required)
+    console.log(safetyThreshold)
+    patient.findByIdAndUpdate({_id: req.params.patientID}, {$set:{healthyData_required: healthyData_required, safety_threshold: safetyThreshold}}, function(err, updatedPatient){
+        if (err) { console.log(err); return; }
+        console.log('Patient updated')
+    })
+    // res.redirect('/dashboard/'+req.params.clinicianID)
+    
 }
 
 // to be removed, getTemp,createTemp
