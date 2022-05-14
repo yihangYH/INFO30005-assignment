@@ -44,7 +44,6 @@ const getPage = async(req,res,next) => {
 
 const CreatePatient = async(req,res,next) => {
     const healthyData_required = [true,true,true,true];
-    console.log(req.body)
     const safety_threshold = [];
     if(req.body.bloodGlucoseCheckbox != 'on'){
         healthyData_required[0] = false

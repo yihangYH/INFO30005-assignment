@@ -218,7 +218,7 @@ const getLeaderboard = async(req,res,next)=>{
     .populate("insulinTaken").lean();
     const updateCount = 0;
     // if(currentPatient.weight.length > updateCount){ updateCount = currentPatient.weight.length}
-    console.log(currentPatient)
+    // console.log(currentPatient)
     patient.find({}, function(err, users) {
         var userMap = {};
     

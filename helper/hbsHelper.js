@@ -13,6 +13,9 @@ hbs.handlebars.registerHelper('each_upto', function(ary, max, options) {
         result.push(options.fn(newary[i]));
     return result.join('');
 });
+hbs.handlebars.registerHelper('findMaxRate', function(data, frequency) {
+    console.log(date);
+});
 
 hbs.handlebars.registerHelper('convert', function(safety,index){
     // console.log(safety[index]);
