@@ -37,7 +37,7 @@ function reloadUpdatePage() {
             const currentDay = dateString.split('/')[1];
             // check the if in the same day, if in the same day, update field display today's updated data 
             if (currentDay == date[1].replace(/\s/g,'') && currentMonth == date[0].replace(/\s/g,'')) {
-                document.getElementById(inputs[i]).value = document.getElementById(datas[i]).innerHTML.split('&')[0];
+                document.getElementById(inputs[i]).value = document.getElementById(datas[i]).innerHTML.split('&')[0].replace(/\s/g, '');
             }
         }
     }
@@ -83,8 +83,19 @@ function validation() {
         document.getElementById("myModal").style.display = "block";
         document.getElementById("error-message").innerHTML = "Please enter at least one data before update"
     }
+    try {
+        // if no data entered, alert error message
+        Swal.fire(
+            'Data update successfully',
+            'please check',
+            'success'
+        )
+    } catch (error) {
+        document.getElementById("myModal").style.display = "block";
+        document.getElementById("error-message").innerHTML = "Data update successfully"
+    }
 
-    return false;
+    return true;
 }
 
 // if only data entered and comment is not entered, return false 

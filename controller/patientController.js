@@ -67,8 +67,8 @@ const updateData  = async(req,res,next) =>{
                 time:dateString,
                 comment:req.body.blood_glucose_comment,
             })
-            // await patient.findOneAndUpdate({_id:req.params.id}, {$push: {bloodGlucose: data._id}});
-            // data.save() 
+            await patient.findOneAndUpdate({_id:req.params.id}, {$push: {bloodGlucose: data._id}});
+            data.save() 
         }else{
             if(req.body.blood_glucose != "" && req.body.blood_glucose != "Not Required"){
                 const leastTime = patientData.bloodGlucose[patientData.bloodGlucose.length - 1].time;
@@ -82,8 +82,8 @@ const updateData  = async(req,res,next) =>{
                 //update to data if the patient have not update today, 
                 // if patient already updated today, patient will not be able to update again
                 if(leastTime.split('/')[1] != currentMonth || leastTime.split('/')[0] != currentDay){
-                    // await patient.findOneAndUpdate({_id:req.params.id}, {$push: {bloodGlucose: data._id}});
-                    // data.save() 
+                    await patient.findOneAndUpdate({_id:req.params.id}, {$push: {bloodGlucose: data._id}});
+                    data.save() 
                 }
             }
         }
@@ -94,8 +94,8 @@ const updateData  = async(req,res,next) =>{
                 time:dateString,
                 comment:req.body.weight_comment,
             })
-            // await patient.findOneAndUpdate({_id:req.params.id}, {$push: {weight: data._id}});
-            // data.save() 
+            await patient.findOneAndUpdate({_id:req.params.id}, {$push: {weight: data._id}});
+            data.save() 
         }else{
             // same logic as above but for weight
             if(req.body.weight != "" && req.body.weight != "Not Required" ){
@@ -106,8 +106,8 @@ const updateData  = async(req,res,next) =>{
                     comment:req.body.weight_comment,
                 })
                 if(leastTime.split('/')[1] != currentMonth || leastTime.split('/')[0] != currentDay){
-                    // await patient.findOneAndUpdate({_id:req.params.id}, {$push: {weight: data._id}});
-                    // data.save() 
+                    await patient.findOneAndUpdate({_id:req.params.id}, {$push: {weight: data._id}});
+                    data.save() 
                 }
             }
         }
@@ -117,8 +117,8 @@ const updateData  = async(req,res,next) =>{
                 time:dateString,
                 comment:req.body.inssulin_comment,
             })
-            // await patient.findOneAndUpdate({_id:req.params.id}, {$push: {insulinTaken: data._id}});
-            // data.save()
+            await patient.findOneAndUpdate({_id:req.params.id}, {$push: {insulinTaken: data._id}});
+            data.save()
         }else{
             // same logic as above but for insulin taken
             if(req.body.insulin_taken != "" && req.body.insulin_taken != "Not Required" ){
@@ -129,8 +129,8 @@ const updateData  = async(req,res,next) =>{
                     comment:req.body.inssulin_comment,
                 })
                 if(leastTime.split('/')[1] != currentMonth || leastTime.split('/')[0] != currentDay){
-                    // await patient.findOneAndUpdate({_id:req.params.id}, {$push: {insulinTaken: data._id}});
-                    // data.save()
+                    await patient.findOneAndUpdate({_id:req.params.id}, {$push: {insulinTaken: data._id}});
+                    data.save()
                 }
             }
         }
@@ -140,8 +140,8 @@ const updateData  = async(req,res,next) =>{
                 time:dateString,
                 comment:req.body.exercise_comment,
             })
-            // await patient.findOneAndUpdate({_id:req.params.id}, {$push: {exercise: data._id}});
-            // data.save() 
+            await patient.findOneAndUpdate({_id:req.params.id}, {$push: {exercise: data._id}});
+            data.save() 
         }else{
             // same logic as above but for exercise
             if(req.body.exercise != "" && req.body.exercise != "Not Required" ){
@@ -152,8 +152,8 @@ const updateData  = async(req,res,next) =>{
                     comment:req.body.exercise_comment,
                 })
                 if(leastTime.split('/')[1] != currentMonth || leastTime.split('/')[0] != currentDay){
-                    // await patient.findOneAndUpdate({_id:req.params.id}, {$push: {exercise: data._id}});
-                    // data.save() 
+                    await patient.findOneAndUpdate({_id:req.params.id}, {$push: {exercise: data._id}});
+                    data.save() 
                 }
             }
         }
