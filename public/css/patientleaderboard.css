@@ -48,22 +48,25 @@
     }
     
     .rank-first{
+        text-align:center;
         position:relative;
-        left:-32.8%;
+        left:-31.2%;
         top:15.5%;
         height:20%;
     }
 
     .rank-second{
+        text-align:center;
         position:relative;
-        left:-29.5%;
+        left:-22%;
         top:33.5%;
         height:20%;
     }
 
     .rank-third{
+        text-align:center;
         position:relative;
-        left:-57.5%;
+        left:-51.5%;
         top:38%;
         height:20%;
     }
@@ -77,7 +80,7 @@
 
     .rank-fifth{
         position:relative;
-        left:-64%;
+        left:-65%;
         top:100%;
         height:20%;
     }
@@ -208,22 +211,25 @@
     }
     
     .rank-first{
+        text-align:center;
         position:relative;
-        left:-32.8%;
+        left:-30.2%;
         top:15.5%;
         height:20%;
     }
 
     .rank-second{
+        text-align:center;
         position:relative;
-        left:-29.5%;
+        left:-21.5%;
         top:33.5%;
         height:20%;
     }
 
     .rank-third{
+        text-align:center;
         position:relative;
-        left:-57.5%;
+        left:-51%;
         top:38%;
         height:20%;
     }
@@ -237,7 +243,7 @@
 
     .rank-fifth{
         position:relative;
-        left:-64%;
+        left:-65.6%;
         top:100%;
         height:20%;
     }
@@ -362,22 +368,25 @@
     }
     
     .rank-first{
+        text-align:center;
         position:relative;
-        left:-32.8%;
+        left:-31.8%;
         top:15.5%;
         height:20%;
     }
 
     .rank-second{
+        text-align:center;
         position:relative;
-        left:-29.5%;
+        left:-22.4%;
         top:33.5%;
         height:20%;
     }
 
     .rank-third{
+        text-align:center;
         position:relative;
-        left:-57.5%;
+        left: -52.4em;%;
         top:38%;
         height:20%;
     }
@@ -391,7 +400,7 @@
 
     .rank-fifth{
         position:relative;
-        left:-64%;
+        left:-64.4%;
         top:108%;
         height:20%;
     }
