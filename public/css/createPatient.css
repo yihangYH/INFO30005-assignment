@@ -237,6 +237,7 @@ hr{
     border-radius: 15px;
     color: white;
     font-weight: 300;
+    cursor: pointer;
 }
 
 .required{

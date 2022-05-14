@@ -211,7 +211,24 @@ const getPassExercise = async(req,res,next)=>{
 }
 
 const getLeaderboard = async(req,res,next)=>{
-    res.render("leaderBoard.hbs");
+    // console.log(req.params.id)
+    const currentPatient = await patient.findOne({_id:req.params.id}).populate("weight")
+    .populate("exercise")
+    .populate("bloodGlucose")
+    .populate("insulinTaken").lean();
+    const updateCount = 0;
+    // if(currentPatient.weight.length > updateCount){ updateCount = currentPatient.weight.length}
+    console.log(currentPatient)
+    patient.find({}, function(err, users) {
+        var userMap = {};
+    
+        users.forEach(function(user) {
+          userMap[user._id] = user;
+        });
+    
+        // console.log(userMap);
+      });
+    res.render("leaderBoard.hbs", {patientInfo: currentPatient});
 }
 
 module.exports = {

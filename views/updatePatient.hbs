@@ -23,14 +23,14 @@
                         <h1 class="required">Required</h1>
                             <h1 class="safety-threhold">Safety thredhold</h1>
                             {{!-- <h1 class="time-series">Time series</h1> --}}
-                        <form action="/{{id}}/newPatient" method="post" onsubmit="return createPatientValidation()"></form>
+                    <form action="/{{id}}/{{patientID}}/newPatient" method="post" onsubmit="return updatePatientValidation()">
                             <ul class="data-info">
                                 <li> 
                                 <p>BLOOD GLUCOSE</p>
                                 <input class ="data-check-box" id="bloodGlucoseCheckboxUpdate" type="checkbox" id="" name="bloodGlucoseCheckboxUpdate">
-                                <input class = "lower-value" id = "bloodGlucoseLowerValueUpdate" type="number" name="bloodGlucoseLowerValueUpdate" readonly>
+                                <input class = "lower-value" id = "bloodGlucoseLowerValueUpdate" type="any" name="bloodGlucoseLowerValueUpdate" readonly>
                                 <p class="sign"> ~ </p>
-                                <input class = "upper-value" id = "bloodGlucoseUpperValueUpdate" type="number" name="bloodGlucoseUpperValueUpdate" readonly>
+                                <input class = "upper-value" id = "bloodGlucoseUpperValueUpdate" type="any" name="bloodGlucoseUpperValueUpdate" readonly>
                                 <p class="unit" style="font-size: 40px; font-weight: normal;">nmol/L</p>
                                 {{!-- <input class = "lower-time-value" id = "bloodGlucoseTimeLowerValue" type="time" name="bloodGlucoseTimeLowerValue" readonly>
                                 <p class="timeSign"> ~ </p>
@@ -43,9 +43,9 @@
                                 <li>
                                     <p>WEIGHT</p>
                                     <input class ="data-check-box" id="weightCheckboxUpdate" type="checkbox" name="weightCheckboxUpdate" id="">
-                                    <input class = "lower-value" id="weightLowerValueUpdate" type="number" name="weightLowerValueUpdate" readonly>
+                                    <input class = "lower-value" id="weightLowerValueUpdate" type="any" name="weightLowerValueUpdate" readonly>
                                     <p class="sign"> ~ </p>
-                                    <input class = "upper-value" id="weightUpperValueUpdate" type="number" name="weightUpperValueUpdate" readonly>
+                                    <input class = "upper-value" id="weightUpperValueUpdate" type="any" name="weightUpperValueUpdate" readonly>
                                     <p class="unit" style="font-size: 40px; font-weight: normal;">kg</p>
                                     {{!-- <input class = "lower-time-value" id = "weightTimeLowerValue" type="time" name = "weightTimeLowerValue" readonly>
                                     <p class="timeSign"> ~ </p>
@@ -58,9 +58,9 @@
                                 <li>
                                     <p>INSULIN TAKEN</p>
                                     <input class ="data-check-box" id="insulinTakenCheckboxUpdate" type="checkbox" name="insulinTakenCheckboxUpdate" id="">
-                                    <input class = "lower-value" id="insulinTakenLowerValueUpdate" type="number" name="insulinTakenLowerValueUpdate" readonly>
+                                    <input class = "lower-value" id="insulinTakenLowerValueUpdate" type="any" name="insulinTakenLowerValueUpdate" readonly>
                                     <p class="sign"> ~ </p>
-                                    <input class = "upper-value" id="insulinTakenUpperValueUpdate" type="number" name="insulinTakenUpperValueUpdate" readonly>
+                                    <input class = "upper-value" id="insulinTakenUpperValueUpdate" type="any" name="insulinTakenUpperValueUpdate" readonly>
                                     <p class="unit" style="font-size: 40px; font-weight: normal;">dose(s)</p>
                                     {{!-- <input class = "lower-time-value" id = "insulinTakenTimeLowerValue" type="time" name="insulinTakenTimeLowerValue" readonly>
                                     <p class="timeSign"> ~ </p>
@@ -73,9 +73,9 @@
                                 <li>
                                     <p>EXERCISE</p>
                                     <input class ="data-check-box" id="exerciseCheckboxUpdate" type="checkbox" name="exerciseCheckboxUpdate" >
-                                    <input class = "lower-value" id="exerciseLowerBalueUpdate" type="number" name="exerciseLowerBalueUpdate" readonly>
+                                    <input class = "lower-value" id="exerciseLowerBalueUpdate" type="any" name="exerciseLowerBalueUpdate" readonly>
                                     <p class="sign"> ~ </p>
-                                    <input class = "upper-value" id="exerciseUpperValueUpdate" type="number" name="exerciseUpperValueUpdate" readonly>
+                                    <input class = "upper-value" id="exerciseUpperValueUpdate" type="any" name="exerciseUpperValueUpdate" readonly>
                                     <p class="unit" style="font-size: 40px; font-weight: normal;">stpes</p>
                                     {{!-- <input class = "lower-time-value" id = "exerciseTimeLowerValue" type="time" name="exerciseTimeLowerValue" readonly>
                                     <p class="timeSign"> ~ </p>
@@ -101,6 +101,6 @@
         data.push({{ this.healthyData_required }})
         var safety=[]
         safety.push("{{ this.safety_threshold  }}")
-        setRequired(data,safety);
+        setRequired(data,"{{ this.safety_threshold  }}");
     {{/with}}
 </script>

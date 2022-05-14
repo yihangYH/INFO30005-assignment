@@ -121,11 +121,15 @@ const getTemp = async(req,res,next) => {
 }
 
 
-const updatePatient = async(req,res,next) => {
+const getUpdatePatient = async(req,res,next) => {
     const patientInfo = await patient.findById({_id: req.params.patientID}).lean();
     // console.log(patientInfo)
     res.render('updatePatient.hbs', {patient: patientInfo})
 }
 
+const updatePatient = async(req,res,next) => {
+    console.log("check");
+}
+
 // to be removed, getTemp,createTemp
-module.exports = { getClinician, getPage, CreatePatient, updatePatient,getTemp,createTemp,comment }
+module.exports = { getClinician, getPage, CreatePatient, getUpdatePatient,getTemp,createTemp,comment,updatePatient }

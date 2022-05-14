@@ -10,7 +10,9 @@ clinicianRouter.get('/:id/newPatient', clinicianController.getPage)
 
 clinicianRouter.post('/:id/newPatient', clinicianController.CreatePatient)
 
-clinicianRouter.get('/:id/:patientID/updatePatient', clinicianController.updatePatient)
+clinicianRouter.get('/:id/:patientID/updatePatient', clinicianController.getUpdatePatient)
+
+clinicianRouter.post('/:id/:patientID/updatePatient', clinicianController.updatePatient)
 
 clinicianRouter.get('/:id/comment', clinicianController.comment)
 
