@@ -28,9 +28,9 @@
                         <li> 
                         <p>BLOOD GLUCOSE</p>
                         <input class ="data-check-box" id="bloodGlucoseCheckbox" type="checkbox" id="" name="bloodGlucoseCheckbox">
-                        <input class = "lower-value" id = "bloodGlucoseLowerValue" type="number" step="0.01" name="bloodGlucoseLowerValue" readonly>
+                        <input class = "lower-value" id = "bloodGlucoseLowerValue" type="number" step="0.01" min="0" max="99" name="bloodGlucoseLowerValue" readonly>
                         <p class="sign"> ~ </p>
-                        <input class = "upper-value" id = "bloodGlucoseUpperValue" type="number" step="0.01" name="bloodGlucoseUpperValue" readonly>
+                        <input class = "upper-value" id = "bloodGlucoseUpperValue" type="number" step="0.01" min="0" max="99" name="bloodGlucoseUpperValue" readonly>
                         <p class="unit" style="font-size: 40px; font-weight: normal;">nmol/L</p>
                         {{!-- <input class = "lower-time-value" id = "bloodGlucoseTimeLowerValue" type="time" name="bloodGlucoseTimeLowerValue" readonly>
                         <p class="timeSign"> ~ </p>
@@ -43,9 +43,9 @@
                         <li>
                             <p>WEIGHT</p>
                             <input class ="data-check-box" id="weightCheckbox" type="checkbox" name="weightCheckbox" id="">
-                            <input class = "lower-value" id="weightLowerValue" type="number" step="0.01" name="weightLowerValue" readonly>
+                            <input class = "lower-value" id="weightLowerValue" type="number" step="0.01" min="0" max="999" name="weightLowerValue" readonly>
                             <p class="sign"> ~ </p>
-                            <input class = "upper-value" id="weightUpperValue" type="number" step="0.01" name="weightUpperValue" readonly>
+                            <input class = "upper-value" id="weightUpperValue" type="number" step="0.01" min="0" max="999" name="weightUpperValue" readonly>
                             <p class="unit" style="font-size: 40px; font-weight: normal;">kg</p>
                             {{!-- <input class = "lower-time-value" id = "weightTimeLowerValue" type="time" name = "weightTimeLowerValue" readonly>
                             <p class="timeSign"> ~ </p>
@@ -58,9 +58,9 @@
                         <li>
                             <p>INSULIN TAKEN</p>
                             <input class ="data-check-box" id="insulinTakenCheckbox" type="checkbox" name="insulinTakenCheckbox" id="">
-                            <input class = "lower-value" id="insulinTakenLowerValue" type="number" step="0.01" name="insulinTakenLowerValue" readonly>
+                            <input class = "lower-value" id="insulinTakenLowerValue" type="number" step="0.01" min="0" max="99" name="insulinTakenLowerValue" readonly>
                             <p class="sign"> ~ </p>
-                            <input class = "upper-value" id="insulinTakenUpperValue" type="number" step="0.01" name="insulinTakenUpperValue" readonly>
+                            <input class = "upper-value" id="insulinTakenUpperValue" type="number" step="0.01" min="0" max="99" name="insulinTakenUpperValue" readonly>
                             <p class="unit" style="font-size: 40px; font-weight: normal;">dose(s)</p>
                             {{!-- <input class = "lower-time-value" id = "insulinTakenTimeLowerValue" type="time" name="insulinTakenTimeLowerValue" readonly>
                             <p class="timeSign"> ~ </p>
@@ -73,9 +73,9 @@
                         <li>
                             <p>EXERCISE</p>
                             <input class ="data-check-box" id="exerciseCheckbox" type="checkbox" name="exerciseCheckbox" >
-                            <input class = "lower-value" id="exerciseLowerBalue" type="number" step="0.01" name="exerciseLowerBalue" readonly>
+                            <input class = "lower-value" id="exerciseLowerBalue" type="number" step="0.01" min="0" max="999999" name="exerciseLowerBalue" readonly>
                             <p class="sign"> ~ </p>
-                            <input class = "upper-value" id="exerciseUpperValue" type="number" step="0.01" name="exerciseUpperValue" readonly>
+                            <input class = "upper-value" id="exerciseUpperValue" type="number" step="0.01" min="0" max="999999" name="exerciseUpperValue" readonly>
                             <p class="unit" style="font-size: 40px; font-weight: normal;">stpes</p>
                             {{!-- <input class = "lower-time-value" id = "exerciseTimeLowerValue" type="time" name="exerciseTimeLowerValue" readonly>
                             <p class="timeSign"> ~ </p>
