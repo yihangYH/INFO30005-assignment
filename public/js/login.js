@@ -10,7 +10,12 @@ function myFunction() {
 
 function changePassword(){
     document.getElementById("change-password-content").style.display = "inline-block"
-  
+    document.getElementById("back-icon").style.display = "inline-block"
+}
+
+function goback(){
+  document.getElementById("change-password-content").style.display = "none"
+  document.getElementById("back-icon").style.display = "none"
 }
 
 function loginValidation(){

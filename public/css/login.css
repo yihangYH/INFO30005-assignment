@@ -275,6 +275,14 @@ body {
         border-radius: 50%;
         background: white;
     }
+    
+    .back-icon{
+        display:none;
+        position:absolute;
+        height:7%;
+        left:8%;
+        top:20%;
+    }
 }
 
 @media screen and (min-width: 1000px) and (max-width:1100px){

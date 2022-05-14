@@ -36,9 +36,14 @@
         </form>
     </div>
     <div class="change-password">
+            <div class="image-icon">
+                <button id="back-icon-btn" type="button" onclick="goback()">
+                    <img class="back-icon" id="back-icon" src="../res/back.jpg" alt="back icon">
+                </button>
+            </div>
             <form action="/changePassword" method="post" onsubmit="return loginValidation()">
                 <div class="change-password-content" id = "change-password-content">
-                    <h1>change your password</h1>
+                    <h1>Change your password</h1>
                     <ul>
                         <li> <input name="userID" class="change-userID" type="text" id="userID" placeholder="User id"></li>
                         <li> <input type="password" name="oldPassword" class="change-password" id="oldPassword" placeholder="Password"></li>
