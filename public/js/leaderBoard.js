@@ -1,3 +1,3 @@
-function findMaxDataRecorded(data) {
+function findMaxDataRecorded(bloodGlucose,) {
     console.log(data);
 }
