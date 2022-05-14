@@ -20,8 +20,32 @@ hbs.handlebars.registerHelper('convert', function(safety,index){
 });
 
 hbs.handlebars.registerHelper('findRank', function(rank,index){
-    console.log(rank[index]);
     return rank[index][0]
+});
+
+hbs.handlebars.registerHelper('findPatientRank', function(rank, userid){
+    for(let i =0; i < rank.length; i++){
+        if(rank[i][2] == userid){
+            return rank[i][1]+"%"
+        }
+    }
+});
+
+hbs.handlebars.registerHelper('findPatientPlace', function(rank, userid){
+    for(let i =0; i < rank.length; i++){
+        if(rank[i][2] == userid){
+            if(i  ==1){
+                return "1st"
+            }else if(i == 2){
+                return "2nd"
+            }else if(i == 3){
+                return "3rd"
+            }else{
+                return i+"th"
+            }
+
+        }
+    }
 });
 
 hbs.handlebars.registerHelper("findLastDate", function(data){

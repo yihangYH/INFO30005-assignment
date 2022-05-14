@@ -22,12 +22,12 @@
     <div class="trophies-and-rankings">
         <div class="trophies">
             <img class="trophies-pic" src="../res/trophie.png" alt="trophie">
-            <p>84%</p>
+            <p>{{findPatientRank this.rank this.userid}}</p>
         </div>
         <div class="vl"></div>
         <div class="rankings">
             <img class="rankings-pic" src="../res/ranking.png" alt="ranking">
-            <p>4th</p>
+            <p>{{findPatientPlace this.rank this.userid}}</p>
             {{!-- <div class="learn-more">Learn more</div> --}}
         </div>
         <div class="learn-more"><p>Learn more</p></div>

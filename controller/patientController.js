@@ -13,6 +13,22 @@ const getPatient = async(req,res,next) => {
         .populate("exercise")
         .populate("bloodGlucose")
         .populate("insulinTaken").lean();
+        var currentPatientRate= caculateRate(patientData);
+        Object.assign(patientData, {"rate": patientData[1]});
+
+        var patientRate = [];
+        const allPatient = await patient.find({_id:{$nin:req.params.id}}).populate("weight")
+        .populate("exercise")
+        .populate("bloodGlucose")
+        .populate("insulinTaken").lean();
+        for(let i =0 ; i < allPatient.length; i++){
+            patientRate.push(caculateRate(allPatient[i]));
+        }
+        patientRate.push(currentPatientRate);
+        patientRate.sort(function(a,b){
+            return b[1] - a[1];
+        });
+        Object.assign(patientData, {"rank": patientRate});
         res.render('data.hbs', {patientInfo: patientData})
     } catch (error) {
         return next(error)
@@ -232,7 +248,6 @@ const getLeaderboard = async(req,res,next)=>{
         return b[1] - a[1];
     });
     Object.assign(currentPatient, {"rank": patientRate});
-    console.log(currentPatient)
     res.render("leaderBoard.hbs", {patientInfo: currentPatient});
 }
 
@@ -242,7 +257,7 @@ function caculateRate(patient){
     var rate  = findRate(maxCount);
     rate = (rate * 100)
     rate = Math.round(rate);
-    return [patient.first_name, rate]
+    return [patient.first_name, rate,patient.userid]
 }
 
 function findRate(maxCount){
