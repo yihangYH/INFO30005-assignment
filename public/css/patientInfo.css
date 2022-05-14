@@ -111,6 +111,15 @@
     }
 
     .trophies-pic {
+        display:none;
+        position: relative;
+        top: 4%;
+        width: 50%;
+        left: -4%;
+    }
+
+    .not-trophies-pic {
+        display: none;
         position: relative;
         top: 4%;
         width: 50%;
@@ -729,6 +738,15 @@
     }
 
     .trophies-pic {
+        display:none;
+        height: 79px;
+        padding-left: 22%;
+        padding-top: 0%;
+
+    }
+
+    .not-trophies-pic {
+        display:none;
         height: 79px;
         padding-left: 22%;
         padding-top: 0%;
@@ -1348,6 +1366,15 @@
     }
 
     .trophies-pic {
+        display:none;
+        position: absolute;
+        height: 45px;
+        left: 15%;
+        top: 17%;
+    }
+
+    .not-trophies-pic {
+        display:none;
         position: absolute;
         height: 45px;
         left: 15%;

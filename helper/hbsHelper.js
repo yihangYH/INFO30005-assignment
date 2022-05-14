@@ -26,7 +26,7 @@ hbs.handlebars.registerHelper('findRank', function(rank,index){
 hbs.handlebars.registerHelper('findPatientRank', function(rank, userid){
     for(let i =0; i < rank.length; i++){
         if(rank[i][2] == userid){
-            return rank[i][1]+"%"
+            return rank[i][1]
         }
     }
 });

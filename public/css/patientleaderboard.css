@@ -114,8 +114,17 @@
         font-weight:bold;
     }
 
+
     .achievement-image{
-        display:flex;
+        display:none;
+        position:absolute;
+        height:30%;
+        left:59%;
+        top:20%;
+    }
+
+    .not-achievement-image{
+        display:none;
         position:absolute;
         height:30%;
         left:59%;
@@ -278,7 +287,15 @@
     }
 
     .achievement-image{
-        display:flex;
+        display:none;
+        position:absolute;
+        height:26%;
+        left:58%;
+        top:21%;
+    }
+
+    .not-achievement-image{
+        display:none;
         position:absolute;
         height:26%;
         left:58%;
@@ -386,7 +403,7 @@
     .rank-third{
         text-align:center;
         position:relative;
-        left: -52.4em;%;
+        left: -52.4%;
         top:38%;
         height:20%;
     }
@@ -435,7 +452,15 @@
     }
 
     .achievement-image{
-        display:flex;
+        display:none;
+        position:absolute;
+        height:18%;
+        left:10%;
+        top:61%;
+    }
+
+    .not-achievement-image{
+        display:none;
         position:absolute;
         height:18%;
         left:10%;

@@ -21,8 +21,9 @@
     </div>
     <div class="trophies-and-rankings">
         <div class="trophies">
-            <img class="trophies-pic" src="../res/trophie.png" alt="trophie">
-            <p>{{findPatientRank this.rank this.userid}}</p>
+            <img class="trophies-pic" src="../res/trophie.png" id = " trophies-pic" alt="trophie">
+            <img class="not-trophies-pic" src="../res/grey_trophie.png" id="not-trophies-pic" alt="not trophie">
+            <p>{{findPatientRank this.rank this.userid}}%</p>
         </div>
         <div class="vl"></div>
         <div class="rankings">
@@ -30,7 +31,9 @@
             <p>{{findPatientPlace this.rank this.userid}}</p>
             {{!-- <div class="learn-more">Learn more</div> --}}
         </div>
-        <div class="learn-more"><p>Learn more</p></div>
+        <div class="learn-more">
+            <a href="/data/{{this._id}}/leaderboard"><p>Learn more</p></a>
+        </div>
     </div>
     <div class="album">
         Check out my new album!!!
@@ -248,4 +251,12 @@
             document.getElementById("myModal").style.display = "none";
         }
     }
+    {{#with patientInfo}}
+    console.log({{findPatientRank this.rank this.userid}})
+        if({{findPatientRank this.rank this.userid}} < 80){
+            document.getElementById("not-trophies-pic").style.display = "flex";
+        }else{
+            document.getElementById("trophies-pic").style.display = "flex";
+        }
+    {{/with}}
 </script>

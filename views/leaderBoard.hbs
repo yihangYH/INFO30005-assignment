@@ -39,12 +39,13 @@
                 <p>Everyone keep going!</p>
             </div>
             <div class="middle-line"></div>
-            <img class="back-icon" src="../../res/back.jpg" alt="back icon">
+            <a href="/data/{{this._id}}"><img class="back-icon" src="../../res/back.jpg" alt="back icon"></a>
             <div class="achievement">
                 <div class="achievement-header">
                     <p>Achievement</p>
                 </div>
-                <img class="achievement-image" src="../../res/trophie.png" alt="achievement-image">
+                <img class="achievement-image" id = "achievement-image" src="../../res/trophie.png" alt="achievement-image">
+                <img class="not-achievement-image" id="not-achievement-image" src="../../res/grey_trophie.png" alt="achievement-image">
                 <div class="achievement-word">
                     <p>Your engagement rate is</p>
                 </div>
@@ -63,23 +64,18 @@
 {{/with}}
 
 <script>
-    {{!-- {{#with patientInfo}}
-        var bloodGlucose= "{{this.bloodGlucose}}"
-        var weight= "{{this.weight}}"
-        var exercise= "{{this.exercise}}"
-        var insulinTaken= "{{this.insulinTaken}}"
-        let conut = "";
-        count = findMaxDataRecorded(bloodGlucose.split(",").length, weight.split(",").length, length,exercise.split(",").length, insulinTaken.split(",").length);
-        let maxRate =""
-        if(count == "bloodGlucose"){
-            maxRate =  "{{findMaxRate this.bloodGlucose}}";
-        }else if(count ==  "weight"){
-            
-        }else if(count == "exercise"){
-            
-        }else if(count == "insulinTaken"){
+    
+    {{#with patientInfo}}
 
-        }
-        
-    {{/with}} --}}
+    if({{this.rate}} < 80){
+        document.getElementById("not-achievement-image").style.display = "flex";
+    }else{
+        document.getElementById("achievement-image").style.display = "flex";
+    }
+    {{/with}}
+
+    
+
+
+
 </script>
