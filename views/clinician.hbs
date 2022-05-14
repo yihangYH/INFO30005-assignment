@@ -32,28 +32,32 @@
 </header>
 
 <main>
-    <div id="dashboard">
+    <div id="dashboard" class="dashboard">
         <table>
             <caption>
                 <p id = "tableTitle">Dashboard</p>
                 <p id="tableTime"></p>
             </caption>
-            <tr class = "tableHeading">
-                <th>Name</th>
-                <th>Blood glucose level(nmol/L)</th>
-                <th>Weight(kg)</th>
-                <th>Insulin taken(does)</th>
-                <th>Exercise(steps)</th>
-            </tr>
-            {{#each patient}}
-            <tr>
-            <td>{{this.first_name}}</td>
-            <td style="{{checkSafety this.safety_threshold this.bloodGlucose "0"}}">{{getValue this.bloodGlucose}}<span>{{getTime this.bloodGlucose}}</span></td>
-            <td style="{{checkSafety this.safety_threshold this.weight "1"}}">{{getValue this.weight}}<span>{{getTime this.weight}}</span></td>
-            <td style="{{checkSafety this.safety_threshold this.insulinTaken "2"}}">{{getValue this.insulinTaken}}<span>{{getTime this.insulinTaken}}</span></td>
-            <td style="{{checkSafety this.safety_threshold this.exercise "3"}}">{{getValue this.exercise}}<span>{{getTime this.exercise}}</span></td>
-            </tr>
-            {{/each}}
+            <thead>
+                <tr class = "tableHeading">
+                    <th>Name</th>
+                    <th>Blood glucose level(nmol/L)</th>
+                    <th>Weight(kg)</th>
+                    <th>Insulin taken(does)</th>
+                    <th>Exercise(steps)</th>
+                </tr>
+            </thead>
+            <tbody class="table-body">
+                {{#each patient}}
+                <tr>
+                    <td>{{this.first_name}}</td>
+                    <td style="{{checkSafety this.safety_threshold this.bloodGlucose "0"}}">{{getValue this.bloodGlucose}}<span>{{getTime this.bloodGlucose}}</span></td>
+                    <td style="{{checkSafety this.safety_threshold this.weight "1"}}">{{getValue this.weight}}<span>{{getTime this.weight}}</span></td>
+                    <td style="{{checkSafety this.safety_threshold this.insulinTaken "2"}}">{{getValue this.insulinTaken}}<span>{{getTime this.insulinTaken}}</span></td>
+                    <td style="{{checkSafety this.safety_threshold this.exercise "3"}}">{{getValue this.exercise}}<span>{{getTime this.exercise}}</span></td>
+                </tr>
+                {{/each}}
+            </tbody>
         </table>
     </div>
 </main>
