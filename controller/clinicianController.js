@@ -123,8 +123,8 @@ const getTemp = async(req,res,next) => {
 
 const updatePatient = async(req,res,next) => {
     const patientInfo = await patient.findById({_id: req.params.patientID}).lean();
-    console.log(patientInfo)
-    res.render('updatePatient.hbs', {id: req.params.id})
+    // console.log(patientInfo)
+    res.render('updatePatient.hbs', {patient: patientInfo})
 }
 
 // to be removed, getTemp,createTemp

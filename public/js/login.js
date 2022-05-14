@@ -137,7 +137,6 @@ async function validate() {
     }
     // post method for login
     if(patient == true){
-      console.log("chasd")
       const response = await fetch('/patientlogin', {
         method: 'POST',
         headers: {

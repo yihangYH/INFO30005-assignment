@@ -14,6 +14,11 @@ hbs.handlebars.registerHelper('each_upto', function(ary, max, options) {
     return result.join('');
 });
 
+hbs.handlebars.registerHelper('convert', function(safety,index){
+    // console.log(safety[index]);
+    return String(safety[index])
+});
+
 hbs.handlebars.registerHelper("findLastDate", function(data){
     const lastDate = data.split(' ')[0];
     return lastDate

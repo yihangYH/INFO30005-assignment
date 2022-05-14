@@ -6,11 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="../res/favicon.ico">
-    <link id="style" rel="stylesheet" href="" media=" all" />
+    <link id="style" rel="stylesheet" type="text/css" href="" media=" all" />
     <script src="/js/patientData.js"></script>
     <script src="/js/login.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="/js/dashboard.js"></script>
+    <script src="/js/updatePatient.js"></script>
 </head>
 
 <body>
@@ -49,8 +50,7 @@
             document.getElementById("style").href = "../css/createPatient.css";
             document.title = "Create patient";
         } else if (path.includes("updatePatient")){
-            console.log("asd");
-            document.getElementById("style").href = "../css/createPatient.css";
+            document.getElementById("style").href = "../../css/createPatient.css";
             document.title = "Update patient";
         }
     </script>
