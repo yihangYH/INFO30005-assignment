@@ -99,9 +99,8 @@
     {{#with patient}}
         var data = []
         data.push({{ this.healthyData_required }})
-        var safety.push("{{ this.safety_threshold }}")
-        console.log(safety)
-        console.log("{{convert this.safety_threshold 1}}")
-        setRequired(data);
+        var safety=[]
+        safety.push("{{ this.safety_threshold  }}")
+        setRequired(data,safety);
     {{/with}}
 </script>

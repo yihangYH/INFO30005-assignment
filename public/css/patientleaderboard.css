@@ -1,0 +1,481 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans");
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans ', sans-serif;
+}
+
+@media screen and (min-width: 1900px){
+    
+    .header {
+        display: flex;
+        background: linear-gradient(to bottom, #DFAFAD, #FDF9F8);
+        height: 200px;
+    }
+    
+    .logo {
+        position: absolute;
+        width: 350px;
+        left: 20px;
+    
+    }
+    
+    .main-body {
+        background-color: #FDF9F8;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        overflow: hidden;
+    }
+    
+    .leaderboard-header{
+        display:flex;
+        position:absolute;
+        font-size: 320%;
+        left:23.5%;
+        top:8%;
+        font-weight:bold;
+    }
+    
+    .leaderboard-rank{
+        display:flex;
+        position:absolute;
+        left:16%;
+        top:15%;
+        height:40%;
+        font-size:190%;
+        font-weight:bold;
+    }
+    
+    .rank-first{
+        position:relative;
+        left:-32.8%;
+        top:15.5%;
+        height:20%;
+    }
+
+    .rank-second{
+        position:relative;
+        left:-29.5%;
+        top:33.5%;
+        height:20%;
+    }
+
+    .rank-third{
+        position:relative;
+        left:-57.5%;
+        top:38%;
+        height:20%;
+    }
+
+    .rank-fourth{
+        position:relative;
+        left:-52%;
+        top: 84%;
+        height:20%;
+    }
+
+    .rank-fifth{
+        position:relative;
+        left:-64%;
+        top:100%;
+        height:20%;
+    }
+
+    .rank-fourth-title{
+        position:relative;
+        left:-63%;
+        top:84%;
+    }
+
+    .rank-fifth-title{
+        position:relative;
+        left:-75.9%;
+        top:100%;
+    }
+
+    .middle-line{
+        border-left: 2px solid black;
+        height:60%;
+        position:absolute;
+        left:50%;
+        top:5%;
+    }
+
+    .achievement-header{
+        display:flex;
+        position:absolute;
+        font-size: 320%;
+        left:60%;
+        top:8%;
+        font-weight:bold;
+    }
+
+    .achievement-image{
+        display:flex;
+        position:absolute;
+        height:30%;
+        left:59%;
+        top:20%;
+    }
+
+    .achievement-word{
+        position:absolute;
+        width:15%;
+        height:30%;
+        left:75%;
+        top:41%;
+        font-size:220%;
+        font-weight:100;
+    }
+
+    .achievement-rate{
+        position:absolute;
+        left:80.7%;
+        top:45%;
+        font-size:220%;
+        font-weight:100; 
+    }
+
+    .encourage-word{
+        position:absolute;
+        left:61%;
+        top:60%;
+        font-size:300%;
+        color:#A22828;
+        font-weight:bold;
+    }
+
+    .back-icon{
+        display:flex;
+        position:absolute;
+        height:7%;
+        left:9%;
+        top:7%;
+    }
+
+    .leaderboard-comment{
+        position: absolute;
+        font-size:280%;
+        top:60%;
+        left:19%;
+        color:#A22828;
+        font-weight:bold;
+    }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1200px){
+    
+    .header {
+        display: flex;
+        background: linear-gradient(to bottom, #DFAFAD, #FDF9F8);
+        width: 100%;
+        height: 120px;
+    }
+
+    .logo {
+        position: absolute;
+        width: 250px;
+        left: 18px;
+
+    }
+
+    .main-body {
+        background-color: #FDF9F8;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        overflow: hidden;
+    }
+    
+    .leaderboard-header{
+        display:flex;
+        position:absolute;
+        font-size: 250%;
+        left: 19.5%;
+        top: 8%;
+        font-weight:bold;
+    }
+    
+    .leaderboard-rank{
+        display:flex;
+        position:absolute;
+        left:12%;
+        top:15%;
+        height:36%;
+        font-size:130%;
+        font-weight:bold;
+    }
+    
+    .rank-first{
+        position:relative;
+        left:-32.8%;
+        top:15.5%;
+        height:20%;
+    }
+
+    .rank-second{
+        position:relative;
+        left:-29.5%;
+        top:33.5%;
+        height:20%;
+    }
+
+    .rank-third{
+        position:relative;
+        left:-57.5%;
+        top:38%;
+        height:20%;
+    }
+
+    .rank-fourth{
+        position:relative;
+        left:-52%;
+        top: 82%;
+        height:20%;
+    }
+
+    .rank-fifth{
+        position:relative;
+        left:-64%;
+        top:100%;
+        height:20%;
+    }
+
+    .rank-fourth-title{
+        position:relative;
+        left:-63%;
+        top:82%;
+    }
+
+    .rank-fifth-title{
+        position:relative;
+        left:-76.5%;
+        top:100%;
+    }
+
+    .middle-line{
+        border-left: 2px solid black;
+        height:60%;
+        position:absolute;
+        left:50%;
+        top:5%;
+    }
+
+    .achievement-header{
+        display:flex;
+        position:absolute;
+        font-size: 250%;
+        left:58%;
+        top:8%;
+        font-weight:bold;
+    }
+
+    .achievement-image{
+        display:flex;
+        position:absolute;
+        height:26%;
+        left:58%;
+        top:21%;
+    }
+
+    .achievement-word{
+        position:absolute;
+        width:25%;
+        height:30%;
+        left:75%;
+        top:38.5%;
+        font-size:160%;
+        font-weight:100;
+    }
+
+    .achievement-rate{
+        position:absolute;
+        left:82.6%;
+        top:42.5%;
+        font-size:160%;
+        font-weight:100; 
+    }
+
+    .encourage-word{
+        position:absolute;
+        left:60%;
+        top:55%;
+        font-size:210%;
+        color:#A22828;
+        font-weight:bold;
+    }
+
+    .back-icon{
+        display:flex;
+        position:absolute;
+        height:6%;
+        left:9%;
+        top:8%;
+    }
+    
+    .leaderboard-comment{
+        position: absolute;
+        font-size:210%;
+        top:55%;
+        left:14%;
+        color:#A22828;
+        font-weight:bold;
+    }
+}
+
+@media screen and (min-width: 300px) and (max-width:400px){
+    .header {
+        display: flex;
+        background: linear-gradient(to bottom, #DFAFAD, #FDF9F8);
+    }
+
+    .logo {
+        width: 150px;
+    }
+    
+    .main-body {
+        background-color: #FDF9F8;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        overflow:hidden;
+    }
+    
+    .leaderboard-header{
+        display:flex;
+        position:absolute;
+        font-size: 170%;
+        left:30%;
+        top:3%;
+        font-weight:bold;
+    }
+    
+    .leaderboard-rank{
+        display:flex;
+        position:absolute;
+        left:7.5%;
+        top:6%;
+        height:30%;
+        font-size:100%;
+        font-weight:bold;
+    }
+    
+    .rank-first{
+        position:relative;
+        left:-32.8%;
+        top:15.5%;
+        height:20%;
+    }
+
+    .rank-second{
+        position:relative;
+        left:-29.5%;
+        top:33.5%;
+        height:20%;
+    }
+
+    .rank-third{
+        position:relative;
+        left:-57.5%;
+        top:38%;
+        height:20%;
+    }
+
+    .rank-fourth{
+        position:relative;
+        left:-52%;
+        top: 89.8%;
+        height:20%;
+    }
+
+    .rank-fifth{
+        position:relative;
+        left:-64%;
+        top:108%;
+        height:20%;
+    }
+
+    .rank-fourth-title{
+        position:relative;
+        left:-63%;
+        top:90%;
+    }
+
+    .rank-fifth-title{
+        position:relative;
+        left:-75.5%;
+        top:108%;
+    }
+
+    .middle-line{
+        border-left: 0px solid black;
+        height:60%;
+        position:absolute;
+        left:50%;
+        top:5%;
+    }
+
+    .achievement-header{
+        display:flex;
+        position:absolute;
+        font-size: 170%;
+        left:31%;
+        top:56%;
+        font-weight:bold;
+    }
+
+    .achievement-image{
+        display:flex;
+        position:absolute;
+        height:18%;
+        left:10%;
+        top:61%;
+    }
+
+    .achievement-word{
+        position:absolute;
+        width:50%;
+        height:30%;
+        left:50%;
+        top:64%;
+        font-size:130%;
+        font-weight:100;
+    }
+
+    .achievement-rate{
+        position:absolute;
+        left:67%;
+        top:67.1%;
+        font-size:130%;
+        font-weight:100; 
+    }
+
+    .encourage-word{
+        position:absolute;
+        left:50%;
+        top:72%;
+        font-size:130%;
+        color:#A22828;
+        font-weight:100;
+    }
+
+    .back-icon{
+        display:flex;
+        position:absolute;
+        height:6%;
+        left:6%;
+        top:2%;
+    }
+
+    .leaderboard-comment{
+        position: absolute;
+        font-size:150%;
+        top:45%;
+        left:21%;
+        color:#A22828;
+        font-weight:100;
+    }
+    
+
+}

@@ -210,6 +210,10 @@ const getPassExercise = async(req,res,next)=>{
     }
 }
 
+const getLeaderboard = async(req,res,next)=>{
+    res.render("leaderBoard.hbs");
+}
+
 module.exports = {
     getPatient, 
     updateData, 
@@ -217,5 +221,6 @@ module.exports = {
     getPassWeight, 
     getPassInsulin, 
     getPassExercise,
-    checkPatient
+    checkPatient,
+    getLeaderboard
 }

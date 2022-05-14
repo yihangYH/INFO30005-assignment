@@ -28,7 +28,7 @@
             document.getElementById("style").href = "../css/login.css";
             document.title = "Login";
         } else if (path.includes("data") && !path.includes("bloodGlucose") && !path.includes("exercise")
-        && !path.includes("weight") && !path.includes("insulinTaken")) {
+        && !path.includes("weight") && !path.includes("insulinTaken") && !path.includes("leaderboard")) {
             document.getElementById("style").href = "../css/patientInfo.css";
             document.title = "Your Data";
         } else if (path.includes("welcome") || path.includes("Welcome")) {
@@ -52,5 +52,8 @@
         } else if (path.includes("updatePatient")){
             document.getElementById("style").href = "../../css/createPatient.css";
             document.title = "Update patient";
+        }else if(path.includes("leaderboard")){
+            document.getElementById("style").href = "../../css/patientleaderboard.css";
+            document.title = "leader board";
         }
     </script>
