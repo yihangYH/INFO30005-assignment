@@ -56,6 +56,7 @@ const updateData  = async(req,res,next) =>{
         // get current update time, timezone Sydney
         let AuDate = new Date().toLocaleString("en-US", {timeZone: "Australia/Sydney"});
         let dateString = AuDate.toString().replace(',', ' ')
+        // this is bug, the date is not correct month is actually day and day is actually month
         const currentMonth = dateString.split('/')[1]
         const currentDay = dateString.split('/')[0]
         const patientData = await patient.findOne({_id:req.params.id}).populate("weight").populate("exercise").populate("bloodGlucose").populate("insulinTaken").lean();
@@ -78,7 +79,6 @@ const updateData  = async(req,res,next) =>{
                     time:dateString,
                     comment:req.body.blood_glucose_comment,
                 })
-    
                 //update to data if the patient have not update today, 
                 // if patient already updated today, patient will not be able to update again
                 if(leastTime.split('/')[1] != currentMonth || leastTime.split('/')[0] != currentDay){
