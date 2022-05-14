@@ -216,23 +216,35 @@ const getLeaderboard = async(req,res,next)=>{
     .populate("exercise")
     .populate("bloodGlucose")
     .populate("insulinTaken").lean();
-    var maxCount = findMacCountDataUpdated(currentPatient);
-    var rate  = findRate(maxCount);
-    // console.log(maxCount)
-    const updateCount = 0;
-    // if(currentPatient.weight.length > updateCount){ updateCount = currentPatient.weight.length}
-    // console.log(currentPatient)
-    patient.find({}, function(err, users) {
-        var userMap = {};
-    
-        users.forEach(function(user) {
-          userMap[user._id] = user;
-        });
-    
-        // console.log(userMap);
-      });
+    var currentPatientRate= caculateRate(currentPatient);
+    Object.assign(currentPatient, {"rate": currentPatientRate[1]});
+
+    var patientRate = [];
+    const allPatient = await patient.find({_id:{$nin:req.params.id}}).populate("weight")
+    .populate("exercise")
+    .populate("bloodGlucose")
+    .populate("insulinTaken").lean();
+    for(let i =0 ; i < allPatient.length; i++){
+        patientRate.push(caculateRate(allPatient[i]));
+    }
+    patientRate.push(currentPatientRate);
+    patientRate.sort(function(a,b){
+        return b[1] - a[1];
+    });
+    Object.assign(currentPatient, {"rank": patientRate});
+    console.log(currentPatient)
     res.render("leaderBoard.hbs", {patientInfo: currentPatient});
 }
+
+function caculateRate(patient){
+    // console.log(patient)
+    var maxCount = findMacCountDataUpdated(patient);
+    var rate  = findRate(maxCount);
+    rate = (rate * 100)
+    rate = Math.round(rate);
+    return [patient.first_name, rate]
+}
+
 function findRate(maxCount){
     var fisrtTime = maxCount[1][0].time;
     let AuDate = new Date().toLocaleString("en-US", {timeZone: "Australia/Sydney"});
@@ -249,19 +261,19 @@ function findRate(maxCount){
 function findMacCountDataUpdated(currentPatient){
     var max = 0;
     var dataName = null;
-    if(currentPatient.bloodGlucose.length > max){
+    if(currentPatient.bloodGlucose.length > max && currentPatient.bloodGlucose[0].value != "Not Required"){
         max = currentPatient.bloodGlucose.length;
         dataName = currentPatient.bloodGlucose;
     }
-    if(currentPatient.weight.length > max){
+    if(currentPatient.weight.length > max && currentPatient.weight[0].value != "Not Required"){
         max = currentPatient.weight.length;
         dataName = currentPatient.weight;
     }
-    if(currentPatient.insulinTaken.length > max){
+    if(currentPatient.insulinTaken.length > max &&  currentPatient.insulinTaken[0].value != "Not Required"){
         max = currentPatient.insulinTaken.length;
         dataName = currentPatient.insulinTaken;
     }
-    if(currentPatient.exercise.length > max){
+    if(currentPatient.exercise.length > max && currentPatient.exercise[0].value != "Not Required"){
         max = currentPatient.exercise.length;
         dataName = currentPatient.exercise;
     }
