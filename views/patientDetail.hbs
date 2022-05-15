@@ -1,0 +1,121 @@
+<link rel = "stylesheet" type="text/css" href="../public/css/dashboard.css">
+<header>
+    <div class="topBar">
+        <div class="logo">
+            <a href=""> 
+                <img src="../res/logo.png" alt="logo">
+            </a>
+        </div>
+        <div>
+            <div class="topButton">
+                <a href="/dashboard/{{this._id}}">Dashboard</a>
+            </div>
+            <div class="topButton">
+                <a href="">Comment</a>
+                {{!-- TODO: href--}}
+            </div>
+            <img class = "line" src="/res/Line.png" alt="line">
+            <div id="clinicianName">
+                <p>{{this.screen_name}}</p>
+                <div id="sideBar">
+                    <img id="triangle" src="/res/triangle.png" alt="triangle" onclick="click_sideBtn()">
+                    <div class="sideButton" style="display: none;">
+                        <p><a href="/{{this._id}}/newPatient">Create new patient</a></p>
+                        {{!-- TODO: href--}}
+                        <p><a href="/login">Log out</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<main>
+    <div id = "top">
+        <div id = "information">
+            <p>Patient name:&nbsp<span>Alan</span></p>
+            <p>Age:&nbsp;<span>27</span></p>
+            <p>Patient ID:&nbsp;<span>99999999</span></p>
+        </div>
+        
+        <div id = "supportMessage">
+            <textarea placeholder="Add support message..."></textarea>
+            <div class = "submit-div">
+                <button>submit</button>
+            </div>   
+        </div>
+    </div>
+
+    <div id = "middle">
+        <img class = "line" src = "../res/horiz_line.png" alt = "line">
+        <div class = "button" id = "editButton">
+            <a href=""> 
+                <img src="/res/gear.png" alt="edit">
+            </a>
+        </div>
+
+        <table>
+            <thead>
+                <tr class = "tableHeading">
+                    <th>Blood glucose level(nmol/L)</th>
+                    <th>Weight(kg)</th>
+                    <th>Insulin taken(does)</th>
+                    <th>Exercise(steps)</th>
+                </tr>
+            </thead>
+            {{!-- {{#each patient}}
+            <tr>
+            <td>{{this.first_name}}</td>
+            <td style="{{checkSafety this.safety_threshold this.bloodGlucose "0"}}">{{getValue this.bloodGlucose}}<span>{{getTime this.bloodGlucose}}</span></td>
+            <td style="{{checkSafety this.safety_threshold this.weight "1"}}">{{getValue this.weight}}<span>{{getTime this.weight}}</span></td>
+            <td style="{{checkSafety this.safety_threshold this.insulinTaken "2"}}">{{getValue this.insulinTaken}}<span>{{getTime this.insulinTaken}}</span></td>
+            <td style="{{checkSafety this.safety_threshold this.exercise "3"}}">{{getValue this.exercise}}<span>{{getTime this.exercise}}</span></td>
+            </tr>
+            {{/each}} --}}
+            <tbody class="table-body"></tbody>
+                <tr>
+                    <td>1<span>2022.01.02</span></td>
+                    <td>2<span>2022.01.02</span></td>
+                    <td>3<span>2022.01.02</span></td>
+                    <td>4<span>2022.01.02</span></td>
+                </tr>
+                <tr>
+                    <td>1<span>2022.01.02</span></td>
+                    <td>2<span>2022.01.02</span></td>
+                    <td>3<span>2022.01.02</span></td>
+                    <td>4<span>2022.01.02</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id = "bottom">
+        <div id = "note">
+            <p class = "title">Note</p>
+            <img id = "addButton" src = "../res/add.png" alt = "add">
+
+            <ul>
+                <li>
+                    <p class = "time">2022.1.7 13:13:13</p>
+                    <p class = "content">The patient has really high blood glucose level, that might due to the food he eat</p>
+                    <img class = "line" src = "../res/horiz_line.png" alt = "line">
+                </li>
+                <li>
+                    <p class = "time">2022.2.7 13:13:13</p>
+                    <p class = "content">The patient has really high blood glucose level, that might due to the food he eat</p>
+                    <img class = "line" src = "../res/horiz_line.png" alt = "line">
+                </li>
+                <li>
+                    <p class = "time">2022.2.7 13:13:13</p>
+                    <p class = "content">The patient has really high blood glucose level, that might due to the food he eat</p>
+                    <img class = "line" src = "../res/horiz_line.png" alt = "line">
+                </li>
+                <li>
+                    <p class = "time">2022.2.7 13:13:13</p>
+                    <p class = "content">The patient has really high blood glucose level, that might due to the food he eat</p>
+                    <img class = "line" src = "../res/horiz_line.png" alt = "line">
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+</main>

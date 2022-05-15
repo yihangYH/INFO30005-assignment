@@ -18,6 +18,7 @@ const patientSchema = new mongoose.Schema({
     bloodGlucose: [{type:mongoose.Schema.Types.ObjectId, ref:'bloodGlucose'}],
     
     supportMessage: String,
+    notes: [{type:mongoose.Schema.Types.ObjectId, ref:'clinicianNote'}],
 })
 
 patientSchema.methods.verifyPassword = function (password, callback) {

@@ -39,3 +39,4 @@ const Clinician = mongoose.model('Clinician', schema, 'clinician')
 
 
 module.exports = Clinician
+

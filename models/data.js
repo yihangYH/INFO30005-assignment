@@ -25,14 +25,21 @@ const bloodGlucoseSchema = new mongoose.Schema({
     comment:String,
 })
 
+const clinicianNoteSchema = new mongoose.Schema({
+    content:String,
+    time: String,
+})
+
 const weight = mongoose.model("weight", weightSchema, 'weight');
 const exercise = mongoose.model("exercise", exerciseSchema, "exercise")
 const insulinTaken = mongoose.model("insulinTaken", insulinTakenSchema, "insulinTaken")
 const bloodGlucose = mongoose.model("bloodGlucose", bloodGlucoseSchema, "bloodGlucose")
+const clinicianNote = mongoose.model("clinicianNote", clinicianNoteSchema,"clinicianNote")
 
 module.exports = {
     weight,
     exercise,
     insulinTaken,
     bloodGlucose,
+    clinicianNote,
 }

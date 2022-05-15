@@ -97,27 +97,8 @@ body{
     margin-right:3%;
 }
 
-#tableTitle{
-    text-align:center;
-    font-weight: bold;
-    font-size: 180%;
-    margin-bottom:0px;
-}
 
-#tableTime{
-    text-align:center;
-    font-size: 130%;
-    margin-top: 0px;
-    margin-bottom:0px;
-}
-
-/* TODO: can't scroll*/
-#dashboard{
-    overflow-y: auto;
-    height: 8px;
-}
-
-#dashboard>table, td, th{
+table, td, th{
     border: 1px solid black;
 }
 
@@ -128,19 +109,28 @@ td,th{
     font-size: 130%;
 }
 
-#dashboard>table{    
+table{    
     width: 80%;
     border-collapse: collapse;
     text-align: center;
-    position: absolute;
-    left:10%;
-    right:10%;
-    margin:auto;
     table-layout:fixed;
     font-size: 120%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-#dashboard span{
+table span{
+    position:absolute;
+    top:69%;
+    left:67%;
+    font-size: 60%;
+    color: #707070;
+    text-align: right;
+    font-weight: normal !important;
+    font-style: normal !important;
+}
+
+/* span{
     position:absolute;
     top:69%;
     left:53%;
@@ -149,9 +139,125 @@ td,th{
     text-align: right;
     font-weight: normal !important;
     font-style: normal !important;
+} */
+
+#top{
+    margin-top: 3%;
+    display: flex;
+    flex-direction: row;
+}
+#information{
+    display: flex;
+    flex-direction: column;
+    font-size: 230%;
+    margin-left:10%;
+    width: 30%;
+    font-weight: bold;
+    color:#707070;
+}
+
+#supportMessage{
+    border: none;
+    margin-left:auto;
+    margin-right: 10%;
+    padding: 1%;
+    width:35%;
+    background-color: #f0efef;
+    height: 130px;
+    border-radius: 10px;
+}
+
+#supportMessage textarea{
+    border: none;
+    background-color: #f0efef;
+    width: 100%;
+    height:80%;
+    vertical-align: text-top;
+    font-size: medium;
+}
+
+.submit-div {
+    background-color: #F0EFEF;
+    width:100%;
+    text-align: right;
+    border: none;
+    
+}
+
+.submit-div button {
+    margin-right: 5%;
+    border: none;
+    background-color: Transparent;
+    cursor: pointer;
+    font-size: large;
+    font-weight: bold;
+    font-size: larger;
 }
 
 
+.button img{
+    width: 100%;
+}
+
+#middle{
+    position: relative;
+    height:100%;
+}
+
+#middle .line{
+    width: 90%;
+    margin-left:5% ;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+#editButton{
+    width: 4%;
+    height: 4%;
+    position: absolute;
+    top:26%;
+    left:91%;
+}
+
+#note{
+    margin-top: 3%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #F0EFEF;
+    width: 55%;
+    position: relative;
+    padding: 1% 3%;
+    border-radius: 10px;
+    height: 250px;
+    overflow-y: scroll;
+}
+
+#note .title{
+    text-align: center;
+    font-size: xx-large;
+    font-weight: bold;
+    margin-bottom: 2%;
+}
+
+#addButton{
+    position: absolute;
+    width: 5%;
+    left:auto;
+    right:2%;
+    top: 10px;
+}
+
+#note ul{
+    list-style-type: none;
+}
+
+.time{
+    font-weight: bold;
+}
+
+#bottom .line{
+    width: 100%;
+}
 
 table {
     width: 100%;
@@ -160,8 +266,9 @@ table {
 
 thead, tbody, tr, th, td { display: block; }
 
+
 thead{
-    width: 80%;
+    width: 100%;
 }
 
 tr:after {  /* clearing float */
@@ -181,5 +288,6 @@ tbody td, thead th {
     width: 19.87%; 
     float: left;
 }
+
 
 

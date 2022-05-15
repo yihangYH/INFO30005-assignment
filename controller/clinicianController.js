@@ -34,6 +34,10 @@ const getClinician = async (req,res, next) =>{
     }
 }
 
+const getPatientDetail = async (req,res, next) =>{
+    return res.render('patientDetail.hbs')
+}
+
 const getPage = async(req,res,next) => {
     try {
         res.render('createPatient.hbs', {id: req.params.id})
@@ -189,4 +193,4 @@ const updatePatient = async(req,res,next) => {
 }
 
 // to be removed, getTemp,createTemp
-module.exports = { getClinician, getPage, CreatePatient, getUpdatePatient,getTemp,createTemp,comment,updatePatient }
+module.exports = { getClinician, getPage, CreatePatient, getUpdatePatient,getTemp,createTemp,comment,updatePatient,getPatientDetail}
