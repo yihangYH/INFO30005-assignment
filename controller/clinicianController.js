@@ -340,7 +340,7 @@ const getTemp = async(req,res,next) => {
 
 const getUpdatePatient = async(req,res,next) => {
     const patientInfo = await patient.findById({_id: req.params.patientID}).lean();
-    Object.assign(patientInfo, {clinicianID: req.params.patientID})
+    Object.assign(patientInfo, {clinicianID: req.params.id})
     res.render('updatePatient.hbs', {patient: patientInfo})
 }
 
@@ -374,13 +374,13 @@ const updatePatient = async(req,res,next) => {
         healthyData_required[3] = false
         safetyThreshold[3] = "Not Required"
     }
-    console.log(healthyData_required)
-    console.log(safetyThreshold)
+    console.log("aadsasdsadad")
     patient.findByIdAndUpdate({_id: req.params.patientID}, {$set:{healthyData_required: healthyData_required, safety_threshold: safetyThreshold}}, function(err, updatedPatient){
         if (err) { console.log(err); return; }
         console.log('Patient updated')
     })
-    // res.redirect('/dashboard/'+req.params.clinicianID)
+    let path="/"+req.params.id + "/"+ req.params.patientID+"/patientDetail"
+    res.redirect(path)
     
 }
 

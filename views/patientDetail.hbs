@@ -34,7 +34,7 @@
             <div id = "information">
                 <p>Patient name:&nbsp<span>{{this.screen_name}}</span></p>
                 <p>Age:&nbsp;<span>{{findAge this.birthday}}</span></p>
-                <p>Patient ID:&nbsp;<span>{{this.userid}}</span></p>
+                <p>ID:&nbsp;<span>{{this.userid}}</span></p>
             </div>
             
             <div id = "supportMessage">
@@ -48,7 +48,7 @@
         <div id = "middle">
             <img class = "line" src = "../../res/horiz_line.png" alt = "line">
             <div class = "button" id = "editButton">
-                <a href=""> 
+                <a href="/{{this.clinicianID}}/{{this._id}}/updatePatient"> 
                     <img src="../../res/gear.png" alt="edit">
                 </a>
             </div>

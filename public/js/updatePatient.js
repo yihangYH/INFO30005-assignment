@@ -90,7 +90,6 @@ function setRequired(data,safetyThreshold){
             document.getElementById(lowervalue[i]).value = value[0];
             document.getElementById(uppervalue[i]).value = value[1];
         }else{
-            console.log(checkBox[i])
             document.getElementById(checkBox[i]).checked = false;
             document.getElementById(lowervalue[i]).readOnly = true;
             document.getElementById(uppervalue[i]).readOnly = true;
@@ -125,7 +124,7 @@ function updatePatientValidation(){
                 }
                 return false;
             }
-            console.log("asd")
+            
         }
     }
     try {
@@ -137,5 +136,5 @@ function updatePatientValidation(){
     } catch (error) {
         alert("Account update successfully")
     }
-    return false;
+    return true;
 }
