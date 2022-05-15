@@ -154,14 +154,15 @@ td,th{
 
 
 table {
-    width: 100%;
+    width: 90%;
     border-spacing: 0;
 }
 
 thead, tbody, tr, th, td { display: block; }
 
+
 thead{
-    width: 80%;
+    width: 100%;
 }
 
 tr:after {  /* clearing float */
