@@ -35,7 +35,199 @@ const getClinician = async (req,res, next) =>{
 }
 
 const getPatientDetail = async (req,res, next) =>{
-    return res.render('patientDetail.hbs')
+    try {
+        const bloodGlucose =[];
+        const bloodGlucoseTime=[];
+        const weight = [];
+        const weightTime = [];
+        const exercise = [];
+        const exerciseTime = [];
+        const insulinTaken = [];
+        const insulinTakenTime = [];
+        const jsondata=[];
+        const patientInfo = 
+            await patient.findOne({_id: req.params.patientID})
+            .populate("weight")
+            .populate("exercise")
+            .populate("bloodGlucose")
+            .populate("insulinTaken").lean()
+        const clinician = 
+            await clinicianData.findOne({_id: req.params.id}).lean()
+        Object.assign(patientInfo, {clinicianID: clinician._id, clinicianName: clinician.screen_name})
+        var type = findMaxDataType(patientInfo);
+        
+        if(type == 1){
+            for(let i = 0; i < patientInfo.bloodGlucose.length; i++){
+                bloodGlucose.push(patientInfo.bloodGlucose[i].value)
+                bloodGlucoseTime.push(patientInfo.bloodGlucose[i].time)
+            }
+            for(let i = 0; i < patientInfo.bloodGlucose.length; i++){
+                if(i < patientInfo.weight.length){ 
+                    weight.push(patientInfo.weight[i].value)
+                    weightTime.push(patientInfo.weight[i].time)
+                }else{
+                    weight.push("No data")
+                    weightTime.push("No time")
+                }
+            }
+            for(let i = 0; i < patientInfo.bloodGlucose.length; i++){
+                if(i < patientInfo.exercise.length){ 
+                    exercise.push(patientInfo.exercise[i].value)
+                    exerciseTime.push(patientInfo.exercise[i].time)
+                }else{
+                    exercise.push("No data")
+                    exerciseTime.push("No time")
+                }
+            }
+            for(let i = 0; i < patientInfo.bloodGlucose.length; i++){
+                if(i < patientInfo.insulinTaken.length){ 
+                    insulinTaken.push(patientInfo.insulinTaken[i].value)
+                    insulinTakenTime.push(patientInfo.insulinTaken[i].time)
+                }else{
+                    insulinTaken.push("No data")
+                    insulinTakenTime.push("No time")
+                }
+            }
+        }else if(type == 2){
+            for(let i = 0; i < patientInfo.weight.length; i++){
+                weight.push(patientInfo.weight[i].value)
+                weightTime.push(patientInfo.weight[i].time)
+            }
+            for(let i = 0; i < patientInfo.weight.length; i++){
+                if(i < patientInfo.bloodGlucose.length){ 
+                    bloodGlucose.push(patientInfo.bloodGlucose[i].value)
+                    bloodGlucoseTime.push(patientInfo.bloodGlucose[i].time)
+                }else{
+                    bloodGlucose.push("No data")
+                    bloodGlucoseTime.push("No time")
+                }
+            }
+            for(let i = 0; i < patientInfo.weight.length; i++){
+                if(i < patientInfo.exercise.length){ 
+                    exercise.push(patientInfo.exercise[i].value)
+                    exerciseTime.push(patientInfo.exercise[i].time)
+                }else{
+                    exercise.push("No data")
+                    exerciseTime.push("No time")
+                }
+            }
+            for(let i = 0; i < patientInfo.weight.length; i++){
+                if(i < patientInfo.insulinTaken.length){ 
+                    insulinTaken.push(patientInfo.insulinTaken[i].value)
+                    insulinTakenTime.push(patientInfo.insulinTaken[i].time)
+                }else{
+                    insulinTaken.push("No data")
+                    insulinTakenTime.push("No time")
+                }
+            }
+        }else if(type == 3){
+            for(let i = 0; i < patientInfo.exercise.length; i++){
+                exercise.push(patientInfo.exercise[i].value)
+                exerciseTime.push(patientInfo.exercise[i].time)
+            }
+            for(let i = 0; i < patientInfo.exercise.length; i++){
+                if(i < patientInfo.bloodGlucose.length){ 
+                    bloodGlucose.push(patientInfo.bloodGlucose[i].value)
+                    bloodGlucoseTime.push(patientInfo.bloodGlucose[i].time)
+                }else{
+                    bloodGlucose.push("No data")
+                    bloodGlucoseTime.push("No time")
+                }
+            }
+            for(let i = 0; i < patientInfo.exercise.length; i++){
+                if(i < patientInfo.weight.length){ 
+                    weight.push(patientInfo.weight[i].value)
+                    weightTime.push(patientInfo.weight[i].time)
+                }else{
+                    weight.push("No data")
+                    weightTime.push("No time")
+                }
+            }
+            for(let i = 0; i < patientInfo.exercise.length; i++){
+                if(i < patientInfo.insulinTaken.length){ 
+                    insulinTaken.push(patientInfo.insulinTaken[i].value)
+                    insulinTakenTime.push(patientInfo.insulinTaken[i].time)
+                }else{
+                    insulinTaken.push("No data")
+                    insulinTakenTime.push("No time")
+                }
+            }
+        }else{
+            for(let i = 0; i < patientInfo.insulinTaken.length; i++){
+                insulinTaken.push(patientInfo.insulinTaken[i].value)
+                insulinTakenTime.push(patientInfo.insulinTaken[i].time)
+            }
+            for(let i = 0; i < patientInfo.insulinTaken.length; i++){
+                if(i < patientInfo.bloodGlucose.length){ 
+                    bloodGlucose.push(patientInfo.bloodGlucose[i].value)
+                    bloodGlucoseTime.push(patientInfo.bloodGlucose[i].time)
+                }else{
+                    bloodGlucose.push("No data")
+                    bloodGlucoseTime.push("No time")
+                }
+            }
+            for(let i = 0; i < patientInfo.insulinTaken.length; i++){
+                if(i < patientInfo.weight.length){ 
+                    weight.push(patientInfo.weight[i].value)
+                    weightTime.push(patientInfo.weight[i].time)
+                }else{
+                    weight.push("No data")
+                    weightTime.push("No time")
+                }
+            }
+            for(let i = 0; i < patientInfo.insulinTaken.length; i++){
+                if(i < patientInfo.exercise.length){ 
+                    exercise.push(patientInfo.exercise[i].value)
+                    exerciseTime.push(patientInfo.exercise[i].time)
+                }else{
+                    exercise.push("No data")
+                    exerciseTime.push("No time")
+                }
+            }
+        }
+
+        for(let i = 0 ; i < bloodGlucose.length; i++){
+            jsondata.push({
+                bloodGlucoseValue: bloodGlucose[i],
+                bloodGlucoseTime: bloodGlucoseTime[i],
+                weightValue: weight[i],
+                weightTime: weightTime[i],
+                exerciseValue: exercise[i],
+                exerciseTime: exerciseTime[i],
+                insulinTakenValue: insulinTaken[i],
+                insulinTakenTime: insulinTakenTime[i],
+                safety_threshold: patientInfo.safety_threshold,
+            })
+        }
+        Object.assign(patientInfo, {data:jsondata})
+        // console.log(patientInfo)
+        return res.render('patientDetail.hbs',{patientInfo:patientInfo})
+
+    } catch (error) {
+        return next(error)
+    }
+}
+
+function findMaxDataType(patientInfo){
+    var len = 0;
+    var type =0;
+    if(patientInfo.bloodGlucose.length >= len){
+        len = patientInfo.bloodGlucose.length
+        type = 1
+    }
+    if(patientInfo.weight.length >= len){
+        len = patientInfo.weight.length
+        type = 2
+    }
+    if(patientInfo.exercise.length >= len){
+        len = patientInfo.exercise.length
+        type = 3
+    }
+    if(patientInfo.insulinTaken.length >= len){
+        len = patientInfo.insulinTaken.length
+        type = 4
+    }
+    return type
 }
 
 const getPage = async(req,res,next) => {

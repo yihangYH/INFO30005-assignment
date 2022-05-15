@@ -70,6 +70,37 @@ hbs.handlebars.registerHelper("findExercise", function(data) {
     return data[data.length -1].value;
 });
 
+hbs.handlebars.registerHelper("print", function(data) {
+    console.log(data)
+    
+});
+
+
+hbs.handlebars.registerHelper('eachUp', function(bloodGlucose,weight,insulinTaken,exercise) {
+    var longest = null;
+    var len = 0;
+    if(bloodGlucose.length >= len){
+        len = bloodGlucose.length;
+        longest = bloodGlucose;
+    }
+    if(weight.length >= len){
+        len = weight.length;
+        longest = weight;
+    }
+    if(insulinTaken.length >= len){
+        len = insulinTaken.length;
+        longest = insulinTaken;
+    }
+    if(exercise.length >= len){
+        len = exercise.length;
+        longest = exercise;
+    }
+    const list = Object.create(null);
+    Object.assign(list, {bloodGlucose: bloodGlucose, weight:weight, insulinTaken:insulinTaken, exercise:exercise});
+    return list
+});
+
+
 hbs.handlebars.registerHelper("findBloodGlucose", function(data) {
     // get the latest value 
     return data[data.length -1].value;
@@ -90,6 +121,13 @@ hbs.handlebars.registerHelper("comment", function(data) {
     if(data[data.length -1].value != "Not Required"){
         return data[data.length -1].comment ;
     }
+});
+
+hbs.handlebars.registerHelper("findAge", function(birth) {
+    var year = birth.split("/")[0]
+    let AuDate = new Date().toLocaleString("en-US", {timeZone: "Australia/Sydney"});
+    let currentYear = AuDate.toString().split(" ")[0].replace(",","").split("/")[2]
+    return currentYear - year
 });
 
 
@@ -169,6 +207,25 @@ hbs.handlebars.registerHelper("checkSafety", function(safety,value,index) {
         const latestValue = value[value.length-1].value
         // if the updated value is <=lower or >= upper, change element style
         if(latestValue<=lower || latestValue>=upper){
+            return "color: red; font-style: italic; font-weight: bold; "
+        }
+    }
+    return ""
+});
+
+// check patient's safty threshold
+hbs.handlebars.registerHelper("checkSafety1", function(safety,value,index) {
+    if(value.includes("No")){
+        return ""
+    }
+    const bound =  safety[index];
+    // if the data is required 
+    if(!bound.includes("Not Required")){
+        // find the upper and lower bound
+        const lower = Number(bound.split("-")[0])
+        const upper = Number(bound.split("-")[1])
+        // if the updated value is <=lower or >= upper, change element style
+        if(value<=lower || value>=upper){
             return "color: red; font-style: italic; font-weight: bold; "
         }
     }

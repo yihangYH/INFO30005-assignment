@@ -122,7 +122,7 @@ table{
 table span{
     position:absolute;
     top:69%;
-    left:67%;
+    left:66%;
     font-size: 60%;
     color: #707070;
     text-align: right;
@@ -191,7 +191,7 @@ table span{
     cursor: pointer;
     font-size: large;
     font-weight: bold;
-    font-size: larger;
+    font-size: xx-large;
 }
 
 
@@ -215,8 +215,8 @@ table span{
     width: 4%;
     height: 4%;
     position: absolute;
-    top:26%;
-    left:91%;
+    top:-20%;
+    left:45%;
 }
 
 #note{
@@ -260,7 +260,7 @@ table span{
 }
 
 table {
-    width: 100%;
+    width: 90%;
     border-spacing: 0;
 }
 
@@ -285,7 +285,7 @@ tbody {
 }
 
 tbody td, thead th {
-    width: 19.87%; 
+    width: 24.87%; 
     float: left;
 }
 
