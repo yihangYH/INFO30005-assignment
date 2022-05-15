@@ -385,5 +385,10 @@ const updatePatient = async(req,res,next) => {
     
 }
 
+
+const updateSupportMessage = async(req,res,next)=>{
+    console.log(req.body);
+};
+
 // to be removed, getTemp,createTemp
-module.exports = { getClinician, getPage, CreatePatient, getUpdatePatient,getTemp,createTemp,comment,updatePatient,getPatientDetail}
+module.exports = { getClinician, getPage, CreatePatient, getUpdatePatient,getTemp,createTemp,comment,updatePatient,getPatientDetail,updateSupportMessage}

@@ -296,9 +296,6 @@ function findMacCountDataUpdated(currentPatient){
    return [max,dataName];
 }
 
-const updateSupportMessage = async(req,res,next)=>{
-    console.log(req.body)
-}
 
 
 module.exports = {
@@ -309,6 +306,6 @@ module.exports = {
     getPassInsulin, 
     getPassExercise,
     checkPatient,
-    getLeaderboard,
-    updateSupportMessage
+    getLeaderboard
+    
 }
