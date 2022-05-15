@@ -1,6 +1,7 @@
 const Clinician = require("../models/clinician")
 const clinicianData = require("../models/clinician")
 const {patient} = require("../models/patient")
+const {clinicianNote} = require("../models/data")
 require('../models/data')
 
 checkBox = ["bloodGlucoseCheckboxUpdate","weightCheckboxUpdate","insulinTakenCheckboxUpdate", "exerciseCheckboxUpdate"]

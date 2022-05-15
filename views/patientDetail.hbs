@@ -1,6 +1,4 @@
 {{#with patientInfo}}
-
-
         <div class="topBar">
             <div class="logo">
                 <a href=""> 
@@ -37,12 +35,15 @@
                 <p>ID:&nbsp;<span>{{this.userid}}</span></p>
             </div>
             
-            <div id = "supportMessage">
-                <textarea placeholder="Add support message..."></textarea>
-                <div class = "submit-div">
-                    <button>submit</button>
-                </div>   
-            </div>
+            <form action = "{{this._id}}/updateMessage" method="POST">
+                <div id = "supportMessage">
+                    <textarea name = "supportMessage" placeholder="Add support message..."></textarea>
+                    <div class = "submit-div">
+                        <button type = "submit">submit</button>
+                    </div>   
+                </div>
+            </form>
+            
         </div>
 
         <div id = "middle">
@@ -106,10 +107,16 @@
                 </ul>
             </div>
         </div>
-        
-    </main>
+
+        <Form id = "noteForm">
+            <img class = "cancelButt" src = "../res/cancel.jpg" alt = "cancel">
+            <textarea placeholder="Add new note"></textarea>
+            <div class = "submit-div">
+                <button>submit</button>
+            </div>
+        </Form>
+
+    </div>
+    
+</main>
 {{/with}}
-
-<script>
-
-</script>

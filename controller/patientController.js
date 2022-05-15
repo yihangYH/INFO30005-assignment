@@ -35,6 +35,7 @@ const getPatient = async(req,res,next) => {
     }
 }
 
+
 const checkPatient = async(req,res,next)=>{
     try {
         const patientData = await patient.findOne({userid:req.body.userId}).lean()
@@ -294,6 +295,12 @@ function findMacCountDataUpdated(currentPatient){
     }
    return [max,dataName];
 }
+
+const updateSupportMessage = async(req,res,next)=>{
+    console.log(req.body)
+}
+
+
 module.exports = {
     getPatient, 
     updateData, 
@@ -302,5 +309,6 @@ module.exports = {
     getPassInsulin, 
     getPassExercise,
     checkPatient,
-    getLeaderboard
+    getLeaderboard,
+    updateSupportMessage
 }

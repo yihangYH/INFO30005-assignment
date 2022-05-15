@@ -167,11 +167,11 @@ table span{
     border-radius: 10px;
 }
 
-#supportMessage textarea{
+#supportMessage textarea, #noteForm textarea{
     border: none;
     background-color: #f0efef;
     width: 100%;
-    height:80%;
+    height:85%;
     vertical-align: text-top;
     font-size: medium;
 }
@@ -185,7 +185,7 @@ table span{
 }
 
 .submit-div button {
-    margin-right: 5%;
+    margin-right: 0;
     border: none;
     background-color: Transparent;
     cursor: pointer;
@@ -219,7 +219,7 @@ table span{
     left:45%;
 }
 
-#note{
+#note , #noteForm{
     margin-top: 3%;
     margin-left: auto;
     margin-right: auto;
@@ -289,5 +289,15 @@ tbody td, thead th {
     float: left;
 }
 
+#noteForm{
+    overflow-y: hidden;
+    margin-bottom: 2%;
+}
 
+#noteForm .cancelButt{
+    width: 4%;
+    height: 20%;
+    position: absolute;
+    right:1%;
+}
 
