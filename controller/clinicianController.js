@@ -51,7 +51,8 @@ const getPatientDetail = async (req,res, next) =>{
             .populate("weight")
             .populate("exercise")
             .populate("bloodGlucose")
-            .populate("insulinTaken").lean()
+            .populate("insulinTaken")
+            .populate("notes").lean()
         const clinician = 
             await clinicianData.findOne({_id: req.params.id}).lean()
         Object.assign(patientInfo, {clinicianID: clinician._id, clinicianName: clinician.screen_name})
@@ -402,16 +403,14 @@ const updateNote = async(req,res,next)=>{
         content: req.body.content,
         time: dateString,
     })
-    patient.findByIdAndUpdate({_id: req.params.patientID}, {$push:{note: note._id}}, function(err, updatedPatient){
+    patient.findByIdAndUpdate({_id: req.params.patientID}, {$push:{notes: note._id}}, function(err, updatedPatient){
         if (err) { console.log(err); return; }
-        console.log('Patient updated')
     })
     note.save(function(err, newNote){
         if (err) { console.log(err); return; }
-        console.log('Note inserted')
     })
     var path = "/"+req.params.id + "/"+ req.params.patientID+"/patientDetail"
-    res.redirect(path)
+    res.redirect(path);
 };
 
 // to be removed, getTemp,createTemp
