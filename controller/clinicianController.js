@@ -39,12 +39,16 @@ const getPatientDetail = async (req,res, next) =>{
     try {
         const bloodGlucose =[];
         const bloodGlucoseTime=[];
+        const bloodGlucoseComment=[];
         const weight = [];
         const weightTime = [];
+        const weightComment = [];
         const exercise = [];
         const exerciseTime = [];
+        const exerciseComment = [];
         const insulinTaken = [];
         const insulinTakenTime = [];
+        const insulinTakenComment = [];
         const jsondata=[];
         const patientInfo = 
             await patient.findOne({_id: req.params.patientID})
@@ -62,128 +66,156 @@ const getPatientDetail = async (req,res, next) =>{
             for(let i = 0; i < patientInfo.bloodGlucose.length; i++){
                 bloodGlucose.push(patientInfo.bloodGlucose[i].value)
                 bloodGlucoseTime.push(patientInfo.bloodGlucose[i].time)
+                bloodGlucoseComment.push(patientInfo.bloodGlucose[i].comment)
             }
             for(let i = 0; i < patientInfo.bloodGlucose.length; i++){
                 if(i < patientInfo.weight.length){ 
                     weight.push(patientInfo.weight[i].value)
                     weightTime.push(patientInfo.weight[i].time)
+                    weightComment.push(patientInfo.weight[i].comment)
                 }else{
                     weight.push("No data")
                     weightTime.push("No time")
+                    weightComment.push("No comment")
                 }
             }
             for(let i = 0; i < patientInfo.bloodGlucose.length; i++){
                 if(i < patientInfo.exercise.length){ 
                     exercise.push(patientInfo.exercise[i].value)
                     exerciseTime.push(patientInfo.exercise[i].time)
+                    exerciseComment.push(patientInfo.exercise[i].comment)
                 }else{
                     exercise.push("No data")
                     exerciseTime.push("No time")
+                    exerciseComment.push("No comment")
                 }
             }
             for(let i = 0; i < patientInfo.bloodGlucose.length; i++){
                 if(i < patientInfo.insulinTaken.length){ 
                     insulinTaken.push(patientInfo.insulinTaken[i].value)
                     insulinTakenTime.push(patientInfo.insulinTaken[i].time)
+                    insulinTakenComment.push(patientInfo.insulinTaken[i].comment)
                 }else{
                     insulinTaken.push("No data")
                     insulinTakenTime.push("No time")
+                    insulinTakenComment.push("No comment")
                 }
             }
         }else if(type == 2){
             for(let i = 0; i < patientInfo.weight.length; i++){
                 weight.push(patientInfo.weight[i].value)
                 weightTime.push(patientInfo.weight[i].time)
+                weightComment.push(patientInfo.weight[i].comment)
             }
             for(let i = 0; i < patientInfo.weight.length; i++){
                 if(i < patientInfo.bloodGlucose.length){ 
                     bloodGlucose.push(patientInfo.bloodGlucose[i].value)
                     bloodGlucoseTime.push(patientInfo.bloodGlucose[i].time)
+                    bloodGlucoseComment.push(patientInfo.bloodGlucose[i].comment)
                 }else{
                     bloodGlucose.push("No data")
                     bloodGlucoseTime.push("No time")
+                    bloodGlucoseComment.push("No comment")
                 }
             }
             for(let i = 0; i < patientInfo.weight.length; i++){
                 if(i < patientInfo.exercise.length){ 
                     exercise.push(patientInfo.exercise[i].value)
                     exerciseTime.push(patientInfo.exercise[i].time)
+                    exerciseComment.push(patientInfo.exercise[i].comment)
                 }else{
                     exercise.push("No data")
                     exerciseTime.push("No time")
+                    exerciseComment.push("No comment")
                 }
             }
             for(let i = 0; i < patientInfo.weight.length; i++){
                 if(i < patientInfo.insulinTaken.length){ 
                     insulinTaken.push(patientInfo.insulinTaken[i].value)
                     insulinTakenTime.push(patientInfo.insulinTaken[i].time)
+                    insulinTakenComment.push(patientInfo.insulinTaken[i].comment)
                 }else{
                     insulinTaken.push("No data")
                     insulinTakenTime.push("No time")
+                    insulinTakenComment.push("No comment")
                 }
             }
         }else if(type == 3){
             for(let i = 0; i < patientInfo.exercise.length; i++){
                 exercise.push(patientInfo.exercise[i].value)
                 exerciseTime.push(patientInfo.exercise[i].time)
+                exerciseComment.push(patientInfo.exercise[i].comment)
             }
             for(let i = 0; i < patientInfo.exercise.length; i++){
                 if(i < patientInfo.bloodGlucose.length){ 
                     bloodGlucose.push(patientInfo.bloodGlucose[i].value)
                     bloodGlucoseTime.push(patientInfo.bloodGlucose[i].time)
+                    bloodGlucoseComment.push(patientInfo.bloodGlucose[i].comment)
                 }else{
                     bloodGlucose.push("No data")
                     bloodGlucoseTime.push("No time")
+                    bloodGlucoseComment.push("No comment")
                 }
             }
             for(let i = 0; i < patientInfo.exercise.length; i++){
                 if(i < patientInfo.weight.length){ 
                     weight.push(patientInfo.weight[i].value)
                     weightTime.push(patientInfo.weight[i].time)
+                    weightComment.push(patientInfo.weight[i].comment)
                 }else{
                     weight.push("No data")
                     weightTime.push("No time")
+                    weightComment.push("No comment")
                 }
             }
             for(let i = 0; i < patientInfo.exercise.length; i++){
                 if(i < patientInfo.insulinTaken.length){ 
                     insulinTaken.push(patientInfo.insulinTaken[i].value)
                     insulinTakenTime.push(patientInfo.insulinTaken[i].time)
+                    insulinTakenComment.push(patientInfo.insulinTaken[i].comment)
                 }else{
                     insulinTaken.push("No data")
                     insulinTakenTime.push("No time")
+                    insulinTakenComment.push("No comment")
                 }
             }
         }else{
             for(let i = 0; i < patientInfo.insulinTaken.length; i++){
                 insulinTaken.push(patientInfo.insulinTaken[i].value)
                 insulinTakenTime.push(patientInfo.insulinTaken[i].time)
+                insulinTakenComment.push(patientInfo.insulinTaken[i].comment)
             }
             for(let i = 0; i < patientInfo.insulinTaken.length; i++){
                 if(i < patientInfo.bloodGlucose.length){ 
                     bloodGlucose.push(patientInfo.bloodGlucose[i].value)
                     bloodGlucoseTime.push(patientInfo.bloodGlucose[i].time)
+                    bloodGlucoseComment.push(patientInfo.bloodGlucose[i].comment)
                 }else{
                     bloodGlucose.push("No data")
                     bloodGlucoseTime.push("No time")
+                    bloodGlucoseComment.push("No comment")
                 }
             }
             for(let i = 0; i < patientInfo.insulinTaken.length; i++){
                 if(i < patientInfo.weight.length){ 
                     weight.push(patientInfo.weight[i].value)
                     weightTime.push(patientInfo.weight[i].time)
+                    weightComment.push(patientInfo.weight[i].comment)
                 }else{
                     weight.push("No data")
                     weightTime.push("No time")
+                    weightComment.push("No comment")
                 }
             }
             for(let i = 0; i < patientInfo.insulinTaken.length; i++){
                 if(i < patientInfo.exercise.length){ 
                     exercise.push(patientInfo.exercise[i].value)
                     exerciseTime.push(patientInfo.exercise[i].time)
+                    exerciseComment.push(patientInfo.exercise[i].comment)
                 }else{
                     exercise.push("No data")
                     exerciseTime.push("No time")
+                    exerciseComment.push("No comment")
                 }
             }
         }
@@ -192,12 +224,16 @@ const getPatientDetail = async (req,res, next) =>{
             jsondata.push({
                 bloodGlucoseValue: bloodGlucose[i],
                 bloodGlucoseTime: bloodGlucoseTime[i],
+                bloodGlucoseComment: bloodGlucoseComment[i],
                 weightValue: weight[i],
                 weightTime: weightTime[i],
+                weightComment: weightComment[i],
                 exerciseValue: exercise[i],
                 exerciseTime: exerciseTime[i],
+                exerciseComment: exerciseComment[i],
                 insulinTakenValue: insulinTaken[i],
                 insulinTakenTime: insulinTakenTime[i],
+                insulinTakenComment: insulinTakenComment[i],
                 safety_threshold: patientInfo.safety_threshold,
             })
         }
