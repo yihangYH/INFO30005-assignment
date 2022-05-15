@@ -387,7 +387,12 @@ const updatePatient = async(req,res,next) => {
 
 
 const updateSupportMessage = async(req,res,next)=>{
-    console.log(req.body);
+    patient.findByIdAndUpdate({_id: req.params.patientID}, {$set:{supportMessage: req.body.supportMessage}}, function(err, updatedPatient){
+        if (err) { console.log(err); return; }
+        console.log('Patient updated')
+    })
+    var path = "/"+req.params.id + "/"+ req.params.patientID+"/patientDetail"
+    res.redirect(path)
 };
 
 // to be removed, getTemp,createTemp

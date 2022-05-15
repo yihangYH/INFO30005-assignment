@@ -35,7 +35,7 @@
                 <p>ID:&nbsp;<span>{{this.userid}}</span></p>
             </div>
             
-            <form action = "{{this._id}}/updateMessage" method="POST" id = "supportMessage">
+            <form action = "/{{this.clinicianID}}/{{this._id}}/updateMessage" method="POST" id = "supportMessage">
                     <textarea name = "supportMessage" placeholder="Add support message..."></textarea>
                     <div class = "submit-div">
                         <button type = "submit">submit</button>
