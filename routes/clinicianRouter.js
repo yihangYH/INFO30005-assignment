@@ -20,6 +20,8 @@ clinicianRouter.get('/:id/:patientID/patientDetail', clinicianController.getPati
 
 clinicianRouter.post('/:id/:patientID/updateMessage' ,clinicianController.updateSupportMessage)
 
+clinicianRouter.post('/:id/:patientID/updateNote' ,clinicianController.updateNote)
+
 // to be remove, it used to create clinician
 clinicianRouter.get('/creatClincianTemp', clinicianController.getTemp)
 // to be remove, it used to create clinician

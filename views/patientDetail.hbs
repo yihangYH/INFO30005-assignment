@@ -106,9 +106,9 @@
             </div>
         </div>
 
-        <Form id = "noteForm">
-            <img class = "cancelButt" src = "../res/cancel.jpg" alt = "cancel">
-            <textarea placeholder="Add new note"></textarea>
+        <Form action="/{{this.clinicianID}}/{{this._id}}/updateNote" method="post" id="noteForm">
+            <img class = "cancelButt" src = "../../res/cancel.jpg" alt = "cancel">
+            <textarea name="content" placeholder="Add new note"></textarea>
             <div class = "submit-div">
                 <button>submit</button>
             </div>

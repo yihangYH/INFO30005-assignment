@@ -395,5 +395,36 @@ const updateSupportMessage = async(req,res,next)=>{
     res.redirect(path)
 };
 
+const updateNote = async(req,res,next)=>{
+    let AuDate = new Date().toLocaleString("en-US", {timeZone: "Australia/Sydney"});
+    let dateString = AuDate.toString().replace(',', ' ');
+    const note = new clinicianNote({
+        content: req.body.content,
+        time: dateString,
+    })
+    patient.findByIdAndUpdate({_id: req.params.patientID}, {$push:{note: note._id}}, function(err, updatedPatient){
+        if (err) { console.log(err); return; }
+        console.log('Patient updated')
+    })
+    note.save(function(err, newNote){
+        if (err) { console.log(err); return; }
+        console.log('Note inserted')
+    })
+    var path = "/"+req.params.id + "/"+ req.params.patientID+"/patientDetail"
+    res.redirect(path)
+};
+
 // to be removed, getTemp,createTemp
-module.exports = { getClinician, getPage, CreatePatient, getUpdatePatient,getTemp,createTemp,comment,updatePatient,getPatientDetail,updateSupportMessage}
+module.exports = { 
+    getClinician, 
+    getPage, 
+    CreatePatient, 
+    getUpdatePatient,
+    getTemp,
+    createTemp,
+    comment,
+    updatePatient,
+    getPatientDetail,
+    updateSupportMessage,
+    updateNote
+}
