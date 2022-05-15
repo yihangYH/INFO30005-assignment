@@ -280,6 +280,7 @@ const CreatePatient = async(req,res,next) => {
         'weight':[],
         'insulinTaken':[],
         'exercise':[],
+        'notes':[],
         'healthyData_required': healthyData_required,
         'safety_threshold':safety_threshold
     }, async function(err, newPatient){
