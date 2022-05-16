@@ -128,41 +128,35 @@ td,th{
     font-size: 130%;
 }
 
-#dashboard>table{    
-    width: 80%;
+#dashboard>table{
     border-collapse: collapse;
     text-align: center;
     position: absolute;
-    left:10%;
-    right:10%;
-    margin:auto;
+    left:5%;
+    right:5%;
     table-layout:fixed;
     font-size: 120%;
+    width: 90%;
+    border-spacing: 0;
 }
 
 #dashboard span{
     position:absolute;
     top:69%;
-    left:53%;
+    left:49%;
     font-size: 60%;
     color: #707070;
+    width:50%;
     text-align: right;
     font-weight: normal !important;
     font-style: normal !important;
-}
-
-
-
-table {
-    width: 90%;
-    border-spacing: 0;
 }
 
 thead, tbody, tr, th, td { display: block; }
 
 
 thead{
-    width: 100%;
+    width: 99.2%;
 }
 
 tr:after {  /* clearing float */

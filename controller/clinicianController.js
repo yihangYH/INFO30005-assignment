@@ -31,7 +31,7 @@ const getClinician = async (req,res, next) =>{
         }
         return res.render('clinician.hbs', {data: clinician})
     }catch(err){
-        return next(err)
+        return next(err);
     }
 }
 
@@ -429,8 +429,8 @@ const updateSupportMessage = async(req,res,next)=>{
         if (err) { console.log(err); return; }
         console.log('Patient updated')
     })
-    var path = "/"+req.params.id + "/"+ req.params.patientID+"/patientDetail"
-    res.redirect(path)
+    // var path = "/"+req.params.id + "/"+ req.params.patientID+"/patientDetail"
+    // res.redirect(path)
 };
 
 const updateNote = async(req,res,next)=>{
@@ -446,8 +446,8 @@ const updateNote = async(req,res,next)=>{
     note.save(function(err, newNote){
         if (err) { console.log(err); return; }
     })
-    var path = "/"+req.params.id + "/"+ req.params.patientID+"/patientDetail"
-    res.redirect(path);
+    // var path = "/"+req.params.id + "/"+ req.params.patientID+"/patientDetail"
+    // res.redirect(path);
 };
 
 // to be removed, getTemp,createTemp

@@ -159,7 +159,9 @@ hbs.handlebars.registerHelper("findComment", function(data){
 });
 
 hbs.handlebars.registerHelper("getValue", function(data) {
-    if(data.length == 0){
+    console.log(data.value);
+    console.log("Type is: " + typeof(data.value))
+    if(data.value === ''){
         return "No data yet"
     }
     // get the latest value 
