@@ -50,7 +50,7 @@
             <tbody class="table-body">
                 {{#each patient}}
                 <tr>
-                    <td><a ref="/{{this._id}}/newPatient">{{this.first_name}}</a></td>
+                    <td><a href="/{{this.clinicianID}}/{{this._id}}/patientDetail" style="cursor: pointer; color: inherit;">{{this.first_name}}</a></td>
                     <td style="{{checkSafety this.safety_threshold this.bloodGlucose "0"}}">{{getValue this.bloodGlucose this.healthyData_required "0"}}<span>{{getTime this.bloodGlucose this.healthyData_required "0"}}</span></td>
                     <td style="{{checkSafety this.safety_threshold this.weight "1"}}">{{getValue this.weight this.healthyData_required "1"}}<span>{{getTime this.weight this.healthyData_required "1"}}</span></td>
                     <td style="{{checkSafety this.safety_threshold this.insulinTaken "2"}}">{{getValue this.insulinTaken this.healthyData_required "2"}}<span>{{getTime this.insulinTaken this.healthyData_required "2"}}</span></td>

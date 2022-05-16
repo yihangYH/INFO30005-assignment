@@ -28,6 +28,7 @@ const getClinician = async (req,res, next) =>{
             clinician.patient[i].bloodGlucose = patientData.bloodGlucose
             clinician.patient[i].insulinTaken = patientData.insulinTaken
             clinician.patient[i].exercise = patientData.exercise
+            Object.assign(clinician.patient[i], {clinicianID:req.params.id })
         }
         return res.render('clinician.hbs', {data: clinician})
     }catch(err){
