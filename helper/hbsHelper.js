@@ -139,7 +139,10 @@ hbs.handlebars.registerHelper("findAge", function(birth) {
 });
 
 
-hbs.handlebars.registerHelper("checkNotRequired", function(data) {
+hbs.handlebars.registerHelper("checkNotRequired", function(data, safety, index) {
+    if(!safety[index]){
+        return "display:none"
+    }
     if(data.length == 0){
         return "No comment yet"
     }
