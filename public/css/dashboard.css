@@ -177,4 +177,7 @@ tbody td, thead th {
     float: left;
 }
 
+::-webkit-scrollbar {
+    width: 0px;
+}
 

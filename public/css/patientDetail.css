@@ -308,4 +308,8 @@ tbody td, thead th {
     right:1%;
 }
 
+::-webkit-scrollbar {
+    width: 0px;
+}
+
 
