@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="/css/passData.css">
+<script src="https://code.highcharts.com/highcharts.js"></script>
 
 {{#with patientInfo}}
 <div class="main">
@@ -25,9 +26,42 @@
             {{/each_upto}}
         </ul>
         <div class="graph">
-            <div class="graph-title">Historical Data</div>
-            <img class="graph-data" src="/res/dataGraph.png" alt="data-graph">
+            <div id="container" ></div>
         </div>
     </div>
 </div>
 {{/with}}
+
+<script>
+    var time = []
+    var value =[]
+    {{#with patientInfo}}
+        {{#each_upto this.insulinTaken 7}}
+            value.push({{this.value}})
+            var date = "{{this.time}}".split(" ")[0]
+            time.push(date)
+        {{/each_upto}}
+    {{/with}}
+    console.log(value)
+    document.addEventListener('DOMContentLoaded', function () {
+        Highcharts.chart('container', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Historical data'
+            },
+            xAxis: {
+                categories: time
+            },
+            yAxis: {
+                title: {
+                    text: 'Value'
+                }
+            },
+            series: [{
+                data: value
+            }]
+        });
+    });
+</script>
