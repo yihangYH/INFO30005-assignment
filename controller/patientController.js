@@ -268,9 +268,8 @@ const getLeaderboard = async(req,res,next)=>{
 }
 
 function caculateRate(patient){
-    // console.log(patient)
     var maxCount = findMacCountDataUpdated(patient);
-    if(maxCount>0){var rate  = findRate(maxCount)};
+    if(maxCount[0]>0){var rate  = findRate(maxCount)};
     rate = (rate * 100)
     rate = Math.round(rate);
     return [patient.screen_name, rate,patient.userid]
@@ -287,6 +286,9 @@ function findRate(maxCount){
     var date2 = new Date(currDateString);
     var Difference_In_Time = date2.getTime() - date1.getTime();
     var Difference_In_Days = Difference_In_Time / (1000 * 3600 * 24);
+    if(Difference_In_Days == 0){
+        Difference_In_Days = 1;
+    }
     return maxCount[0]/Difference_In_Days;
 };
 
