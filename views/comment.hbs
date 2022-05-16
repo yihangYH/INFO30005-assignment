@@ -34,7 +34,7 @@
         <div id="dashboard">
             <table>
                 <caption>
-                    <p id = "tableTitle">Dashboard</p>
+                    <p id = "tableTitle">Comment</p>
                     <p id="tableTime"></p>
                 </caption>
                 <tr class = "tableHeading">
@@ -49,28 +49,28 @@
                         <td>{{this.first_name}}</td>
                         <td>bloodGlucose</td>
                         <td style="{{checkSafety this.safety_threshold this.bloodGlucose "0"}}">{{value this.bloodGlucose}}</td>
-                        <td>{{getTime this.bloodGlucose}}</td>
+                        <td>{{getCommentTime this.bloodGlucose}}</td>
                         <td>{{comment this.bloodGlucose}}</td>
                     </tr>
                     <tr style="{{checkNotRequired this.weight}}">
                         <td>{{this.first_name}}</td>
                         <td>Weight</td>
                         <td style="{{checkSafety this.safety_threshold this.weight "1"}}">{{value this.weight}}</td>
-                        <td>{{getTime this.weight}}</td>
+                        <td>{{getCommentTime this.weight}}</td>
                         <td>{{comment this.weight}}</td>
                     </tr>
                     <tr style="{{checkNotRequired this.insulinTaken}}">
                         <td>{{this.first_name}}</td>
                         <td>Insulin taken</td>
                         <td style="{{checkSafety this.safety_threshold this.insulinTaken "2"}}">{{value this.insulinTaken}}</td>
-                        <td>{{getTime this.insulinTaken}}</td>
+                        <td>{{getCommentTime this.insulinTaken}}</td>
                         <td>{{comment this.insulinTaken}}</td>
                     </tr>
                     <tr style="{{checkNotRequired this.exercise}}">
                         <td>{{this.first_name}}</td>
                         <td>Exercise</td>
                         <td style="{{checkSafety this.safety_threshold this.exercise "3"}}">{{value this.exercise}}</td>
-                        <td>{{getTime this.exercise}}</td>
+                        <td>{{getCommentTime this.exercise}}</td>
                         <td>{{comment this.exercise}}</td>
                     </tr>
                 {{/each}}

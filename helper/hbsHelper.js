@@ -15,7 +15,6 @@ hbs.handlebars.registerHelper('each_upto', function(ary, max, options) {
 });
 
 hbs.handlebars.registerHelper('convert', function(safety,index){
-    // console.log(safety[index]);
     return String(safety[index])
 });
 
@@ -71,7 +70,6 @@ hbs.handlebars.registerHelper("findExercise", function(data) {
 });
 
 hbs.handlebars.registerHelper("print", function(supportMessage) {
-    console.log(supportMessage)
     return supportMessage
     
 });
@@ -108,17 +106,26 @@ hbs.handlebars.registerHelper("findBloodGlucose", function(data) {
 });
 
 hbs.handlebars.registerHelper("findTime", function(data) {
+    if(data.length == 0){
+        return "Not updated yet"
+    }
     // get the latest value 
     return data[data.length-1].time;
 });
 
 hbs.handlebars.registerHelper("value", function(data) {
+    if(data.length == 0){
+        return "No data yet"
+    }
     if(data[data.length -1].value != "Not Required"){
         return data[data.length -1].value ;
     }
 });
 
 hbs.handlebars.registerHelper("comment", function(data) {
+    if(data.length == 0){
+        return "No comment yet"
+    }
     if(data[data.length -1].value != "Not Required"){
         return data[data.length -1].comment ;
     }
@@ -133,6 +140,9 @@ hbs.handlebars.registerHelper("findAge", function(birth) {
 
 
 hbs.handlebars.registerHelper("checkNotRequired", function(data) {
+    if(data.length == 0){
+        return "No comment yet"
+    }
     if(data[data.length -1].value == "Not Required"){
         return "display:none"
     }
@@ -159,8 +169,6 @@ hbs.handlebars.registerHelper("findComment", function(data){
 });
 
 hbs.handlebars.registerHelper("getValue", function(data, safety, index) {
-    // console.log(data[data.length-1].value);
-    // console.log("Type is: " + typeof(data.value))
     if(!safety[index]){
         return "Not Required"
     }
@@ -170,6 +178,24 @@ hbs.handlebars.registerHelper("getValue", function(data, safety, index) {
     // get the latest value 
     const latest = data[data.length-1]
     return latest.value
+});
+
+hbs.handlebars.registerHelper("getCommentTime", function(data) {
+    if(data.length == 0){
+        return "No time yet"
+    }
+    // get the data updated time, and do some formating
+    const latest = data[data.length-1].time
+    if (latest){
+        const time = latest.split(" ")[2].split(":")
+        const date = latest.split(" ")[0].split("/")
+        // formating the time 
+        return twoDigit(date[0])+"/"+twoDigit(date[1])+"/"+twoDigit(date[2])+" "+twoDigit(time[0])+":"+twoDigit(time[1])+" "+latest.split(" ")[3]
+    }
+    else{
+        return latest
+    }
+    
 });
 
 hbs.handlebars.registerHelper("getTime", function(data, safety, index) {
