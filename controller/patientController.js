@@ -254,7 +254,7 @@ const getLeaderboard = async(req,res,next)=>{
 function caculateRate(patient){
     // console.log(patient)
     var maxCount = findMacCountDataUpdated(patient);
-    var rate  = findRate(maxCount);
+    if(maxCount>0){var rate  = findRate(maxCount)};
     rate = (rate * 100)
     rate = Math.round(rate);
     return [patient.screen_name, rate,patient.userid]
