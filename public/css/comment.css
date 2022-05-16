@@ -151,3 +151,33 @@ td,th{
     font-style: normal !important;
 }
 
+
+thead, tbody, tr, th, td { display: block; }
+
+
+thead{
+    width: 100%;
+}
+
+tr:after {  /* clearing float */
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+tbody {
+    height: 800px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+tbody td, thead th {
+    width: 19.87%; 
+    float: left;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+

@@ -36,13 +36,15 @@
                     <p id = "tableTitle">Comment</p>
                     <p id="tableTime"></p>
                 </caption>
-                <tr class = "tableHeading">
-                    <th>Name</th>
-                    <th>Data type</th>
-                    <th>Value</th>
-                    <th>Time</th>
-                    <th>Comment</th>
-                </tr>
+                <thead>
+                    <tr class = "tableHeading">
+                        <th>Name</th>
+                        <th>Data type</th>
+                        <th>Value</th>
+                        <th>Time</th>
+                        <th>Comment</th>
+                    </tr>
+                </thead>
                 {{#each this.patient}}
                     <tr style="{{checkNotRequired this.bloodGlucose this.healthyData_required "0"}};">
                         <td>{{this.first_name}}</td>
