@@ -156,7 +156,7 @@ thead, tbody, tr, th, td { display: block; }
 
 
 thead{
-    width: 99.2%;
+    width: 100%;
 }
 
 tr:after {  /* clearing float */

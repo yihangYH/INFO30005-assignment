@@ -158,10 +158,13 @@ hbs.handlebars.registerHelper("findComment", function(data){
     return comment;
 });
 
-hbs.handlebars.registerHelper("getValue", function(data) {
-    console.log(data.value);
-    console.log("Type is: " + typeof(data.value))
-    if(data.value === ''){
+hbs.handlebars.registerHelper("getValue", function(data, safety, index) {
+    // console.log(data[data.length-1].value);
+    // console.log("Type is: " + typeof(data.value))
+    if(!safety[index]){
+        return "Not Required"
+    }
+    if(data.length == 0){
         return "No data yet"
     }
     // get the latest value 
@@ -169,8 +172,11 @@ hbs.handlebars.registerHelper("getValue", function(data) {
     return latest.value
 });
 
-hbs.handlebars.registerHelper("getTime", function(data) {
+hbs.handlebars.registerHelper("getTime", function(data, safety, index) {
     // get the data updated time, and do some formating
+    if(!safety[index]){
+        return 
+    }
     if(data.length == 0){
         return "Not updated yet"
     }
