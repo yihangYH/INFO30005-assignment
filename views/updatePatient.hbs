@@ -22,7 +22,7 @@
                             <li > <input type="text" class="password" id="password" placeholder="******" name="passwordUpdate" readonly></li>
                         </ul>
                         <h1 class="required">Required</h1>
-                            <h1 class="safety-threhold">Safety thredhold</h1>
+                            <h1 class="safety-threhold">Safety threshold</h1>
                             {{!-- <h1 class="time-series">Time series</h1> --}}
                     {{!-- {{#with id}} --}}
                     <form action="/{{this.clinicianID}}/{{this._id}}/updatePatient" method="post" onsubmit="return updatePatientValidation()">
@@ -78,7 +78,7 @@
                                     <input class = "lower-value" id="exerciseLowerBalueUpdate" type="number" step="0.01" min="0" max="999999" name="exerciseLowerBalueUpdate" readonly>
                                     <p class="sign"> ~ </p>
                                     <input class = "upper-value" id="exerciseUpperValueUpdate" type="number" step="0.01" min="0" max="999999" name="exerciseUpperValueUpdate" readonly>
-                                    <p class="unit" style="font-size: 40px; font-weight: normal;">stpes</p>
+                                    <p class="unit" style="font-size: 40px; font-weight: normal;">steps</p>
                                     {{!-- <input class = "lower-time-value" id = "exerciseTimeLowerValue" type="time" name="exerciseTimeLowerValue" readonly>
                                     <p class="timeSign"> ~ </p>
                                     <input class = "upper-time-value" id = "exerciseTimeUpperValue" type="time" name="exerciseTimeUpperValue" readonly> --}}
