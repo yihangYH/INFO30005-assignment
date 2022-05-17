@@ -1,0 +1,415 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans");
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans ', sans-serif;
+}
+/* and (min-width: 300px) */
+@media screen  and (max-width:400px) {
+    .body {
+        height: 100%;
+        width: 100%;
+    }
+
+    .graph{
+        display: flex;
+        position: absolute;
+        top: 70%;
+        width: 100%;
+        height: 20%;
+    }
+    #container {
+        height: 375px;
+        width:375px
+    }
+    
+    .header {
+        display: flex;
+        background: linear-gradient(to bottom, #DFAFAD, #FDF9F8)
+    }
+
+    .logo {
+        width: 150px;
+    }
+
+    .logout {
+        position: absolute;
+        left: 76%;
+        top: 4%;
+        border-radius: 25px;
+        text-align: center;
+        text-decoration:none;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        padding-left: 2%;
+        padding-right: 2%;
+        background-color: #DFAFAD;
+        color: white;
+    }
+
+    .title{
+        z-index: 0;
+        width: 100%;
+        height: 10%;
+    }
+
+    .big-title {
+        position: absolute;
+        font-size: 26px;
+        font-weight: bold;
+        left: 24%;
+        top: 3%;
+    }
+
+    .back {
+        position: absolute;
+        width: 13%;
+        left: 5%;
+        top: 1.5%;
+    }
+
+    .pass-data{
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 90%;
+        background-color: #FDF9F8;
+    }
+
+    .pastData {
+        list-style: none;
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 90%;
+        
+    }
+
+    .pastData li {
+        list-style: none;
+        position: relative;
+        display: block;
+        width: 88%;
+        height:6%;
+        left: 1.5%;
+        top: 0%;
+        font-size: 15px;
+        border: 1px solid grey;
+        border-radius: 16px;
+        margin: 4.5%;
+    }
+    
+    .data1 {
+        position: relative;
+        left: 5%;
+        top: 33%;
+        width: 69%;
+    }
+
+    .data1-number {
+        display: inline;
+    }
+
+    .date1 {
+        position: relative;
+        left: 75%;
+        top: -11%;
+        width: 8%;
+    }
+
+    .graph-title{
+        font-size: 24px;
+        font-weight: bold;
+        position: absolute;
+        top: 69%;
+        left: 28%;
+
+    }
+
+    .graph-data{
+        position: absolute;
+        display: block;
+        width: 85%;
+        top: 75%;
+        left: 8%;
+    }
+}
+
+@media screen and (min-device-width: 400px) and (max-device-width: 1200px) {
+    .body {
+        height: 100%;
+        width: 100%;
+    }
+
+    .graph{
+        display: flex;
+        position: absolute;
+        top: 22%;
+        width: 50%;
+        height: 20%;
+        left:50%;
+    }
+    #container {
+        height: 480px;
+        width:480px;
+    }
+
+    .header {
+        display: flex;
+        background: linear-gradient(to bottom, #DFAFAD, #FDF9F8);
+        width: 100%;
+        height: 125px;
+    }
+    
+    .logo {
+        position: absolute;
+        width: 250px;
+        left: 18px;
+
+    }
+    
+    .logout {
+        position: absolute;
+        right: 5%;
+        top: 6%;
+        font-size: 26px;
+        text-align: center;
+        text-decoration:none;
+        border-radius: 25px;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        padding-left: 2%;
+        padding-right: 2%;
+        background-color: #DFAFAD;
+        color: white;
+    }
+
+    .title{
+        z-index: 0;
+        width: 100%;
+        height: 20%;
+    }
+
+    .big-title {
+        position: absolute;
+        font-size: 35px;
+        font-weight: bold;
+        left: 38%;
+        top: 7%;
+    }
+
+    .back {
+        position: absolute;
+        width: 6%;
+        left: 7%;
+        top: 6%;
+    }
+
+    .pass-data{
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 90%;
+        background-color: #FDF9F8;
+    }
+
+    .pastData {
+        list-style: none;
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 80%;
+        
+    }
+
+    .pastData li {
+        list-style: none;
+        position: relative;
+        display: block;
+        width: 40%;
+        height:11%;
+        left: 5%;
+        top: -1%;
+        font-size: 18px;
+        border: 1px solid grey;
+        border-radius: 18px;
+        margin: 1.5%;
+    }
+    
+    .data1 {
+        position: relative;
+        left: 5%;
+        top: 33%;
+        width: 69%;
+    }
+
+    .data1-number {
+        display: inline;
+    }
+
+    .date1 {
+        position: relative;
+        left: 75%;
+        top: -6%;
+        width: 8%;
+    }
+
+    .graph-title{
+        font-size: 24px;
+        font-weight: bold;
+        position: absolute;
+        top: 24%;
+        left: 65%;
+
+    }
+
+    .graph-data{
+        position: absolute;
+        display: block;
+        width: 42%;
+        top: 33%;
+        left: 52%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    body {
+        height: 100%;
+        width: 100%;
+    }
+
+    .graph{
+        display: flex;
+        position: absolute;
+        top: 20%;
+        width: 45%;
+        height: 20%;
+        left:55%;
+    }
+    #container {
+        height: 670px;
+        width:670px
+    }
+
+    .header {
+        display: flex;
+        background: linear-gradient(to bottom, #DFAFAD, #FDF9F8);
+        height: 200px;
+    }
+    
+    .logo {
+        position: absolute;
+        width: 350px;
+        left: 25px;
+
+    }
+
+    .logout {
+        position: absolute;
+        left: 86.5%;
+        top: 6%;
+        width: 150px;
+        height: 50px;
+        font-size: 38px;
+        text-align: center;
+        text-decoration:none;
+        border-radius: 18px;
+        padding-top: 0.5%;
+        padding-bottom: 0.5%;
+        padding-left: 1%;
+        padding-right: 1%;
+        background-color: #DFAFAD;
+        color: white;
+    }
+
+    .title{
+        z-index: 0;
+        width: 100%;
+        height: 20%;
+    }
+
+    .big-title {
+        position: absolute;
+        font-size: 65px;
+        font-weight: bold;
+        left: 38%;
+        top: 5%;
+    }
+
+    .back {
+        position: absolute;
+        width: 5.5%;
+        left: 5%;
+        top: 3%;
+    }
+
+    .pass-data{
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 85%;
+        background-color: #FDF9F8;
+    }
+
+    .pastData{
+        list-style: none;
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 80%;
+        top:20%;
+    }
+
+    .pastData li {
+        list-style: none;
+        position: relative;
+        display: block;
+        width: 40%;
+        height:12%;
+        left: 6%;
+        top: 0%;
+        font-size: 30px;
+        border: 1px solid grey;
+        border-radius: 16px;
+        margin: 0.5%;
+    }
+    
+    .data1 {
+        position: relative;
+        display: flex;
+        left: 6%;
+        top: 30%;
+        width: 70%;
+        height: 3%;
+
+    }
+    
+    .data1-number {
+        display: inline;
+    }
+
+    .date1 {
+        position: relative;
+        left: 78%;
+        top: 30%;
+        width: 8%;
+    }
+
+    .graph-title{
+        font-size: 50px;
+        font-weight: bold;
+        position: absolute;
+        top: 22%;
+        left: 64%;
+
+    }
+
+    .graph-data{
+        position: absolute;
+        display: block;
+        width: 40%;
+        top: 32%;
+        left: 53%;
+    }
+}

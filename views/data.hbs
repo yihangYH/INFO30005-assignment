@@ -1,9 +1,10 @@
+
 {{#with patientInfo}}
 
 <div class="main">
     <div class="header">
         <div class="logo">
-            <img class="logo" src="../res/logo.png" alt="diabetes">
+            <a href="/welcome"><img class="logo" src="../res/logo.png" alt="diabetes"></a>
         </div>
         <div class="log-out">
             <a href="/login" style = "text-decoration: none; color: inherit" >Log out</a>
@@ -20,16 +21,19 @@
     </div>
     <div class="trophies-and-rankings">
         <div class="trophies">
-            <img class="trophies-pic" src="../res/trophie.png" alt="trophie">
-            <p>84%</p>
+            <img class="trophies-pic" src="../res/trophie.png" id = "trophies-pic" alt="trophie">
+            <img class="not-trophies-pic" src="../res/grey_trophie.png" id="not-trophies-pic" alt="not trophie">
+            <p>{{findPatientRank this.rank this.userid}}%</p>
         </div>
         <div class="vl"></div>
         <div class="rankings">
             <img class="rankings-pic" src="../res/ranking.png" alt="ranking">
-            <p>4th</p>
+            <p>{{findPatientPlace this.rank this.userid}}</p>
             {{!-- <div class="learn-more">Learn more</div> --}}
         </div>
-        <div class="learn-more"><p>Learn more</p></div>
+        <div class="learn-more">
+            <a href="/data/{{this._id}}/leaderboard"><p>Learn more</p></a>
+        </div>
     </div>
     <div class="album">
         Check out my new album!!!
@@ -56,7 +60,7 @@
             {{/if}}
         </div>
         <div class="blood-glucose-arrow">
-            <img class="blood-glucose-arrow" src="../res/arrow.png" alt="arrow">
+             <a href="/data/{{this._id}}/bloodGlucose" id = "blood-glucose-arrow"><img class="blood-glucose-arrow" src="../res/arrow.png" alt="arrow"></a>
         </div>
     </div>
     <hr class="first-hr">
@@ -79,7 +83,7 @@
             {{/if}}   
         </div>
         <div class="weight-arrow">
-            <img class="weight-arrow" src="../res/arrow.png" alt="arrow">
+            <a href="/data/{{this._id}}/weight" id = "weight-arrow"><img class="weight-arrow" src="../res/arrow.png" alt="arrow"></a>
         </div>
     </div>
     <hr class="sec-hr">
@@ -102,7 +106,7 @@
             {{/if}}
         </div>
         <div class="insulin-taken-arrow">
-            <img class="insulin-taken-arrow" src="../res/arrow.png" alt="arrow">
+            <a href="/data/{{this._id}}/insulinTaken" id = "insulin-taken-arrow"><img class="insulin-taken-arrow" src="../res/arrow.png" alt="arrow"></a>
         </div>
     </div>
     <hr class="third-hr">
@@ -125,7 +129,7 @@
             {{/if}}
         </div>
         <div class="exercise-arrow">
-            <img class="exercise-arrow" src="../res/arrow.png" alt="arrow">
+            <a href="/data/{{this._id}}/exercise " id = "exercise-arrow"><img class="exercise-arrow" src="../res/arrow.png" alt="arrow"></a>
         </div>
     </div>
     <hr class="forth-hr">
@@ -146,7 +150,7 @@
             <p class="insert-data">Enter today's data</p>
             <div class="item">
                 <p>BLOOD GLUCOSE</p>
-                <input name="blood_glucose" id="blood-glucose-input" type="text" placeholder="(nmol/L)" />
+                <input name="blood_glucose" id="blood-glucose-input" type="number" step="0.01" min="0" max="99" placeholder="(nmol/L)" />
                 <button type="button" class="butn" id="butn1" onclick="setCommentWindow()">
                     {{#if this.bloodGlucose}}
                         <p class="comment" id="comment">{{findComment this.bloodGlucose}} <img class="pen" id="pen" src="../res/pen.png" alt=""></p>
@@ -164,7 +168,7 @@
             </div>
             <div class="item">
                 <p>Weight</p>
-                <input name="weight" id="weight-input" type="text" placeholder="(Kg)" />
+                <input name="weight" id="weight-input" type="number" step="0.01" min="0" max="999" placeholder="(Kg)" />
                 <button type="button" class="butn" id="butn2" onclick="setCommentWindow1()">
                     {{#if this.weight}}
                         <p class="comment" id="comment1">{{findComment this.weight}} <img class="pen" id="pen1" src="../res/pen.png" alt=""></p>
@@ -182,12 +186,12 @@
             </div>
             <div class="item">
                 <p>INSULIN TAKEN</p>
-                <input name="insulin_taken" id="insulin-taken-input" type="text" placeholder="(DOSES)" />
+                <input name="insulin_taken" id="insulin-taken-input" type="number" step="0.01" min="0" max="99" placeholder="(DOSES)" />
                 <button type="button" class="butn" id="butn3" onclick="setCommentWindow2()">
                     {{#if this.insulinTaken}}
                         <p class="comment" id="comment2">{{findComment this.insulinTaken}} <img class="pen" id="pen2" src="../res/pen.png" alt=""></p>
                     {{else}}
-                        <p class="comment" id="comment2">{{findComment this.insulinTaken}} <img class="pen" id="pen2" src="../res/pen.png" alt=""></p>
+                        <p class="comment" id="comment2">+ Comment <img class="pen" id="pen2" src="../res/pen.png" alt=""></p>
                     {{/if}}
                 </button>
                 <textarea class="text-block" id="text-block2" name = "inssulin_comment" placeholder="Add comments"></textarea>
@@ -200,12 +204,12 @@
             </div>
             <div class="item">
                 <p>EXERICSE</p>
-                <input name="exercise" id="exericse-input" type="text" placeholder="(Steps)" />
+                <input name="exercise" id="exericse-input" type="number" step="0.01" min="0" max="999999" placeholder="(Steps)" />
                 <button type="button" class="butn" id="butn4" onclick="setCommentWindow3()">
                     {{#if this.exercise}}
                         <p class="comment" id="comment3">{{findComment this.exercise}}<img class="pen" id="pen3" src="../res/pen.png" alt=""></p>
                     {{else}}
-                        <p class="comment" id="comment3">{{findComment this.exercise}}<img class="pen" id="pen3" src="../res/pen.png" alt=""></p>
+                        <p class="comment" id="comment3">+ Comment<img class="pen" id="pen3" src="../res/pen.png" alt=""></p>
                     {{/if}}
                 </button>
                 <textarea class="text-block" id="text-block3" name = "exercise_comment" placeholder="Add comments"></textarea>
@@ -235,8 +239,8 @@
     var data = []
     data.push({{ this.healthyData_required }})
     // call checkUpdated() and setPatientDatavalue when page load
-    checkUpdated();
-    setPatientDataValue(data)
+    checkUpdated(data);
+    setPatientDataValue(data);
     {{/with}}
     // the code below is for closing alter box
     document.getElementsByClassName("close")[0].onclick = function() {
@@ -247,4 +251,12 @@
             document.getElementById("myModal").style.display = "none";
         }
     }
+    {{#with patientInfo}}
+    console.log({{findPatientRank this.rank this.userid}})
+        if({{findPatientRank this.rank this.userid}} < 80){
+            document.getElementById("not-trophies-pic").style.display = "flex";
+        }else{
+            document.getElementById("trophies-pic").style.display = "flex";
+        }
+    {{/with}}
 </script>

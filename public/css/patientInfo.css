@@ -111,6 +111,15 @@
     }
 
     .trophies-pic {
+        display:none;
+        position: relative;
+        top: 4%;
+        width: 50%;
+        left: -4%;
+    }
+
+    .not-trophies-pic {
+        display: none;
         position: relative;
         top: 4%;
         width: 50%;
@@ -729,6 +738,15 @@
     }
 
     .trophies-pic {
+        display:none;
+        height: 79px;
+        padding-left: 22%;
+        padding-top: 0%;
+
+    }
+
+    .not-trophies-pic {
+        display:none;
         height: 79px;
         padding-left: 22%;
         padding-top: 0%;
@@ -973,11 +991,11 @@
     .text {
         display: flex;
         position: relative;
-        top: 70%;
+        top: 67%;
         padding-right: 20%;
         padding-left: 20%;
         color: #A22929;
-        font-size: 35px;
+        font-size: 55px;
     }
     .text p{
         text-align: center;
@@ -1348,6 +1366,15 @@
     }
 
     .trophies-pic {
+        display:none;
+        position: absolute;
+        height: 45px;
+        left: 15%;
+        top: 17%;
+    }
+
+    .not-trophies-pic {
+        display:none;
         position: absolute;
         height: 45px;
         left: 15%;
@@ -1594,11 +1621,11 @@
     .text {
         display: flex;
         position: relative;
-        top: 68%;
+        top: 67%;
         padding-left: 20%;
         padding-right: 20%;
         color: #A22929;
-        font-size: 30px;
+        font-size: 45px;
     }
     .text p{
         text-align: center;

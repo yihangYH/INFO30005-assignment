@@ -1,0 +1,315 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans");
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans ';
+}
+
+body{
+    background-color:#FDF9F8;
+}
+
+.topBar{
+    width:100%;
+    height:90px;
+    background:linear-gradient(to bottom,#DFAFAD,#FDF9F8);
+    transition: top 0.3s ease-in-out, transform 0.3s ease-in-out 0.3s;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logo{
+    display: flex;
+    width:15%;
+    align-items:center;
+}
+
+.logo img{
+    width: 100%;
+}
+
+.logo + div{
+    display: flex;
+    flex-direction: row;
+    justify-content:right; 
+    align-items:center; /* set elements to the same altitude*/
+    width:50%;
+}
+
+.topButton>a{
+    font-size: 150%;
+    text-decoration: none;
+    color: #000;
+
+}
+
+.topButton{
+    margin-right: 10%;
+}
+
+#clinicianName{
+    font-size:350%;
+    color: #a22929;
+    font-weight: bold;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#sideBar{
+    position: relative;
+}
+
+#triangle{
+    width:50%;
+}
+
+
+#sideBar a{
+    color: #000;
+}
+
+#sideBar p{
+    margin-bottom: 7%;
+}
+
+
+.sideButton{
+    position: absolute;
+    width: 600%;
+    top:90%;
+    left:-550%;
+    font-size: 30%;
+    font-weight: normal;
+    text-decoration: underline;
+    text-align: right;
+    z-index:9;
+}
+
+.line{
+    height: 40%;
+    margin-right:3%;
+}
+
+
+table, td, th{
+    border: 1px solid black;
+}
+
+td,th{
+    padding-top: 2%;
+    padding-bottom:2%;
+    position: relative;
+    font-size: 130%;
+}
+
+table{    
+    width: 80%;
+    border-collapse: collapse;
+    text-align: center;
+    table-layout:fixed;
+    font-size: 120%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+table span{
+    position:absolute;
+    top:69%;
+    right: 0;
+    width:40%;
+    font-size: 60%;
+    color: #707070;
+    text-align: right;
+    font-weight: normal !important;
+    font-style: normal !important;
+}
+
+/* span{
+    position:absolute;
+    top:69%;
+    left:53%;
+    font-size: 60%;
+    color: #707070;
+    text-align: right;
+    font-weight: normal !important;
+    font-style: normal !important;
+} */
+
+#top{
+    margin-top: 3%;
+    display: flex;
+    flex-direction: row;
+}
+#information{
+    display: flex;
+    flex-direction: column;
+    font-size: 230%;
+    margin-left:10%;
+    width: 30%;
+    font-weight: bold;
+    color:#707070;
+}
+
+#supportMessage{
+    border: none;
+    margin-left:auto;
+    margin-right: 10%;
+    padding: 1%;
+    width:35%;
+    background-color: #f0efef;
+    height: 130px;
+    border-radius: 10px;
+}
+
+#supportMessage textarea, #noteForm textarea{
+    border: none;
+    background-color: #f0efef;
+    width: 100%;
+    height:80%;
+    vertical-align: text-top;
+    font-size: x-large;
+    outline: none;
+    cursor: pointer;
+}
+
+.submit-div {
+    background-color: #F0EFEF;
+    width:100%;
+    text-align: right;
+    border: none;
+    
+}
+
+.submit-div button {
+    margin-right: 0;
+    border: none;
+    background-color: Transparent;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+
+.button img{
+    width: 100%;
+}
+
+#middle{
+    position: relative;
+    height:100%;
+}
+
+#middle .line{
+    width: 90%;
+    margin-left:5% ;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+#editButton{
+    width: 4%;
+    height: 4%;
+    position: absolute;
+    top:10%;
+    right:1%;
+}
+
+#note , #noteForm{
+    margin-top: 3%;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #F0EFEF;
+    width: 55%;
+    position: relative;
+    padding: 1% 3%;
+    border-radius: 10px;
+    height: 300px;
+    overflow-y: scroll;
+}
+
+#note .title{
+    text-align: center;
+    font-size: xxx-large;
+    font-weight: bold;
+    margin-bottom: 2%;
+}
+
+#addButton{
+    position: absolute;
+    width: 5%;
+    left:auto;
+    right:2%;
+    top: 10px;
+}
+
+#note ul{
+    list-style-type: none;
+    font-size: x-large;
+}
+
+p.content{
+    margin-bottom: -2%;
+}
+
+.time{
+    font-weight: bold;
+}
+
+#bottom .line{
+    width: 100%;
+}
+
+table {
+    width: 90%;
+    border-spacing: 0;
+}
+
+thead, tbody, tr, th, td { display: block; }
+
+
+thead{
+    width: 100%;
+}
+
+tr:after {  /* clearing float */
+    content: ' ';
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+
+tbody {
+    height: 800px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+tbody td, thead th {
+    width: 24.87%; 
+    float: left;
+}
+
+#noteForm{
+    overflow-y: hidden;
+    margin-bottom: 2%;
+}
+
+#noteForm .cancelButt{
+    width: 4%;
+    height: 20%;
+    position: absolute;
+    right:1%;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+}
+
+

@@ -1,0 +1,81 @@
+{{#with patientInfo}}
+    <div class="main">
+        <div class="header">
+            <div class ="logo">
+                <img class="logo" src="../../res/logo.png" alt="diabate">
+            </div>
+        </div>
+    </div>
+    <div class="main-body" id="main-body">
+        <div class="laederboard">
+            <div class="leaderboard-header">
+                <p>Leaderboard</p>
+            </div>
+            <div class="leaderboard-rank">
+                <img class="leaderboard-pic" src="../../res/leaderboard.png" alt="leaderboard image">
+                <div class="rank-first">
+                    {{findRank this.rank 0}}
+                </div>
+                <div class="rank-second">
+                    {{findRank this.rank 1}}
+                </div>
+                <div class="rank-third">
+                    {{findRank this.rank 2}}
+                </div>
+                <div class="rank-fourth-title">
+                    4th.
+                </div>
+                <div class="rank-fourth">
+                    {{findRank this.rank 3}}
+                </div>
+                <div class="rank-fifth-title">
+                    5th.
+                </div>
+                <div class="rank-fifth">
+                    {{findRank this.rank 4}}
+                </div>     
+            </div>
+            <div class="leaderboard-comment">
+                <p>Everyone keep going!</p>
+            </div>
+            <div class="middle-line"></div>
+            <a href="/data/{{this._id}}"><img class="back-icon" src="../../res/back.jpg" alt="back icon"></a>
+            <div class="achievement">
+                <div class="achievement-header">
+                    <p>Achievement</p>
+                </div>
+                <img class="achievement-image" id = "achievement-image" src="../../res/trophie.png" alt="achievement-image">
+                <img class="not-achievement-image" id="not-achievement-image" src="../../res/grey_trophie.png" alt="achievement-image">
+                <div class="achievement-word">
+                    <p>Your engagement rate is</p>
+                </div>
+                <div class="achievement-rate">
+                    <p>{{this.rate}}%</p>
+                </div>
+                <div class="encourage-word">
+                    <p>Good Job!!</p>
+                </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+
+
+{{/with}}
+
+<script>
+    
+    {{#with patientInfo}}
+
+    if({{this.rate}} < 80){
+        document.getElementById("not-achievement-image").style.display = "flex";
+    }else{
+        document.getElementById("achievement-image").style.display = "flex";
+    }
+    {{/with}}
+
+    
+
+
+
+</script>

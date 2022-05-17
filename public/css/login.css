@@ -1,48 +1,50 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans");
-
 * {
-    padding: 0;
-    margin: 0;
+	padding: 0;
+	margin: 0;
     font-family: 'Open Sans ';
 }
-
 body {
     height: 100%;
     overflow: hidden;
 }
 
-@media screen and (min-width: 1900px) {
-    .logo img {
+@media screen and (min-width: 1900px){
+    .logo img{
         width: 25%;
     }
-
-    .side-picture {
+    .side-picture{
         height: 100%;
         display: flex;
         position: absolute;
         top: 0%;
         left: 47%;
     }
-
     .header {
-        background: linear-gradient(to bottom, #DFAFAD, #FDF9F8);
-        height: 10%;
+        background:linear-gradient(to bottom,#DFAFAD,#FDF9F8);
+        height: 10%; 
         position: relative;
         z-index: 0;
         width: 100%;
         display: flex;
     }
-
     .bottom {
         width: 47%;
-        background-color: #FDF9F8;
+        background-color:#FDF9F8;
         position: absolute;
         height: 89.5%;
         text-align: center;
         display: flex;
     }
-
-    .login-content {
+    .chenge-password{
+        width: 47%;
+        background-color:#FDF9F8;
+        position: absolute;
+        height: 89.5%;
+        text-align: center;
+        display: flex;
+    }
+    .login-content{
         height: 60%;
         width: 60%;
         background-color: white;
@@ -50,52 +52,94 @@ body {
         display: inline-block;
         position: absolute;
         right: 20%;
-        top: 20%;
+        top:20%;
     }
-
     .login-content ul li {
         list-style: none;
     }
-
     .login-content h1 {
         text-align: center;
         margin-top: 10%;
         font-size: 42px;
         font-weight: bold;
     }
-
-    .login-content h2 {
+    .login-content h2{
         margin-top: 5%;
         font-weight: normal;
     }
-
-    .login-content ul li:nth-child(1) {
+    .login-content ul li:nth-child(1){
+        text-align: center;
+    }
+    .login-content ul li:nth-child(2){
         text-align: center;
     }
 
-    .login-content ul li:nth-child(2) {
-        text-align: center;
-    }
-
-    .login-content ul li:nth-child(4) {
-        display: inline;
-        float: right;
-        margin-right: 7%;
-        margin-top: 3%;
-    }
-
-    .login-content ul li:nth-child(3) {
+    .login-content ul li:nth-child(3){
         display: inline;
         float: left;
         margin-left: 8%;
         margin-top: 2%;
     }
+    .login-content ul li:nth-child(4){
+        display: inline;
+        float: right;
+        margin-right: 7%;
+        margin-top: 3%;
+    }
+    .change-password-btn{
+        all:unset;
+        cursor: pointer;
+    }
+    .login-content ul li:nth-child(5){
+        text-align: center;
+    }
+    .change-password-content{
+        height: 60%;
+        width: 35%;
+        background-color: white;
+        border-radius: 15%;
+        display: none;
+        position: absolute;
+        right: 60%;
+        top:30%;
+    }
 
-    .login-content ul li:nth-child(5) {
+    .change-password-content ul li {
+        list-style: none;
+    }
+    .change-password-content h1 {
+        text-align: center;
+        margin-top: 4%;
+        font-size: 42px;
+        font-weight: bold;
+    }
+
+    .change-password-content ul li:nth-child(1){
+        text-align: center;
+    }
+    .change-password-content ul li:nth-child(2){
+        text-align: center;
+    }
+    .change-password-content ul li:nth-child(4){
         text-align: center;
     }
 
-    #username {
+    .change-password-content ul li:nth-child(3){
+        text-align: center;
+    }
+    .change-password-content ul li:nth-child(5){
+        text-align: center;
+    }
+    .change-userID{
+        margin-top: 5%;
+        background-color: #F3DFD6;
+        border: 0px;
+        border-radius: 10px;
+        width: 80%;
+        padding: 15px;
+    }
+    
+    .userID{
         margin-top: 10%;
         background-color: #F3DFD6;
         border: 0px;
@@ -103,23 +147,29 @@ body {
         width: 80%;
         padding: 15px;
     }
-
-    input::-webkit-input-placeholder {
+    input::-webkit-input-placeholder{
         font-size: 20px;
         color: gray;
         text-align: left;
     }
-
-    #password {
+    .password {
         margin-top: 10%;
-        background-color: #F3DFD6;
+        background-color:#F3DFD6;
+        border: 0px;
+        border-radius: 10px;
+        width: 80%;
+        padding: 15px;
+    }
+    .change-password{
+        margin-top: 5%;
+        background-color:#F3DFD6;
         border: 0px;
         border-radius: 10px;
         width: 80%;
         padding: 15px;
     }
 
-    .show-password {
+    .show-password{
         margin-top: 5%;
     }
 
@@ -135,11 +185,11 @@ body {
         cursor: pointer;
     }
 
-    input[type="text"] {
-        font-size: 20px;
+    input[type="text"]
+    {
+        font-size:20px;
         padding: 15px;
     }
-
     #patient {
         background: none;
         border: none;
@@ -148,7 +198,6 @@ body {
         cursor: pointer;
         color: black;
     }
-
     #doctor {
         background: none;
         border: none;
@@ -159,7 +208,7 @@ body {
     }
 
 
-
+    /* Customize the label (the container) */
     .container {
         display: block;
         position: relative;
@@ -171,8 +220,8 @@ body {
         user-select: none;
         margin-top: 3%;
     }
-
-
+    
+    /* Hide the browser's default radio button */
     .container input {
         position: absolute;
         opacity: 0;
@@ -180,8 +229,8 @@ body {
         height: 0;
         width: 0;
     }
-
-
+    
+    /* Create a custom radio button */
     .checkmark {
         position: absolute;
         top: 0;
@@ -191,33 +240,33 @@ body {
         background-color: #eee;
         border-radius: 50%;
     }
-
-
-    .container:hover input~.checkmark {
+    
+    /* On mouse-over, add a grey background color */
+    .container:hover input ~ .checkmark {
         background-color: #ccc;
     }
-
-
-    .container input:checked~.checkmark {
+    
+    /* When the radio button is checked, add a blue background */
+    .container input:checked ~ .checkmark {
         background-color: #2196F3;
     }
-
+    
+    /* Create the indicator (the dot/circle - hidden when not checked) */
     .checkmark:after {
         content: "";
         position: absolute;
         display: none;
     }
-
     input[type='password'] {
         font-size: 20px;
         padding: 15px;
     }
-
-    .container input:checked~.checkmark:after {
+    /* Show the indicator (dot/circle) when checked */
+    .container input:checked ~ .checkmark:after {
         display: block;
     }
-
-
+    
+    /* Style the indicator (dot/circle) */
     .container .checkmark:after {
         top: 5px;
         left: 5px;
@@ -226,76 +275,41 @@ body {
         border-radius: 50%;
         background: white;
     }
-
-    .modal {
-        display: none;
-        position: fixed;
+    
+    .back-icon{
+        display:none;
+        position:absolute;
+        height:7%;
+        left:8%;
+        top:20%;
         z-index: 1;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgba(0, 0, 0, 0.4);
     }
-
-
-    .modal-content {
-        background-color: red;
-        margin: 15% auto;
-        padding: 20px;
-        border: 1px solid #888;
-        width: 30%;
-        color: white;
-        font-size: 27px;
-    }
-
-
-    .close {
-        color: #aaa;
-        float: right;
-        font-size: 27px;
-        font-weight: bold;
-    }
-
-    .close:hover,
-    .close:focus {
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-    }
-
-
 }
 
-@media screen and (min-width: 900px) and (max-width:1200px) {
-    .logo img {
+@media screen and (min-width: 1000px) and (max-width:1100px){
+    .logo img{
         width: 25%;
     }
-
-    .side-picture {
+    .side-picture{
         display: none;
     }
-
     .header {
-        background: linear-gradient(to bottom, #DFAFAD, #FDF9F8);
-        height: 10%;
+        background:linear-gradient(to bottom,#DFAFAD,#FDF9F8);
+        height: 10%; 
         position: relative;
         z-index: 0;
         width: 100%;
         display: flex;
     }
-
     .bottom {
         width: 100%;
-        background-color: #FDF9F8;
+        background-color:#FDF9F8;
         position: absolute;
         height: 89.5%;
         text-align: center;
         overflow: auto;
     }
-
-    .login-content {
+    .login-content{
         height: 75%;
         width: 60%;
         background-color: white;
@@ -303,53 +317,96 @@ body {
         display: inline-block;
         position: absolute;
         right: 20%;
-        top: 10%;
+        top:10%;
     }
-
     .login-content ul li {
         list-style: none;
     }
-
     .login-content h1 {
         text-align: center;
         margin-top: 5%;
         font-size: 42px;
         font-weight: bold;
     }
-
-    .login-content h2 {
+    .login-content h2{
         margin-top: 2%;
         font-weight: normal;
     }
-
-    .login-content ul li:nth-child(1) {
+    .login-content ul li:nth-child(1){
         text-align: center;
     }
-
-    .login-content ul li:nth-child(2) {
+    .login-content ul li:nth-child(2){
         text-align: center;
     }
-
-    .login-content ul li:nth-child(4) {
+    .login-content ul li:nth-child(4){
         display: inline;
         float: right;
         margin-right: 7%;
         margin-top: 3%;
+        
+    }
+    .back-icon{
+        display:none;
+        position:absolute;
+        height:7%;
+        left:8%;
+        top:20%;
+        z-index: 1;
+    }
+    .change-password-btn{
+        all: unset;
+        cursor: pointer;
     }
 
-    .login-content ul li:nth-child(3) {
+    .login-content ul li:nth-child(3){
         display: inline;
         float: left;
         margin-left: 8%;
         margin-top: 2%;
     }
-
-    .login-content ul li:nth-child(5) {
+    .login-content ul li:nth-child(5){
         text-align: center;
     }
 
-    #username {
-        margin-top: 8%;
+    .change-password-content{
+        height: 70%;
+        width: 75%;
+        background-color: white;
+        border-radius: 15%;
+        display: none;
+        position: absolute;
+        right: 15%;
+        top:25%;
+    }
+
+    .change-password-content ul li {
+        list-style: none;
+    }
+    .change-password-content h1 {
+        text-align: center;
+        margin-top: 4%;
+        font-size: 42px;
+        font-weight: bold;
+    }
+
+    .change-password-content ul li:nth-child(1){
+        text-align: center;
+    }
+    .change-password-content ul li:nth-child(2){
+        text-align: center;
+    }
+    .change-password-content ul li:nth-child(4){
+        text-align: center;
+    }
+
+    .change-password-content ul li:nth-child(3){
+        text-align: center;
+    }
+    .change-password-content ul li:nth-child(5){
+        text-align: center;
+    }
+    .change-userID{
+        margin-top: 5%;
         background-color: #F3DFD6;
         border: 0px;
         border-radius: 10px;
@@ -357,22 +414,38 @@ body {
         padding: 15px;
     }
 
-    input::-webkit-input-placeholder {
+    .change-password{
+        margin-top: 5%;
+        background-color:#F3DFD6;
+        border: 0px;
+        border-radius: 10px;
+        width: 80%;
+        padding: 15px;
+    }
+
+    .userID {
+        margin-top: 8%;
+        background-color: #F3DFD6;
+        border: 0px;
+        border-radius: 10px;
+        width: 80%;
+        padding: 15px;
+    }
+    input::-webkit-input-placeholder{
         font-size: 20px;
         color: gray;
         text-align: left;
     }
-
-    #password {
+    .password {
         margin-top: 8%;
-        background-color: #F3DFD6;
+        background-color:#F3DFD6;
         border: 0px;
         border-radius: 10px;
         width: 80%;
         padding: 15px;
     }
 
-    .show-password {
+    .show-password{
         margin-top: 5%;
     }
 
@@ -388,11 +461,11 @@ body {
         cursor: pointer;
     }
 
-    input[type="text"] {
-        font-size: 20px;
+    input[type="text"]
+    {
+        font-size:20px;
         padding: 15px;
     }
-
     #patient {
         background: none;
         border: none;
@@ -401,7 +474,6 @@ body {
         cursor: pointer;
         color: black;
     }
-
     #doctor {
         background: none;
         border: none;
@@ -412,6 +484,7 @@ body {
     }
 
 
+    /* Customize the label (the container) */
     .container {
         display: block;
         position: relative;
@@ -423,8 +496,8 @@ body {
         user-select: none;
         margin-top: 3%;
     }
-
-
+    
+    /* Hide the browser's default radio button */
     .container input {
         position: absolute;
         opacity: 0;
@@ -432,8 +505,8 @@ body {
         height: 0;
         width: 0;
     }
-
-
+    
+    /* Create a custom radio button */
     .checkmark {
         position: absolute;
         top: 0;
@@ -443,34 +516,33 @@ body {
         background-color: #eee;
         border-radius: 50%;
     }
-
-
-    .container:hover input~.checkmark {
+    
+    /* On mouse-over, add a grey background color */
+    .container:hover input ~ .checkmark {
         background-color: #ccc;
     }
-
-
-    .container input:checked~.checkmark {
+    
+    /* When the radio button is checked, add a blue background */
+    .container input:checked ~ .checkmark {
         background-color: #2196F3;
     }
-
-
+    
+    /* Create the indicator (the dot/circle - hidden when not checked) */
     .checkmark:after {
         content: "";
         position: absolute;
         display: none;
     }
-
     input[type='password'] {
         font-size: 20px;
         padding: 15px;
     }
-
-    .container input:checked~.checkmark:after {
+    /* Show the indicator (dot/circle) when checked */
+    .container input:checked ~ .checkmark:after {
         display: block;
     }
-
-
+    
+    /* Style the indicator (dot/circle) */
     .container .checkmark:after {
         top: 5px;
         left: 5px;
@@ -479,73 +551,31 @@ body {
         border-radius: 50%;
         background: white;
     }
-
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 1;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgba(0, 0, 0, 0.4);
-    }
-
-
-    .modal-content {
-        background-color: red;
-        margin: 35% auto;
-        padding: 20px;
-        border: 1px solid #888;
-        width: 70%;
-        color: white;
-        font-size: 27px;
-    }
-
-
-    .close {
-        color: #aaa;
-        float: right;
-        font-size: 27px;
-        font-weight: bold;
-    }
-
-    .close:hover,
-    .close:focus {
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-    }
 }
 
-@media screen and (min-width: 300px) and (max-width:400px) {
-    .logo img {
+@media screen and (min-width: 350px) and (max-width:400px) {
+    .logo img{
         width: 45%;
     }
-
-    .side-picture {
+    .side-picture{
         display: none;
     }
-
     .header {
-        background: linear-gradient(to bottom, #DFAFAD, #FDF9F8);
-        height: 100%;
+        background:linear-gradient(to bottom,#DFAFAD,#FDF9F8);
+        height: 100%; 
         position: relative;
         z-index: 0;
         width: 100%;
     }
-
     .bottom {
         width: 100%;
-        background-color: #FDF9F8;
+        background-color:#FDF9F8;
         position: absolute;
         height: 91%;
         text-align: center;
         overflow: auto;
     }
-
-    .login-content {
+    .login-content{
         height: 55%;
         width: 80%;
         background-color: white;
@@ -553,35 +583,29 @@ body {
         display: inline-block;
         position: absolute;
         right: 10%;
-        top: 15%;
+        top:15%;
     }
-
     .login-content ul li {
         list-style: none;
     }
-
     .login-content h1 {
         text-align: center;
         margin-top: 5%;
         font-size: 30px;
         font-weight: bold;
     }
-
-    .login-content h2 {
+    .login-content h2{
         margin-top: 5%;
         font-weight: normal;
         font-size: medium;
     }
-
-    .login-content ul li:nth-child(1) {
+    .login-content ul li:nth-child(1){
         text-align: center;
     }
-
-    .login-content ul li:nth-child(2) {
+    .login-content ul li:nth-child(2){
         text-align: center;
     }
-
-    .login-content ul li:nth-child(4) {
+    .login-content ul li:nth-child(4){
         display: inline;
         float: right;
         margin-right: 7%;
@@ -589,19 +613,58 @@ body {
         font-size: 75%;
     }
 
-    .login-content ul li:nth-child(3) {
+    .login-content ul li:nth-child(3){
         display: inline;
         float: left;
         margin-left: 8%;
         margin-top: 2%;
     }
+    .login-content ul li:nth-child(5){
+        text-align: center;
+    }
+    .change-password-btn{
+        all: unset;
+        cursor: pointer;
+    }
+    .change-password-content{
+        height: 70%;
+        width: 75%;
+        background-color: white;
+        border-radius: 15%;
+        display: none;
+        position: absolute;
+        right: 12%;
+        top:25%;
+    }
 
-    .login-content ul li:nth-child(5) {
+    .change-password-content ul li {
+        list-style: none;
+    }
+    .change-password-content h1 {
+        text-align: center;
+        margin-top: 4%;
+        font-size: 42px;
+        font-weight: bold;
+    }
+
+    .change-password-content ul li:nth-child(1){
+        text-align: center;
+    }
+    .change-password-content ul li:nth-child(2){
+        text-align: center;
+    }
+    .change-password-content ul li:nth-child(4){
         text-align: center;
     }
 
-    #username {
-        margin-top: 10%;
+    .change-password-content ul li:nth-child(3){
+        text-align: center;
+    }
+    .change-password-content ul li:nth-child(5){
+        text-align: center;
+    }
+    .change-userID{
+        margin-top: 5%;
         background-color: #F3DFD6;
         border: 0px;
         border-radius: 10px;
@@ -609,22 +672,38 @@ body {
         padding: 15px;
     }
 
-    input::-webkit-input-placeholder {
+    .change-password{
+        margin-top: 5%;
+        background-color:#F3DFD6;
+        border: 0px;
+        border-radius: 10px;
+        width: 80%;
+        padding: 15px;
+    }
+
+    .userID {
+        margin-top: 10%;
+        background-color: #F3DFD6;
+        border: 0px;
+        border-radius: 10px;
+        width: 80%;
+        padding: 15px;
+    }
+    input::-webkit-input-placeholder{
         font-size: 75%;
         color: gray;
         text-align: left;
     }
-
-    #password {
+    .password {
         margin-top: 10%;
-        background-color: #F3DFD6;
+        background-color:#F3DFD6;
         border: 0px;
         border-radius: 10px;
         width: 80%;
         padding: 15px;
     }
 
-    .show-password {
+    .show-password{
         margin-top: 5%;
     }
 
@@ -640,11 +719,11 @@ body {
         cursor: pointer;
     }
 
-    input[type="text"] {
-        font-size: 20px;
+    input[type="text"]
+    {
+        font-size:20px;
         padding: 15px;
     }
-
     #patient {
         background: none;
         border: none;
@@ -653,7 +732,6 @@ body {
         cursor: pointer;
         color: black;
     }
-
     #doctor {
         background: none;
         border: none;
@@ -662,9 +740,17 @@ body {
         cursor: pointer;
         color: black;
     }
+    .back-icon{
+        display:none;
+        position:absolute;
+        height:7%;
+        left:8%;
+        top:20%;
+        z-index: 1;
+    }
 
 
-
+    /* Customize the label (the container) */
     .container {
         display: block;
         position: relative;
@@ -673,8 +759,8 @@ body {
         margin-top: 3%;
         font-size: 75%;
     }
-
-
+    
+    /* Hide the browser's default radio button */
     .container input {
         position: absolute;
         opacity: 0;
@@ -682,8 +768,8 @@ body {
         height: 0;
         width: 0;
     }
-
-
+    
+    /* Create a custom radio button */
     .checkmark {
         position: absolute;
         top: 0;
@@ -693,33 +779,33 @@ body {
         background-color: #eee;
         border-radius: 50%;
     }
-
-
-    .container:hover input~.checkmark {
+    
+    /* On mouse-over, add a grey background color */
+    .container:hover input ~ .checkmark {
         background-color: #ccc;
     }
-
-
-    .container input:checked~.checkmark {
+    
+    /* When the radio button is checked, add a blue background */
+    .container input:checked ~ .checkmark {
         background-color: #2196F3;
     }
-
+    
+    /* Create the indicator (the dot/circle - hidden when not checked) */
     .checkmark:after {
         content: "";
         position: absolute;
         display: none;
     }
-
     input[type='password'] {
         font-size: 20px;
         padding: 15px;
     }
-
-    .container input:checked~.checkmark:after {
+    /* Show the indicator (dot/circle) when checked */
+    .container input:checked ~ .checkmark:after {
         display: block;
     }
-
-
+    
+    /* Style the indicator (dot/circle) */
     .container .checkmark:after {
         top: 5px;
         left: 5px;
@@ -728,43 +814,5 @@ body {
         border-radius: 50%;
         background: white;
     }
-
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 1;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgba(0, 0, 0, 0.4);
-    }
-
-
-    .modal-content {
-        background-color: red;
-        margin: 70% auto;
-        padding: 20px;
-        border: 1px solid #888;
-        width: 70%;
-        color: white;
-        font-size: 20px;
-    }
-
-
-    .close {
-        color: #aaa;
-        float: right;
-        font-size: 27px;
-        font-weight: bold;
-    }
-
-    .close:hover,
-    .close:focus {
-        color: black;
-        text-decoration: none;
-        cursor: pointer;
-    }
-
+    
 }

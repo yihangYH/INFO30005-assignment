@@ -21,3 +21,11 @@ db.once('open', async () => {
 })
 
 require('./patient')
+
+const mongooseClient = mongoose
+    .connect(process.env.MONGO_URL || 'mongodb://localhost', {
+        dbName: 'info30005Database' 
+    })
+    .then((m) => m.connection.getClient())
+
+module.exports = mongooseClient

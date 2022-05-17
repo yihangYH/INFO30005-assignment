@@ -6,6 +6,7 @@ const pens = ['pen', 'pen1', 'pen2', 'pen3'];
 const butns = ['butn1', 'butn2', 'butn3', 'butn4'];
 const comments = ['comment', 'comment1', 'comment2', 'comment3'];
 const names = ['blood-glucose', 'weight', 'insulin-taken', 'exercise'];
+const arrows = ["blood-glucose-arrow", "weight-arrow", "insulin-taken-arrow", "exercise-arrow"];
 
 // this function is used for change display when update btn clicked
 function updateBtnclick() {
@@ -18,6 +19,7 @@ function updateBtnclick() {
     // reload update page to get the corresponding info
     reloadUpdatePage();
 }
+
 
 function reloadUpdatePage() {
     for (let i = 0; i < 4; i++) {
@@ -35,7 +37,7 @@ function reloadUpdatePage() {
             const currentDay = dateString.split('/')[1];
             // check the if in the same day, if in the same day, update field display today's updated data 
             if (currentDay == date[1].replace(/\s/g,'') && currentMonth == date[0].replace(/\s/g,'')) {
-                document.getElementById(inputs[i]).value = document.getElementById(datas[i]).innerHTML.split('&')[0];
+                document.getElementById(inputs[i]).value = document.getElementById(datas[i]).innerHTML.split('&')[0].replace(/\s/g, '');
             }
         }
     }
@@ -81,8 +83,19 @@ function validation() {
         document.getElementById("myModal").style.display = "block";
         document.getElementById("error-message").innerHTML = "Please enter at least one data before update"
     }
+    try {
+        // if no data entered, alert error message
+        Swal.fire(
+            'Data update successfully',
+            'please check',
+            'success'
+        )
+    } catch (error) {
+        document.getElementById("myModal").style.display = "block";
+        document.getElementById("error-message").innerHTML = "Data update successfully"
+    }
 
-    return false;
+    return true;
 }
 
 // if only data entered and comment is not entered, return false 
@@ -463,14 +476,11 @@ function cancel() {
     document.getElementById('blur').style.display = 'none';
     document.getElementById('cancel').style.display = 'none';
     document.getElementById('container').style.display = 'none';
-}
 
+}
 // display not required if this data is not requried
 function setPatientDataValue(data) {
     for (let i = 0; i < 4; i++) {
-        if (document.getElementById(inputs[i]).readOnly) {
-            document.getElementById(pens[i]).style.display = "none"
-        }
         if (!data[i]) {
             document.getElementById(datas[i]).innerHTML = "Not Required"
             document.getElementById(dates[i]).innerHTML = "Updated on: No Record"
@@ -478,12 +488,18 @@ function setPatientDataValue(data) {
             document.getElementById(inputs[i]).value = "Not Required"
             document.getElementById(butns[i]).disabled = true
             document.getElementById(butns[i]).style.cursor = "none"
+            document.getElementById(arrows[i]).style.pointerEvents = "none"
+            // document.getElementById(comments[i]).style.display = "none"
+           
+        }
+        if (document.getElementById(inputs[i]).readOnly) {
+            document.getElementById(pens[i]).style.display = "none"
         }
     }
 }
 
 // display value in update data page based on different logic
-function checkUpdated() {
+function checkUpdated(data) {
     // get current time
     let AuDate = new Date().toLocaleString("en-US", {
         timeZone: "Australia/Sydney"
@@ -507,10 +523,11 @@ function checkUpdated() {
         } else {
             // if data value contains Not means, this data is not reuqired
             // display orginal text
-            if (!document.getElementById(datas[i]).innerHTML.includes("Not")) {
+            if (data[i]&&!document.getElementById(datas[i]).innerHTML.includes("Yet")) {
                 document.getElementById(comments[i]).innerHTML = "+ Comment" + document.getElementById(comments[i]).innerHTML
             }
         }
 
     }
+
 }

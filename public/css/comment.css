@@ -128,29 +128,29 @@ td,th{
     font-size: 130%;
 }
 
-#dashboard>table{
+#dashboard>table{    
+    width: 80%;
     border-collapse: collapse;
     text-align: center;
     position: absolute;
-    left:5%;
-    right:5%;
+    left:10%;
+    right:10%;
+    margin:auto;
     table-layout:fixed;
     font-size: 120%;
-    width: 90%;
-    border-spacing: 0;
 }
 
 #dashboard span{
     position:absolute;
     top:69%;
-    left:49%;
+    left:53%;
     font-size: 60%;
     color: #707070;
-    width:50%;
     text-align: right;
     font-weight: normal !important;
     font-style: normal !important;
 }
+
 
 thead, tbody, tr, th, td { display: block; }
 
