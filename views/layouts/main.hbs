@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <link rel="icon" type="image/x-icon" href="/res/favicon.ico">
     <link id="style" rel="stylesheet" type="text/css" href="" media=" all" />
-    <script src="/js/patientData.js"></script>
-    <script src="/js/login.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="/js/dashboard.js"></script>
-    <script src="/js/patientDetail.js"></script>
+    <script src="/js/patientData.js?v=1"></script>
+    <script src="/js/login.js?v=1"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11?v=1"></script>
+    <script src="/js/dashboard.js?v=1"></script>
+    <script src="/js/patientDetail.js?v=1"></script>
 </head>
 
 <body>
@@ -25,50 +26,50 @@
 <script>
         var path = window.location.pathname;
         if (path.includes("login")) {
-            document.getElementById("style").href = "../css/login.css";
+            document.getElementById("style").href = "../css/login.css?v=1";
             document.title = "Login";
         } else if (path.includes("data") && !path.includes("bloodGlucose") && !path.includes("exercise")
         && !path.includes("weight") && !path.includes("insulinTaken") && !path.includes("leaderboard")) {
-            document.getElementById("style").href = "../css/patientInfo.css";
+            document.getElementById("style").href = "../css/patientInfo.css?v=1";
             document.title = "Your Data";
         } else if (path.includes("welcome") || path.includes("Welcome")) {
-            document.getElementById("style").href = "../css/stylesheet.css";
+            document.getElementById("style").href = "../css/stylesheet.css?v=1";
             document.title = "Welcome";
         } else if (path.includes("aboutDiabetes")) {
-            document.getElementById("style").href = "../css/stylesheet.css";
+            document.getElementById("style").href = "../css/stylesheet.css?v=1";
             document.title = "About Diabetes";
         } else if (path.includes("aboutThisWebsite")) {
-            document.getElementById("style").href = "../css/stylesheet.css";
+            document.getElementById("style").href = "../css/stylesheet.css?v=1";
             document.title = "About This Website";
         } else if (path.includes("dashboard") && !path.includes("commnet")){
-            document.getElementById("style").href = "../css/dashboard.css";
+            document.getElementById("style").href = "../css/dashboard.css?v=1";
             document.title = "Dashboard";
         }else if (path.includes("comment") ){
-            document.getElementById("style").href = "../css/comment.css";
+            document.getElementById("style").href = "../css/comment.css?v=1";
             document.title = "Comment";
         } else if (path.includes("newPatient")){
-            document.getElementById("style").href = "../css/createPatient.css";
+            document.getElementById("style").href = "../css/createPatient.css?v=1";
             document.title = "Create patient";
         } else if (path.includes("updatePatient")){
-            document.getElementById("style").href = "../../css/createPatient.css";
+            document.getElementById("style").href = "../../css/createPatient.css?v=1";
             document.title = "Update patient";
         }else if(path.includes("leaderboard")){
-            document.getElementById("style").href = "../../css/patientleaderboard.css";
+            document.getElementById("style").href = "../../css/patientleaderboard.css?v=1";
             document.title = "Leader board";
         } else if (path.includes("patientDetail")){
-            document.getElementById("style").href = "../../css/patientDetail.css";
+            document.getElementById("style").href = "../../css/patientDetail.css?v=1";
             document.title = "Patient Detail";       
         } else if (path.includes("data") && path.includes("bloodGlucose")){
-            document.getElementById("style").href = "../../css/passBloodGlucose.css";
+            document.getElementById("style").href = "../../css/passBloodGlucose.css?v=1";
             document.title = "BloodGlucose data";
         } else if (path.includes("data") && path.includes("exercise")){
-            document.getElementById("style").href = "../../css/passExercise.css";
+            document.getElementById("style").href = "../../css/passExercise.css?v=1";
             document.title = "Exercise data";
         } else if (path.includes("data") && path.includes("insulinTaken")){
-            document.getElementById("style").href = "../../css/passInsulinTaken.css";
+            document.getElementById("style").href = "../../css/passInsulinTaken.css?v=1";
             document.title = "InsulinTaken data";
         } else if (path.includes("data") && path.includes("weight")){
-            document.getElementById("style").href = "../../css/passWeight.css";
+            document.getElementById("style").href = "../../css/passWeight.css?v=1";
             document.title = "Weight data";
         }
     </script>
