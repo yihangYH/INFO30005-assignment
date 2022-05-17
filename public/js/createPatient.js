@@ -312,7 +312,7 @@ function createPatientValidation(){
     if(!checkDataInput()){
         return false;
     }
-    return false;
+    return true;
 }
 
 // check if the userID is in the DB or not, if in the DB, need to change another one 
@@ -329,6 +329,7 @@ async function checkPatientExists(){
             },
             body: JSON.stringify(patient)
           });
+          console.log(response)
           if(response.status == 201){
                 try {
                     Swal.fire(
