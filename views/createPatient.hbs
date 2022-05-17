@@ -1,8 +1,9 @@
 <script src="/js/createPatient.js"></script>
+{{#with id}}
 <div class="main">
             <div class="header">
                 <div >
-                    <a href="/dashboard/{{id}}">
+                    <a href="/dashboard/{{this}}">
                         <img class="back" src="/res/back.jpg" alt="">
                     </a>
                     <img class ="logo" src="/res/logo.png" alt="logo">
@@ -93,3 +94,4 @@
             </div>
     </div>
 </div>
+{{/with}}

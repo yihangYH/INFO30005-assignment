@@ -384,8 +384,7 @@ const comment = async(req,res,next) => {
             clinician.patient[i].bloodGlucose = patientData.bloodGlucose
             clinician.patient[i].insulinTaken = patientData.insulinTaken
             clinician.patient[i].exercise = patientData.exercise
-            // console.log(clinician.patient[i])
-            // break
+            Object.assign(clinician.patient[i], {clinicianID:req.params.id})
         }
         // console.log(clinician)
         res.render('comment.hbs',{clinicianInfo:clinician})

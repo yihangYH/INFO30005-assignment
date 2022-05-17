@@ -9,6 +9,9 @@
 body{
     background-color:#FDF9F8;
 }
+a {
+    color: inherit;
+}
 
 .topBar{
     width:100%;
@@ -129,7 +132,7 @@ td,th{
 }
 
 #dashboard>table{    
-    width: 80%;
+    width: 81%;
     border-collapse: collapse;
     text-align: center;
     position: absolute;

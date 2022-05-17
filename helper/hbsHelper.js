@@ -70,7 +70,7 @@ hbs.handlebars.registerHelper("findExercise", function(data) {
 });
 
 hbs.handlebars.registerHelper("print", function(supportMessage) {
-    return supportMessage
+    console.log(supportMessage);
     
 });
 
