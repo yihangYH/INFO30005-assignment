@@ -23,11 +23,12 @@ const getClinician = async (req,res, next) =>{
             .populate("exercise")
             .populate("bloodGlucose")
             .populate("insulinTaken").lean()
-            // assign found data to the JSON
+            // assign founded data to the JSON
             clinician.patient[i].weight = patientData.weight
             clinician.patient[i].bloodGlucose = patientData.bloodGlucose
             clinician.patient[i].insulinTaken = patientData.insulinTaken
             clinician.patient[i].exercise = patientData.exercise
+            // assign Clinician ID to each patientData
             Object.assign(clinician.patient[i], {clinicianID:req.params.id })
         }
         return res.render('clinician.hbs', {data: clinician})
@@ -38,6 +39,7 @@ const getClinician = async (req,res, next) =>{
 
 const getPatientDetail = async (req,res, next) =>{
     try {
+        // init value time and comment array for 4 data
         const bloodGlucose =[];
         const bloodGlucoseTime=[];
         const bloodGlucoseComment=[];
@@ -51,6 +53,7 @@ const getPatientDetail = async (req,res, next) =>{
         const insulinTakenTime = [];
         const insulinTakenComment = [];
         const jsondata=[];
+        // popuplate data and notes
         const patientInfo = 
             await patient.findOne({_id: req.params.patientID})
             .populate("weight")
@@ -58,17 +61,20 @@ const getPatientDetail = async (req,res, next) =>{
             .populate("bloodGlucose")
             .populate("insulinTaken")
             .populate("notes").lean()
+        // find clinician based on id
         const clinician = 
             await clinicianData.findOne({_id: req.params.id}).lean()
         Object.assign(patientInfo, {clinicianID: clinician._id, clinicianName: clinician.screen_name})
+        // find which data have been updated most
         var type = findMaxDataType(patientInfo);
-        
+        // if is blood glucose, set rest data array length as same as blood glucose
         if(type == 1){
             for(let i = 0; i < patientInfo.bloodGlucose.length; i++){
                 bloodGlucose.push(patientInfo.bloodGlucose[i].value)
                 bloodGlucoseTime.push(patientInfo.bloodGlucose[i].time)
                 bloodGlucoseComment.push(patientInfo.bloodGlucose[i].comment)
             }
+            // full array with No 
             for(let i = 0; i < patientInfo.bloodGlucose.length; i++){
                 if(i < patientInfo.weight.length){ 
                     weight.push(patientInfo.weight[i].value)
@@ -80,6 +86,7 @@ const getPatientDetail = async (req,res, next) =>{
                     weightComment.push("No comment")
                 }
             }
+            // full array with No 
             for(let i = 0; i < patientInfo.bloodGlucose.length; i++){
                 if(i < patientInfo.exercise.length){ 
                     exercise.push(patientInfo.exercise[i].value)
@@ -91,6 +98,7 @@ const getPatientDetail = async (req,res, next) =>{
                     exerciseComment.push("No comment")
                 }
             }
+            // full array with No 
             for(let i = 0; i < patientInfo.bloodGlucose.length; i++){
                 if(i < patientInfo.insulinTaken.length){ 
                     insulinTaken.push(patientInfo.insulinTaken[i].value)
@@ -102,12 +110,14 @@ const getPatientDetail = async (req,res, next) =>{
                     insulinTakenComment.push("No comment")
                 }
             }
+        // if weight has been updated most
         }else if(type == 2){
             for(let i = 0; i < patientInfo.weight.length; i++){
                 weight.push(patientInfo.weight[i].value)
                 weightTime.push(patientInfo.weight[i].time)
                 weightComment.push(patientInfo.weight[i].comment)
             }
+            // full array with No 
             for(let i = 0; i < patientInfo.weight.length; i++){
                 if(i < patientInfo.bloodGlucose.length){ 
                     bloodGlucose.push(patientInfo.bloodGlucose[i].value)
@@ -119,6 +129,7 @@ const getPatientDetail = async (req,res, next) =>{
                     bloodGlucoseComment.push("No comment")
                 }
             }
+            // full array with No 
             for(let i = 0; i < patientInfo.weight.length; i++){
                 if(i < patientInfo.exercise.length){ 
                     exercise.push(patientInfo.exercise[i].value)
@@ -130,6 +141,7 @@ const getPatientDetail = async (req,res, next) =>{
                     exerciseComment.push("No comment")
                 }
             }
+            // full array with No 
             for(let i = 0; i < patientInfo.weight.length; i++){
                 if(i < patientInfo.insulinTaken.length){ 
                     insulinTaken.push(patientInfo.insulinTaken[i].value)
@@ -141,12 +153,14 @@ const getPatientDetail = async (req,res, next) =>{
                     insulinTakenComment.push("No comment")
                 }
             }
+        // if exercise has been updated most 
         }else if(type == 3){
             for(let i = 0; i < patientInfo.exercise.length; i++){
                 exercise.push(patientInfo.exercise[i].value)
                 exerciseTime.push(patientInfo.exercise[i].time)
                 exerciseComment.push(patientInfo.exercise[i].comment)
             }
+            // full array with No 
             for(let i = 0; i < patientInfo.exercise.length; i++){
                 if(i < patientInfo.bloodGlucose.length){ 
                     bloodGlucose.push(patientInfo.bloodGlucose[i].value)
@@ -158,6 +172,7 @@ const getPatientDetail = async (req,res, next) =>{
                     bloodGlucoseComment.push("No comment")
                 }
             }
+            // full array with No 
             for(let i = 0; i < patientInfo.exercise.length; i++){
                 if(i < patientInfo.weight.length){ 
                     weight.push(patientInfo.weight[i].value)
@@ -169,6 +184,7 @@ const getPatientDetail = async (req,res, next) =>{
                     weightComment.push("No comment")
                 }
             }
+            // full array with No 
             for(let i = 0; i < patientInfo.exercise.length; i++){
                 if(i < patientInfo.insulinTaken.length){ 
                     insulinTaken.push(patientInfo.insulinTaken[i].value)
@@ -180,12 +196,14 @@ const getPatientDetail = async (req,res, next) =>{
                     insulinTakenComment.push("No comment")
                 }
             }
+        // if insulinTaken has been updated most
         }else{
             for(let i = 0; i < patientInfo.insulinTaken.length; i++){
                 insulinTaken.push(patientInfo.insulinTaken[i].value)
                 insulinTakenTime.push(patientInfo.insulinTaken[i].time)
                 insulinTakenComment.push(patientInfo.insulinTaken[i].comment)
             }
+            // full array with No 
             for(let i = 0; i < patientInfo.insulinTaken.length; i++){
                 if(i < patientInfo.bloodGlucose.length){ 
                     bloodGlucose.push(patientInfo.bloodGlucose[i].value)
@@ -197,6 +215,7 @@ const getPatientDetail = async (req,res, next) =>{
                     bloodGlucoseComment.push("No comment")
                 }
             }
+            // full array with No 
             for(let i = 0; i < patientInfo.insulinTaken.length; i++){
                 if(i < patientInfo.weight.length){ 
                     weight.push(patientInfo.weight[i].value)
@@ -208,6 +227,7 @@ const getPatientDetail = async (req,res, next) =>{
                     weightComment.push("No comment")
                 }
             }
+            // full array with No 
             for(let i = 0; i < patientInfo.insulinTaken.length; i++){
                 if(i < patientInfo.exercise.length){ 
                     exercise.push(patientInfo.exercise[i].value)
@@ -220,7 +240,7 @@ const getPatientDetail = async (req,res, next) =>{
                 }
             }
         }
-
+        // push array to a json 
         for(let i = 0 ; i < bloodGlucose.length; i++){
             jsondata.push({
                 bloodGlucoseValue: bloodGlucose[i],
@@ -238,6 +258,7 @@ const getPatientDetail = async (req,res, next) =>{
                 safety_threshold: patientInfo.safety_threshold,
             })
         }
+        // assign new jsondata to patientInfo
         Object.assign(patientInfo, {data:jsondata})
         // console.log(patientInfo)
         return res.render('patientDetail.hbs',{patientInfo:patientInfo})
@@ -247,6 +268,7 @@ const getPatientDetail = async (req,res, next) =>{
     }
 }
 
+// this function is used to find which data has been updated most
 function findMaxDataType(patientInfo){
     var len = 0;
     var type =0;
@@ -269,6 +291,7 @@ function findMaxDataType(patientInfo){
     return type
 }
 
+// get create patient page
 const getPage = async(req,res,next) => {
     try {
         res.render('createPatient.hbs', {id: req.params.id})
@@ -277,9 +300,11 @@ const getPage = async(req,res,next) => {
     }
 }
 
+// post method callback function to send new patient data
 const CreatePatient = async(req,res,next) => {
     const healthyData_required = [true,true,true,true];
     const safety_threshold = [];
+    // check which data is required
     if(req.body.bloodGlucoseCheckbox != 'on'){
         healthyData_required[0] = false
         safety_threshold.push("Not Required")
@@ -304,6 +329,7 @@ const CreatePatient = async(req,res,next) => {
     }else{
         safety_threshold.push(req.body.exerciseLowerBalue + "-" + req.body.exerciseUpperValue );
     }
+    // create new patient
     patient.create({
         'first_name': req.body.first_name,
         'last_name': req.body.last_name,
@@ -322,8 +348,7 @@ const CreatePatient = async(req,res,next) => {
         'safety_threshold':safety_threshold
     }, async function(err, newPatient){
         if (err) { console.log(err); return; }
-        console.log('Dummy user inserted')
-        console.log(newPatient._id)
+        // save new patient ID to clinician patitent array
         await clinicianData.findByIdAndUpdate({_id: req.params.id}, {$push: {patient: newPatient._id}})
     })
     // await clinicianData.findByIdAndUpdate({_id: req.params.id}, {$push: {patient: newPatient_id}})
@@ -343,6 +368,7 @@ const createTemp = async(req,res,next) => {
     })
 }
 
+// get comment page
 const comment = async(req,res,next) => {
     try {
         const clinician = 
@@ -377,18 +403,19 @@ const getTemp = async(req,res,next) => {
     }
 }
 
-
+// get update patient page
 const getUpdatePatient = async(req,res,next) => {
     const patientInfo = await patient.findById({_id: req.params.patientID}).lean();
     Object.assign(patientInfo, {clinicianID: req.params.id})
     res.render('updatePatient.hbs', {patient: patientInfo})
 }
 
+// callback function for update patient
 const updatePatient = async(req,res,next) => {
     const patientInfo = await patient.findById({_id: req.params.patientID}).lean();
-    console.log(req.body)
     const healthyData_required = patientInfo.healthyData_required;
     const safetyThreshold = patientInfo.safety_threshold;
+    // get new req body, and assign the value to the corresponding fields 
     if(req.body.bloodGlucoseCheckboxUpdate == undefined){
         healthyData_required[0] = false
         safetyThreshold[0] = "Not Required"
@@ -415,40 +442,43 @@ const updatePatient = async(req,res,next) => {
         safetyThreshold[3] = "Not Required"
     }
     console.log("aadsasdsadad")
+    // update patient with new data
     patient.findByIdAndUpdate({_id: req.params.patientID}, {$set:{healthyData_required: healthyData_required, safety_threshold: safetyThreshold}}, function(err, updatedPatient){
         if (err) { console.log(err); return; }
-        console.log('Patient updated')
     })
     let path="/"+req.params.id + "/"+ req.params.patientID+"/patientDetail"
     res.redirect(path)
     
 }
 
-
+// callback function for update support message
 const updateSupportMessage = async(req,res,next)=>{
     patient.findByIdAndUpdate({_id: req.params.patientID}, {$set:{supportMessage: req.body.supportMessage}}, function(err, updatedPatient){
         if (err) { console.log(err); return; }
-        console.log('Patient updated')
     })
-    // var path = "/"+req.params.id + "/"+ req.params.patientID+"/patientDetail"
-    // res.redirect(path)
+    var path = "/"+req.params.id + "/"+ req.params.patientID+"/patientDetail"
+    res.redirect(path)
 };
 
+// callback function for update clinician notes
 const updateNote = async(req,res,next)=>{
     let AuDate = new Date().toLocaleString("en-US", {timeZone: "Australia/Sydney"});
     let dateString = AuDate.toString().replace(',', ' ');
+    // create new clinicianNote moduel with two fields content and time
     const note = new clinicianNote({
         content: req.body.content,
         time: dateString,
     })
+    // update new note id to the patient npte array
     patient.findByIdAndUpdate({_id: req.params.patientID}, {$push:{notes: note._id}}, function(err, updatedPatient){
         if (err) { console.log(err); return; }
     })
+    // save new note the clinicianNote document
     note.save(function(err, newNote){
         if (err) { console.log(err); return; }
     })
-    // var path = "/"+req.params.id + "/"+ req.params.patientID+"/patientDetail"
-    // res.redirect(path);
+    var path = "/"+req.params.id + "/"+ req.params.patientID+"/patientDetail"
+    res.redirect(path);
 };
 
 // to be removed, getTemp,createTemp

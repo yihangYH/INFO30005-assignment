@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 
 
-
+// validate if data has entered
 function checkDataInput(){
     console.log(document.getElementById("bloodGlucoseCheckbox").checked)
     if(!document.getElementById("bloodGlucoseCheckbox").checked &&
@@ -216,6 +216,7 @@ function checkDataInput(){
     return true;
 }
 
+// check is patient detail has enterd and if it is valid
 function createPatientValidation(){
     // return false;
     if(document.getElementById('firstName').value == ""){
@@ -314,6 +315,7 @@ function createPatientValidation(){
     return false;
 }
 
+// check if the userID is in the DB or not, if in the DB, need to change another one 
 async function checkPatientExists(){
     var userEmail = document.getElementById('userId').value
     try {

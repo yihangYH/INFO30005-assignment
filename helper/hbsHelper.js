@@ -131,6 +131,7 @@ hbs.handlebars.registerHelper("comment", function(data) {
     }
 });
 
+// find the age based on the patient birth
 hbs.handlebars.registerHelper("findAge", function(birth) {
     var year = birth.split("/")[0]
     let AuDate = new Date().toLocaleString("en-US", {timeZone: "Australia/Sydney"});
@@ -138,7 +139,7 @@ hbs.handlebars.registerHelper("findAge", function(birth) {
     return currentYear - year
 });
 
-
+// check if the data is not required
 hbs.handlebars.registerHelper("checkNotRequired", function(data, safety, index) {
     if(!safety[index]){
         return "display:none"
@@ -151,6 +152,7 @@ hbs.handlebars.registerHelper("checkNotRequired", function(data, safety, index) 
     }
 });
 
+// find the data comment
 hbs.handlebars.registerHelper("findComment", function(data){
     let AuDate = new Date().toLocaleString("en-US", {timeZone: "Australia/Sydney"});
     let dateString = AuDate.toString().replace(',', ' ');
@@ -171,6 +173,7 @@ hbs.handlebars.registerHelper("findComment", function(data){
     return comment;
 });
 
+// get the data value
 hbs.handlebars.registerHelper("getValue", function(data, safety, index) {
     if(!safety[index]){
         return "Not Required"
@@ -183,6 +186,7 @@ hbs.handlebars.registerHelper("getValue", function(data, safety, index) {
     return latest.value
 });
 
+// get comment time
 hbs.handlebars.registerHelper("getCommentTime", function(data) {
     if(data.length == 0){
         return "No time yet"
@@ -201,6 +205,7 @@ hbs.handlebars.registerHelper("getCommentTime", function(data) {
     
 });
 
+// get the data updated time
 hbs.handlebars.registerHelper("getTime", function(data, safety, index) {
     // get the data updated time, and do some formating
     if(!safety[index]){

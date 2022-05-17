@@ -21,13 +21,16 @@ const getPatient = async(req,res,next) => {
         .populate("exercise")
         .populate("bloodGlucose")
         .populate("insulinTaken").lean();
+        // caculate each patient engagement rate 
         for(let i =0 ; i < allPatient.length; i++){
             patientRate.push(caculateRate(allPatient[i]));
         }
         patientRate.push(currentPatientRate);
+        // sort engagement rate 
         patientRate.sort(function(a,b){
             return b[1] - a[1];
         });
+        // assign engagement rate  to patientData named as rank
         Object.assign(patientData, {"rank": patientRate});
         res.render('data.hbs', {patientInfo: patientData})
     } catch (error) {
@@ -242,6 +245,7 @@ const getPassExercise = async(req,res,next)=>{
     }
 }
 
+// call back function for get leader board
 const getLeaderboard = async(req,res,next)=>{
     // console.log(req.params.id)
     const currentPatient = await patient.findOne({_id:req.params.id}).populate("weight")
@@ -252,14 +256,17 @@ const getLeaderboard = async(req,res,next)=>{
     Object.assign(currentPatient, {"rate": currentPatientRate[1]});
 
     var patientRate = [];
+
     const allPatient = await patient.find({_id:{$nin:req.params.id}}).populate("weight")
     .populate("exercise")
     .populate("bloodGlucose")
     .populate("insulinTaken").lean();
+    // find all patient engagement rate
     for(let i =0 ; i < allPatient.length; i++){
         patientRate.push(caculateRate(allPatient[i]));
     }
     patientRate.push(currentPatientRate);
+    // sort the engagement rate
     patientRate.sort(function(a,b){
         return b[1] - a[1];
     });
@@ -267,6 +274,7 @@ const getLeaderboard = async(req,res,next)=>{
     res.render("leaderBoard.hbs", {patientInfo: currentPatient});
 }
 
+// function use to caculate engagement rate
 function caculateRate(patient){
     var maxCount = findMacCountDataUpdated(patient);
     if(maxCount[0]>0){var rate  = findRate(maxCount)};
@@ -275,7 +283,7 @@ function caculateRate(patient){
     return [patient.screen_name, rate,patient.userid]
 }
 
-
+// caculate engagement rate
 function findRate(maxCount){
     var fisrtTime = maxCount[1][0].time;
     let AuDate = new Date().toLocaleString("en-US", {timeZone: "Australia/Sydney"});
@@ -292,6 +300,7 @@ function findRate(maxCount){
     return maxCount[0]/Difference_In_Days;
 };
 
+// find which data has been updated most
 function findMacCountDataUpdated(currentPatient){
     var max = 0;
     var dataName = null;
