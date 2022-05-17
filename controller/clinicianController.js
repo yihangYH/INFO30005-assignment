@@ -351,7 +351,6 @@ const CreatePatient = async(req,res,next) => {
         // save new patient ID to clinician patitent array
         await clinicianData.findByIdAndUpdate({_id: req.params.id}, {$push: {patient: newPatient._id}})
     })
-
     res.redirect('/dashboard/'+req.params.id)
 }
 
