@@ -58,5 +58,17 @@
         } else if (path.includes("patientDetail")){
             document.getElementById("style").href = "../../css/patientDetail.css";
             document.title = "Patient Detail";       
+        } else if (path.includes("data") && path.includes("bloodGlucose")){
+            document.getElementById("style").href = "../../css/passBloodGlucose.css";
+            document.title = "BloodGlucose data";
+        } else if (path.includes("data") && path.includes("exercise")){
+            document.getElementById("style").href = "../../css/passExercise.css";
+            document.title = "Exercise data";
+        } else if (path.includes("data") && path.includes("insulinTaken")){
+            document.getElementById("style").href = "../../css/passInsulinTaken.css";
+            document.title = "InsulinTaken data";
+        } else if (path.includes("data") && path.includes("weight")){
+            document.getElementById("style").href = "../../css/passWeight.css";
+            document.title = "Weight data";
         }
     </script>
