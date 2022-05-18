@@ -52,6 +52,11 @@ a {
     margin-right: 10%;
 }
 
+.comment-td{
+    height: 29px;
+    overflow-y: scroll;
+}
+
 #clinicianName{
     font-size:350%;
     color: #a22929;

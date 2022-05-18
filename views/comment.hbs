@@ -55,7 +55,7 @@
                         <td>Blood Glucose</td>
                         <td style="{{checkSafety this.safety_threshold this.bloodGlucose "0"}}">{{value this.bloodGlucose}}</td>
                         <td>{{getCommentTime this.bloodGlucose}}</td>
-                        <td>{{comment this.bloodGlucose}}</td>
+                        <td class="comment-td">{{comment this.bloodGlucose}}</td>
                     </tr>
                     <tr style="{{checkNotRequired this.weight this.healthyData_required "1"}}">
                         <td>
@@ -66,7 +66,7 @@
                         <td>Weight</td>
                         <td style="{{checkSafety this.safety_threshold this.weight "1"}}">{{value this.weight}}</td>
                         <td>{{getCommentTime this.weight}}</td>
-                        <td>{{comment this.weight}}</td>
+                        <td class="comment-td">{{comment this.weight}}</td>
                     </tr>
                     <tr style="{{checkNotRequired this.insulinTaken this.healthyData_required "2"}}">
                         <td>
@@ -77,7 +77,7 @@
                         <td>Insulin taken</td>
                         <td style="{{checkSafety this.safety_threshold this.insulinTaken "2"}}">{{value this.insulinTaken}}</td>
                         <td>{{getCommentTime this.insulinTaken}}</td>
-                        <td>{{comment this.insulinTaken}}</td>
+                        <td class="comment-td">{{comment this.insulinTaken}}</td>
                     </tr>
                     <tr style="{{checkNotRequired this.exercise this.healthyData_required "3"}}">
                         <td>
@@ -88,7 +88,7 @@
                         <td>Exercise</td>
                         <td style="{{checkSafety this.safety_threshold this.exercise "3"}}">{{value this.exercise}}</td>
                         <td>{{getCommentTime this.exercise}}</td>
-                        <td>{{comment this.exercise}}</td>
+                        <td class="comment-td">{{comment this.exercise}}</td>
                     </tr>
                 {{/each}}
             </table>

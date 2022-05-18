@@ -34,10 +34,10 @@
                 <p>ID:&nbsp;<span>{{this.userid}}</span></p>
             </div>
             
-            <form action = "/{{this.clinicianID}}/{{this._id}}/updateMessage" method="POST" id = "supportMessage">
-                    <textarea name = "supportMessage" placeholder="{{this.supportMessage}}"></textarea>
+            <form action = "/{{this.clinicianID}}/{{this._id}}/updateMessage" method="POST" id = "supportMessage" onsubmit="return supportMessageValidation()">
+                    <textarea name = "supportMessage" placeholder="{{this.supportMessage}}" id="supportMessageContent"></textarea>
                     <div class = "submit-div">
-                        <button type = "submit" onclick="reloadPage()">submit</button>
+                        <button type = "submit" onclick="reloadSupportmessagePage()">submit</button>
                     </div>   
             </form>
         </div>
@@ -63,10 +63,16 @@
                 <tbody class="table-body">
                     {{#each (reverse this.data)}}
                         <tr >
-                            <td style="{{checkSafety1 this.safety_threshold this.bloodGlucoseValue "0"}}">{{this.bloodGlucoseValue}}<span>{{this.bloodGlucoseTime}}</span></td>
-                            <td style="{{checkSafety1 this.safety_threshold this.weightValue "1"}}">{{this.weightValue}}<span>{{this.weightTime}}</span></td>
-                            <td style="{{checkSafety1 this.safety_threshold this.insulinTakenValue "2"}}">{{this.insulinTakenValue}}<span>{{this.insulinTakenTime}}</span></td>
-                            <td style="{{checkSafety1 this.safety_threshold this.exerciseValue "3"}}">{{this.exerciseValue}}<span>{{this.exerciseTime}}</span></td>
+                            <td class="value-td" style="{{checkSafety1 this.safety_threshold this.bloodGlucoseValue "0"}}">{{this.bloodGlucoseValue}}<span>{{this.bloodGlucoseTime}}</span></td>
+                            <td class="value-td" style="{{checkSafety1 this.safety_threshold this.weightValue "1"}}">{{this.weightValue}}<span>{{this.weightTime}}</span></td>
+                            <td class="value-td" style="{{checkSafety1 this.safety_threshold this.insulinTakenValue "2"}}">{{this.insulinTakenValue}}<span>{{this.insulinTakenTime}}</span></td>
+                            <td class="value-td" style="{{checkSafety1 this.safety_threshold this.exerciseValue "3"}}">{{this.exerciseValue}}<span>{{this.exerciseTime}}</span></td>
+                        </tr>
+                        <tr>
+                            <td class="comment-td" style="{{checkSafety1 this.safety_threshold this.bloodGlucoseValue "0"}}">{{this.bloodGlucoseComment}}</td>
+                            <td class="comment-td" style="{{checkSafety1 this.safety_threshold this.weightValue "1"}}">{{this.weightComment}}</td>
+                            <td class="comment-td" style="{{checkSafety1 this.safety_threshold this.insulinTakenValue "2"}}">{{this.insulinTakenComment}}</td>
+                            <td class="comment-td" style="{{checkSafety1 this.safety_threshold this.exerciseValue "3"}}">{{this.exerciseComment}}</td>
                         </tr>
                     {{/each}}
 
@@ -90,8 +96,8 @@
             </div>
         </div>
 
-        <Form action="/{{this.clinicianID}}/{{this._id}}/updateNote" method="post" id="noteForm" style="display: none">
-            <img class = "cancelButt" src = "../../res/cancel.jpg" alt = "cancel" onclick="click_cancelButton()">
+        <Form action="/{{this.clinicianID}}/{{this._id}}/updateNote" method="post" id="noteForm" style="display: none" onsubmit=" return commentValidation()">
+            <img class = "cancelButt" src = "../../res/cancel.jpg" alt = "cancel">
             <textarea name="content" placeholder="Add new note" id="content"></textarea>
             <div class = "submit-div">
                 <button type="submit" onclick="reloadPage()">submit</button>

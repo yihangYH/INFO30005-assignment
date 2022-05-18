@@ -25,7 +25,11 @@ hbs.handlebars.registerHelper('findRank', function(rank,index){
 hbs.handlebars.registerHelper('findPatientRank', function(rank, userid){
     for(let i =0; i < rank.length; i++){
         if(rank[i][2] == userid){
-            return rank[i][1]
+            if(rank[i][1] > 100){
+                return "100"
+            }else{
+                return rank[i][1]
+            }
         }
     }
 });
@@ -70,6 +74,7 @@ hbs.handlebars.registerHelper("findExercise", function(data) {
 });
 
 hbs.handlebars.registerHelper("reverse", function(data) {
+
     var reverseArray = []
     for (var i = data.length - 1; i >= 0; i--) {
         reverseArray.push(data[i])
@@ -205,8 +210,11 @@ hbs.handlebars.registerHelper("getCommentTime", function(data) {
     if (latest){
         const time = latest.split(" ")[2].split(":")
         const date = latest.split(" ")[0].split("/")
+
         // formating the time 
+
         return twoDigit(date[0])+"/"+twoDigit(date[1])+"/"+twoDigit(date[2])+" "+twoDigit(time[0])+":"+twoDigit(time[1])+" "+latest.split(" ")[3]
+
     }
     else{
         return latest
@@ -247,6 +255,7 @@ function twoDigit(data){
 
 // check patient's safty threshold
 hbs.handlebars.registerHelper("checkSafety", function(safety,value,index) {
+
     if(value.length == 0){
         return ""
     }

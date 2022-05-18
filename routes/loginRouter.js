@@ -7,7 +7,7 @@ const { redirect } = require('express/lib/response')
 const isAuthenticated = (req, res, next) => {
     // If user is not authenticated via passport, redirect to login page 
     if (!req.isAuthenticated()) {
-        return res.redirect('/login') 
+        return res.redirect('/welcome') 
     }
     return next() 
 }

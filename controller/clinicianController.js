@@ -362,8 +362,7 @@ const createTemp = async(req,res,next) => {
         'password':req.body.password,
     }, function(err, newClinician){
         if (err) { console.log(err); return; }
-        console.log('Dummy user inserted')
-        console.log(newClinician._id)
+
     })
 }
 
