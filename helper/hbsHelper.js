@@ -69,6 +69,15 @@ hbs.handlebars.registerHelper("findExercise", function(data) {
     return data[data.length -1].value;
 });
 
+hbs.handlebars.registerHelper("reverse", function(data) {
+    var reverseArray = []
+    for (var i = data.length - 1; i >= 0; i--) {
+        reverseArray.push(data[i])
+    }
+    return reverseArray;
+    
+});
+
 hbs.handlebars.registerHelper("print", function(supportMessage) {
     console.log(supportMessage);
     

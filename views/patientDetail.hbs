@@ -61,7 +61,7 @@
                 </thead>
                 
                 <tbody class="table-body">
-                    {{#each this.data}}
+                    {{#each (reverse this.data)}}
                         <tr >
                             <td style="{{checkSafety1 this.safety_threshold this.bloodGlucoseValue "0"}}">{{this.bloodGlucoseValue}}<span>{{this.bloodGlucoseTime}}</span></td>
                             <td style="{{checkSafety1 this.safety_threshold this.weightValue "1"}}">{{this.weightValue}}<span>{{this.weightTime}}</span></td>
