@@ -97,7 +97,7 @@
         </div>
 
         <Form action="/{{this.clinicianID}}/{{this._id}}/updateNote" method="post" id="noteForm" style="display: none" onsubmit=" return commentValidation()">
-            <img class = "cancelButt" src = "../../res/cancel.jpg" alt = "cancel">
+            <img class = "cancelButt" src = "../../res/cancel.jpg" alt = "cancel" onclick="click_cancelButton()">
             <textarea name="content" placeholder="Add new note" id="content"></textarea>
             <div class = "submit-div">
                 <button type="submit" onclick="reloadPage()">submit</button>
