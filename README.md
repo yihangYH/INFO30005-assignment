@@ -1,5 +1,40 @@
 # INFO30005-assignment
-Repository for INFO30005 group project 
+Repository for INFO30005 group project
+
+## Deliverable 3: 
+
+### Tutorial: 
+
+Tutorial T8, Thursday 6:15 pm Tutor: Dekko Shi
+
+### Log in:
+
+<p align="center">
+  <img src="README_res/log_in.png"  width="600" >
+</p>
+
+### Patient: 
+
+<p align="center">
+  <img src="README_res/patient_version.png"  width="600" >
+</p>
+
+### Clinician:
+
+<p align="center">
+  <img src="README_res/clinician_dashboard.png"  width="600" >
+</p>
+
+<p align="center">
+  <img src="README_res/clinician_detail.png"  width="600" >
+</p>
+
+1. Only clinicians can help the patient to create the account.
+2. Clinicians cannot create accounts.
+3. We have created 12 patients, all patients's user ID is "patientname.ThePatient@demo.com", all clinicians's user ID is "clinicianname.TheClinician@demo.com", all password is 12345678.
+4. Patient name list {Pat, Sam, David, Daniel, Paul, Jason, Lisa, Betty, Amy, Sara, Wendy, John}
+5. Clinician name list {Chris, Tom}
+6. We considered as each data must accompany by a comment.
 
 ## Deliverable 2:
 
