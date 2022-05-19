@@ -9,8 +9,7 @@
         </div>
         <form action="/logout" method="post">
             <div class="log-out">
-                <button type="submit"
-                    style="background: none;color: inherit;border: none;padding: 0;font: inherit;cursor: pointer;outline: inherit;">
+                <button type="submit" style="background: none;color: inherit;border: none;padding: 0;font: inherit;cursor: pointer;outline: inherit;"> 
                     Log out
                 </button>
             </div>
@@ -33,46 +32,42 @@
             {{/each_upto}}
         </ul>
         <div class="graph">
-            <div id="container"></div>
-        </div>
+            <div id="container" ></div>
+        </div>    
     </div>
 </div>
 {{/with}}
 
 <script>
     var time = []
-    var value = []
-    { { #with patientInfo } }
-    { { #each_upto this.exercise 7 } }
-    value.push({{ this.value }})
-    var date = "{{this.time}}".split(" ")[0]
-    time.push(date)
-    {
-        {
-            /each_upto}}
-            {
-                {
-                    /with}}
-                    console.log(value)
-                    document.addEventListener('DOMContentLoaded', function () {
-                        Highcharts.chart('container', {
-                            chart: {
-                                type: 'column'
-                            },
-                            title: {
-                                text: 'Historical data'
-                            },
-                            xAxis: {
-                                categories: time
-                            },
-                            yAxis: {
-                                title: {
-                                    text: 'Value'
-                                }
-                            },
-                            series: [{
-                                data: value
-                            }]
-                        });
-                    });
+    var value =[]
+    {{#with patientInfo}}
+        {{#each_upto this.exercise 7}}
+            value.push({{this.value}})
+            var date = "{{this.time}}".split(" ")[0]
+            time.push(date)
+        {{/each_upto}}
+    {{/with}}
+    console.log(value)
+    document.addEventListener('DOMContentLoaded', function () {
+        Highcharts.chart('container', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Historical data'
+            },
+            xAxis: {
+                categories: time
+            },
+            yAxis: {
+                title: {
+                    text: 'Value'
+                }
+            },
+            series: [{
+                data: value
+            }]
+        });
+    });
 </script>

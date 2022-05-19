@@ -1,126 +1,115 @@
 {{#with patientInfo}}
-<div class="topBar">
-    <div class="logo">
-        <a href="">
-            <img src="../../res/logo.png" alt="logo">
-        </a>
-    </div>
-    <div>
-        <div class="topButton">
-            <a href="/dashboard/{{this.clinicianID}}">Dashboard</a>
-        </div>
-        <div class="topButton">
-            <a href="/{{this.clinicianID}}/comment">Comment</a>
-        </div>
-        <img class="line" src="../../res/Line.png" alt="line">
-        <div id="clinicianName">
-            <p>{{this.clinicianName}}</p>
-            <div id="sideBar">
-                <img id="triangle" src="../../res/triangle.png" alt="triangle" onclick="clickSideBtn()">
-                <div class="sideButton" style="display: none;">
-                    <p><a href="/{{this._id}}/newPatient">Create new patient</a></p>
-                    {{!-- TODO: href--}}
-                    <form action="/logout" method="post">
-                        <p><button type="submit"
-                                style="background: none;color: inherit;border: none;padding: 0;font: inherit;cursor: pointer;outline: inherit;">
+        <div class="topBar">
+            <div class="logo">
+                <a href=""> 
+                    <img src="../../res/logo.png" alt="logo">
+                </a>
+            </div>
+            <div>
+                <div class="topButton">
+                    <a href="/dashboard/{{this.clinicianID}}">Dashboard</a>
+                </div>
+                <div class="topButton">
+                    <a href="/{{this.clinicianID}}/comment">Comment</a>
+                </div>
+                <img class = "line" src="../../res/Line.png" alt="line">
+                <div id="clinicianName">
+                    <p>{{this.clinicianName}}</p>
+                    <div id="sideBar">
+                        <img id="triangle" src="../../res/triangle.png" alt="triangle" onclick="clickSideBtn()">
+                        <div class="sideButton" style="display: none;">
+                            <p><a href="/{{this._id}}/newPatient">Create new patient</a></p>
+                            {{!-- TODO: href--}}
+                            <form action="/logout" method="post">
+                            <p><button type="submit" style="background: none;color: inherit;border: none;padding: 0;font: inherit;cursor: pointer;outline: inherit;">
                                 Log out
-                            </button>
-                        </p>
-                    </form>
+                                </button>
+                            </p>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-<main>
-    <div id="top">
-        <div id="information">
-            <p>Patient name:&nbsp<span>{{this.screen_name}}</span></p>
-            <p>Age:&nbsp;<span>{{findAge this.birthday}}</span></p>
-            <p>ID:&nbsp;<span>{{this.userid}}</span></p>
-        </div>
-
-        <form action="/{{this.clinicianID}}/{{this._id}}/updateMessage" method="POST" id="supportMessage"
-            onsubmit="return supportMessageValidation()">
-            <textarea name="supportMessage" placeholder="{{this.supportMessage}}" id="supportMessageContent"></textarea>
-            <div class="submit-div">
-                <button type="submit" onclick="reloadSupportmessagePage()">submit</button>
+    <main>
+        <div id = "top">
+            <div id = "information">
+                <p>Patient name:&nbsp<span>{{this.screen_name}}</span></p>
+                <p>Age:&nbsp;<span>{{findAge this.birthday}}</span></p>
+                <p>ID:&nbsp;<span>{{this.userid}}</span></p>
             </div>
-        </form>
-    </div>
-
-    <div id="middle">
-        <img class="line" src="../../res/horiz_line.png" alt="line">
-        <div class="button" id="editButton">
-            <a href="/{{this.clinicianID}}/{{this._id}}/updatePatient">
-                <img src="../../res/gear.png" alt="edit">
-            </a>
+            
+            <form action = "/{{this.clinicianID}}/{{this._id}}/updateMessage" method="POST" id = "supportMessage" onsubmit="return supportMessageValidation()">
+                    <textarea name = "supportMessage" placeholder="{{this.supportMessage}}" id="supportMessageContent"></textarea>
+                    <div class = "submit-div">
+                        <button type = "submit" onclick="reloadSupportmessagePage()">submit</button>
+                    </div>   
+            </form>
         </div>
 
-        <table>
-            <thead>
-                <tr class="tableHeading">
-                    <th>Blood glucose level(nmol/L)</th>
-                    <th>Weight(kg)</th>
-                    <th>Insulin taken(does)</th>
-                    <th>Exercise(steps)</th>
-                </tr>
-            </thead>
+        <div id = "middle">
+            <img class = "line" src = "../../res/horiz_line.png" alt = "line">
+            <div class = "button" id = "editButton">
+                <a href="/{{this.clinicianID}}/{{this._id}}/updatePatient"> 
+                    <img src="../../res/gear.png" alt="edit">
+                </a>
+            </div>
 
-            <tbody class="table-body">
-                {{#each (reverse this.data)}}
-                <tr>
-                    <td class="value-td" style="{{checkSafety1 this.safety_threshold this.bloodGlucoseValue " 0"}}">
-                        {{this.bloodGlucoseValue}}<span>{{this.bloodGlucoseTime}}</span></td>
-                    <td class="value-td" style="{{checkSafety1 this.safety_threshold this.weightValue " 1"}}">
-                        {{this.weightValue}}<span>{{this.weightTime}}</span></td>
-                    <td class="value-td" style="{{checkSafety1 this.safety_threshold this.insulinTakenValue " 2"}}">
-                        {{this.insulinTakenValue}}<span>{{this.insulinTakenTime}}</span></td>
-                    <td class="value-td" style="{{checkSafety1 this.safety_threshold this.exerciseValue " 3"}}">
-                        {{this.exerciseValue}}<span>{{this.exerciseTime}}</span></td>
-                </tr>
-                <tr>
-                    <td class="comment-td" style="{{checkSafety1 this.safety_threshold this.bloodGlucoseValue " 0"}}">
-                        {{this.bloodGlucoseComment}}</td>
-                    <td class="comment-td" style="{{checkSafety1 this.safety_threshold this.weightValue " 1"}}">
-                        {{this.weightComment}}</td>
-                    <td class="comment-td" style="{{checkSafety1 this.safety_threshold this.insulinTakenValue " 2"}}">
-                        {{this.insulinTakenComment}}</td>
-                    <td class="comment-td" style="{{checkSafety1 this.safety_threshold this.exerciseValue " 3"}}">
-                        {{this.exerciseComment}}</td>
-                </tr>
-                {{/each}}
+            <table>
+                <thead>
+                    <tr class = "tableHeading">
+                        <th>Blood glucose level(nmol/L)</th>
+                        <th>Weight(kg)</th>
+                        <th>Insulin taken(does)</th>
+                        <th>Exercise(steps)</th>
+                    </tr>
+                </thead>
+                
+                <tbody class="table-body">
+                    {{#each (reverse this.data)}}
+                        <tr >
+                            <td class="value-td" style="{{checkSafety1 this.safety_threshold this.bloodGlucoseValue "0"}}">{{this.bloodGlucoseValue}}<span>{{this.bloodGlucoseTime}}</span></td>
+                            <td class="value-td" style="{{checkSafety1 this.safety_threshold this.weightValue "1"}}">{{this.weightValue}}<span>{{this.weightTime}}</span></td>
+                            <td class="value-td" style="{{checkSafety1 this.safety_threshold this.insulinTakenValue "2"}}">{{this.insulinTakenValue}}<span>{{this.insulinTakenTime}}</span></td>
+                            <td class="value-td" style="{{checkSafety1 this.safety_threshold this.exerciseValue "3"}}">{{this.exerciseValue}}<span>{{this.exerciseTime}}</span></td>
+                        </tr>
+                        <tr>
+                            <td class="comment-td" style="{{checkSafety1 this.safety_threshold this.bloodGlucoseValue "0"}}">{{this.bloodGlucoseComment}}</td>
+                            <td class="comment-td" style="{{checkSafety1 this.safety_threshold this.weightValue "1"}}">{{this.weightComment}}</td>
+                            <td class="comment-td" style="{{checkSafety1 this.safety_threshold this.insulinTakenValue "2"}}">{{this.insulinTakenComment}}</td>
+                            <td class="comment-td" style="{{checkSafety1 this.safety_threshold this.exerciseValue "3"}}">{{this.exerciseComment}}</td>
+                        </tr>
+                    {{/each}}
 
-            </tbody>
-        </table>
-    </div>
-
-    <div id="bottom">
-        <div id="note">
-            <p class="title">Note</p>
-            <img id="addButton" src="../../res/add.png" alt="add" onclick="clickAddButton()">
-            <ul>
-                {{#each this.notes}}
-                <li>
-                    <p class="time">{{this.time}}</p>
-                    <p class="content">{{this.content}}</p>
-                    <img class="line" src="../../res/horiz_line.png" alt="line">
-                </li>
-                {{/each}}
-            </ul>
+                </tbody>
+            </table>
         </div>
-    </div>
 
-    <Form action="/{{this.clinicianID}}/{{this._id}}/updateNote" method="post" id="noteForm" style="display: none"
-        onsubmit=" return commentValidation()">
-        <img class="cancelButt" src="../../res/cancel.jpg" alt="cancel" onclick="clickCancelButton()">
-        <textarea name="content" placeholder="Add new note" id="content"></textarea>
-        <div class="submit-div">
-            <button type="submit" onclick="reloadPage()">submit</button>
+        <div id = "bottom">
+            <div id = "note">
+                <p class = "title">Note</p>
+                <img id = "addButton" src = "../../res/add.png" alt = "add" onclick="clickAddButton()">
+                <ul>
+                    {{#each this.notes}}
+                    <li>
+                        <p class = "time">{{this.time}}</p>
+                        <p class = "content">{{this.content}}</p>
+                        <img class = "line" src = "../../res/horiz_line.png" alt = "line">
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
         </div>
-    </Form>
+
+        <Form action="/{{this.clinicianID}}/{{this._id}}/updateNote" method="post" id="noteForm" style="display: none" onsubmit=" return commentValidation()">
+            <img class = "cancelButt" src = "../../res/cancel.jpg" alt = "cancel" onclick="clickCancelButton()">
+            <textarea name="content" placeholder="Add new note" id="content"></textarea>
+            <div class = "submit-div">
+                <button type="submit" onclick="reloadPage()">submit</button>
+            </div>
+        </Form>
 
     </div>
-
+    
 </main>
 {{/with}}

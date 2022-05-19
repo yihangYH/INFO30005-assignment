@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="/css/passData.css">
-<script src="https://code.highcharts.com/highcharts.js"></script>
 
 {{#with patientInfo}}
 <div class="main">
@@ -9,8 +8,7 @@
         </div>
         <form action="/logout" method="post">
             <div class="log-out">
-                <button type="submit"
-                    style="background: none;color: inherit;border: none;padding: 0;font: inherit;cursor: pointer;outline: inherit;">
+                <button type="submit" style="background: none;color: inherit;border: none;padding: 0;font: inherit;cursor: pointer;outline: inherit;"> 
                     Log out
                 </button>
             </div>
@@ -20,7 +18,7 @@
     <div class="pass-data">
         <div class="title">
             <a href="/data/{{this._id}}"><img class="back" src="/res/back.jpg" alt="backArrow"></a>
-            <div class="big-title">Past Seven Records</div>
+            <div class="big-title">Past Seven Days</div>
         </div>
         <ul class="pastData">
             {{#each_upto this.bloodGlucose 7}}
@@ -33,46 +31,10 @@
             {{/each_upto}}
         </ul>
         <div class="graph">
-            <div id="container"></div>
+            <div class="graph-title">Historical Data</div>
+            {{!-- <img class="graph-data" src="/res/dataGraph.png" alt="data-graph"> --}}
+            <img class="graph-data" src={{generateGraph}} alt="data-graph">
         </div>
     </div>
 </div>
 {{/with}}
-
-<script>
-    var time = []
-    var value = []
-    { { #with patientInfo } }
-    { { #each_upto this.bloodGlucose 7 } }
-    value.push({{ this.value }})
-    var date = "{{this.time}}".split(" ")[0]
-    time.push(date)
-    {
-        {
-            /each_upto}}
-            {
-                {
-                    /with}}
-                    console.log(value)
-                    document.addEventListener('DOMContentLoaded', function () {
-                        Highcharts.chart('container', {
-                            chart: {
-                                type: 'column'
-                            },
-                            title: {
-                                text: 'Historical data'
-                            },
-                            xAxis: {
-                                categories: time
-                            },
-                            yAxis: {
-                                title: {
-                                    text: 'Value'
-                                }
-                            },
-                            series: [{
-                                data: value
-                            }]
-                        });
-                    });
-</script>
