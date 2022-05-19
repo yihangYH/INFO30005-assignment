@@ -19,7 +19,7 @@ const isAuthenticated = (req, res, next) => {
     }
     return next() 
 }
-loginRouter.get('/', isAuthenticated, (req, res) => {
+loginRouter.get('/', (req, res) => {
     res.redirect('/login') 
 })
 loginRouter.get('/data/:id', isAuthenticated, loginController.getPatient)
