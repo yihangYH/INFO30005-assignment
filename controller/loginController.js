@@ -26,6 +26,7 @@ const getPatient = async(req,res,next) => {
         patientRate.sort(function(a,b){
             return b[1] - a[1];
         });
+
         // assign engagement rate  to patientData named as rank
         Object.assign(patientData, {"rank": patientRate});
         res.render('data.hbs', {patientInfo: patientData})
@@ -107,6 +108,7 @@ const getClinician = async (req,res, next) =>{
             // assign Clinician ID to each patientData
             Object.assign(clinician.patient[i], {clinicianID:req.params.id })
         }
+
         return res.render('clinician.hbs', {data: clinician})
     }catch(err){
         return next(err);

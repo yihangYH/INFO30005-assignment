@@ -260,7 +260,7 @@ const getPatientDetail = async (req,res, next) =>{
         }
         // assign new jsondata to patientInfo
         Object.assign(patientInfo, {data:jsondata})
-        // console.log(patientInfo)
+        
         return res.render('patientDetail.hbs',{patientInfo:patientInfo})
 
     } catch (error) {
@@ -294,6 +294,7 @@ function findMaxDataType(patientInfo){
 // get create patient page
 const getPage = async(req,res,next) => {
     try {
+
         res.render('createPatient.hbs', {id: req.params.id})
     } catch (error) {
         return next(err)
@@ -384,6 +385,7 @@ const comment = async(req,res,next) => {
             clinician.patient[i].exercise = patientData.exercise
             Object.assign(clinician.patient[i], {clinicianID:req.params.id})
         }
+
         // console.log(clinician)
         res.render('comment.hbs',{clinicianInfo:clinician})
     } catch (error) {
@@ -404,6 +406,7 @@ const getTemp = async(req,res,next) => {
 const getUpdatePatient = async(req,res,next) => {
     const patientInfo = await patient.findById({_id: req.params.patientID}).lean();
     Object.assign(patientInfo, {clinicianID: req.params.id})
+
     res.render('updatePatient.hbs', {patient: patientInfo})
 }
 

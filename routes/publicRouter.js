@@ -6,10 +6,14 @@ const bcrypt = require('bcryptjs')
 const loginController = require('../controller/loginController')
 const patientController = require('../controller/patientController')
 const clinicianController = require('../controller/clinicianController')
+const { authenticate } = require('passport/lib')
 // const { redirect } = require('express/lib/response')
 const isAuthenticated = (req, res, next) => {
     // If user is not authenticated via passport, redirect to login page 
-    console.log(req.isAuthenticated())
+    if(req.params.id != req.session.passport.user){
+        return res.redirect('/welcome') 
+    }
+
     if (!req.isAuthenticated()) {
         return res.redirect('/welcome') 
     }
