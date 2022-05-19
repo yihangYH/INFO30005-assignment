@@ -37,7 +37,7 @@ hbs.handlebars.registerHelper('findPatientRank', function(rank, userid){
 hbs.handlebars.registerHelper('findPatientPlace', function(rank, userid){
     for(let i =0; i < rank.length; i++){
         if(rank[i][2] == userid){
-            if(i  ==1){
+            if(i  == 1 || i == 0){
                 return "1st"
             }else if(i == 2){
                 return "2nd"
