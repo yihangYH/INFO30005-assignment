@@ -14,6 +14,9 @@ clinicianRouter.get('/:id/:patientID/updatePatient', clinicianController.getUpda
 
 clinicianRouter.post('/:id/:patientID/updatePatient', clinicianController.updatePatient)
 
+// clinicianRouter.get('/:id/comment', clinicianController.comment)
+
+// clinicianRouter.get('/:id/:patientID/patientDetail', clinicianController.getPatientDetail)
 
 clinicianRouter.post('/:id/:patientID/updateMessage' ,clinicianController.updateSupportMessage)
 
