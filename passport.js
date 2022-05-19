@@ -6,8 +6,7 @@ const {patient} = require('./models/patient')
 
 passport.serializeUser((user, done) => {
     // Use id to serialize user
-
-    done(undefined, user._id)
+    done(null, user._id)
 })
 
 passport.deserializeUser((userId, done) => {

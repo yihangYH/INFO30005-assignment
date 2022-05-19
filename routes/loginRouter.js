@@ -3,9 +3,11 @@ const express = require('express')
 const loginRouter = express.Router()
 const {patient} = require('../models/patient')
 const bcrypt = require('bcryptjs')
-const { redirect } = require('express/lib/response')
+const loginController = require('../controller/loginController')
+// const { redirect } = require('express/lib/response')
 const isAuthenticated = (req, res, next) => {
     // If user is not authenticated via passport, redirect to login page 
+    console.log(req.isAuthenticated())
     if (!req.isAuthenticated()) {
         return res.redirect('/welcome') 
     }
@@ -14,6 +16,7 @@ const isAuthenticated = (req, res, next) => {
 loginRouter.get('/', isAuthenticated, (req, res) => {
     res.redirect('/login') 
 })
+loginRouter.get('/data/:id', isAuthenticated, loginController.getPatient)
 
 loginRouter.get('/changePassword', (req, res) => {
     res.render('changePassword')
@@ -55,8 +58,15 @@ loginRouter.post('/changePassword', function(req, res) {
 })
 
 loginRouter.get('/login', (req, res) => {
-        res.render('login', { flash: req.flash('error'), title: 'Login' })
+    res.render('login', { flash: req.flash('error'), title: 'Login' })
 })
+
+loginRouter.post('/logout', function(req, res){
+    req.logOut();
+    delete req.user
+    req.session.destroy()
+    res.redirect('/');
+});
 
 loginRouter.post('/patientlogin', 
     passport.authenticate('local', {

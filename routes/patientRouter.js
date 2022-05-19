@@ -4,7 +4,7 @@ const patientRouter = express.Router()
 
 const patientController = require('../controller/patientController')
 
-patientRouter.get('/data/:id', patientController.getPatient)
+// patientRouter.get('/data/:id', patientController.getPatient)
 
 patientRouter.post('/data/:id', patientController.updateData)
 
