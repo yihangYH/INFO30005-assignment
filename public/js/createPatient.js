@@ -267,7 +267,36 @@ function createPatientValidation(){
         
         return false
         // user ID not empty
-    }else if(document.getElementById('userId').value.replace(/ /g,'') == ""){
+    }
+    var date = document.getElementById('brith').value.split('/');
+    if(date.length != 3){
+        try {
+            Swal.fire(
+                'Please check birth',
+                'please check',
+                'error'
+            )
+        } catch (error) {
+            alert("Please check birth")
+        }
+        
+        return false
+    }else if(date[0] > 31 || date[0] < 1 || date[1] > 12 || date[1] < 1 || date[2]<0 ||
+        !Number.isInteger(date[0]) || !Number.isInteger(date[1]) || !Number.isInteger(date[2])){
+        try {
+            Swal.fire(
+                'Please check birth',
+                'please check',
+                'error'
+            )
+        } catch (error) {
+            alert("Please check birth")
+        }
+        
+        return false
+    }
+        
+    if(document.getElementById('userId').value.replace(/ /g,'') == ""){
         try {
             Swal.fire(
                 'Please enter User id',
@@ -304,6 +333,20 @@ function createPatientValidation(){
             )
         } catch (error) {
             alert("The Password at least at least 8 characters long.")
+        }
+        
+        return false
+    }
+    var format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+    if(format.test(password) || /\s/g.test(password)){
+        try {
+            Swal.fire(
+                'The password can only numbers and letters',
+                'please check',
+                'error'
+            )
+        } catch (error) {
+            alert("The password can only numbers and letters")
         }
         
         return false

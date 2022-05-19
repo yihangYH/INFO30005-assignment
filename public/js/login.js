@@ -38,6 +38,19 @@ function loginValidation(){
       document.getElementById('error-message').innerHTML = "Please enter all the information";
     }
     return false;
+  } 
+  if(newpassword.replace(/ /g,'') == ""){
+    try {
+        Swal.fire(
+            'Please check new Password',
+            'please check',
+            'error'
+        )
+    } catch (error) {
+        alert("Please check new Password")
+    }
+    
+    return false
   }
   if(password == newpassword){
     try {
@@ -83,6 +96,20 @@ function loginValidation(){
     }
     return false;
   }
+  var format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+    if(format.test(newpassword) || /\s/g.test(newpassword)){
+        try {
+            Swal.fire(
+                'The password can only numbers and letters',
+                'please check',
+                'error'
+            )
+        } catch (error) {
+            alert("The password can only numbers and letters")
+        }
+        
+        return false
+    }
 
   try {
     Swal.fire(

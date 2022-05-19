@@ -331,11 +331,11 @@ const CreatePatient = async(req,res,next) => {
     }
     // create new patient
     patient.create({
-        'first_name': req.body.first_name,
-        'last_name': req.body.last_name,
+        'first_name': req.body.first_name.replace(/ /g,''),
+        'last_name': req.body.last_name.replace(/ /g,''),
         'screen_name': req.body.screen_name,
         'birth': req.body.birthday,
-        'userid':req.body.userid,
+        'userid':req.body.userid.replace(/ /g,''),
         'password':req.body.password,
         'bio': "enter your bio!!!",
         'supportMessage': "keep going",
