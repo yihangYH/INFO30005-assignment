@@ -10,6 +10,8 @@ const { authenticate } = require('passport/lib')
 // const { redirect } = require('express/lib/response')
 const isAuthenticated = (req, res, next) => {
     // If user is not authenticated via passport, redirect to login page 
+    console.log(req.params.id)
+    console.log(req.session.passport.user)
     if(req.params.id != req.session.passport.user){
         return res.redirect('/welcome') 
     }
@@ -112,5 +114,8 @@ loginRouter.get('/data/:id/leaderboard', isAuthenticated, patientController.getL
 loginRouter.get('/:id/comment', isAuthenticated, clinicianController.comment)
 
 loginRouter.get('/:id/:patientID/patientDetail', isAuthenticated, clinicianController.getPatientDetail)
+
+loginRouter.get('/:id/:patientID/updatePatient', isAuthenticated, clinicianController.getUpdatePatient)
+loginRouter.get('/:id/newPatient', isAuthenticated, clinicianController.getPage)
 
 module.exports = loginRouter

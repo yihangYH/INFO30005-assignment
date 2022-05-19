@@ -6,11 +6,11 @@ const clinicianController = require('../controller/clinicianController')
 
 // clinicianRouter.get('/dashboard/:id', clinicianController.getClinician)
 
-clinicianRouter.get('/:id/newPatient', clinicianController.getPage)
+// clinicianRouter.get('/:id/newPatient', clinicianController.getPage)
 
 clinicianRouter.post('/:id/newPatient', clinicianController.CreatePatient)
 
-clinicianRouter.get('/:id/:patientID/updatePatient', clinicianController.getUpdatePatient)
+// clinicianRouter.get('/:id/:patientID/updatePatient', clinicianController.getUpdatePatient)
 
 clinicianRouter.post('/:id/:patientID/updatePatient', clinicianController.updatePatient)
 
