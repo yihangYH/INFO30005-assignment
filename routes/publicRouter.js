@@ -99,7 +99,7 @@ loginRouter.post('/doctorLogin',
     });
 
 
-loginRouter.post('/data/:id', isAuthenticated, patientController.updateData)
+loginRouter.post('/data/:id', patientController.updateData)
 
 loginRouter.get('/data/:id/bloodGlucose', isAuthenticated, patientController.getPassBloodGlucose)
 
