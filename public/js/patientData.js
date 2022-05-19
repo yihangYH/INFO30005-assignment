@@ -20,7 +20,7 @@ function updateBtnclick() {
     reloadUpdatePage();
 }
 
-
+// reload update page
 function reloadUpdatePage() {
     for (let i = 0; i < 4; i++) {
         var date = document.getElementById(dates[i]).innerHTML

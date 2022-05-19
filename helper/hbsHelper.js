@@ -73,8 +73,8 @@ hbs.handlebars.registerHelper("findExercise", function(data) {
     return data[data.length -1].value;
 });
 
+// reverse the data array, so the data will display from latest
 hbs.handlebars.registerHelper("reverse", function(data) {
-
     var reverseArray = []
     for (var i = data.length - 1; i >= 0; i--) {
         reverseArray.push(data[i])
@@ -83,35 +83,6 @@ hbs.handlebars.registerHelper("reverse", function(data) {
     
 });
 
-hbs.handlebars.registerHelper("print", function(supportMessage) {
-    console.log(supportMessage);
-    
-});
-
-
-hbs.handlebars.registerHelper('eachUp', function(bloodGlucose,weight,insulinTaken,exercise) {
-    var longest = null;
-    var len = 0;
-    if(bloodGlucose.length >= len){
-        len = bloodGlucose.length;
-        longest = bloodGlucose;
-    }
-    if(weight.length >= len){
-        len = weight.length;
-        longest = weight;
-    }
-    if(insulinTaken.length >= len){
-        len = insulinTaken.length;
-        longest = insulinTaken;
-    }
-    if(exercise.length >= len){
-        len = exercise.length;
-        longest = exercise;
-    }
-    const list = Object.create(null);
-    Object.assign(list, {bloodGlucose: bloodGlucose, weight:weight, insulinTaken:insulinTaken, exercise:exercise});
-    return list
-});
 
 
 hbs.handlebars.registerHelper("findBloodGlucose", function(data) {
@@ -127,6 +98,7 @@ hbs.handlebars.registerHelper("findTime", function(data) {
     return data[data.length-1].time;
 });
 
+// find the value from data
 hbs.handlebars.registerHelper("value", function(data) {
     if(data.length == 0){
         return "No data yet"
@@ -136,6 +108,7 @@ hbs.handlebars.registerHelper("value", function(data) {
     }
 });
 
+// find the comment from data
 hbs.handlebars.registerHelper("comment", function(data) {
     if(data.length == 0){
         return "No comment yet"

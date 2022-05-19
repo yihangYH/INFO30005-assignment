@@ -8,11 +8,13 @@ function myFunction() {
   }
 }
 
+// click change password perform some display change 
 function changePassword(){
     document.getElementById("change-password-content").style.display = "inline-block"
     document.getElementById("back-icon").style.display = "inline-block"
 }
 
+// click back img perform some display change 
 function goback(){
   document.getElementById("change-password-content").style.display = "none"
   document.getElementById("back-icon").style.display = "none"
@@ -66,6 +68,7 @@ function loginValidation(){
     }
     return false;
   }
+  // password length must greater than 8
   if(newpassword.length < 8){
     try {
       Swal.fire(

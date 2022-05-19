@@ -1,3 +1,4 @@
+// perform some display change when add clicked
 function clickAddButton(){
     var form = document.getElementById("noteForm");
     var note = document.getElementById("note");
@@ -5,7 +6,7 @@ function clickAddButton(){
     note.style.display = "none";
 }
 
-
+// perform some display change when cancel clicked
 function clickCancelButton(){
     var form = document.getElementById("noteForm");
     var note = document.getElementById("note");
@@ -13,6 +14,7 @@ function clickCancelButton(){
     note.style.display = "block";
 }
 
+// set time out to reload the current page
 function reloadSupportmessagePage(){
     if(document.getElementById("supportMessageContent").value != ''){
         setTimeout(() => {
@@ -29,7 +31,9 @@ function reloadPage(){
         }, "1000")
     }
 }
+// check if support message input is valid 
 function supportMessageValidation(){
+    // cannot submit empty support message
     if(document.getElementById("supportMessageContent").value == ''){
         try {
             Swal.fire(
@@ -44,7 +48,9 @@ function supportMessageValidation(){
     }
     return true;
 }
+// check if comment message input is valid 
 function commentValidation(){
+    // cannot submit empty comment
     if(document.getElementById("content").value == ''){
         try {
             Swal.fire(

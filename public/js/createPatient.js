@@ -1,70 +1,57 @@
+// event listener for checkbox
+// if corresponding data type check box checked, 
+// clinician can enter the safety threshold value
+// if unchecked, the safety threshold value should be cleared
 document.addEventListener("DOMContentLoaded", function(){
+    // clistent blood glucose check box
     document.getElementById("bloodGlucoseCheckbox").addEventListener("change", function() {
+        // if checked, allow clinican to enter the safety threshold value
         if(this.checked){
             document.getElementById('bloodGlucoseLowerValue').readOnly = false
             document.getElementById('bloodGlucoseUpperValue').readOnly = false
-            // document.getElementById('bloodGlucoseTimeLowerValue').readOnly = false;
-            // document.getElementById('bloodGlucoseTimeUpperValue').readOnly = false;
+        // if unchecked, not allow clinican to enter the safety threshold value
+        // and clear the value
         }else{
             document.getElementById('bloodGlucoseLowerValue').readOnly = true
             document.getElementById('bloodGlucoseUpperValue').readOnly = true
             document.getElementById('bloodGlucoseLowerValue').value = ""
             document.getElementById('bloodGlucoseUpperValue').value = ""
-            // document.getElementById('bloodGlucoseTimeLowerValue').readOnly = true
-            // document.getElementById('bloodGlucoseTimeUpperValue').readOnly = true
-            // document.getElementById('bloodGlucoseTimeLowerValue').value = ""
-            // document.getElementById('bloodGlucoseTimeUpperValue').value = ""
         }
     });
+    // same logic as above
     document.getElementById("weightCheckbox").addEventListener("change", function() {
         if(this.checked){
             document.getElementById('weightLowerValue').readOnly = false
             document.getElementById('weightUpperValue').readOnly = false
-            // document.getElementById('weightTimeLowerValue').readOnly = false
-            // document.getElementById('weightTimeUpperValue').readOnly = false
         }else{
             document.getElementById('weightLowerValue').readOnly = true
             document.getElementById('weightUpperValue').readOnly = true
             document.getElementById('weightLowerValue').value = ""
             document.getElementById('weightUpperValue').value = ""
-            // document.getElementById('weightTimeLowerValue').readOnly = true
-            // document.getElementById('weightTimeUpperValue').readOnly = true
-            // document.getElementById('weightTimeLowerValue').value = ""
-            // document.getElementById('weightTimeUpperValue').value = ""
         }
     });
+    // same logic as above
     document.getElementById("insulinTakenCheckbox").addEventListener("change", function() {
         if(this.checked){
             document.getElementById('insulinTakenLowerValue').readOnly = false
             document.getElementById('insulinTakenUpperValue').readOnly = false
-            // document.getElementById('insulinTakenTimeLowerValue').readOnly = false
-            // document.getElementById('insulinTakenTimeUpperValue').readOnly = false
         }else{
             document.getElementById('insulinTakenLowerValue').readOnly = true
             document.getElementById('insulinTakenUpperValue').readOnly = true
             document.getElementById('insulinTakenLowerValue').value = ""
             document.getElementById('insulinTakenUpperValue').value = ""
-            // document.getElementById('insulinTakenTimeLowerValue').readOnly = true
-            // document.getElementById('insulinTakenTimeUpperValue').readOnly = true
-            // document.getElementById('insulinTakenTimeLowerValue').value = ""
-            // document.getElementById('insulinTakenTimeUpperValue').value = ""
         }
     });
+    // same logic as above
     document.getElementById("exerciseCheckbox").addEventListener("change", function() {
         if(this.checked){
             document.getElementById('exerciseLowerBalue').readOnly = false
             document.getElementById('exerciseUpperValue').readOnly = false
-            // document.getElementById('exerciseTimeLowerValue').readOnly = false
-            // document.getElementById('exerciseTimeUpperValue').readOnly = false
         }else{
             document.getElementById('exerciseLowerBalue').readOnly = true
             document.getElementById('exerciseUpperValue').readOnly = true
             document.getElementById('exerciseLowerBalue').value = ""
             document.getElementById('exerciseUpperValue').value = ""
-            // document.getElementById('exerciseTimeLowerValue').readOnly = true
-            // document.getElementById('exerciseTimeUpperValue').readOnly = true
-            // document.getElementById('exerciseTimeLowerValue').value = ""
-            // document.getElementById('exerciseTimeUpperValue').value = ""
         }
     });
 });
@@ -72,7 +59,9 @@ document.addEventListener("DOMContentLoaded", function(){
 
 // validate if data has entered
 function checkDataInput(){
-    console.log(document.getElementById("bloodGlucoseCheckbox").checked)
+    // check at least one data type is required
+    // if all the data type check box is unchecked 
+    // alert error message
     if(!document.getElementById("bloodGlucoseCheckbox").checked &&
     !document.getElementById("weightCheckbox").checked &&
     !document.getElementById("insulinTakenCheckbox").checked &&
@@ -88,6 +77,8 @@ function checkDataInput(){
         }
         return false
     }
+    // if data type check box checked but not have safety threshold value
+    // alert erro message
     if(document.getElementById("bloodGlucoseCheckbox").checked && 
     (document.getElementById('bloodGlucoseLowerValue').value == "" || 
     document.getElementById('bloodGlucoseUpperValue').value == "")){
@@ -102,7 +93,7 @@ function checkDataInput(){
         }
         return false
     }
-
+    // same logic above 
     if(document.getElementById("weightCheckbox").checked && 
     (document.getElementById('weightLowerValue').value == "" || 
     document.getElementById('weightUpperValue').value == "")){
@@ -117,7 +108,7 @@ function checkDataInput(){
         }
         return false
     }
-
+    // same logic above 
     if(document.getElementById("insulinTakenCheckbox").checked && 
     (document.getElementById('insulinTakenLowerValue').value == "" || 
     document.getElementById('insulinTakenUpperValue').value == "")){
@@ -132,7 +123,7 @@ function checkDataInput(){
         }
         return false
     }
-    
+    // same logic above 
     if(document.getElementById("exerciseCheckbox").checked && 
     (document.getElementById('exerciseLowerValue').value == "" || 
     document.getElementById('exerciseUpperValue').value == "")){
@@ -147,6 +138,8 @@ function checkDataInput(){
         }
         return false
     }
+    // if data type check box checked but lower value >= upper value
+    // alert error message
     if(document.getElementById("bloodGlucoseCheckbox").checked &&
     document.getElementById('bloodGlucoseLowerValue').value >= 
     document.getElementById('bloodGlucoseUpperValue').value){
@@ -161,6 +154,7 @@ function checkDataInput(){
         }
         return false
     }
+    // same logic above 
     if(document.getElementById("weightCheckbox").checked &&
     document.getElementById('weightLowerValue').value >=
     document.getElementById('weightUpperValue').value){
@@ -175,6 +169,7 @@ function checkDataInput(){
         }
         return false
     }
+    // same logic above 
     if(document.getElementById("insulinTakenCheckbox").checked &&
     document.getElementById('insulinTakenLowerValue').value >=
     document.getElementById('insulinTakenUpperValue').value){
@@ -189,6 +184,7 @@ function checkDataInput(){
         }
         return false
     }
+    // same logic above 
     if(document.getElementById("exerciseCheckbox").checked &&
     document.getElementById('exerciseLowerValue').value >=
     document.getElementById('exerciseUpperValue').value){
@@ -203,7 +199,7 @@ function checkDataInput(){
         }
         return false
     }
-    
+    // alert success message
     try {
         Swal.fire(
             'Account Created successfully',
@@ -218,7 +214,7 @@ function checkDataInput(){
 
 // check is patient detail has enterd and if it is valid
 function createPatientValidation(){
-    // return false;
+    // the frist name cannot be empty
     if(document.getElementById('firstName').value == ""){
         try {
             Swal.fire(
@@ -231,6 +227,7 @@ function createPatientValidation(){
         }
         
         return false
+        // last name cannot be empty
     }else if (document.getElementById('lastName').value == ""){
         try {
             Swal.fire(
@@ -243,6 +240,7 @@ function createPatientValidation(){
         }
         
         return false
+        // screen name not empty
     }else if(document.getElementById('screenName').value == ""){
         try {
             Swal.fire(
@@ -255,6 +253,7 @@ function createPatientValidation(){
         }
         
         return false
+        // birth not empty
     }else if(document.getElementById('brith').value == ""){
         try {
             Swal.fire(
@@ -267,6 +266,7 @@ function createPatientValidation(){
         }
         
         return false
+        // user ID not empty
     }else if(document.getElementById('userId').value == ""){
         try {
             Swal.fire(
@@ -279,6 +279,7 @@ function createPatientValidation(){
         }
         
         return false
+        // password not empty
     }else if(document.getElementById('password').value == ""){
         try {
             Swal.fire(
@@ -293,6 +294,7 @@ function createPatientValidation(){
         return false
     }
     var password = document.getElementById('password').value
+    // password length must be greater than 8
     if(password.length < 8){
         try {
             Swal.fire(
@@ -306,9 +308,12 @@ function createPatientValidation(){
         
         return false
     }
+    // check if the patient userid already exists
     if(!checkPatientExists()){
         return false;
     }
+    // call checkDatainput function to check if clinician
+    // has enter the valid safety threshold
     if(!checkDataInput()){
         return false;
     }
@@ -322,6 +327,7 @@ async function checkPatientExists(){
         let patient = {
             userId: userEmail,
         }
+        // call post method to check if patient userid already in the DB
         let response = await fetch('/checkPatient', {
             method: 'POST',
             headers: {
@@ -330,6 +336,7 @@ async function checkPatientExists(){
             body: JSON.stringify(patient)
           });
           console.log(response)
+          // if post method response return 201 means userid exists
           if(response.status == 201){
                 try {
                     Swal.fire(
@@ -348,5 +355,6 @@ async function checkPatientExists(){
     } catch (err) {
         console.error(`Error: ${err}`);
     }
+    // else return true 
     return true;
 }
