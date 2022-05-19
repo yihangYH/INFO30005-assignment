@@ -113,5 +113,7 @@ const getClinician = async (req,res, next) =>{
     }
 }
 
+
+
 module.exports = {getPatient,getClinician}
 

@@ -4,6 +4,7 @@ const loginRouter = express.Router()
 const {patient} = require('../models/patient')
 const bcrypt = require('bcryptjs')
 const loginController = require('../controller/loginController')
+const patientController = require('../controller/patientController')
 // const { redirect } = require('express/lib/response')
 const isAuthenticated = (req, res, next) => {
     // If user is not authenticated via passport, redirect to login page 
@@ -91,6 +92,17 @@ loginRouter.post('/doctorLogin',
     });
 
 
+loginRouter.post('/data/:id', isAuthenticated, patientController.updateData)
+
+loginRouter.get('/data/:id/bloodGlucose', isAuthenticated, patientController.getPassBloodGlucose)
+
+loginRouter.get('/data/:id/weight', isAuthenticated, patientController.getPassWeight)
+
+loginRouter.get('/data/:id/insulinTaken', isAuthenticated, patientController.getPassInsulin)
+
+loginRouter.get('/data/:id/exercise', isAuthenticated, patientController.getPassExercise)
+
+loginRouter.get('/data/:id/leaderboard', isAuthenticated, patientController.getLeaderboard)
 
 
 module.exports = loginRouter
