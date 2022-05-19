@@ -2,7 +2,6 @@ const express = require('express')
 
 const patientRouter = express.Router()
 
-const loginRouter = require('./loginRouter.js')
 
 const patientController = require('../controller/patientController')
 

@@ -80,7 +80,7 @@ if (app.get('env') === 'production') {
 
 app.use(passport.authenticate('session'))
 
-const authRouter = require('./routes/loginRouter') 
+const authRouter = require('./routes/publicRouter') 
 app.use(authRouter)
 
 
