@@ -1,4 +1,3 @@
-const mongoose = require('mongoose')
 const {patient} = require('../models/patient.js')
 const {weight} = require('../models/data.js')
 const {exercise} = require('../models/data.js')
@@ -323,7 +322,22 @@ function findMacCountDataUpdated(currentPatient){
    return [max,dataName];
 }
 
+const isAuthenticated = (req, res, next) => {
+    // If user is not authenticated via passport, redirect to login page 
+    console.log(req.params.id)
+    console.log(req.session)
+    if(req.session.passport == undefined){
+        return res.redirect('/welcome') 
+    }
+    if(req.params.id != req.session.passport.user){
+        return res.redirect('/welcome') 
+    }
 
+    if (!req.isAuthenticated()) {
+        return res.redirect('/welcome') 
+    }
+    return next() 
+}
 
 module.exports = {
     getPatient, 
@@ -333,6 +347,7 @@ module.exports = {
     getPassInsulin, 
     getPassExercise,
     checkPatient,
-    getLeaderboard
+    getLeaderboard,
+    isAuthenticated
     
 }

@@ -104,15 +104,15 @@ publicRouter.post('/doctorLogin',
 
 // publicRouter.post('/data/:id', patientController.updateData)
 
-publicRouter.get('/data/:id/bloodGlucose', loginController.isAuthenticated, patientController.getPassBloodGlucose)
+// publicRouter.get('/data/:id/bloodGlucose', loginController.isAuthenticated, patientController.getPassBloodGlucose)
 
-publicRouter.get('/data/:id/weight', loginController.isAuthenticated, patientController.getPassWeight)
+// publicRouter.get('/data/:id/weight', loginController.isAuthenticated, patientController.getPassWeight)
 
-publicRouter.get('/data/:id/insulinTaken', loginController.isAuthenticated, patientController.getPassInsulin)
+// publicRouter.get('/data/:id/insulinTaken', loginController.isAuthenticated, patientController.getPassInsulin)
 
-publicRouter.get('/data/:id/exercise', loginController.isAuthenticated, patientController.getPassExercise)
+// publicRouter.get('/data/:id/exercise', loginController.isAuthenticated, patientController.getPassExercise)
 
-publicRouter.get('/data/:id/leaderboard', loginController.isAuthenticated, patientController.getLeaderboard)
+// publicRouter.get('/data/:id/leaderboard', loginController.isAuthenticated, patientController.getLeaderboard)
 
 // publicRouter.get('/:id/comment', loginController.isAuthenticated, clinicianController.comment)
 
