@@ -1,65 +1,6 @@
-// const mongoose = require('mongoose')
-// const passport = require('passport') 
-// const express = require('express') 
-// const {patient} = require('../models/patient.js')
 const {patient} = require('../models/patient.js')
-const {weight} = require('../models/data.js')
-const {exercise} = require('../models/data.js')
-const {insulinTaken} = require('../models/data.js')
-const {bloodGlucose} = require('../models/data.js')
-
-// // Authentication middleware
-// const isAuthenticated = (req, res, next) => {
-//     // Authentication middleware
-//     if (!req.isAuthenticated()) {
-//         return res.redirect('/login') 
-//     }
-    
-//     // Otherwise, proceed to next middleware function
-//     return next() 
-// }
-
-// // render login.hbs
-// const login = async(req,res,next) => {
-//     try {
-//         res.render('login.hbs')
-//     } catch (error) {
-//         return next(err)
-//     }
-// }
-
-// const loginToData = async(req,res,next) => {
-//     passport.authenticate('local', {
-//         successRedirect: '/', failureRedirect: '/login', failureFlash: true 
-//     })
-//     try {
-//         //check if is patient
-//         //when patient is selected req.body.isDoctor will be equal to object
-//         if(typeof req.body.isDoctor == "object"){
-//             passport.authenticate('local', {
-//                 successRedirect: '/', failureRedirect: '/login', failureFlash: true 
-//             })
-//             // find patient info from db
-//             // const patientData = await patient.findOne({userid:req.body.userid}).lean();
-//             // //if password matches with data in database
-//             // if(patientData != null &&patientData.password == req.body.password){
-//             //     res.status("202")
-//             //     res.statusMessage = patientData._id
-//             // }else if(patientData != null && patientData.password != req.body.password){
-//             //     //201: unsuccessfull
-//             //     res.status("201")
-//             // }
-//            res.send()
-//         }else if(typeof req.body.isPatient == "object"){
-//             //TODO:Doctor login
-//             res.status("201")
-//             res.send()
-//         }
-//     } catch (error) {
-//         return next(err)
-//     }
-// }
-
+const {clinicianNote} = require("../models/data")
+const clinicianData = require("../models/clinician")
 // find specific patient based on the id, and populate with 4 data and render data.hbs
 const getPatient = async(req,res,next) => {
     try {
@@ -142,6 +83,35 @@ function findMacCountDataUpdated(currentPatient){
    return [max,dataName];
 }
 
-module.exports = {getPatient}
 
-// module.exports = {login, loginToData}
+//get corresponding info from DB 
+// and populate with patient and 4 data
+// then render the clinician.hbs
+const getClinician = async (req,res, next) =>{
+    try{
+        // find the clinician from DB based on the object id, and populate with patient collection
+        const clinician = 
+            await clinicianData.findOne({_id: req.params.id}).populate("patient").lean()
+        // iterate all clinician's patients and populate the data related to the patitent 
+        for(let i = 0; i < Object.keys(clinician.patient).length; i++){
+            const patientData = await patient.findById({_id:clinician.patient[i]._id})
+            .populate("weight")
+            .populate("exercise")
+            .populate("bloodGlucose")
+            .populate("insulinTaken").lean()
+            // assign founded data to the JSON
+            clinician.patient[i].weight = patientData.weight
+            clinician.patient[i].bloodGlucose = patientData.bloodGlucose
+            clinician.patient[i].insulinTaken = patientData.insulinTaken
+            clinician.patient[i].exercise = patientData.exercise
+            // assign Clinician ID to each patientData
+            Object.assign(clinician.patient[i], {clinicianID:req.params.id })
+        }
+        return res.render('clinician.hbs', {data: clinician})
+    }catch(err){
+        return next(err);
+    }
+}
+
+module.exports = {getPatient,getClinician}
+

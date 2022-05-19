@@ -10,11 +10,22 @@ passport.serializeUser((user, done) => {
 })
 
 passport.deserializeUser((userId, done) => {
+    clinician.findOne({ _id: userId },  (err, user) => {
+        if (err) {
+            return done(err, undefined)
+        }
+        if(user != null) {
+            return done(null, user)
+        }
+    })
+
     patient.findOne({ _id: userId },  (err, user) => {
         if (err) {
             return done(err, undefined) 
         }
-        return done(undefined, user) 
+        if(user != null) {
+            return done(null, user)
+        }
     })
 })
 

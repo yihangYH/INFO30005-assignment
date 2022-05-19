@@ -21,8 +21,12 @@
                     <img id="triangle" src="/res/triangle.png" alt="triangle" onclick="clickSideBtn()">
                     <div class="sideButton" style="display: none;">
                         <p><a href="/{{this._id}}/newPatient">Create new patient</a></p>
-                        {{!-- TODO: href--}}
-                        <p><a href="/login">Log out</a></p>
+                        <form action="/logout" method="post">
+                            <p><button type="submit" style="background: none;color: inherit;border: none;padding: 0;font: inherit;cursor: pointer;outline: inherit;">
+                                Log out
+                                </button>
+                            </p>
+                        </form>
                     </div>
                 </div>
             </div>

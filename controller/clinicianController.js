@@ -11,31 +11,31 @@ uppervalue= ["bloodGlucoseUpperValueUpdate", "weightUpperValueUpdate", "insulinT
 //get corresponding info from DB 
 // and populate with patient and 4 data
 // then render the clinician.hbs
-const getClinician = async (req,res, next) =>{
-    try{
-        // find the clinician from DB based on the object id, and populate with patient collection
-        const clinician = 
-            await clinicianData.findOne({_id: req.params.id}).populate("patient").lean()
-        // iterate all clinician's patients and populate the data related to the patitent 
-        for(let i = 0; i < Object.keys(clinician.patient).length; i++){
-            const patientData = await patient.findById({_id:clinician.patient[i]._id})
-            .populate("weight")
-            .populate("exercise")
-            .populate("bloodGlucose")
-            .populate("insulinTaken").lean()
-            // assign founded data to the JSON
-            clinician.patient[i].weight = patientData.weight
-            clinician.patient[i].bloodGlucose = patientData.bloodGlucose
-            clinician.patient[i].insulinTaken = patientData.insulinTaken
-            clinician.patient[i].exercise = patientData.exercise
-            // assign Clinician ID to each patientData
-            Object.assign(clinician.patient[i], {clinicianID:req.params.id })
-        }
-        return res.render('clinician.hbs', {data: clinician})
-    }catch(err){
-        return next(err);
-    }
-}
+// const getClinician = async (req,res, next) =>{
+//     try{
+//         // find the clinician from DB based on the object id, and populate with patient collection
+//         const clinician = 
+//             await clinicianData.findOne({_id: req.params.id}).populate("patient").lean()
+//         // iterate all clinician's patients and populate the data related to the patitent 
+//         for(let i = 0; i < Object.keys(clinician.patient).length; i++){
+//             const patientData = await patient.findById({_id:clinician.patient[i]._id})
+//             .populate("weight")
+//             .populate("exercise")
+//             .populate("bloodGlucose")
+//             .populate("insulinTaken").lean()
+//             // assign founded data to the JSON
+//             clinician.patient[i].weight = patientData.weight
+//             clinician.patient[i].bloodGlucose = patientData.bloodGlucose
+//             clinician.patient[i].insulinTaken = patientData.insulinTaken
+//             clinician.patient[i].exercise = patientData.exercise
+//             // assign Clinician ID to each patientData
+//             Object.assign(clinician.patient[i], {clinicianID:req.params.id })
+//         }
+//         return res.render('clinician.hbs', {data: clinician})
+//     }catch(err){
+//         return next(err);
+//     }
+// }
 
 const getPatientDetail = async (req,res, next) =>{
     try {
@@ -438,7 +438,6 @@ const updatePatient = async(req,res,next) => {
         healthyData_required[3] = false
         safetyThreshold[3] = "Not Required"
     }
-    console.log("aadsasdsadad")
     // update patient with new data
     patient.findByIdAndUpdate({_id: req.params.patientID}, {$set:{healthyData_required: healthyData_required, safety_threshold: safetyThreshold}}, function(err, updatedPatient){
         if (err) { console.log(err); return; }
@@ -480,7 +479,7 @@ const updateNote = async(req,res,next)=>{
 
 // to be removed, getTemp,createTemp
 module.exports = { 
-    getClinician, 
+    // getClinician, 
     getPage, 
     CreatePatient, 
     getUpdatePatient,

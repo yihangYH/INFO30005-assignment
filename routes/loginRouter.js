@@ -18,6 +18,8 @@ loginRouter.get('/', isAuthenticated, (req, res) => {
 })
 loginRouter.get('/data/:id', isAuthenticated, loginController.getPatient)
 
+loginRouter.get('/dashboard/:id', isAuthenticated, loginController.getClinician)
+
 loginRouter.get('/changePassword', (req, res) => {
     res.render('changePassword')
 })
