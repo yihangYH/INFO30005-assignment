@@ -11,31 +11,31 @@ uppervalue= ["bloodGlucoseUpperValueUpdate", "weightUpperValueUpdate", "insulinT
 //get corresponding info from DB 
 // and populate with patient and 4 data
 // then render the clinician.hbs
-// const getClinician = async (req,res, next) =>{
-//     try{
-//         // find the clinician from DB based on the object id, and populate with patient collection
-//         const clinician = 
-//             await clinicianData.findOne({_id: req.params.id}).populate("patient").lean()
-//         // iterate all clinician's patients and populate the data related to the patitent 
-//         for(let i = 0; i < Object.keys(clinician.patient).length; i++){
-//             const patientData = await patient.findById({_id:clinician.patient[i]._id})
-//             .populate("weight")
-//             .populate("exercise")
-//             .populate("bloodGlucose")
-//             .populate("insulinTaken").lean()
-//             // assign founded data to the JSON
-//             clinician.patient[i].weight = patientData.weight
-//             clinician.patient[i].bloodGlucose = patientData.bloodGlucose
-//             clinician.patient[i].insulinTaken = patientData.insulinTaken
-//             clinician.patient[i].exercise = patientData.exercise
-//             // assign Clinician ID to each patientData
-//             Object.assign(clinician.patient[i], {clinicianID:req.params.id })
-//         }
-//         return res.render('clinician.hbs', {data: clinician})
-//     }catch(err){
-//         return next(err);
-//     }
-// }
+const getClinician = async (req,res, next) =>{
+    try{
+        // find the clinician from DB based on the object id, and populate with patient collection
+        const clinician = 
+            await clinicianData.findOne({_id: req.params.id}).populate("patient").lean()
+        // iterate all clinician's patients and populate the data related to the patitent 
+        for(let i = 0; i < Object.keys(clinician.patient).length; i++){
+            const patientData = await patient.findById({_id:clinician.patient[i]._id})
+            .populate("weight")
+            .populate("exercise")
+            .populate("bloodGlucose")
+            .populate("insulinTaken").lean()
+            // assign founded data to the JSON
+            clinician.patient[i].weight = patientData.weight
+            clinician.patient[i].bloodGlucose = patientData.bloodGlucose
+            clinician.patient[i].insulinTaken = patientData.insulinTaken
+            clinician.patient[i].exercise = patientData.exercise
+            // assign Clinician ID to each patientData
+            Object.assign(clinician.patient[i], {clinicianID:req.params.id })
+        }
+        return res.render('clinician.hbs', {data: clinician})
+    }catch(err){
+        return next(err);
+    }
+}
 
 const getPatientDetail = async (req,res, next) =>{
     try {
@@ -294,7 +294,7 @@ function findMaxDataType(patientInfo){
 // get create patient page
 const getPage = async(req,res,next) => {
     try {
-
+            console.log(req.params.id)
         res.render('createPatient.hbs', {id: req.params.id})
     } catch (error) {
         return next(err)
@@ -480,9 +480,26 @@ const updateNote = async(req,res,next)=>{
     res.redirect(path);
 };
 
+const isAuthenticated = (req, res, next) => {
+    // If user is not authenticated via passport, redirect to login page 
+    // console.log(req.params.id)
+    console.log(req.session)
+    if(req.session.passport == undefined){
+        return res.redirect('/welcome') 
+    }
+    if(req.params.id != req.session.passport.user){
+        return res.redirect('/welcome') 
+    }
+
+    if (!req.isAuthenticated()) {
+        return res.redirect('/welcome') 
+    }
+    return next() 
+}
+
 // to be removed, getTemp,createTemp
 module.exports = { 
-    // getClinician, 
+    getClinician, 
     getPage, 
     CreatePatient, 
     getUpdatePatient,
@@ -492,5 +509,6 @@ module.exports = {
     updatePatient,
     getPatientDetail,
     updateSupportMessage,
-    updateNote
+    updateNote,
+    isAuthenticated
 }

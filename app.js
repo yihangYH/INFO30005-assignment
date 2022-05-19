@@ -39,19 +39,6 @@ app.use((req, res, next) => {
 
 app.use(express.static('public'))
 
-// import all the routers 
-const patientRouter = require('./routes/patientRouter.js')
-app.use('',patientRouter)
-
-// const loginRouter = require('./routes/loginRouter.js')
-// app.use('',loginRouter)
-
-const welcomeRouter = require('./routes/welcomeRouter.js')
-app.use('',welcomeRouter)
-
-const clinicianRouter = require('./routes/clinicianRouter.js')
-app.use('',clinicianRouter)
-
 // listen on port 3000 and logs tha tinformation to the console.
 // in the local env
 app.listen(process.env.PORT || 3000, () => {
@@ -62,7 +49,7 @@ app.listen(process.env.PORT || 3000, () => {
 app.use( 
     session({
         // The secret used to sign session cookies (ADD ENV VAR)
-        secret: process.env.SESSION_SECRET || 'keyboard cat', name: 'demo', // The cookie name (CHANGE THIS) 
+        secret: process.env.SESSION_SECRET || 'keyboard cat', name: 'PROD',
         saveUninitialized: false,
         resave: false,
         cookie: {
@@ -80,8 +67,18 @@ if (app.get('env') === 'production') {
 
 app.use(passport.authenticate('session'))
 
-const authRouter = require('./routes/publicRouter') 
-app.use(authRouter)
+const publicRouter = require('./routes/publicRouter') 
+app.use(publicRouter)
+
+// import all the routers 
+const patientRouter = require('./routes/patientRouter.js')
+app.use('',patientRouter)
+
+const welcomeRouter = require('./routes/welcomeRouter.js')
+app.use('',welcomeRouter)
+
+const clinicianRouter = require('./routes/clinicianRouter.js')
+app.use('',clinicianRouter)
 
 
 

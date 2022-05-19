@@ -1,22 +1,21 @@
 const express = require('express')
-const passport = require('passport') 
 const clinicianRouter = express.Router()
-
+const loginController = require('../controller/loginController')
 const clinicianController = require('../controller/clinicianController')
 
-// clinicianRouter.get('/dashboard/:id', clinicianController.getClinician)
+clinicianRouter.get('/dashboard/:id', clinicianController.isAuthenticated, clinicianController.getClinician)
 
-// clinicianRouter.get('/:id/newPatient', clinicianController.getPage)
+clinicianRouter.get('/:id/newPatient', clinicianController.isAuthenticated, clinicianController.getPage)
 
 clinicianRouter.post('/:id/newPatient', clinicianController.CreatePatient)
 
-// clinicianRouter.get('/:id/:patientID/updatePatient', clinicianController.getUpdatePatient)
+clinicianRouter.get('/:id/:patientID/updatePatient', clinicianController.isAuthenticated, clinicianController.getUpdatePatient)
 
-clinicianRouter.post('/:id/:patientID/updatePatient', clinicianController.updatePatient)
+clinicianRouter.post('/:id/:patientID/updatePatient',  clinicianController.updatePatient)
 
-// clinicianRouter.get('/:id/comment', clinicianController.comment)
+clinicianRouter.get('/:id/comment', clinicianController.isAuthenticated, clinicianController.comment)
 
-// clinicianRouter.get('/:id/:patientID/patientDetail', clinicianController.getPatientDetail)
+clinicianRouter.get('/:id/:patientID/patientDetail', clinicianController.isAuthenticated, clinicianController.getPatientDetail)
 
 clinicianRouter.post('/:id/:patientID/updateMessage' ,clinicianController.updateSupportMessage)
 

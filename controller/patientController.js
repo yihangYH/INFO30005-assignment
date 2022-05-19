@@ -5,38 +5,38 @@ const {exercise} = require('../models/data.js')
 const {insulinTaken} = require('../models/data.js')
 const {bloodGlucose} = require('../models/data.js')
 
-// // find specific patient based on the id, and populate with 4 data and render data.hbs
-// const getPatient = async(req,res,next) => {
-//     try {
-//         const patientData = await patient.findOne({_id:req.params.id})
-//         .populate("weight")
-//         .populate("exercise")
-//         .populate("bloodGlucose")
-//         .populate("insulinTaken").lean();
-//         var currentPatientRate= caculateRate(patientData);
-//         Object.assign(patientData, {"rate": patientData[1]});
+// find specific patient based on the id, and populate with 4 data and render data.hbs
+const getPatient = async(req,res,next) => {
+    try {
+        const patientData = await patient.findOne({_id:req.params.id})
+        .populate("weight")
+        .populate("exercise")
+        .populate("bloodGlucose")
+        .populate("insulinTaken").lean();
+        var currentPatientRate= caculateRate(patientData);
+        Object.assign(patientData, {"rate": patientData[1]});
 
-//         var patientRate = [];
-//         const allPatient = await patient.find({_id:{$nin:req.params.id}}).populate("weight")
-//         .populate("exercise")
-//         .populate("bloodGlucose")
-//         .populate("insulinTaken").lean();
-//         // caculate each patient engagement rate 
-//         for(let i =0 ; i < allPatient.length; i++){
-//             patientRate.push(caculateRate(allPatient[i]));
-//         }
-//         patientRate.push(currentPatientRate);
-//         // sort engagement rate 
-//         patientRate.sort(function(a,b){
-//             return b[1] - a[1];
-//         });
-//         // assign engagement rate  to patientData named as rank
-//         Object.assign(patientData, {"rank": patientRate});
-//         res.render('data.hbs', {patientInfo: patientData})
-//     } catch (error) {
-//         return next(error)
-//     }
-// }
+        var patientRate = [];
+        const allPatient = await patient.find({_id:{$nin:req.params.id}}).populate("weight")
+        .populate("exercise")
+        .populate("bloodGlucose")
+        .populate("insulinTaken").lean();
+        // caculate each patient engagement rate 
+        for(let i =0 ; i < allPatient.length; i++){
+            patientRate.push(caculateRate(allPatient[i]));
+        }
+        patientRate.push(currentPatientRate);
+        // sort engagement rate 
+        patientRate.sort(function(a,b){
+            return b[1] - a[1];
+        });
+        // assign engagement rate  to patientData named as rank
+        Object.assign(patientData, {"rank": patientRate});
+        res.render('data.hbs', {patientInfo: patientData})
+    } catch (error) {
+        return next(error)
+    }
+}
 
 
 const checkPatient = async(req,res,next)=>{
@@ -326,7 +326,7 @@ function findMacCountDataUpdated(currentPatient){
 
 
 module.exports = {
-    // getPatient, 
+    getPatient, 
     updateData, 
     getPassBloodGlucose, 
     getPassWeight, 

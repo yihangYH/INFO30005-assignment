@@ -8,25 +8,28 @@ const patientController = require('../controller/patientController')
 const clinicianController = require('../controller/clinicianController')
 // const { authenticate } = require('passport/lib')
 // const { redirect } = require('express/lib/response')
-const isAuthenticated = (req, res, next) => {
-    // If user is not authenticated via passport, redirect to login page 
-    console.log(req.params.id)
-    console.log(req.session.passport.user)
-    if(req.params.id != req.session.passport.user){
-        return res.redirect('/welcome') 
-    }
+// const isAuthenticated = (req, res, next) => {
+//     // If user is not authenticated via passport, redirect to login page 
+//     console.log(req.params.id)
+//     console.log(req.session)
+//     if(req.session.passport == undefined){
+//         return res.redirect('/welcome') 
+//     }
+//     if(req.params.id != req.session.passport.user){
+//         return res.redirect('/welcome') 
+//     }
 
-    if (!req.isAuthenticated()) {
-        return res.redirect('/welcome') 
-    }
-    return next() 
-}
+//     if (!req.isAuthenticated()) {
+//         return res.redirect('/welcome') 
+//     }
+//     return next() 
+// }
 publicRouter.get('/', (req, res) => {
     res.redirect('/login') 
 })
-publicRouter.get('/data/:id', isAuthenticated, loginController.getPatient)
+publicRouter.get('/data/:id', loginController.isAuthenticated, patientController.getPatient)
 
-publicRouter.get('/dashboard/:id', isAuthenticated, loginController.getClinician)
+// publicRouter.get('/dashboard/:id', loginController.isAuthenticated, clinicianController.getClinician)
 
 publicRouter.get('/changePassword', (req, res) => {
     res.render('changePassword')
@@ -99,23 +102,24 @@ publicRouter.post('/doctorLogin',
     });
 
 
-publicRouter.post('/data/:id', patientController.updateData)
+// publicRouter.post('/data/:id', patientController.updateData)
 
-publicRouter.get('/data/:id/bloodGlucose', isAuthenticated, patientController.getPassBloodGlucose)
+publicRouter.get('/data/:id/bloodGlucose', loginController.isAuthenticated, patientController.getPassBloodGlucose)
 
-publicRouter.get('/data/:id/weight', isAuthenticated, patientController.getPassWeight)
+publicRouter.get('/data/:id/weight', loginController.isAuthenticated, patientController.getPassWeight)
 
-publicRouter.get('/data/:id/insulinTaken', isAuthenticated, patientController.getPassInsulin)
+publicRouter.get('/data/:id/insulinTaken', loginController.isAuthenticated, patientController.getPassInsulin)
 
-publicRouter.get('/data/:id/exercise', isAuthenticated, patientController.getPassExercise)
+publicRouter.get('/data/:id/exercise', loginController.isAuthenticated, patientController.getPassExercise)
 
-publicRouter.get('/data/:id/leaderboard', isAuthenticated, patientController.getLeaderboard)
+publicRouter.get('/data/:id/leaderboard', loginController.isAuthenticated, patientController.getLeaderboard)
 
-publicRouter.get('/:id/comment', isAuthenticated, clinicianController.comment)
+// publicRouter.get('/:id/comment', loginController.isAuthenticated, clinicianController.comment)
 
-publicRouter.get('/:id/:patientID/patientDetail', isAuthenticated, clinicianController.getPatientDetail)
+// publicRouter.get('/:id/:patientID/patientDetail', loginController.isAuthenticated, clinicianController.getPatientDetail)
 
-publicRouter.get('/:id/:patientID/updatePatient', isAuthenticated, clinicianController.getUpdatePatient)
-publicRouter.get('/:id/newPatient', isAuthenticated, clinicianController.getPage)
+// publicRouter.get('/:id/:patientID/updatePatient', loginController.isAuthenticated, clinicianController.getUpdatePatient)
+
+// publicRouter.get('/:id/newPatient', loginController.isAuthenticated, clinicianController.getPage)
 
 module.exports = publicRouter
