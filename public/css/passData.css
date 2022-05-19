@@ -11,7 +11,18 @@
         height: 100%;
         width: 100%;
     }
-
+    .log-out {
+        position: absolute;
+        left: 77%;
+        top: 4%;
+        border-radius: 20px;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        padding-left: 2%;
+        padding-right: 2%;
+        background-color: #DFAFAD;
+        color: white;
+    }
     .graph{
         display: flex;
         position: absolute;
@@ -141,7 +152,22 @@
         height: 100%;
         width: 100%;
     }
-
+    .log-out {
+        position: absolute;
+        left: 81%;
+        top: 7%;
+        width: 120px;
+        height: 35px;
+        font-size: 28px;
+        text-align: center;
+        border-radius: 18px;
+        padding-top: 0.5%;
+        padding-bottom: 0.5%;
+        padding-left: 1%;
+        padding-right: 1%;
+        background-color: #DFAFAD;
+        color: white;
+    }
     .graph{
         display: flex;
         position: absolute;
@@ -278,7 +304,22 @@
         height: 100%;
         width: 100%;
     }
-
+    .log-out {
+        position: absolute;
+        left: 86%;
+        top: 6%;
+        width: 150px;
+        height: 50px;
+        font-size: 40px;
+        text-align: center;
+        border-radius: 18px;
+        padding-top: 0.5%;
+        padding-bottom: 0.5%;
+        padding-left: 1%;
+        padding-right: 1%;
+        background-color: #DFAFAD;
+        color: white;
+    }
     .graph{
         display: flex;
         position: absolute;
