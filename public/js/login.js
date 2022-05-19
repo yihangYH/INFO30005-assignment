@@ -103,17 +103,17 @@ async function validate() {
   var patient = document.getElementById("patient");
   var doctor = document.getElementById("doctor");
   // get doctor and patient style to help to identify which one has been selected
-  const doctor_style = getComputedStyle(doctor);
-  const patient_style = getComputedStyle(patient);
+  const doctorStyle = getComputedStyle(doctor);
+  const patientStyle = getComputedStyle(patient);
   var doctor;
   var patient;
   // get password and username value 
   const password = document.getElementById("password").value;
   const username = document.getElementById("username").value;
   // based on the style, check which one has been selected
-  if (patient_style.color == "rgb(0, 0, 0)") {
+  if (patientStyle.color == "rgb(0, 0, 0)") {
     patient = true;
-  } else if (doctor_style.color == "rgb(0, 0, 0)") {
+  } else if (doctorStyle.color == "rgb(0, 0, 0)") {
     doctor = true;
   }
 
@@ -224,17 +224,17 @@ async function validate() {
 }
 
 // this function is used for change the color for patient and doctore when patient is selected
-function identity_patient() {
+function identityPatient() {
   var patient = document.getElementById("patient");
   var doctor = document.getElementById("doctor");
-  const doctor_style = getComputedStyle(doctor);
-  const patient_style = getComputedStyle(patient);
+  const doctorStyle = getComputedStyle(doctor);
+  const patientStyle = getComputedStyle(patient);
   // if patient is black, cheng doctor to grey
-  if (patient_style.color == "rgb(0, 0, 0)") {
+  if (patientStyle.color == "rgb(0, 0, 0)") {
     document.getElementById("doctor").style.color = "grey";
   }
 
-  if (patient_style.color == "rgb(128, 128, 128)" && doctor_style.color == "rgb(0, 0, 0)") {
+  if (patientStyle.color == "rgb(128, 128, 128)" && doctorStyle.color == "rgb(0, 0, 0)") {
     document.getElementById("patient").style.color = "black";
     document.getElementById("doctor").style.color = "grey";
     document.getElementById("change-password-btn").disabled = false;
@@ -242,17 +242,17 @@ function identity_patient() {
 }
 
 // this function is used for change the color for doctore and doctore when doctor is selected
-function identity_doctor() {
+function identityDoctor() {
   var patient = document.getElementById("patient");
   var doctor = document.getElementById("doctor");
-  const doctor_style = getComputedStyle(doctor);
-  const patient_style = getComputedStyle(patient);
+  const doctorStyle = getComputedStyle(doctor);
+  const patientStyle = getComputedStyle(patient);
   // same logic as above 
-  if (patient_style.color == "rgb(0, 0, 0)") {
+  if (patientStyle.color == "rgb(0, 0, 0)") {
     document.getElementById("doctor").style.color = "grey";
   }
 
-  if (doctor_style.color == "rgb(128, 128, 128)" && patient_style.color == "rgb(0, 0, 0)") {
+  if (doctorStyle.color == "rgb(128, 128, 128)" && patientStyle.color == "rgb(0, 0, 0)") {
     document.getElementById("patient").style.color = "grey";
     document.getElementById("doctor").style.color = "black";
     document.getElementById("change-password-btn").disabled = true;

@@ -16,7 +16,7 @@
                 <div id="clinicianName">
                     <p>{{this.clinicianName}}</p>
                     <div id="sideBar">
-                        <img id="triangle" src="../../res/triangle.png" alt="triangle" onclick="click_sideBtn()">
+                        <img id="triangle" src="../../res/triangle.png" alt="triangle" onclick="clickSideBtn()">
                         <div class="sideButton" style="display: none;">
                             <p><a href="/{{this._id}}/newPatient">Create new patient</a></p>
                             {{!-- TODO: href--}}
@@ -83,7 +83,7 @@
         <div id = "bottom">
             <div id = "note">
                 <p class = "title">Note</p>
-                <img id = "addButton" src = "../../res/add.png" alt = "add" onclick="click_addButton()">
+                <img id = "addButton" src = "../../res/add.png" alt = "add" onclick="clickAddButton()">
                 <ul>
                     {{#each this.notes}}
                     <li>
@@ -97,7 +97,7 @@
         </div>
 
         <Form action="/{{this.clinicianID}}/{{this._id}}/updateNote" method="post" id="noteForm" style="display: none" onsubmit=" return commentValidation()">
-            <img class = "cancelButt" src = "../../res/cancel.jpg" alt = "cancel" onclick="click_cancelButton()">
+            <img class = "cancelButt" src = "../../res/cancel.jpg" alt = "cancel" onclick="clickCancelButton()">
             <textarea name="content" placeholder="Add new note" id="content"></textarea>
             <div class = "submit-div">
                 <button type="submit" onclick="reloadPage()">submit</button>

@@ -1,4 +1,4 @@
-function click_addButton(){
+function clickAddButton(){
     var form = document.getElementById("noteForm");
     var note = document.getElementById("note");
     form.style.display = "block";
@@ -6,7 +6,7 @@ function click_addButton(){
 }
 
 
-function click_cancelButton(){
+function clickCancelButton(){
     var form = document.getElementById("noteForm");
     var note = document.getElementById("note");
     form.style.display = "none";
