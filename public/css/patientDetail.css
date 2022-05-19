@@ -139,17 +139,6 @@ table span{
     font-style: normal !important;
 }
 
-/* span{
-    position:absolute;
-    top:69%;
-    left:53%;
-    font-size: 60%;
-    color: #707070;
-    text-align: right;
-    font-weight: normal !important;
-    font-style: normal !important;
-} */
-
 #top{
     margin-top: 3%;
     display: flex;
@@ -240,6 +229,7 @@ table span{
     border-radius: 10px;
     height: 300px;
     overflow-y: scroll;
+    margin-bottom: 2%;
 }
 
 #note .title{
@@ -306,11 +296,10 @@ tbody td, thead th {
 
 #noteForm{
     overflow-y: hidden;
-    margin-bottom: 2%;
 }
 
 #noteForm .cancelButt{
-    width: 4%;
+    width: 4.5%;
     height: 20%;
     position: absolute;
     right:1%;
