@@ -234,6 +234,7 @@
 </div>
 {{/with}}
 <script>
+
     {{#with patientInfo}}
     // get data reuiqred from patientInfo object
     var data = []
@@ -252,11 +253,17 @@
         }
     }
     {{#with patientInfo}}
-    console.log({{findPatientRank this.rank this.userid}})
         if({{findPatientRank this.rank this.userid}} < 80){
             document.getElementById("not-trophies-pic").style.display = "flex";
         }else{
             document.getElementById("trophies-pic").style.display = "flex";
         }
     {{/with}}
+    if(document.getElementById("blood-glucose-input").readOnly && 
+    document.getElementById("weight-input").readOnly &&
+    document.getElementById("insulin-taken-input").readOnly &&
+    document.getElementById("exericse-input").readOnly){
+            document.getElementById("update-btn").disabled = true;
+            document.getElementById("update-btn").style.backgroundColor = "grey"
+    }
 </script>

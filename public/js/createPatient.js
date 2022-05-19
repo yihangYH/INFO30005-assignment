@@ -215,7 +215,7 @@ function checkDataInput(){
 // check is patient detail has enterd and if it is valid
 function createPatientValidation(){
     // the frist name cannot be empty
-    if(document.getElementById('firstName').value == ""){
+    if(document.getElementById('firstName').value.replace(/ /g,'') == ""){
         try {
             Swal.fire(
                 'Please enter Frist name',
@@ -228,7 +228,7 @@ function createPatientValidation(){
         
         return false
         // last name cannot be empty
-    }else if (document.getElementById('lastName').value == ""){
+    }else if (document.getElementById('lastName').value.replace(/ /g,'') == ""){
         try {
             Swal.fire(
                 'Please enter Last name',
@@ -241,7 +241,7 @@ function createPatientValidation(){
         
         return false
         // screen name not empty
-    }else if(document.getElementById('screenName').value == ""){
+    }else if(document.getElementById('screenName').value.replace(/ /g,'') == ""){
         try {
             Swal.fire(
                 'Please enter Screen name',
@@ -254,7 +254,7 @@ function createPatientValidation(){
         
         return false
         // birth not empty
-    }else if(document.getElementById('brith').value == ""){
+    }else if(document.getElementById('brith').value.replace(/ /g,'') == ""){
         try {
             Swal.fire(
                 'Please enter birth',
@@ -267,7 +267,7 @@ function createPatientValidation(){
         
         return false
         // user ID not empty
-    }else if(document.getElementById('userId').value == ""){
+    }else if(document.getElementById('userId').value.replace(/ /g,'') == ""){
         try {
             Swal.fire(
                 'Please enter User id',
@@ -280,7 +280,7 @@ function createPatientValidation(){
         
         return false
         // password not empty
-    }else if(document.getElementById('password').value == ""){
+    }else if(document.getElementById('password').value.replace(/ /g,'') == ""){
         try {
             Swal.fire(
                 'Please enter Password',
