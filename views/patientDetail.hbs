@@ -68,10 +68,10 @@
                 <tbody class="table-body">
                     {{#each (reverse this.data)}}
                         <tr >
-                            <td class="value-td" style="{{checkSafety1 this.safety_threshold this.bloodGlucoseValue "0"}}">{{this.bloodGlucoseValue}}<span>{{this.bloodGlucoseTime}}</span></td>
-                            <td class="value-td" style="{{checkSafety1 this.safety_threshold this.weightValue "1"}}">{{this.weightValue}}<span>{{this.weightTime}}</span></td>
-                            <td class="value-td" style="{{checkSafety1 this.safety_threshold this.insulinTakenValue "2"}}">{{this.insulinTakenValue}}<span>{{this.insulinTakenTime}}</span></td>
-                            <td class="value-td" style="{{checkSafety1 this.safety_threshold this.exerciseValue "3"}}">{{this.exerciseValue}}<span>{{this.exerciseTime}}</span></td>
+                            <td class="value-td" style="{{checkSafety1 this.safety_threshold this.bloodGlucoseValue "0"}}">{{patientDetailGetValue this.bloodGlucoseValue this.safety_threshold "0"}}<span>{{this.bloodGlucoseTime}}</span></td>
+                            <td class="value-td" style="{{checkSafety1 this.safety_threshold this.weightValue "1"}}">{{ patientDetailGetValue this.weightValue this.safety_threshold "1"}}<span>{{this.weightTime}}</span></td>
+                            <td class="value-td" style="{{checkSafety1 this.safety_threshold this.insulinTakenValue "2"}}">{{patientDetailGetValue this.insulinTakenValue this.safety_threshold "2"}}<span>{{this.insulinTakenTime}}</span></td>
+                            <td class="value-td" style="{{checkSafety1 this.safety_threshold this.exerciseValue "3"}}">{{patientDetailGetValue this.exerciseValue this.safety_threshold "3"}}<span>{{this.exerciseTime}}</span></td>
                         </tr>
                         <tr>
                             <td class="comment-td" style="{{checkSafety1 this.safety_threshold this.bloodGlucoseValue "0"}}">{{this.bloodGlucoseComment}}</td>

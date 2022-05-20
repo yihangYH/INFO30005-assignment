@@ -83,7 +83,14 @@ hbs.handlebars.registerHelper("reverse", function(data) {
     
 });
 
-
+hbs.handlebars.registerHelper("patientDetailGetValue", function(value, require,index) {
+    console.log(require)
+    if(require[index].includes("Not")){
+        return "Not Required"
+    }else{
+        return value
+    }
+})
 
 hbs.handlebars.registerHelper("findBloodGlucose", function(data) {
     // get the latest value 
