@@ -36,6 +36,24 @@ Tutorial T8, Thursday 6:15 pm Tutor: Dekko Shi
 5. Clinician name list {Chris, Tom}
 6. We considered as each data must accompany by a comment.
 
+### Delete a data in the database:
+
+1. Find the user in the database-patient. For example, Pat.
+
+   <p align="center">
+     <img src="README_res/database_image_1.png"  width="600" >
+   </p>
+
+2. Find the data array you want to delate (weight, insulinTaken, exercise, bloodGlucose)
+
+3. Find the data in the array, the data in the array is sorted by date. The earliest data is the first one, array[0], The latest data is the last one in the array. 
+
+   <p align="center">
+     <img src="README_res/database_image_2.png"  width="600" >
+   </p>
+
+4. If you wanna delete the latest data, delete the last row. (You do not need to clear that data in the database, the one that has been deleted will be useless data in the database )
+
 ## Deliverable 2:
 
 ### Tutorial: 
