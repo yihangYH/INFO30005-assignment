@@ -301,6 +301,12 @@ const createPatient = async(req,res,next) => {
     }
 }
 
+// Revert the Birthday to YYYY/MM/DD
+function formatBirth(birthday){
+    date = birthday.split("/")
+    return date[2]+"/"+date[1]+"/"+date[0]
+}
+
 // post method callback function to send new patient data
 const CreatePatient = async(req,res,next) => {
     const healthyData_required = [true,true,true,true];
@@ -347,7 +353,7 @@ const CreatePatient = async(req,res,next) => {
         'notes':[],
         'healthyData_required': healthyData_required,
         'safety_threshold':safety_threshold,
-        'birthday': req.body.birthday.replace(/ /g,''),
+        'birthday': formatBirth(req.body.birthday.replace(/ /g,'')),
     }, async function(err, newPatient){
         if (err) { console.log(err); return; }
         // save new patient ID to clinician patitent array
