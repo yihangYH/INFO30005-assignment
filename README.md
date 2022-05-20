@@ -3,6 +3,10 @@ Repository for INFO30005 group project
 
 ## Deliverable 3: 
 
+### Warning:
+
+According to our algorithm for calculating the engagement, in order to keep the engagement rate of Pat over 80%, we have to keep updating the data of Pat. If possible, before marking our project, please send us an email so that we will stop updating the data. Otherwise, you could follow the instruction below "Delete a data in the database". We highly recommend that do not delete the data in the database, it will be better to follow our logic detail to update or delete the data. If adding data or deleting data in the database in the wrong way, it might come to a server error.
+
 ### Tutorial: 
 
 Tutorial T8, Thursday 6:15 pm Tutor: Dekko Shi
