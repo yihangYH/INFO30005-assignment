@@ -54,12 +54,12 @@ function commentValidation(){
     if(document.getElementById("content").value.replace(/ /g,'') == ''){
         try {
             Swal.fire(
-                'Please enter a comment',
+                'Please enter a note',
                 'please check',
                 'error'
             )
         } catch (error) {
-            alert("Please enter a comment")
+            alert("Please enter a note")
         }
         return false;
     }
