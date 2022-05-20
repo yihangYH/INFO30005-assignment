@@ -92,6 +92,25 @@ hbs.handlebars.registerHelper("patientDetailGetValue", function(value, require,i
     }
 })
 
+hbs.handlebars.registerHelper("patientDetailGetTime", function(value, require,index) {
+    console.log(require)
+    if(require[index].includes("Not")){
+        return ""
+    }else{
+        return value
+    }
+})
+
+hbs.handlebars.registerHelper("patientDetailGetComment", function(value, require,index) {
+    console.log(require)
+    if(require[index].includes("Not")){
+        return "Not Required"
+    }else{
+        return value
+    }
+})
+
+
 hbs.handlebars.registerHelper("findBloodGlucose", function(data) {
     // get the latest value 
     return data[data.length -1].value;

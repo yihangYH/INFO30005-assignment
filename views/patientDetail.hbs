@@ -68,16 +68,16 @@
                 <tbody class="table-body">
                     {{#each (reverse this.data)}}
                         <tr >
-                            <td class="value-td" style="{{checkSafety1 this.safety_threshold this.bloodGlucoseValue "0"}}">{{patientDetailGetValue this.bloodGlucoseValue this.safety_threshold "0"}}<span>{{this.bloodGlucoseTime}}</span></td>
-                            <td class="value-td" style="{{checkSafety1 this.safety_threshold this.weightValue "1"}}">{{ patientDetailGetValue this.weightValue this.safety_threshold "1"}}<span>{{this.weightTime}}</span></td>
-                            <td class="value-td" style="{{checkSafety1 this.safety_threshold this.insulinTakenValue "2"}}">{{patientDetailGetValue this.insulinTakenValue this.safety_threshold "2"}}<span>{{this.insulinTakenTime}}</span></td>
-                            <td class="value-td" style="{{checkSafety1 this.safety_threshold this.exerciseValue "3"}}">{{patientDetailGetValue this.exerciseValue this.safety_threshold "3"}}<span>{{this.exerciseTime}}</span></td>
+                            <td class="value-td" style="{{checkSafety1 this.safety_threshold this.bloodGlucoseValue "0"}}">{{patientDetailGetValue this.bloodGlucoseValue this.safety_threshold "0"}}<span>{{patientDetailGetTime this.bloodGlucoseTime this.safety_threshold "0"}}</span></td>
+                            <td class="value-td" style="{{checkSafety1 this.safety_threshold this.weightValue "1"}}">{{ patientDetailGetValue this.weightValue this.safety_threshold "1"}}<span>{{patientDetailGetTime this.weightTime this.safety_threshold "1"}}</span></td>
+                            <td class="value-td" style="{{checkSafety1 this.safety_threshold this.insulinTakenValue "2"}}">{{patientDetailGetValue this.insulinTakenValue this.safety_threshold "2"}}<span>{{patientDetailGetTime this.insulinTakenTime this.safety_threshold "2"}}</span></td>
+                            <td class="value-td" style="{{checkSafety1 this.safety_threshold this.exerciseValue "3"}}">{{patientDetailGetValue this.exerciseValue this.safety_threshold "3"}}<span>{{patientDetailGetTime this.exerciseTime this.safety_threshold "3"}}</span></td>
                         </tr>
                         <tr>
-                            <td class="comment-td" style="{{checkSafety1 this.safety_threshold this.bloodGlucoseValue "0"}}">{{this.bloodGlucoseComment}}</td>
-                            <td class="comment-td" style="{{checkSafety1 this.safety_threshold this.weightValue "1"}}">{{this.weightComment}}</td>
-                            <td class="comment-td" style="{{checkSafety1 this.safety_threshold this.insulinTakenValue "2"}}">{{this.insulinTakenComment}}</td>
-                            <td class="comment-td" style="{{checkSafety1 this.safety_threshold this.exerciseValue "3"}}">{{this.exerciseComment}}</td>
+                            <td class="comment-td" style="{{checkSafety1 this.safety_threshold this.bloodGlucoseValue "0"}}">{{patientDetailGetComment this.insulinTakenComment this.safety_threshold "0"}}</td>
+                            <td class="comment-td" style="{{checkSafety1 this.safety_threshold this.weightValue "1"}}">{{patientDetailGetComment this.insulinTakenComment this.safety_threshold "1"}}</td>
+                            <td class="comment-td" style="{{checkSafety1 this.safety_threshold this.insulinTakenValue "2"}}">{{patientDetailGetComment this.insulinTakenComment this.safety_threshold "2"}}</td>
+                            <td class="comment-td" style="{{checkSafety1 this.safety_threshold this.exerciseValue "3"}}">{{patientDetailGetComment this.insulinTakenComment this.safety_threshold "3"}}</td>
                         </tr>
                     {{/each}}
 

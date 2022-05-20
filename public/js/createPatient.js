@@ -141,8 +141,8 @@ function checkDataInput(){
     // if data type check box checked but lower value >= upper value
     // alert error message
     if(document.getElementById("bloodGlucoseCheckbox").checked &&
-    document.getElementById('bloodGlucoseLowerValue').value >= 
-    document.getElementById('bloodGlucoseUpperValue').value){
+    Number(document.getElementById('bloodGlucoseLowerValue').value) >= 
+    Number(document.getElementById('bloodGlucoseUpperValue').value)){
         try {
             Swal.fire(
                 'Blood Glucose Lower Value should be less than Upper Value',
@@ -156,8 +156,8 @@ function checkDataInput(){
     }
     // same logic above 
     if(document.getElementById("weightCheckbox").checked &&
-    document.getElementById('weightLowerValue').value >=
-    document.getElementById('weightUpperValue').value){
+    Number(document.getElementById('weightLowerValue').value) >=
+    Number(document.getElementById('weightUpperValue').value)){
         try {
             Swal.fire(
                 'Weight Lower Value should be less than Upper Value',
@@ -171,8 +171,8 @@ function checkDataInput(){
     }
     // same logic above 
     if(document.getElementById("insulinTakenCheckbox").checked &&
-    document.getElementById('insulinTakenLowerValue').value >=
-    document.getElementById('insulinTakenUpperValue').value){
+    Number(document.getElementById('insulinTakenLowerValue').value) >=
+    Number(document.getElementById('insulinTakenUpperValue').value)){
         try {
             Swal.fire(
                 'Insulin Taken Lower Value should be less than Upper Value',
@@ -186,8 +186,8 @@ function checkDataInput(){
     }
     // same logic above 
     if(document.getElementById("exerciseCheckbox").checked &&
-    document.getElementById('exerciseLowerValue').value >=
-    document.getElementById('exerciseUpperValue').value){
+    Number(document.getElementById('exerciseLowerValue').value) >=
+    Number(document.getElementById('exerciseUpperValue').value)){
         try {
             Swal.fire(
                 'Exercise Lower Value should be less than Upper Value',

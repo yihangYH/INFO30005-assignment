@@ -440,7 +440,11 @@ const updatePatient = async(req,res,next) => {
     if(req.body.exerciseCheckboxUpdate == undefined){
         healthyData_required[3] = false
         safetyThreshold[3] = "Not Required"
+    }else if(req.body.exerciseCheckboxUpdate == 'on'){
+        healthyData_required[3] = true
+        safetyThreshold[3] = req.body.exerciseLowerBalueUpdate + "-" + req.body.exerciseUpperValueUpdate
     }
+    console.log("check")
     // update patient with new data
     patient.findByIdAndUpdate({_id: req.params.patientID}, {$set:{healthyData_required: healthyData_required, safety_threshold: safetyThreshold}}, function(err, updatedPatient){
         if (err) { console.log(err); return; }

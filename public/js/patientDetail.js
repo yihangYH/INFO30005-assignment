@@ -34,7 +34,7 @@ function reloadPage(){
 // check if support message input is valid 
 function supportMessageValidation(){
     // cannot submit empty support message
-    if(document.getElementById("supportMessageContent").value == ''){
+    if(document.getElementById("supportMessageContent").value.replace(/ /g,'') == ''){
         try {
             Swal.fire(
                 'Please enter a support message',
@@ -51,7 +51,7 @@ function supportMessageValidation(){
 // check if comment message input is valid 
 function commentValidation(){
     // cannot submit empty comment
-    if(document.getElementById("content").value == ''){
+    if(document.getElementById("content").value.replace(/ /g,'') == ''){
         try {
             Swal.fire(
                 'Please enter a comment',

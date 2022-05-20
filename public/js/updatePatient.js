@@ -97,7 +97,7 @@ function updatePatientValidation(){
                 }
                 return false;
             }
-            if(document.getElementById(lowervalue[i]).value >= document.getElementById(uppervalue[i]).value){
+            if(Number(document.getElementById(lowervalue[i]).value) >= Number(document.getElementById(uppervalue[i]).value)){
                 try {
                     Swal.fire(
                         valueName[i]+' lower value should be less than upper value',
