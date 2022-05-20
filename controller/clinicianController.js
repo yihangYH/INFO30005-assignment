@@ -292,7 +292,7 @@ function findMaxDataType(patientInfo){
 }
 
 // get create patient page
-const getPage = async(req,res,next) => {
+const createPatient = async(req,res,next) => {
     try {
             console.log(req.params.id)
         res.render('createPatient.hbs', {id: req.params.id})
@@ -500,7 +500,7 @@ const isAuthenticated = (req, res, next) => {
 // to be removed, getTemp,createTemp
 module.exports = { 
     getClinician, 
-    getPage, 
+    createPatient, 
     CreatePatient, 
     getUpdatePatient,
     getTemp,
