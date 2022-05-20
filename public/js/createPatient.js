@@ -281,8 +281,7 @@ function createPatientValidation(){
         }
         
         return false
-    }else if(date[0] > 31 || date[0] < 1 || date[1] > 12 || date[1] < 1 || date[2]<0 ||
-        !Number.isInteger(date[0]) || !Number.isInteger(date[1]) || !Number.isInteger(date[2])){
+    }else if(Number.isNaN(Number(date[0])) || Number.isNaN(Number(date[1])) || Number.isNaN(Number(date[2]))){
         try {
             Swal.fire(
                 'Please check birth',
@@ -294,8 +293,19 @@ function createPatientValidation(){
         }
         
         return false
+    }else if(Number(date[0])>31 || Number(date[0])<1 || Number(date[1])>12 || Number(date[1])<1 || Number(date[2])<0){
+        try {
+            Swal.fire(
+                'Please check birth',
+                'please check',
+                'error'
+            )
+        } catch (error) {
+            alert("Please check birth")
+        }
+        return false
     }
-        
+    console.log(Number(date[0]) , Number(date[1]) , Number(date[2]))
     if(document.getElementById('userId').value.replace(/ /g,'') == ""){
         try {
             Swal.fire(

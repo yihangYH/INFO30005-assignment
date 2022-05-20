@@ -347,7 +347,7 @@ const CreatePatient = async(req,res,next) => {
         'notes':[],
         'healthyData_required': healthyData_required,
         'safety_threshold':safety_threshold,
-        'birthday': req.body.birthday,
+        'birthday': req.body.birthday.replace(/ /g,''),
     }, async function(err, newPatient){
         if (err) { console.log(err); return; }
         // save new patient ID to clinician patitent array
