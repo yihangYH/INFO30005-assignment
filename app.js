@@ -67,8 +67,8 @@ if (app.get('env') === 'production') {
 
 app.use(passport.authenticate('session'))
 
-const publicRouter = require('./routes/publicRouter') 
-app.use(publicRouter)
+const loginRouter = require('./routes/loginRouter') 
+app.use(loginRouter)
 
 // import all the routers 
 const patientRouter = require('./routes/patientRouter.js')

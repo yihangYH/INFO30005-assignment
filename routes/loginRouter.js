@@ -1,6 +1,6 @@
 const passport = require('passport') 
 const express = require('express') 
-const publicRouter = express.Router()
+const loginRouter = express.Router()
 const {patient} = require('../models/patient')
 const bcrypt = require('bcryptjs')
 const loginController = require('../controller/loginController')
@@ -24,18 +24,18 @@ const clinicianController = require('../controller/clinicianController')
 //     }
 //     return next() 
 // }
-publicRouter.get('/', (req, res) => {
+loginRouter.get('/', (req, res) => {
     res.redirect('/login') 
 })
-publicRouter.get('/data/:id', loginController.isAuthenticated, patientController.getPatient)
+loginRouter.get('/data/:id', loginController.isAuthenticated, patientController.getPatient)
 
-// publicRouter.get('/dashboard/:id', loginController.isAuthenticated, clinicianController.getClinician)
+// loginRouter.get('/dashboard/:id', loginController.isAuthenticated, clinicianController.getClinician)
 
-publicRouter.get('/changePassword', (req, res) => {
+loginRouter.get('/changePassword', (req, res) => {
     res.render('changePassword')
 })
 
-publicRouter.post('/changePassword', function(req, res) {
+loginRouter.post('/changePassword', function(req, res) {
     console.log(req.body.oldPassword)
     patient.findOne({ userid: req.body.userID },(err, user) => {
       // Check if error connecting
@@ -70,18 +70,18 @@ publicRouter.post('/changePassword', function(req, res) {
     }); 
 })
 
-publicRouter.get('/login', (req, res) => {
+loginRouter.get('/login', (req, res) => {
     res.render('login', { flash: req.flash('error'), title: 'Login' })
 })
 
-publicRouter.post('/logout', function(req, res){
+loginRouter.post('/logout', function(req, res){
     req.logOut();
     delete req.user
     req.session.destroy()
     res.redirect('/');
 });
 
-publicRouter.post('/patientlogin', 
+loginRouter.post('/patientlogin', 
     passport.authenticate('local', {
         failureRedirect: '/login', failureFlash: true 
     }),
@@ -91,7 +91,7 @@ publicRouter.post('/patientlogin',
         res.send()
     });
 
-publicRouter.post('/doctorLogin', 
+loginRouter.post('/doctorLogin', 
     passport.authenticate('client-login', {
         failureRedirect: '/login', failureFlash: true 
     }),
@@ -102,24 +102,24 @@ publicRouter.post('/doctorLogin',
     });
 
 
-// publicRouter.post('/data/:id', patientController.updateData)
+// loginRouter.post('/data/:id', patientController.updateData)
 
-// publicRouter.get('/data/:id/bloodGlucose', loginController.isAuthenticated, patientController.getPassBloodGlucose)
+// loginRouter.get('/data/:id/bloodGlucose', loginController.isAuthenticated, patientController.getPassBloodGlucose)
 
-// publicRouter.get('/data/:id/weight', loginController.isAuthenticated, patientController.getPassWeight)
+// loginRouter.get('/data/:id/weight', loginController.isAuthenticated, patientController.getPassWeight)
 
-// publicRouter.get('/data/:id/insulinTaken', loginController.isAuthenticated, patientController.getPassInsulin)
+// loginRouter.get('/data/:id/insulinTaken', loginController.isAuthenticated, patientController.getPassInsulin)
 
-// publicRouter.get('/data/:id/exercise', loginController.isAuthenticated, patientController.getPassExercise)
+// loginRouter.get('/data/:id/exercise', loginController.isAuthenticated, patientController.getPassExercise)
 
-// publicRouter.get('/data/:id/leaderboard', loginController.isAuthenticated, patientController.getLeaderboard)
+// loginRouter.get('/data/:id/leaderboard', loginController.isAuthenticated, patientController.getLeaderboard)
 
-// publicRouter.get('/:id/comment', loginController.isAuthenticated, clinicianController.comment)
+// loginRouter.get('/:id/comment', loginController.isAuthenticated, clinicianController.comment)
 
-// publicRouter.get('/:id/:patientID/patientDetail', loginController.isAuthenticated, clinicianController.getPatientDetail)
+// loginRouter.get('/:id/:patientID/patientDetail', loginController.isAuthenticated, clinicianController.getPatientDetail)
 
-// publicRouter.get('/:id/:patientID/updatePatient', loginController.isAuthenticated, clinicianController.getUpdatePatient)
+// loginRouter.get('/:id/:patientID/updatePatient', loginController.isAuthenticated, clinicianController.getUpdatePatient)
 
-// publicRouter.get('/:id/newPatient', loginController.isAuthenticated, clinicianController.getPage)
+// loginRouter.get('/:id/newPatient', loginController.isAuthenticated, clinicianController.getPage)
 
-module.exports = publicRouter
+module.exports = loginRouter
