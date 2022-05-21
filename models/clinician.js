@@ -12,6 +12,7 @@ const schema = new mongoose.Schema({
     bio: String,
     patient: [{type:mongoose.Schema.Types.ObjectId, ref:'patient'}]
 })
+
 schema.methods.verifyPassword = function (password, callback) {
     bcrypt.compare(password, this.password, (err, valid) => {
     callback(err, valid) 
@@ -25,6 +26,7 @@ schema.pre('save', function save(next) {
     if (!user.isModified('password')) {
         return next() 
 }
+
 // Automatically generate salt, and calculate hash
 bcrypt.hash(user.password, SALT_FACTOR, (err, hash) => { 
     if (err) {

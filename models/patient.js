@@ -2,6 +2,7 @@
 const mongoose = require('mongoose')
 const bcrypt = require('bcryptjs')
 require('./data.js')
+
 const patientSchema = new mongoose.Schema({
     userid: String,
     password: String,
