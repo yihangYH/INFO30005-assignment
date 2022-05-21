@@ -6,22 +6,30 @@
                     <img src="../res/logo.png" alt="logo">
                 </a>
             </div>
+
             <div>
                 <div class="topButton">
                     <a href="/dashboard/{{this._id}}">Dashboard</a>
                 </div>
+
                 <div class="topButton">
                     <a href="/{{this._id}}/comment">Comment</a>
                 </div>
+
                 <img class = "line" src="/res/Line.png" alt="line">
+
                 <div id="clinicianName">
                     <p>{{this.screen_name}}</p>
+
                     <div id="sideBar">
                         <img id="triangle" src="/res/triangle.png" alt="triangle" onclick="clickSideBtn()">
+
                         <div class="sideButton" style="display: none;">
                             <p><a href="/{{this._id}}/newPatient">Create new patient</a></p>
+
                             {{!-- TODO: href--}}
                             <form action="/logout" method="post">
+
                             <p><button type="submit" style="background: none;color: inherit;border: none;padding: 0;font: inherit;cursor: pointer;outline: inherit;">
                                 Log out
                                 </button>
@@ -41,6 +49,7 @@
                     <p id = "tableTitle">Comment</p>
                     <p id="tableTime"></p>
                 </caption>
+
                 <thead>
                     <tr class = "tableHeading">
                         <th>Name</th>
@@ -50,6 +59,7 @@
                         <th>Comment</th>
                     </tr>
                 </thead>
+
                 {{#each this.patient}}
                     <tr style="{{checkNotRequired this.bloodGlucose this.healthyData_required "0"}};">
                         <td>
@@ -57,6 +67,7 @@
                                 {{this.first_name}}
                             </a>
                         </td>
+
                         <td>Blood glucose</td>
                         <td style="{{checkSafety this.safety_threshold this.bloodGlucose "0"}}">{{value this.bloodGlucose}}</td>
                         <td>{{getCommentTime this.bloodGlucose}}</td>
@@ -73,6 +84,7 @@
                         <td>{{getCommentTime this.weight}}</td>
                         <td class="comment-td">{{comment this.weight}}</td>
                     </tr>
+                    
                     <tr style="{{checkNotRequired this.insulinTaken this.healthyData_required "2"}}">
                         <td>
                             <a href="/{{this.clinicianID}}/{{this._id}}/patientDetail">
@@ -84,6 +96,7 @@
                         <td>{{getCommentTime this.insulinTaken}}</td>
                         <td class="comment-td">{{comment this.insulinTaken}}</td>
                     </tr>
+
                     <tr style="{{checkNotRequired this.exercise this.healthyData_required "3"}}">
                         <td>
                             <a href="/{{this.clinicianID}}/{{this._id}}/patientDetail">

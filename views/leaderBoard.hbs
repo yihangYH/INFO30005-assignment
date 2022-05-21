@@ -6,11 +6,13 @@
             </div>
         </div>
     </div>
+
     <div class="main-body" id="main-body">
         <div class="laederboard">
             <div class="leaderboard-header">
                 <p>Leaderboard</p>
             </div>
+
             <div class="leaderboard-rank">
                 <img class="leaderboard-pic" src="../../res/leaderboard.png" alt="leaderboard image">
                 <div class="rank-first">
@@ -35,11 +37,15 @@
                     {{findRank this.rank 4}}
                 </div>     
             </div>
+
             <div class="leaderboard-comment">
                 <p>Everyone keep going!</p>
             </div>
+
             <div class="middle-line"></div>
+
             <a href="/data/{{this._id}}"><img class="back-icon" src="../../res/back.jpg" alt="back icon"></a>
+
             <div class="achievement">
                 <div class="achievement-header">
                     <p>Achievement</p>
@@ -59,12 +65,9 @@
             </div>
         </div>        
     </div>
-
-
 {{/with}}
 
 <script>
-    
     {{#with patientInfo}}
 
     if({{this.rate}} < 80){
@@ -73,9 +76,4 @@
         document.getElementById("achievement-image").style.display = "flex";
     }
     {{/with}}
-
-    
-
-
-
 </script>

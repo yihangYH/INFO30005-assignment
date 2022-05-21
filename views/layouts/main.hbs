@@ -28,8 +28,10 @@
         if (path.includes("login")) {
             document.getElementById("style").href = "../css/login.css?v=1";
             document.title = "Login";
-        } else if (path.includes("data") && !path.includes("bloodGlucose") && !path.includes("exercise")
-        && !path.includes("weight") && !path.includes("insulinTaken") && !path.includes("leaderboard")) {
+        } else if (path.includes("data") && !path.includes("bloodGlucose") && 
+                !path.includes("exercise")
+        && !path.includes("weight") && !path.includes("insulinTaken") && 
+                !path.includes("leaderboard")) {
             document.getElementById("style").href = "../css/patientInfo.css?v=1";
             document.title = "Your Data";
         } else if (path.includes("welcome") || path.includes("Welcome")) {

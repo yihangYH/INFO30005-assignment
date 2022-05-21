@@ -5,22 +5,30 @@
                     <img src="../../res/logo.png" alt="logo">
                 </a>
             </div>
+
             <div>
                 <div class="topButton">
                     <a href="/dashboard/{{this.clinicianID}}">Dashboard</a>
                 </div>
+
                 <div class="topButton">
                     <a href="/{{this.clinicianID}}/comment">Comment</a>
                 </div>
+
                 <img class = "line" src="../../res/Line.png" alt="line">
+
                 <div id="clinicianName">
                     <p>{{this.clinicianName}}</p>
+
                     <div id="sideBar">
                         <img id="triangle" src="../../res/triangle.png" alt="triangle" onclick="clickSideBtn()">
+
                         <div class="sideButton" style="display: none;">
                             <p><a href="/{{this.clinicianID}}/newPatient">Create new patient</a></p>
+                            
                             {{!-- TODO: href--}}
                             <form action="/logout" method="post">
+
                             <p><button type="submit" style="background: none;color: inherit;border: none;padding: 0;font: inherit;cursor: pointer;outline: inherit;">
                                 Log out
                                 </button>

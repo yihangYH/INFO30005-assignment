@@ -45,7 +45,6 @@ app.listen(process.env.PORT || 3000, () => {
     console.log('App is listening on port 3000!')
 })
 
-
 app.use( 
     session({
         // The secret used to sign session cookies (ADD ENV VAR)

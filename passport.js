@@ -29,7 +29,6 @@ passport.deserializeUser((userId, done) => {
     })
 })
 
-
 passport.use(
     new LocalStrategy((userId, password, done) => {
         patient.findOne({ userid: userId }, (err, user) => { 

@@ -10,6 +10,7 @@
             <img class="side-picture" src="../res/login.png" alt="picture">
         </div>
     </div>
+
     <div class="bottom">
         <form action="/login" method="post">
             <div class="login-content">
@@ -35,12 +36,14 @@
             </div>
         </form>
     </div>
+
     <div class="change-password">
             <div class="image-icon">
                 <button id="back-icon-btn" type="button" onclick="goback()">
                     <img class="back-icon" id="back-icon" src="../res/back.jpg" alt="back icon">
                 </button>
             </div>
+
             <form action="/changePassword" method="post" onsubmit="return loginValidation()">
                 <div class="change-password-content" id = "change-password-content">
                     <h1>Change your password</h1>
@@ -58,12 +61,14 @@
             </form>
         </div>
 </div>
+
 <div id="myModal" class="modal">
     <div class="modal-content">
         <span class="close">&times;</span>
         <p id="error-message"></p>
     </div>
 </div>
+
 <script>
     // the code below is for close alert box
     document.getElementsByClassName("close")[0].onclick = function () {

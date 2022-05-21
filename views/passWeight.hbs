@@ -14,14 +14,15 @@
                 </button>
             </div>
         </form>
-
     </div>
+
     <div class="pass-data">
         <div class="title">
             <a href="/data/{{this._id}}"><img class="back" src="/res/back.jpg" alt="backArrow"></a>
             {{!-- <img class="back" src="/res/back.jpg" alt=""> --}}
             <div class="big-title">Past Seven Records</div>
         </div>
+
         <ul class="pastData">
             {{#each_upto this.weight 7}}
             <li>
@@ -32,6 +33,7 @@
             </li>
             {{/each_upto}}
         </ul>
+        
         <div class="graph">
             <div id="container" ></div>
         </div>

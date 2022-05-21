@@ -6,6 +6,7 @@
         <div class="logo">
             <img class="logo" src="../res/logo.png" alt="diabetes">
         </div>
+
         <form action="/logout" method="post">
             <div class="log-out">
                 <button type="submit" style="background: none;color: inherit;border: none;padding: 0;font: inherit;cursor: pointer;outline: inherit;"> 
@@ -13,6 +14,7 @@
                 </button>
             </div>
         </form>
+
     </div>
 </div>
 <div class="main-body" id="main-body">
@@ -23,22 +25,27 @@
             <li class="details"> {{this.screen_name}} {{this.last_name}} ({{this.birthday}}) </li>
         </ul>
     </div>
+
     <div class="trophies-and-rankings">
         <div class="trophies">
             <img class="trophies-pic" src="../res/trophie.png" id = "trophies-pic" alt="trophie">
             <img class="not-trophies-pic" src="../res/grey_trophie.png" id="not-trophies-pic" alt="not trophie">
             <p>{{findPatientRank this.rank this.userid}}%</p>
         </div>
+
         <div class="vl"></div>
+
         <div class="rankings">
             <img class="rankings-pic" src="../res/ranking.png" alt="ranking">
             <p>{{findPatientPlace this.rank this.userid}}</p>
             {{!-- <div class="learn-more">Learn more</div> --}}
         </div>
+
         <div class="learn-more">
             <a href="/data/{{this._id}}/leaderboard"><p>Learn more</p></a>
         </div>
     </div>
+
     <div class="bio">
         <p class="bio-insert" id="bio-insert">{{this.bio}}</p>
         <div class="bio-page">
@@ -60,16 +67,19 @@
 
         </div>
     </div>
+
     <div class="your-data">
         <P>Your Data:</P>
         <button class="update" id="update-btn" onclick="updateBtnclick()">
             Update +
         </button>
     </div>
+
     <div class="blood-glucose">
         <div class="blood-glucose-words">
             BLOOD GLUCOSE
         </div>
+
         <div class="blood-glucose-data">
             {{#if this.bloodGlucose}}
             <P id="blood-glucose-data">{{findBloodGlucose this.bloodGlucose}} &nbsp nmol/L </P>
@@ -77,10 +87,12 @@
             <P id="blood-glucose-data">No Data Yet</P>
             {{/if}}
         </div>
+
         <div class="blood-glucose-arrow">
              <a href="/data/{{this._id}}/bloodGlucose" id = "blood-glucose-arrow"><img class="blood-glucose-arrow" src="../res/arrow.png" alt="arrow"></a>
         </div>
     </div>
+
     <hr class="first-hr">
     <div class="blood-glucose-date" id="date">
             {{#if this.bloodGlucose}}
@@ -89,10 +101,12 @@
                 <P id="blood-glucose-date">Updated on:&nbsp No Record</P>
             {{/if}}
         </div>
+
     <div class="weight">
         <div>
             WEIGHT
         </div>
+
         <div class="weight-data">
             {{#if this.weight}}
             <P id="weight-data">{{findWeight this.weight}} &nbsp KG </P>
@@ -100,11 +114,14 @@
             <P id="weight-data">No Data Yet</P>
             {{/if}}   
         </div>
+
         <div class="weight-arrow">
             <a href="/data/{{this._id}}/weight" id = "weight-arrow"><img class="weight-arrow" src="../res/arrow.png" alt="arrow"></a>
         </div>
     </div>
+
     <hr class="sec-hr">
+
     <div class="weight-date" id="date">
         {{#if this.weight}}
             <P id= "weight-date">Updated on:&nbsp {{findTime this.weight}}</P>
@@ -112,10 +129,12 @@
             <P id= "weight-date">Updated on:&nbsp No Record</P>
         {{/if}}
     </div>
+
     <div class="insulin-taken">
         <div class="insulin-taken-word">
             INSULIN TAKEN
         </div>
+
         <div class="insulin-taken-data">
             {{#if this.insulinTaken}}
             <P id="insulin-taken-data"> {{findInsulinTaken this.insulinTaken}} &nbsp Doses </P>
@@ -123,11 +142,15 @@
             <P id="insulin-taken-data">No Data Yet</P>
             {{/if}}
         </div>
+
         <div class="insulin-taken-arrow">
             <a href="/data/{{this._id}}/insulinTaken" id = "insulin-taken-arrow"><img class="insulin-taken-arrow" src="../res/arrow.png" alt="arrow"></a>
         </div>
+
     </div>
+
     <hr class="third-hr">
+
     <div class="insulin-taken-date" id="date">
         {{#if this.insulinTaken}}
             <P id="insulin-taken-date" >Updated on:&nbsp {{findTime this.insulinTaken}}</P>
@@ -135,6 +158,7 @@
             <P id="insulin-taken-date">Updated on:&nbsp No Record</P>
         {{/if}}
     </div>
+
     <div class="exercise">
         <div>
             EXERCISE
@@ -150,7 +174,9 @@
             <a href="/data/{{this._id}}/exercise " id = "exercise-arrow"><img class="exercise-arrow" src="../res/arrow.png" alt="arrow"></a>
         </div>
     </div>
+
     <hr class="forth-hr">
+
     <div class="exercise-date" id="date">
         {{#if this.exercise}}
             <P id ="exercise-date" >Updated on:&nbsp {{findTime this.exercise}}</P>
@@ -158,14 +184,19 @@
             <P id ="exercise-date">Updated on:&nbsp No Record</P>
         {{/if}}
     </div>
+
     <div class="text" id="text"><p>{{this.supportMessage}}</p></div>
 </div>
+
 <img class="blur" id="blur" src="../res/blur.jpeg" alt="">
+
 <button type="button" onclick="cancel()"><img class="cancel" id="cancel" src="../res/cancel.jpg" alt=""></button>
+
 <div class="container" id="container">
     <form action="/data/{{this._id}}" method="post" onsubmit="return validation()">
         <div class="dialog">
             <p class="insert-data">Enter today's data</p>
+
             <div class="item">
                 <p>BLOOD GLUCOSE</p>
                 <input name="blood_glucose" id="blood-glucose-input" type="number" step="0.01" min="0" max="99" placeholder="(nmol/L)" />
@@ -184,6 +215,7 @@
                         onclick="submit0()">submit</button>
                 </div>
             </div>
+
             <div class="item">
                 <p>Weight</p>
                 <input name="weight" id="weight-input" type="number" step="0.01" min="0" max="999" placeholder="(Kg)" />
@@ -202,6 +234,7 @@
                         onclick="submit1()">submit</button>
                 </div>
             </div>
+
             <div class="item">
                 <p>INSULIN TAKEN</p>
                 <input name="insulin_taken" id="insulin-taken-input" type="number" step="0.01" min="0" max="99" placeholder="(DOSES)" />
@@ -220,6 +253,7 @@
                         onclick="submit2()">submit</button>
                 </div>
             </div>
+
             <div class="item">
                 <p>EXERICSE</p>
                 <input name="exercise" id="exericse-input" type="number" step="0.01" min="0" max="999999" placeholder="(Steps)" />
@@ -238,12 +272,14 @@
                         onclick="submit3()">submit</button>
                 </div>
             </div>
+
             <div class="update-btn">
                 <button type="submit" >Update +</button>
             </div>
         </div>
     </form>
 </div>
+
 <div id="myModal" class="modal">
   <div class="modal-content">
     <span class="close">&times;</span>
@@ -252,7 +288,6 @@
 </div>
 {{/with}}
 <script>
-
     {{#with patientInfo}}
     // get data reuiqred from patientInfo object
     var data = []
