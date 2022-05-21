@@ -6,11 +6,11 @@
     font-family: 'Open Sans ';
 }
 
-body{
+body {
     background-color:#FDF9F8;
 }
 
-.topBar{
+.topBar {
     width:100%;
     height:90px;
     background:linear-gradient(to bottom,#DFAFAD,#FDF9F8);
@@ -20,17 +20,17 @@ body{
     justify-content: space-between;
 }
 
-.logo{
+.logo {
     display: flex;
     width:15%;
     align-items:center;
 }
 
-.logo img{
+.logo img {
     width: 100%;
 }
 
-.logo + div{
+.logo + div {
     display: flex;
     flex-direction: row;
     justify-content:right; 
@@ -38,18 +38,18 @@ body{
     width:50%;
 }
 
-.topButton>a{
+.topButton>a {
     font-size: 200%;
     text-decoration: none;
     color: #000;
 
 }
 
-.topButton{
+.topButton {
     margin-right: 10%;
 }
 
-#clinicianName{
+#clinicianName {
     font-size:350%;
     color: #a22929;
     font-weight: bold;
@@ -62,25 +62,24 @@ body{
     
 }
 
-#sideBar{
+#sideBar {
     position: relative;
 }
 
-#triangle{
+#triangle {
     width:50%;
 }
 
 
-#sideBar a{
+#sideBar a {
     color: #000;
 }
 
-#sideBar p{
+#sideBar p {
     margin-bottom: 7%;
 }
 
-
-.sideButton{
+.sideButton {
     position: absolute;
     width: 600%;
     top:90%;
@@ -92,19 +91,19 @@ body{
     z-index:9;
 }
 
-.line{
+.line {
     height: 40%;
     margin-right:3%;
 }
 
-#tableTitle{
+#tableTitle {
     text-align:center;
     font-weight: bold;
     font-size: 180%;
     margin-bottom:0px;
 }
 
-#tableTime{
+#tableTime {
     text-align:center;
     font-size: 130%;
     margin-top: 0px;
@@ -112,23 +111,23 @@ body{
 }
 
 /* TODO: can't scroll*/
-#dashboard{
+#dashboard {
     overflow-y: auto;
     height: 8px;
 }
 
-#dashboard>table, td, th{
+#dashboard>table, td, th {
     border: 1px solid black;
 }
 
-td,th{
+td,th {
     padding-top: 2%;
     padding-bottom:2%;
     position: relative;
     font-size: 130%;
 }
 
-#dashboard>table{
+#dashboard>table {
     border-collapse: collapse;
     text-align: center;
     position: absolute;
@@ -140,7 +139,7 @@ td,th{
     border-spacing: 0;
 }
 
-#dashboard span{
+#dashboard span {
     position:absolute;
     top:69%;
     left:49%;
@@ -154,8 +153,7 @@ td,th{
 
 thead, tbody, tr, th, td { display: block; }
 
-
-thead{
+thead {
     width: 100%;
 }
 

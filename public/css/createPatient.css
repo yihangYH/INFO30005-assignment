@@ -4,20 +4,23 @@
 	margin: 0;
     font-family: 'Open Sans ';
 }
+
 body {
     height: 100%;
     overflow: hidden;
 }
+
 .main {
     display: flex;
 }
 
-.logo{
+.logo {
     width: 20%;
     display: flex;
     position: relative;
     left: 20%;
 }
+
 .back {
     width: 5%;
     display: flex;
@@ -35,7 +38,7 @@ body {
     width: 100%;
 }
 
-.body-register{
+.body-register {
     display: flex;
     position: absolute;
     height: 100%;
@@ -68,7 +71,7 @@ body {
     height: 10%;
 }
 
-.login-info input{
+.login-info input {
     border: none;
     font-size: 25px;
     border-radius:15px;
@@ -78,15 +81,17 @@ body {
     padding-left: 2%;
 }
 
-.firstName{
+.firstName {
     width: 45%;
 }
+
 .lastName {
     position: relative;
     left: 6%;
     width: 45%;
 }
-.login-info li{
+
+.login-info li {
     line-height: 120px;
 }
 
@@ -115,15 +120,18 @@ ul {
     display: block;
     margin-top: 25px;
 }
+
 .data-info li:nth-child(3) {
     display: block;
     margin-top: 25px;
 }
+
 .data-info li:nth-child(4) {
     display: block;
     margin-top: 25px;
 }
-.data-check-box{
+
+.data-check-box {
     display: inline-block;
     position: relative;
     left: 24%;
@@ -131,6 +139,7 @@ ul {
     height: 40px;
     outline: 3px solid gray
 }
+
 .lower-value {
     display: inline-flex;
     position: relative;
@@ -190,6 +199,7 @@ ul {
     background: none;
     outline: none;
 } */
+
 .sign {
     position: relative;
     left: 47%;
@@ -213,7 +223,8 @@ ul {
     left: 48%;
     bottom: 10px;
 }
-hr{
+
+hr {
     width: 125%;
     margin-top: 2%;
 }
@@ -225,7 +236,8 @@ hr{
     left: 35%;
     width: 30%;
 }
-.create button{
+
+.create button {
     font-size: 35px;
     width: 100%;
     padding-left: 15%;
@@ -240,14 +252,14 @@ hr{
     cursor: pointer;
 }
 
-.required{
+.required {
     display: block;
     position: absolute;
     top: 16%;
     left: 57.5%;
 }
 
-.safety-threhold{
+.safety-threhold {
     display: block;
     position: absolute;
     top: 16%;

@@ -4,22 +4,25 @@
 	margin: 0;
     font-family: 'Open Sans ';
 }
+
 body {
     height: 100%;
     overflow: hidden;
 }
 
-@media screen and (min-width: 1900px){
-    .logo img{
+@media screen and (min-width: 1900px) {
+    .logo img {
         width: 25%;
     }
-    .side-picture{
+
+    .side-picture {
         height: 100%;
         display: flex;
         position: absolute;
         top: 0%;
         left: 47%;
     }
+
     .header {
         background:linear-gradient(to bottom,#DFAFAD,#FDF9F8);
         height: 10%; 
@@ -28,6 +31,7 @@ body {
         width: 100%;
         display: flex;
     }
+
     .bottom {
         width: 47%;
         background-color:#FDF9F8;
@@ -36,7 +40,8 @@ body {
         text-align: center;
         display: flex;
     }
-    .chenge-password{
+
+    .chenge-password {
         width: 47%;
         background-color:#FDF9F8;
         position: absolute;
@@ -44,7 +49,8 @@ body {
         text-align: center;
         display: flex;
     }
-    .login-content{
+
+    .login-content {
         height: 60%;
         width: 60%;
         background-color: white;
@@ -54,46 +60,55 @@ body {
         right: 20%;
         top:20%;
     }
+
     .login-content ul li {
         list-style: none;
     }
+
     .login-content h1 {
         text-align: center;
         margin-top: 10%;
         font-size: 42px;
         font-weight: bold;
     }
-    .login-content h2{
+
+    .login-content h2 {
         margin-top: 5%;
         font-weight: normal;
     }
-    .login-content ul li:nth-child(1){
-        text-align: center;
-    }
-    .login-content ul li:nth-child(2){
+
+    .login-content ul li:nth-child(1) {
         text-align: center;
     }
 
-    .login-content ul li:nth-child(3){
+    .login-content ul li:nth-child(2) {
+        text-align: center;
+    }
+
+    .login-content ul li:nth-child(3) {
         display: inline;
         float: left;
         margin-left: 8%;
         margin-top: 2%;
     }
-    .login-content ul li:nth-child(4){
+
+    .login-content ul li:nth-child(4) {
         display: inline;
         float: right;
         margin-right: 7%;
         margin-top: 3%;
     }
-    .change-password-btn{
+
+    .change-password-btn {
         all:unset;
         cursor: pointer;
     }
-    .login-content ul li:nth-child(5){
+
+    .login-content ul li:nth-child(5) {
         text-align: center;
     }
-    .change-password-content{
+
+    .change-password-content {
         height: 60%;
         width: 35%;
         background-color: white;
@@ -107,6 +122,7 @@ body {
     .change-password-content ul li {
         list-style: none;
     }
+
     .change-password-content h1 {
         text-align: center;
         margin-top: 4%;
@@ -114,23 +130,25 @@ body {
         font-weight: bold;
     }
 
-    .change-password-content ul li:nth-child(1){
+    .change-password-content ul li:nth-child(1) {
         text-align: center;
     }
-    .change-password-content ul li:nth-child(2){
+    .change-password-content ul li:nth-child(2) {
         text-align: center;
     }
-    .change-password-content ul li:nth-child(4){
+    .change-password-content ul li:nth-child(4) {
         text-align: center;
     }
 
-    .change-password-content ul li:nth-child(3){
+    .change-password-content ul li:nth-child(3) {
         text-align: center;
     }
-    .change-password-content ul li:nth-child(5){
+    
+    .change-password-content ul li:nth-child(5) {
         text-align: center;
     }
-    .change-userID{
+
+    .change-userID {
         margin-top: 5%;
         background-color: #F3DFD6;
         border: 0px;
@@ -139,7 +157,7 @@ body {
         padding: 15px;
     }
     
-    .userID{
+    .userID {
         margin-top: 10%;
         background-color: #F3DFD6;
         border: 0px;
@@ -147,11 +165,13 @@ body {
         width: 80%;
         padding: 15px;
     }
-    input::-webkit-input-placeholder{
+
+    input::-webkit-input-placeholder {
         font-size: 20px;
         color: gray;
         text-align: left;
     }
+
     .password {
         margin-top: 10%;
         background-color:#F3DFD6;
@@ -160,7 +180,8 @@ body {
         width: 80%;
         padding: 15px;
     }
-    .change-password{
+
+    .change-password {
         margin-top: 5%;
         background-color:#F3DFD6;
         border: 0px;
@@ -169,7 +190,7 @@ body {
         padding: 15px;
     }
 
-    .show-password{
+    .show-password {
         margin-top: 5%;
     }
 
@@ -185,11 +206,11 @@ body {
         cursor: pointer;
     }
 
-    input[type="text"]
-    {
+    input[type="text"] {
         font-size:20px;
         padding: 15px;
     }
+
     #patient {
         background: none;
         border: none;
@@ -198,6 +219,7 @@ body {
         cursor: pointer;
         color: black;
     }
+
     #doctor {
         background: none;
         border: none;
@@ -206,7 +228,6 @@ body {
         cursor: pointer;
         color: black;
     }
-
 
     /* Customize the label (the container) */
     .container {
@@ -261,6 +282,7 @@ body {
         font-size: 20px;
         padding: 15px;
     }
+
     /* Show the indicator (dot/circle) when checked */
     .container input:checked ~ .checkmark:after {
         display: block;
@@ -276,7 +298,7 @@ body {
         background: white;
     }
     
-    .back-icon{
+    .back-icon {
         display:none;
         position:absolute;
         height:7%;
@@ -286,13 +308,15 @@ body {
     }
 }
 
-@media screen and (min-width: 1000px) and (max-width:1100px){
-    .logo img{
+@media screen and (min-width: 1000px) and (max-width:1100px) {
+    .logo img {
         width: 25%;
     }
-    .side-picture{
+
+    .side-picture {
         display: none;
     }
+
     .header {
         background:linear-gradient(to bottom,#DFAFAD,#FDF9F8);
         height: 10%; 
@@ -301,6 +325,7 @@ body {
         width: 100%;
         display: flex;
     }
+
     .bottom {
         width: 100%;
         background-color:#FDF9F8;
@@ -309,7 +334,8 @@ body {
         text-align: center;
         overflow: auto;
     }
-    .login-content{
+    
+    .login-content {
         height: 75%;
         width: 60%;
         background-color: white;
@@ -319,33 +345,40 @@ body {
         right: 20%;
         top:10%;
     }
+
     .login-content ul li {
         list-style: none;
     }
+
     .login-content h1 {
         text-align: center;
         margin-top: 5%;
         font-size: 42px;
         font-weight: bold;
     }
-    .login-content h2{
+
+    .login-content h2 {
         margin-top: 2%;
         font-weight: normal;
     }
-    .login-content ul li:nth-child(1){
+
+    .login-content ul li:nth-child(1) {
         text-align: center;
     }
-    .login-content ul li:nth-child(2){
+
+    .login-content ul li:nth-child(2) {
         text-align: center;
     }
-    .login-content ul li:nth-child(4){
+
+    .login-content ul li:nth-child(4) {
         display: inline;
         float: right;
         margin-right: 7%;
         margin-top: 3%;
         
     }
-    .back-icon{
+
+    .back-icon {
         display:none;
         position:absolute;
         height:7%;
@@ -353,22 +386,24 @@ body {
         top:20%;
         z-index: 1;
     }
-    .change-password-btn{
+
+    .change-password-btn {
         all: unset;
         cursor: pointer;
     }
 
-    .login-content ul li:nth-child(3){
+    .login-content ul li:nth-child(3) {
         display: inline;
         float: left;
         margin-left: 8%;
         margin-top: 2%;
     }
-    .login-content ul li:nth-child(5){
+
+    .login-content ul li:nth-child(5) {
         text-align: center;
     }
 
-    .change-password-content{
+    .change-password-content {
         height: 70%;
         width: 75%;
         background-color: white;
@@ -382,6 +417,7 @@ body {
     .change-password-content ul li {
         list-style: none;
     }
+
     .change-password-content h1 {
         text-align: center;
         margin-top: 4%;
@@ -389,23 +425,27 @@ body {
         font-weight: bold;
     }
 
-    .change-password-content ul li:nth-child(1){
-        text-align: center;
-    }
-    .change-password-content ul li:nth-child(2){
-        text-align: center;
-    }
-    .change-password-content ul li:nth-child(4){
+    .change-password-content ul li:nth-child(1) {
         text-align: center;
     }
 
-    .change-password-content ul li:nth-child(3){
+    .change-password-content ul li:nth-child(2) {
         text-align: center;
     }
-    .change-password-content ul li:nth-child(5){
+
+    .change-password-content ul li:nth-child(4) {
         text-align: center;
     }
-    .change-userID{
+
+    .change-password-content ul li:nth-child(3) {
+        text-align: center;
+    }
+
+    .change-password-content ul li:nth-child(5) {
+        text-align: center;
+    }
+
+    .change-userID {
         margin-top: 5%;
         background-color: #F3DFD6;
         border: 0px;
@@ -414,7 +454,7 @@ body {
         padding: 15px;
     }
 
-    .change-password{
+    .change-password {
         margin-top: 5%;
         background-color:#F3DFD6;
         border: 0px;
@@ -431,11 +471,13 @@ body {
         width: 80%;
         padding: 15px;
     }
-    input::-webkit-input-placeholder{
+
+    input::-webkit-input-placeholder {
         font-size: 20px;
         color: gray;
         text-align: left;
     }
+
     .password {
         margin-top: 8%;
         background-color:#F3DFD6;
@@ -445,7 +487,7 @@ body {
         padding: 15px;
     }
 
-    .show-password{
+    .show-password {
         margin-top: 5%;
     }
 
@@ -461,11 +503,11 @@ body {
         cursor: pointer;
     }
 
-    input[type="text"]
-    {
+    input[type="text"] {
         font-size:20px;
         padding: 15px;
     }
+    
     #patient {
         background: none;
         border: none;
@@ -474,6 +516,7 @@ body {
         cursor: pointer;
         color: black;
     }
+
     #doctor {
         background: none;
         border: none;
@@ -482,7 +525,6 @@ body {
         cursor: pointer;
         color: black;
     }
-
 
     /* Customize the label (the container) */
     .container {
@@ -533,10 +575,12 @@ body {
         position: absolute;
         display: none;
     }
+
     input[type='password'] {
         font-size: 20px;
         padding: 15px;
     }
+
     /* Show the indicator (dot/circle) when checked */
     .container input:checked ~ .checkmark:after {
         display: block;
@@ -554,12 +598,14 @@ body {
 }
 
 @media screen and (min-width: 350px) and (max-width:400px) {
-    .logo img{
+    .logo img {
         width: 45%;
     }
-    .side-picture{
+
+    .side-picture {
         display: none;
     }
+
     .header {
         background:linear-gradient(to bottom,#DFAFAD,#FDF9F8);
         height: 100%; 
@@ -567,6 +613,7 @@ body {
         z-index: 0;
         width: 100%;
     }
+
     .bottom {
         width: 100%;
         background-color:#FDF9F8;
@@ -575,7 +622,8 @@ body {
         text-align: center;
         overflow: auto;
     }
-    .login-content{
+
+    .login-content {
         height: 55%;
         width: 80%;
         background-color: white;
@@ -585,27 +633,33 @@ body {
         right: 10%;
         top:15%;
     }
+    
     .login-content ul li {
         list-style: none;
     }
+
     .login-content h1 {
         text-align: center;
         margin-top: 5%;
         font-size: 30px;
         font-weight: bold;
     }
-    .login-content h2{
+
+    .login-content h2 {
         margin-top: 5%;
         font-weight: normal;
         font-size: medium;
     }
-    .login-content ul li:nth-child(1){
+
+    .login-content ul li:nth-child(1) {
         text-align: center;
     }
-    .login-content ul li:nth-child(2){
+
+    .login-content ul li:nth-child(2) {
         text-align: center;
     }
-    .login-content ul li:nth-child(4){
+
+    .login-content ul li:nth-child(4) {
         display: inline;
         float: right;
         margin-right: 7%;
@@ -613,20 +667,23 @@ body {
         font-size: 75%;
     }
 
-    .login-content ul li:nth-child(3){
+    .login-content ul li:nth-child(3) {
         display: inline;
         float: left;
         margin-left: 8%;
         margin-top: 2%;
     }
-    .login-content ul li:nth-child(5){
+
+    .login-content ul li:nth-child(5) {
         text-align: center;
     }
-    .change-password-btn{
+
+    .change-password-btn {
         all: unset;
         cursor: pointer;
     }
-    .change-password-content{
+
+    .change-password-content {
         height: 70%;
         width: 75%;
         background-color: white;
@@ -640,6 +697,7 @@ body {
     .change-password-content ul li {
         list-style: none;
     }
+
     .change-password-content h1 {
         text-align: center;
         margin-top: 4%;
@@ -647,23 +705,27 @@ body {
         font-weight: bold;
     }
 
-    .change-password-content ul li:nth-child(1){
-        text-align: center;
-    }
-    .change-password-content ul li:nth-child(2){
-        text-align: center;
-    }
-    .change-password-content ul li:nth-child(4){
+    .change-password-content ul li:nth-child(1) {
         text-align: center;
     }
 
-    .change-password-content ul li:nth-child(3){
+    .change-password-content ul li:nth-child(2) {
         text-align: center;
     }
-    .change-password-content ul li:nth-child(5){
+
+    .change-password-content ul li:nth-child(4) {
         text-align: center;
     }
-    .change-userID{
+
+    .change-password-content ul li:nth-child(3) {
+        text-align: center;
+    }
+
+    .change-password-content ul li:nth-child(5) {
+        text-align: center;
+    }
+
+    .change-userID {
         margin-top: 5%;
         background-color: #F3DFD6;
         border: 0px;
@@ -672,7 +734,7 @@ body {
         padding: 15px;
     }
 
-    .change-password{
+    .change-password {
         margin-top: 5%;
         background-color:#F3DFD6;
         border: 0px;
@@ -689,11 +751,13 @@ body {
         width: 80%;
         padding: 15px;
     }
-    input::-webkit-input-placeholder{
+
+    input::-webkit-input-placeholder {
         font-size: 75%;
         color: gray;
         text-align: left;
     }
+
     .password {
         margin-top: 10%;
         background-color:#F3DFD6;
@@ -703,7 +767,7 @@ body {
         padding: 15px;
     }
 
-    .show-password{
+    .show-password {
         margin-top: 5%;
     }
 
@@ -719,11 +783,11 @@ body {
         cursor: pointer;
     }
 
-    input[type="text"]
-    {
+    input[type="text"] {
         font-size:20px;
         padding: 15px;
     }
+
     #patient {
         background: none;
         border: none;
@@ -732,6 +796,7 @@ body {
         cursor: pointer;
         color: black;
     }
+
     #doctor {
         background: none;
         border: none;
@@ -740,6 +805,7 @@ body {
         cursor: pointer;
         color: black;
     }
+
     .back-icon{
         display:none;
         position:absolute;
@@ -748,7 +814,6 @@ body {
         top:20%;
         z-index: 1;
     }
-
 
     /* Customize the label (the container) */
     .container {
@@ -796,10 +861,12 @@ body {
         position: absolute;
         display: none;
     }
+
     input[type='password'] {
         font-size: 20px;
         padding: 15px;
     }
+
     /* Show the indicator (dot/circle) when checked */
     .container input:checked ~ .checkmark:after {
         display: block;

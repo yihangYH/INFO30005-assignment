@@ -343,7 +343,6 @@
 
   }
 
-
   .about-us-text {
     margin-top: 5%;
     font-size: 10px;
@@ -428,7 +427,6 @@
     list-style: none;
   }
 
-
   .topBar .about-us {
     margin-left: 18%;
   }
@@ -443,7 +441,6 @@
     margin-right: 8%;
     width: 90%;
   }
-
 
   .type-picture {
     width: 140%;
@@ -656,7 +653,6 @@
     z-index: -1;
     transition: all ease, 0.4s;
     overflow: hidden;
-
   }
 
   li:nth-child(2):hover~.slider {
@@ -889,14 +885,11 @@
 
   .about-diabetes-type ul {
     display: flex;
-
     list-style: none;
-
   }
 
   .about-diabetes-type ul li {
     font-size: large;
-
   }
 
   .type1-picture {
@@ -999,7 +992,6 @@
   .logo {
     width: 250px;
     overflow: hidden;
-
   }
 
   .topBar ul li a {

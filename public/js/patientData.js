@@ -189,6 +189,7 @@ function validForm() {
         
         return false
     }
+
     if (document.getElementById('bio-block').value.length > 200) {
         try {
             Swal.fire(
@@ -214,7 +215,7 @@ function validForm() {
     return true
 }
 
-// reload page after 1 sec
+// reload page after 1.5 sec
 function bioReloadPage(){
     setTimeout(() => {
         window.location.reload()
@@ -274,6 +275,7 @@ function submit0() {
     if(text == ""){
         document.getElementById('pen').style.display = 'flex';
     }
+
     // when submit is clicked, display comment.
     if(/\p{L}/u.test(text)){
         // if comment length is > 22, display part of it 
@@ -303,6 +305,7 @@ function submit0() {
             imgp.setAttribute('id', 'pen');
             document.getElementById('comment').appendChild(imgp);
             document.getElementById('pen').style.position = 'absolute';
+
             // set different position based on the different screen size 
             if (window.innerWidth == 375) {
                 document.getElementById('pen').style.left = '122%';
@@ -584,6 +587,7 @@ function checkUpdated(data) {
         let time = updateTime.substring(18).split(' ')[0].split('/');
         const day = time[1];
         const month = time[0];
+        
         // if the data is entered is today, display this data, and 
         // set corresponding field to not eidtable 
         if (day == currentDay && month == currentMonth) {

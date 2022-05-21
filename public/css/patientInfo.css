@@ -7,7 +7,6 @@
 }
 
 @media screen and (min-width: 300px) and (max-width:400px) {
-
     .header {
         display: flex;
         background: linear-gradient(to bottom, #DFAFAD, #FDF9F8);
@@ -644,7 +643,6 @@
         background-color: rgba(0, 0, 0, 0.4);
     }
 
-
     .modal-content {
         background-color: red;
         margin: 70% auto;
@@ -654,7 +652,6 @@
         color: white;
         font-size: 20px;
     }
-
 
     .close {
         color: #aaa;
@@ -672,7 +669,6 @@
 }
 
 @media screen and (min-width: 1900px) {
-
     .header {
         display: flex;
         background: linear-gradient(to bottom, #DFAFAD, #FDF9F8);
@@ -848,6 +844,7 @@
         font-weight: Bold;
         color: black;
     } */
+
     .trophies-and-rankings {
         display: flex;
         position: absolute;
@@ -1133,6 +1130,7 @@
         color: #A22929;
         font-size: 55px;
     }
+
     .text p{
         text-align: center;
         width: 100%;
@@ -1334,7 +1332,6 @@
         background-color: rgba(0, 0, 0, 0.4);
     }
 
-
     .modal-content {
         background-color: red;
         margin: 15% auto;
@@ -1344,7 +1341,6 @@
         color: white;
         font-size: 27px;
     }
-
 
     .close {
         color: #aaa;
@@ -1359,7 +1355,6 @@
         text-decoration: none;
         cursor: pointer;
     }
-
 }
 
 @media screen and (min-width: 1000px) and (max-width: 1200px) {
@@ -1538,6 +1533,7 @@
         font-weight: Bold;
         color: black;
     } */
+
     .trophies-and-rankings {
         display: flex;
         position: absolute;
@@ -1640,8 +1636,6 @@
         background-color: #DFAFAD;
         border: none;
         cursor: pointer;
-
-
     }
 
     .blood-glucose-words {
@@ -1828,7 +1822,7 @@
         color: #A22929;
         font-size: 45px;
     }
-    .text p{
+    .text p {
         text-align: center;
         width: 100%;
     }
@@ -2043,7 +2037,6 @@
         font-size: 27px;
     }
 
-
     .close {
         color: #aaa;
         float: right;
@@ -2057,7 +2050,6 @@
         text-decoration: none;
         cursor: pointer;
     }
-
 }
 
 ::-webkit-scrollbar {

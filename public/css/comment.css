@@ -6,14 +6,15 @@
     font-family: 'Open Sans ';
 }
 
-body{
+body {
     background-color:#FDF9F8;
 }
+
 a {
     color: inherit;
 }
 
-.topBar{
+.topBar {
     width:100%;
     height:90px;
     background:linear-gradient(to bottom,#DFAFAD,#FDF9F8);
@@ -23,17 +24,17 @@ a {
     justify-content: space-between;
 }
 
-.logo{
+.logo {
     display: flex;
     width:15%;
     align-items:center;
 }
 
-.logo img{
+.logo img {
     width: 100%;
 }
 
-.logo + div{
+.logo + div {
     display: flex;
     flex-direction: row;
     justify-content:right; 
@@ -48,16 +49,16 @@ a {
 
 }
 
-.topButton{
+.topButton {
     margin-right: 10%;
 }
 
-.comment-td{
+.comment-td {
     height: 29px;
     overflow-y: scroll;
 }
 
-#clinicianName{
+#clinicianName {
     font-size:350%;
     color: #a22929;
     font-weight: bold;
@@ -70,25 +71,24 @@ a {
     
 }
 
-#sideBar{
+#sideBar {
     position: relative;
 }
 
-#triangle{
+#triangle {
     width:50%;
 }
 
 
-#sideBar a{
+#sideBar a {
     color: #000;
 }
 
-#sideBar p{
+#sideBar p {
     margin-bottom: 7%;
 }
 
-
-.sideButton{
+.sideButton {
     position: absolute;
     width: 600%;
     top:90%;
@@ -100,19 +100,19 @@ a {
     z-index:9;
 }
 
-.line{
+.line {
     height: 40%;
     margin-right:3%;
 }
 
-#tableTitle{
+#tableTitle {
     text-align:center;
     font-weight: bold;
     font-size: 180%;
     margin-bottom:0px;
 }
 
-#tableTime{
+#tableTime {
     text-align:center;
     font-size: 130%;
     margin-top: 0px;
@@ -120,23 +120,23 @@ a {
 }
 
 /* TODO: can't scroll*/
-#dashboard{
+#dashboard {
     overflow-y: auto;
     height: 8px;
 }
 
-#dashboard>table, td, th{
+#dashboard>table, td, th {
     border: 1px solid black;
 }
 
-td,th{
+td,th {
     padding-top: 2%;
     padding-bottom:2%;
     position: relative;
     font-size: 130%;
 }
 
-#dashboard>table{    
+#dashboard>table {    
     width: 81%;
     border-collapse: collapse;
     text-align: center;
@@ -148,7 +148,7 @@ td,th{
     font-size: 120%;
 }
 
-#dashboard span{
+#dashboard span {
     position:absolute;
     top:69%;
     left:53%;
@@ -159,9 +159,7 @@ td,th{
     font-style: normal !important;
 }
 
-
 thead, tbody, tr, th, td { display: block; }
-
 
 thead{
     width: 100%;
