@@ -20,7 +20,7 @@ function goback(){
   document.getElementById("back-icon").style.display = "none"
 }
 
-function loginValidation(){
+async function loginValidation(){
   var userID = document.getElementById("userID").value;
   var password = document.getElementById("oldPassword").value;
   var newpassword = document.getElementById("newPassword").value;
@@ -109,6 +109,35 @@ function loginValidation(){
         }
         
         return false
+    }
+    try {
+      let logininfo = {
+        username: document.getElementById("userID").value,
+        password: document.getElementById("oldPassword").value,
+      }
+      const response = await fetch('/patientlogin', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(logininfo)
+      });
+      if(response.status != 202){
+        try {
+          Swal.fire(
+            'Please check your username and password',
+            'please check',
+            'error'
+          )
+        } catch (error) {
+          // if sweetalert2 not working in the current moment, use defulat alert
+          document.getElementById("myModal").style.display = "block";
+          document.getElementById('error-message').innerHTML = "Please check your username and password";
+        }
+        return false;
+      }
+    } catch (error) {
+      alert(error)
     }
 
   try {
