@@ -785,7 +785,7 @@
    .bio-pen-pic {
        display: flex;
        position: absolute;
-       width: 17%;
+       width: 16%;
        left: 124%;
        top:-10px;
        height: 65px;
@@ -796,7 +796,7 @@
        border: 0;
         display: flex;
         position: absolute;
-        width: 17%;
+        width: 16%;
         left: 124%;
         top:-10px;
         height: 65px;
@@ -1476,7 +1476,7 @@
    .bio-pen-pic {
        display: flex;
        position: absolute;
-       width: 17%;
+       width: 16%;
        left: 98%;
        top:-8px;
        height: 42px;
@@ -2058,4 +2058,8 @@
         cursor: pointer;
     }
 
+}
+
+::-webkit-scrollbar {
+    width: 0px;
 }
