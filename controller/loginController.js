@@ -5,8 +5,7 @@ const bcrypt = require('bcryptjs')
 
 const isAuthenticated = (req, res, next) => {
     // If user is not authenticated via passport, redirect to login page 
-    console.log(req.params.id)
-    console.log(req.session)
+
     if(req.session.passport == undefined){
         return res.redirect('/welcome') 
     }
@@ -29,7 +28,6 @@ const getChangePassword = (req, res, next) => {
 }
 
 const postChangePassword = (req, res, next) => {
-    console.log(req.body.oldPassword)
     patient.findOne({ userid: req.body.userID },(err, user) => {
       // Check if error connecting
       if (err) {

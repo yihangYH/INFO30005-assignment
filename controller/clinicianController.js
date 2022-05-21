@@ -294,7 +294,6 @@ function findMaxDataType(patientInfo){
 // get create patient page
 const createPatient = async(req,res,next) => {
     try {
-            console.log(req.params.id)
         res.render('createPatient.hbs', {id: req.params.id})
     } catch (error) {
         return next(err)
@@ -450,7 +449,6 @@ const updatePatient = async(req,res,next) => {
         healthyData_required[3] = true
         safetyThreshold[3] = req.body.exerciseLowerBalueUpdate + "-" + req.body.exerciseUpperValueUpdate
     }
-    console.log("check")
     // update patient with new data
     patient.findByIdAndUpdate({_id: req.params.patientID}, {$set:{healthyData_required: healthyData_required, safety_threshold: safetyThreshold}}, function(err, updatedPatient){
         if (err) { console.log(err); return; }
@@ -493,7 +491,6 @@ const updateNote = async(req,res,next)=>{
 const isAuthenticated = (req, res, next) => {
     // If user is not authenticated via passport, redirect to login page 
     // console.log(req.params.id)
-    console.log(req.session)
     if(req.session.passport == undefined){
         return res.redirect('/welcome') 
     }

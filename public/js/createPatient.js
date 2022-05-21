@@ -305,7 +305,6 @@ function createPatientValidation(){
         }
         return false
     }
-    console.log(Number(date[0]) , Number(date[1]) , Number(date[2]))
     if(document.getElementById('userId').value.replace(/ /g,'') == ""){
         try {
             Swal.fire(

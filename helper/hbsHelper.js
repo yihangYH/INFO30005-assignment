@@ -79,12 +79,13 @@ hbs.handlebars.registerHelper("reverse", function(data) {
     for (var i = data.length - 1; i >= 0; i--) {
         reverseArray.push(data[i])
     }
+    console.log(reverseArray)
     return reverseArray;
     
 });
 
 hbs.handlebars.registerHelper("patientDetailGetValue", function(value, require,index) {
-    console.log(require)
+
     if(require[index].includes("Not")){
         return "Not Required"
     }else{
@@ -93,7 +94,7 @@ hbs.handlebars.registerHelper("patientDetailGetValue", function(value, require,i
 })
 
 hbs.handlebars.registerHelper("patientDetailGetTime", function(value, require,index) {
-    console.log(require)
+
     if(require[index].includes("Not")){
         return ""
     }else{
@@ -102,7 +103,6 @@ hbs.handlebars.registerHelper("patientDetailGetTime", function(value, require,in
 })
 
 hbs.handlebars.registerHelper("patientDetailGetComment", function(value, require,index) {
-    console.log(require)
     if(require[index].includes("Not")){
         return "Not Required"
     }else{

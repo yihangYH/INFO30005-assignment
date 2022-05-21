@@ -324,8 +324,7 @@ function findMacCountDataUpdated(currentPatient){
 
 const isAuthenticated = (req, res, next) => {
     // If user is not authenticated via passport, redirect to login page 
-    console.log(req.params.id)
-    console.log(req.session)
+
     if(req.session.passport == undefined){
         return res.redirect('/welcome') 
     }
