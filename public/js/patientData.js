@@ -20,7 +20,7 @@ function updateBtnclick() {
     reloadUpdatePage();
 }
 
-// reload update page
+
 function reloadUpdatePage() {
     for (let i = 0; i < 4; i++) {
         var date = document.getElementById(dates[i]).innerHTML
@@ -153,6 +153,77 @@ function updatePlusClick() {
         document.getElementById('cancel').style.display = 'none';
         document.getElementById('container').style.display = 'none';
     }
+}
+
+// display comment area
+function setBioWindow() {
+    document.getElementById('bio-block').style.display = 'flex';
+    document.getElementById('bio-insert').style.display = 'none';
+    document.getElementById('bio-submit').style.display = 'flex';
+    document.getElementById('bio-clear').style.display = 'flex';
+    document.getElementById('bio-pen').style.display = 'none'
+}
+
+// Bio arra submit button logic 
+function bioSubmit() {
+    document.getElementById('bio-block').style.display = 'none';
+    document.getElementById('bio-insert').style.display = 'flex';
+    document.getElementById('bio-submit').style.display = 'none';
+    document.getElementById('bio-clear').style.display = 'none';
+    
+
+}
+
+function validForm() {
+    console.log(document.getElementById('bio-block').value.length)
+    if(document.getElementById('bio-block').value.replace(/ /g,'') == ""){
+        try {
+            Swal.fire(
+                'Please check bio',
+                'please check',
+                'error'
+            )
+        } catch (error) {
+            alert("Please check bio")
+        }
+        
+        return false
+    }
+    if (document.getElementById('bio-block').value.length > 200) {
+        try {
+            Swal.fire(
+                'Invalid bio length, longer than 150 characters',
+                'please check',
+                'error'
+            )
+        } catch (error) {
+            alert("Please enter bio")
+        }
+        return false
+    }else if(document.getElementById('bio-block').value.length == 0) {
+        try {
+            Swal.fire(
+                'Invalid bio length, empty bio',
+                'please check',
+                'error'
+            )
+        } catch (error) {
+            alert("Please enter bio")
+        }
+    }
+    return true
+}
+
+// reload page after 1 sec
+function bioReloadPage(){
+    setTimeout(() => {
+        window.location.reload()
+    }, "1500")
+}
+
+// clear Bio area
+function bioClear() {
+    document.getElementById('bio-block').value = "";
 }
 
 // display comment area

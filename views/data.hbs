@@ -4,7 +4,7 @@
 <div class="main">
     <div class="header">
         <div class="logo">
-            <a href="/welcome"><img class="logo" src="../res/logo.png" alt="diabetes"></a>
+            <img class="logo" src="../res/logo.png" alt="diabetes">
         </div>
         <form action="/logout" method="post">
             <div class="log-out">
@@ -39,13 +39,27 @@
             <a href="/data/{{this._id}}/leaderboard"><p>Learn more</p></a>
         </div>
     </div>
-    <div class="album">
-        Check out my new album!!!
-        <!-- <div class="submit">submit</div> -->
-        <div class="pen">
-            <img class="pen-pic" src="../res/pen.png" alt="pen">
+    <div class="bio">
+        <p class="bio-insert" id="bio-insert">{{this.bio}}</p>
+        <div class="bio-page">
+
+            <form action="/data/{{this._id}}/updateBio" method = "POST" onsubmit="return validForm()">
+                <div class="bio-block-butn" id="bio-block-butn">
+                    <button type="button" class="bio-clear" id="bio-clear" onclick="bioClear()">clear</button>
+                    <button type="submit" class="bio-submit" id="bio-submit" onclick="bioSubmit() bioReloadPage()">submit</button>
+                </div>
+
+                <textarea 
+                    class="bio-block" id="bio-block" name= "bioInfo" placeholder="Add Bio"> 
+                </textarea>
+            </form>
+            
+            <img class="bio-pen-pic" id="bio-pen" src="../res/pen.png">
+            <button type="button" class="bio-pen-butn" id="bio-pen-butn" onclick="setBioWindow(), bioClear()"></button>
+            
+
         </div>
-    </div>  
+    </div>
     <div class="your-data">
         <P>Your Data:</P>
         <button class="update" id="update-btn" onclick="updateBtnclick()">

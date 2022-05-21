@@ -22,4 +22,6 @@ patientRouter.post('/checkPatient', patientController.isAuthenticated, patientCo
 
 patientRouter.post('/data/:id', patientController.isAuthenticated, patientController.updateData)
 
+patientRouter.post('/data/:id/updateBio',patientController.updateBioMessage)
+
 module.exports = patientRouter

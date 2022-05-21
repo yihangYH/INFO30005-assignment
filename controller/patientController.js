@@ -339,6 +339,17 @@ const isAuthenticated = (req, res, next) => {
     return next() 
 }
 
+// callback function for update support message
+const updateBioMessage = async(req,res,next)=>{
+    console.log(req.body.bioInfo)
+    patient.findByIdAndUpdate({_id: req.params.id}, {$set:{bio: req.body.bioInfo}}, function(err, updatedPatient){
+        if (err) { console.log(err); return; }
+    })
+    
+    var path = "/data/"+ req.params.id
+    res.redirect(path)
+}
+
 module.exports = {
     getPatient, 
     updateData, 
@@ -348,6 +359,6 @@ module.exports = {
     getPassExercise,
     checkPatient,
     getLeaderboard,
-    isAuthenticated
-    
+    isAuthenticated,
+    updateBioMessage
 }
