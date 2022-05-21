@@ -20,24 +20,31 @@ function updateBtnclick() {
     reloadUpdatePage();
 }
 
-
 function reloadUpdatePage() {
     for (let i = 0; i < 4; i++) {
         var date = document.getElementById(dates[i]).innerHTML
+
         // if the date not include no
         if(!date.includes("No")){
             // date display in the page
             date = date.substring(17, date.length - 10).split('/')
+
             // get current time
             let AuDate = new Date().toLocaleString("en-US", {
                 timeZone: "Australia/Sydney"
             });
+
             let dateString = AuDate.toString().replace(',', ' ');
             const currentMonth = dateString.split('/')[0];
             const currentDay = dateString.split('/')[1];
-            // check the if in the same day, if in the same day, update field display today's updated data 
-            if (currentDay == date[1].replace(/\s/g,'') && currentMonth == date[0].replace(/\s/g,'')) {
-                document.getElementById(inputs[i]).value = document.getElementById(datas[i]).innerHTML.split('&')[0].replace(/\s/g, '');
+
+            /* check the if in the same day, if in the same day, 
+            update field display today's updated data */
+            if (currentDay == date[1].replace(/\s/g,'') && 
+                currentMonth == date[0].replace(/\s/g,'')) {
+                document.getElementById(inputs[i]).value = 
+                document.getElementById(datas[i]).innerHTML
+                .split('&')[0].replace(/\s/g, '');
             }
         }
     }
@@ -46,18 +53,25 @@ function reloadUpdatePage() {
 // check if data are entered. before submit post request
 function validation() {
     for (let i = 0; i < 4; i++) {
-        if (document.getElementById(inputs[i]).value != "Not Required" && document.getElementById(inputs[i]).value != "" && !document.getElementById(inputs[i]).readOnly) {
+        if (document.getElementById(inputs[i]).value != 
+            "Not Required" && document.getElementById(inputs[i]).value != "" && 
+            !document.getElementById(inputs[i]).readOnly) {
             // call checkComment function, if data is entered
             if (!checkComment()) {
                 return false;
             }
+
             // call updatePulsClick function
             updatePlusClick();
             return true;
         }
     }
+
     // if all data has updated, alert message
-    if (document.getElementById('blood-glucose-input').readOnly && document.getElementById('weight-input').readOnly && document.getElementById('insulin-taken-input').readOnly && document.getElementById('exericse-input').readOnly) {
+    if (document.getElementById('blood-glucose-input').readOnly && 
+        document.getElementById('weight-input').readOnly && 
+        document.getElementById('insulin-taken-input').readOnly && 
+        document.getElementById('exericse-input').readOnly) {
         try {
             Swal.fire(
                 'All data has been updated',
@@ -103,7 +117,9 @@ function validation() {
 function checkComment() {
     for (let i = 0; i < 4; i++) {
         // check if only data is entered
-        if (document.getElementById(inputs[i]).value != "Not Required" && document.getElementById(inputs[i]).value != "" && document.getElementById(comments[i]).innerHTML.includes("+ Comment")) {
+        if (document.getElementById(inputs[i]).value != "Not Required" && 
+            document.getElementById(inputs[i]).value != "" && 
+            document.getElementById(comments[i]).innerHTML.includes("+ Comment")) {
             try {
                 Swal.fire(
                     'Please enter ' + names[i] + ' comment before update',
@@ -117,9 +133,11 @@ function checkComment() {
             return false;
         }
     }
+
     // check if only comment is enterd 
     for (let i = 0; i < 4; i++) {
-        if (!document.getElementById(comments[i]).innerHTML.includes("+ Comment") && document.getElementById(inputs[i]).value == "") {
+        if (!document.getElementById(comments[i]).innerHTML.includes("+ Comment") && 
+            document.getElementById(inputs[i]).value == "") {
             try {
                 Swal.fire(
                     'Please enter ' + names[i] + ' data before update',
@@ -140,7 +158,8 @@ function updatePlusClick() {
     var validator = false;
     // if data is entered validator = true
     for (let i = 0; i < 4; i++) {
-        if (document.getElementById(inputs[i]).value != "Not Required" && document.getElementById(inputs[i]).value != "") {
+        if (document.getElementById(inputs[i]).value != "Not Required" && 
+            document.getElementById(inputs[i]).value != "") {
             validator = true;
         }
     }
@@ -587,7 +606,7 @@ function checkUpdated(data) {
         let time = updateTime.substring(18).split(' ')[0].split('/');
         const day = time[1];
         const month = time[0];
-        
+
         // if the data is entered is today, display this data, and 
         // set corresponding field to not eidtable 
         if (day == currentDay && month == currentMonth) {
@@ -599,7 +618,8 @@ function checkUpdated(data) {
             // if data value contains Not means, this data is not reuqired
             // display orginal text
             if (data[i]&&!document.getElementById(datas[i]).innerHTML.includes("Yet")) {
-                document.getElementById(comments[i]).innerHTML = "+ Comment" + document.getElementById(comments[i]).innerHTML
+                document.getElementById(comments[i]).innerHTML = "+ Comment" + 
+                document.getElementById(comments[i]).innerHTML
             }
         }
 

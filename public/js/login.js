@@ -9,23 +9,24 @@ function myFunction() {
 }
 
 // click change password perform some display change 
-function changePassword(){
+function changePassword() {
     document.getElementById("change-password-content").style.display = "inline-block"
     document.getElementById("back-icon").style.display = "inline-block"
 }
 
 // click back img perform some display change 
-function goback(){
+function goback() {
   document.getElementById("change-password-content").style.display = "none"
   document.getElementById("back-icon").style.display = "none"
 }
 
-async function loginValidation(){
+async function loginValidation() {
   var userID = document.getElementById("userID").value;
   var password = document.getElementById("oldPassword").value;
   var newpassword = document.getElementById("newPassword").value;
   var confirmpassword = document.getElementById("confirmPassword").value;
-  if(confirmpassword.length == 0 || newpassword.length == 0 || password.length == 0 || userID.length == 0){
+  if(confirmpassword.length == 0 || newpassword.length == 0 || 
+      password.length == 0 || userID.length == 0) {
     try {
       Swal.fire(
         'Please enter all the information',
@@ -35,11 +36,13 @@ async function loginValidation(){
     } catch (error) {
       // if sweetalert2 not working in the current moment, use defulat alert
       document.getElementById("myModal").style.display = "block";
-      document.getElementById('error-message').innerHTML = "Please enter all the information";
+      document.getElementById('error-message').innerHTML = 
+        "Please enter all the information";
     }
     return false;
   } 
-  if(newpassword.replace(/ /g,'') == ""){
+
+  if(newpassword.replace(/ /g,'') == "") {
     try {
         Swal.fire(
             'Please check new Password',
@@ -52,7 +55,8 @@ async function loginValidation(){
     
     return false
   }
-  if(password == newpassword){
+
+  if(password == newpassword) {
     try {
       Swal.fire(
         'new password cannot be same as old password',
@@ -62,12 +66,15 @@ async function loginValidation(){
     } catch (error) {
       // if sweetalert2 not working in the current moment, use defulat alert
       document.getElementById("myModal").style.display = "block";
-      document.getElementById('error-message').innerHTML = "new password cannot be same as old password";
+      document.getElementById('error-message').innerHTML = 
+        "new password cannot be same as old password";
     }
     return false;
   }
+
   document.getElementById("change-password-content").style.display = "none";
-  if(newpassword != confirmpassword){
+
+  if(newpassword != confirmpassword) {
     try {
       Swal.fire(
         'new password does not match to confirm password',
@@ -77,12 +84,13 @@ async function loginValidation(){
     } catch (error) {
       // if sweetalert2 not working in the current moment, use defulat alert
       document.getElementById("myModal").style.display = "block";
-      document.getElementById('error-message').innerHTML = "new password does not match to confirm password";
+      document.getElementById('error-message').innerHTML = 
+        "new password does not match to confirm password";
     }
     return false;
   }
   // password length must greater than 8
-  if(newpassword.length < 8){
+  if(newpassword.length < 8) {
     try {
       Swal.fire(
         'password must be at least 8 characters',
@@ -92,12 +100,14 @@ async function loginValidation(){
     } catch (error) {
       // if sweetalert2 not working in the current moment, use defulat alert
       document.getElementById("myModal").style.display = "block";
-      document.getElementById('error-message').innerHTML = "password must be at least 8 characters";
+      document.getElementById('error-message').innerHTML = 
+        "password must be at least 8 characters";
     }
     return false;
   }
+
   var format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
-    if(format.test(newpassword) || /\s/g.test(newpassword)){
+    if(format.test(newpassword) || /\s/g.test(newpassword)) {
         try {
             Swal.fire(
                 'The password can only numbers and letters',
@@ -115,6 +125,7 @@ async function loginValidation(){
         username: document.getElementById("userID").value,
         password: document.getElementById("oldPassword").value,
       }
+
       const response = await fetch('/patientlogin', {
         method: 'POST',
         headers: {
@@ -122,6 +133,7 @@ async function loginValidation(){
         },
         body: JSON.stringify(logininfo)
       });
+
       if(response.status != 202){
         try {
           Swal.fire(
@@ -132,7 +144,8 @@ async function loginValidation(){
         } catch (error) {
           // if sweetalert2 not working in the current moment, use defulat alert
           document.getElementById("myModal").style.display = "block";
-          document.getElementById('error-message').innerHTML = "Please check your username and password";
+          document.getElementById('error-message').innerHTML = 
+            "Please check your username and password";
         }
         return false;
       }
@@ -149,26 +162,27 @@ async function loginValidation(){
   } catch (error) {
     // if sweetalert2 not working in the current moment, use defulat alert
     document.getElementById("myModal").style.display = "block";
-    document.getElementById('error-message').innerHTML = "password must be at least 8 characters";
+    document.getElementById('error-message').innerHTML = 
+      "password must be at least 8 characters";
   }
-
-
   return true;
 }
-
 
 // thie function is used to validate login info
 async function validate() {
   var patient = document.getElementById("patient");
   var doctor = document.getElementById("doctor");
+
   // get doctor and patient style to help to identify which one has been selected
   const doctorStyle = getComputedStyle(doctor);
   const patientStyle = getComputedStyle(patient);
   var doctor;
   var patient;
+
   // get password and username value 
   const password = document.getElementById("password").value;
   const username = document.getElementById("username").value;
+
   // based on the style, check which one has been selected
   if (patientStyle.color == "rgb(0, 0, 0)") {
     patient = true;
@@ -184,8 +198,10 @@ async function validate() {
       isDoctor: doctor,
       isPatient: patient
     }
+
     // error message if user not enter either username of password
-    if (document.getElementById("username").value == "" || document.getElementById("password").value == "") {
+    if (document.getElementById("username").value == "" || 
+        document.getElementById("password").value == "") {
       try {
         Swal.fire(
           'userID and password',
@@ -195,10 +211,12 @@ async function validate() {
       } catch (error) {
         // if sweetalert2 not working in the current moment, use defulat alert
         document.getElementById("myModal").style.display = "block";
-        document.getElementById('error-message').innerHTML = "please enter a userID and password";
+        document.getElementById('error-message').innerHTML = 
+          "please enter a userID and password";
       }
       return
     }
+
     // post method for login
     if(patient == true){
       const response = await fetch('/patientlogin', {
@@ -208,6 +226,7 @@ async function validate() {
         },
         body: JSON.stringify(patientInfo)
       });
+
       // based on the response, redirect to data page for patient, or showing error meesage
       if (response.status == 202) {
         window.location.href = "./data/" + response.statusText;
@@ -222,9 +241,10 @@ async function validate() {
         } catch (error) {
           // if sweetalert2 not working in the current moment, use defulat alert
           document.getElementById("myModal").style.display = "block";
-          document.getElementById('error-message').innerHTML = "Invalid identity, userID or password";
+          document.getElementById('error-message').innerHTML = 
+            "Invalid identity, userID or password";
         }
-      } else if(response.status == 200){
+      } else if(response.status == 200) {
         try {
           Swal.fire(
             'Invalid identity, userID or password',
@@ -234,7 +254,8 @@ async function validate() {
         } catch (error) {
           // if sweetalert2 not working in the current moment, use defulat alert
           document.getElementById("myModal").style.display = "block";
-          document.getElementById('error-message').innerHTML = "Invalid identity, userID or password";
+          document.getElementById('error-message').innerHTML = 
+            "Invalid identity, userID or password";
         }
       }
     }
@@ -288,6 +309,7 @@ function identityPatient() {
   var doctor = document.getElementById("doctor");
   const doctorStyle = getComputedStyle(doctor);
   const patientStyle = getComputedStyle(patient);
+
   // if patient is black, cheng doctor to grey
   if (patientStyle.color == "rgb(0, 0, 0)") {
     document.getElementById("doctor").style.color = "grey";

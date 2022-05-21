@@ -31,6 +31,7 @@ function reloadPage(){
         }, "1000")
     }
 }
+
 // check if support message input is valid 
 function supportMessageValidation(){
     // cannot submit empty support message
@@ -48,6 +49,7 @@ function supportMessageValidation(){
     }
     return true;
 }
+
 // check if comment message input is valid 
 function commentValidation(){
     // cannot submit empty comment

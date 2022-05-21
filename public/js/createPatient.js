@@ -2,13 +2,15 @@
 // if corresponding data type check box checked, 
 // clinician can enter the safety threshold value
 // if unchecked, the safety threshold value should be cleared
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function() {
     // clistent blood glucose check box
+
     document.getElementById("bloodGlucoseCheckbox").addEventListener("change", function() {
         // if checked, allow clinican to enter the safety threshold value
         if(this.checked){
             document.getElementById('bloodGlucoseLowerValue').readOnly = false
             document.getElementById('bloodGlucoseUpperValue').readOnly = false
+
         // if unchecked, not allow clinican to enter the safety threshold value
         // and clear the value
         }else{
@@ -18,6 +20,7 @@ document.addEventListener("DOMContentLoaded", function(){
             document.getElementById('bloodGlucoseUpperValue').value = ""
         }
     });
+
     // same logic as above
     document.getElementById("weightCheckbox").addEventListener("change", function() {
         if(this.checked){
@@ -30,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function(){
             document.getElementById('weightUpperValue').value = ""
         }
     });
+
     // same logic as above
     document.getElementById("insulinTakenCheckbox").addEventListener("change", function() {
         if(this.checked){
@@ -62,10 +66,11 @@ function checkDataInput(){
     // check at least one data type is required
     // if all the data type check box is unchecked 
     // alert error message
+
     if(!document.getElementById("bloodGlucoseCheckbox").checked &&
     !document.getElementById("weightCheckbox").checked &&
     !document.getElementById("insulinTakenCheckbox").checked &&
-    !document.getElementById("exerciseCheckbox").checked ){
+    !document.getElementById("exerciseCheckbox").checked ) {
         try {
             Swal.fire(
                 'Please select at least one data',
@@ -77,11 +82,12 @@ function checkDataInput(){
         }
         return false
     }
+
     // if data type check box checked but not have safety threshold value
     // alert erro message
     if(document.getElementById("bloodGlucoseCheckbox").checked && 
     (document.getElementById('bloodGlucoseLowerValue').value == "" || 
-    document.getElementById('bloodGlucoseUpperValue').value == "")){
+    document.getElementById('bloodGlucoseUpperValue').value == "")) {
         try {
             Swal.fire(
                 'please enter blood glucose safety threshold',
@@ -93,10 +99,11 @@ function checkDataInput(){
         }
         return false
     }
+
     // same logic above 
     if(document.getElementById("weightCheckbox").checked && 
     (document.getElementById('weightLowerValue').value == "" || 
-    document.getElementById('weightUpperValue').value == "")){
+    document.getElementById('weightUpperValue').value == "")) {
         try {
             Swal.fire(
                 'please enter weight safety threshold',
@@ -108,10 +115,11 @@ function checkDataInput(){
         }
         return false
     }
+
     // same logic above 
     if(document.getElementById("insulinTakenCheckbox").checked && 
     (document.getElementById('insulinTakenLowerValue').value == "" || 
-    document.getElementById('insulinTakenUpperValue').value == "")){
+    document.getElementById('insulinTakenUpperValue').value == "")) {
         try {
             Swal.fire(
                 'please enter insulin taken safety threshold',
@@ -123,10 +131,11 @@ function checkDataInput(){
         }
         return false
     }
+
     // same logic above 
     if(document.getElementById("exerciseCheckbox").checked && 
     (document.getElementById('exerciseLowerValue').value == "" || 
-    document.getElementById('exerciseUpperValue').value == "")){
+    document.getElementById('exerciseUpperValue').value == "")) {
         try {
             Swal.fire(
                 'please enter exercise safety threshold',
@@ -138,11 +147,12 @@ function checkDataInput(){
         }
         return false
     }
+
     // if data type check box checked but lower value >= upper value
     // alert error message
     if(document.getElementById("bloodGlucoseCheckbox").checked &&
     Number(document.getElementById('bloodGlucoseLowerValue').value) >= 
-    Number(document.getElementById('bloodGlucoseUpperValue').value)){
+    Number(document.getElementById('bloodGlucoseUpperValue').value)) {
         try {
             Swal.fire(
                 'Blood Glucose Lower Value should be less than Upper Value',
@@ -154,10 +164,11 @@ function checkDataInput(){
         }
         return false
     }
+
     // same logic above 
     if(document.getElementById("weightCheckbox").checked &&
     Number(document.getElementById('weightLowerValue').value) >=
-    Number(document.getElementById('weightUpperValue').value)){
+    Number(document.getElementById('weightUpperValue').value)) {
         try {
             Swal.fire(
                 'Weight Lower Value should be less than Upper Value',
@@ -169,10 +180,11 @@ function checkDataInput(){
         }
         return false
     }
+
     // same logic above 
     if(document.getElementById("insulinTakenCheckbox").checked &&
     Number(document.getElementById('insulinTakenLowerValue').value) >=
-    Number(document.getElementById('insulinTakenUpperValue').value)){
+    Number(document.getElementById('insulinTakenUpperValue').value)) {
         try {
             Swal.fire(
                 'Insulin Taken Lower Value should be less than Upper Value',
@@ -184,10 +196,11 @@ function checkDataInput(){
         }
         return false
     }
+
     // same logic above 
     if(document.getElementById("exerciseCheckbox").checked &&
     Number(document.getElementById('exerciseLowerValue').value) >=
-    Number(document.getElementById('exerciseUpperValue').value)){
+    Number(document.getElementById('exerciseUpperValue').value)) {
         try {
             Swal.fire(
                 'Exercise Lower Value should be less than Upper Value',
@@ -199,6 +212,7 @@ function checkDataInput(){
         }
         return false
     }
+
     // alert success message
     try {
         Swal.fire(
@@ -215,7 +229,7 @@ function checkDataInput(){
 // check is patient detail has enterd and if it is valid
 function createPatientValidation(){
     // the frist name cannot be empty
-    if(document.getElementById('firstName').value.replace(/ /g,'') == ""){
+    if(document.getElementById('firstName').value.replace(/ /g,'') == "") {
         try {
             Swal.fire(
                 'Please enter Frist name',
@@ -227,8 +241,9 @@ function createPatientValidation(){
         }
         
         return false
+
         // last name cannot be empty
-    }else if (document.getElementById('lastName').value.replace(/ /g,'') == ""){
+    }else if (document.getElementById('lastName').value.replace(/ /g,'') == "") {
         try {
             Swal.fire(
                 'Please enter Last name',
@@ -241,7 +256,7 @@ function createPatientValidation(){
         
         return false
         // screen name not empty
-    }else if(document.getElementById('screenName').value.replace(/ /g,'') == ""){
+    }else if(document.getElementById('screenName').value.replace(/ /g,'') == "") {
         try {
             Swal.fire(
                 'Please enter Screen name',
@@ -254,7 +269,7 @@ function createPatientValidation(){
         
         return false
         // birth not empty
-    }else if(document.getElementById('brith').value.replace(/ /g,'') == ""){
+    }else if(document.getElementById('brith').value.replace(/ /g,'') == "") {
         try {
             Swal.fire(
                 'Please enter birth',
@@ -269,7 +284,7 @@ function createPatientValidation(){
         // user ID not empty
     }
     var date = document.getElementById('brith').value.split('/');
-    if(date.length != 3){
+    if(date.length != 3) {
         try {
             Swal.fire(
                 'Please check birth',
@@ -281,7 +296,8 @@ function createPatientValidation(){
         }
         
         return false
-    }else if(Number.isNaN(Number(date[0])) || Number.isNaN(Number(date[1])) || Number.isNaN(Number(date[2]))){
+    }else if(Number.isNaN(Number(date[0])) || Number.isNaN(Number(date[1])) || 
+            Number.isNaN(Number(date[2]))){
         try {
             Swal.fire(
                 'Please check birth',
@@ -293,7 +309,8 @@ function createPatientValidation(){
         }
         
         return false
-    }else if(Number(date[0])>31 || Number(date[0])<1 || Number(date[1])>12 || Number(date[1])<1 || Number(date[2])<0){
+    }else if(Number(date[0])>31 || Number(date[0])<1 || Number(date[1])>12 || 
+                Number(date[1])<1 || Number(date[2])<0){
         try {
             Swal.fire(
                 'Please check birth',
@@ -305,7 +322,8 @@ function createPatientValidation(){
         }
         return false
     }
-    if(document.getElementById('userId').value.replace(/ /g,'') == ""){
+
+    if(document.getElementById('userId').value.replace(/ /g,'') == "") {
         try {
             Swal.fire(
                 'Please enter User id',
@@ -318,7 +336,7 @@ function createPatientValidation(){
         
         return false
         // password not empty
-    }else if(document.getElementById('password').value.replace(/ /g,'') == ""){
+    }else if(document.getElementById('password').value.replace(/ /g,'') == "") {
         try {
             Swal.fire(
                 'Please enter Password',
@@ -333,7 +351,7 @@ function createPatientValidation(){
     }
     var password = document.getElementById('password').value
     // password length must be greater than 8
-    if(password.length < 8){
+    if(password.length < 8) {
         try {
             Swal.fire(
                 'The Password at least at least 8 characters long.',
@@ -360,25 +378,28 @@ function createPatientValidation(){
         
         return false
     }
+
     // check if the patient userid already exists
-    if(!checkPatientExists()){
+    if(!checkPatientExists()) {
         return false;
     }
+
     // call checkDatainput function to check if clinician
     // has enter the valid safety threshold
-    if(!checkDataInput()){
+    if(!checkDataInput()) {
         return false;
     }
     return true;
 }
 
 // check if the userID is in the DB or not, if in the DB, need to change another one 
-async function checkPatientExists(){
+async function checkPatientExists() {
     var userEmail = document.getElementById('userId').value
     try {
         let patient = {
             userId: userEmail,
         }
+
         // call post method to check if patient userid already in the DB
         let response = await fetch('/checkPatient', {
             method: 'POST',
@@ -388,8 +409,9 @@ async function checkPatientExists(){
             body: JSON.stringify(patient)
           });
           console.log(response)
+          
           // if post method response return 201 means userid exists
-          if(response.status == 201){
+          if(response.status == 201) {
                 try {
                     Swal.fire(
                         'Account already exists',

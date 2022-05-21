@@ -1,6 +1,12 @@
-checkBox = ["bloodGlucoseCheckboxUpdate","weightCheckboxUpdate","insulinTakenCheckboxUpdate", "exerciseCheckboxUpdate"]
-lowervalue= ["bloodGlucoseLowerValueUpdate","weightLowerValueUpdate", "insulinTakenLowerValueUpdate","exerciseLowerBalueUpdate"]
-uppervalue= ["bloodGlucoseUpperValueUpdate", "weightUpperValueUpdate", "insulinTakenUpperValueUpdate","exerciseUpperValueUpdate"]
+checkBox = ["bloodGlucoseCheckboxUpdate","weightCheckboxUpdate",
+            "insulinTakenCheckboxUpdate", "exerciseCheckboxUpdate"]
+
+lowervalue= ["bloodGlucoseLowerValueUpdate","weightLowerValueUpdate", 
+            "insulinTakenLowerValueUpdate","exerciseLowerBalueUpdate"]
+
+uppervalue= ["bloodGlucoseUpperValueUpdate", "weightUpperValueUpdate", 
+            "insulinTakenUpperValueUpdate","exerciseUpperValueUpdate"]
+
 valueName = ["blood glucose","weight", "insulin Taken","exercise"]
 
 // same logic with eventListener in createPatient.js
@@ -18,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function(){
             
         }
     });
+
     document.getElementById("weightCheckboxUpdate").addEventListener("change", function() {
         if(this.checked){
             document.getElementById('weightLowerValueUpdate').readOnly = false
@@ -31,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function(){
             
         }
     });
+
     document.getElementById("insulinTakenCheckboxUpdate").addEventListener("change", function() {
         if(this.checked){
             document.getElementById('insulinTakenLowerValueUpdate').readOnly = false
@@ -44,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function(){
             
         }
     });
+
     document.getElementById("exerciseCheckboxUpdate").addEventListener("change", function() {
         if(this.checked){
             document.getElementById('exerciseLowerBalueUpdate').readOnly = false
@@ -58,8 +67,6 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     });
 });
-
-
 
 
 // load data from DB and display in the updatePatient page
@@ -85,7 +92,8 @@ function setRequired(data,safetyThreshold){
 function updatePatientValidation(){
     for(let i =0; i < 4; i++){
         if(document.getElementById(checkBox[i]).checked){
-            if(document.getElementById(lowervalue[i]).value == "" || document.getElementById(uppervalue[i]).value == ""){
+            if(document.getElementById(lowervalue[i]).value == "" || 
+                document.getElementById(uppervalue[i]).value == ""){
                 try {
                     Swal.fire(
                         'Please enter '+ valueName[i]  +' safety threshold values',
@@ -97,7 +105,9 @@ function updatePatientValidation(){
                 }
                 return false;
             }
-            if(Number(document.getElementById(lowervalue[i]).value) >= Number(document.getElementById(uppervalue[i]).value)){
+
+            if(Number(document.getElementById(lowervalue[i]).value) >= 
+                Number(document.getElementById(uppervalue[i]).value)){
                 try {
                     Swal.fire(
                         valueName[i]+' lower value should be less than upper value',
@@ -112,6 +122,7 @@ function updatePatientValidation(){
             
         }
     }
+    
     try {
         Swal.fire(
             'Account update successfully',
