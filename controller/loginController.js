@@ -5,10 +5,10 @@ const bcrypt = require('bcryptjs')
 
 const isAuthenticated = (req, res, next) => {
     // If user is not authenticated via passport, redirect to login page 
-
     if(req.session.passport == undefined){
         return res.redirect('/welcome') 
     }
+
     if(req.params.id != req.session.passport.user){
         return res.redirect('/welcome') 
     }
@@ -16,6 +16,7 @@ const isAuthenticated = (req, res, next) => {
     if (!req.isAuthenticated()) {
         return res.redirect('/welcome') 
     }
+
     return next() 
 }
 
@@ -38,17 +39,20 @@ const postChangePassword = (req, res, next) => {
                 console.log('Incorrect password')
                 return
             }
+
             if (!valid) {
                 console.log('Incorrect password')
                 // res.send('Incorrect password')
                 return
             }
+
             bcrypt.hash(req.body.newPassword, 10, (err, hash) => { 
                 if (err) {
                     return next(err) 
                 }
                 // Replace password with hash
-                patient.findOneAndUpdate({ userid: req.body.userID }, { password: hash }, (err, user) => {
+                patient.findOneAndUpdate({ userid: req.body.userID }, 
+                    { password: hash }, (err, user) => {
                     if (err) {
                         // res.json({ success: false, message: err }); // Return error
                     } else {

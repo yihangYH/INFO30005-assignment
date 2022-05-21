@@ -20,15 +20,18 @@ const getPatient = async(req,res,next) => {
         .populate("exercise")
         .populate("bloodGlucose")
         .populate("insulinTaken").lean();
+
         // caculate each patient engagement rate 
         for(let i =0 ; i < allPatient.length; i++){
             patientRate.push(caculateRate(allPatient[i]));
         }
         patientRate.push(currentPatientRate);
+
         // sort engagement rate 
         patientRate.sort(function(a,b){
             return b[1] - a[1];
         });
+        
         // assign engagement rate  to patientData named as rank
         Object.assign(patientData, {"rank": patientRate});
         res.render('data.hbs', {patientInfo: patientData})
