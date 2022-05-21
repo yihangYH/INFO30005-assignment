@@ -1,5 +1,4 @@
 //helper functions for .hbs files
-
 const exphbs = require('express-handlebars')
 var hbs = exphbs.create({});
 
@@ -56,8 +55,6 @@ hbs.handlebars.registerHelper("findLastDate", function(data){
     return lastDate
 });
 
-
-
 hbs.handlebars.registerHelper("findWeight", function(data) {
     // get the latest value 
     return data[data.length -1].value;
@@ -85,7 +82,6 @@ hbs.handlebars.registerHelper("reverse", function(data) {
 });
 
 hbs.handlebars.registerHelper("patientDetailGetValue", function(value, require,index) {
-
     if(require[index].includes("Not")){
         return "Not Required"
     }else{
@@ -94,7 +90,6 @@ hbs.handlebars.registerHelper("patientDetailGetValue", function(value, require,i
 })
 
 hbs.handlebars.registerHelper("patientDetailGetTime", function(value, require,index) {
-
     if(require[index].includes("Not")){
         return ""
     }else{
@@ -167,19 +162,25 @@ hbs.handlebars.registerHelper("checkNotRequired", function(data, safety, index) 
 
 // find the data comment
 hbs.handlebars.registerHelper("findComment", function(data){
-    let AuDate = new Date().toLocaleString("en-US", {timeZone: "Australia/Sydney"});
+    let AuDate = new Date().toLocaleString("en-US", 
+                            {timeZone: "Australia/Sydney"});
     let dateString = AuDate.toString().replace(',', ' ');
     const currentMonth = dateString.split('/')[1];
     const currentDay = dateString.split('/')[0];
     let time = data[data.length-1].time.split('/')
-    if(data[data.length-1].comment == "Not Required" || data[data.length-1].comment == ""){
+
+    if(data[data.length-1].comment == "Not Required" || 
+        data[data.length-1].comment == ""){
         return "+ Comment"
     }
+
     //if the time period not matching, return null
     if(time[0] != currentDay || time[1] != currentMonth){
         return ""
     }
+
     const comment = data[data.length-1].comment
+
     if(comment.length>30){
         return comment.substring(0, 30) + "...";
     }
@@ -191,9 +192,11 @@ hbs.handlebars.registerHelper("getValue", function(data, safety, index) {
     if(!safety[index]){
         return "Not Required"
     }
+
     if(data.length == 0){
         return "No data yet"
     }
+
     // get the latest value 
     const latest = data[data.length-1]
     return latest.value
@@ -204,6 +207,7 @@ hbs.handlebars.registerHelper("getCommentTime", function(data) {
     if(data.length == 0){
         return "No time yet"
     }
+
     // get the data updated time, and do some formating
     const latest = data[data.length-1].time
     if (latest){
@@ -212,7 +216,9 @@ hbs.handlebars.registerHelper("getCommentTime", function(data) {
 
         // formating the time 
 
-        return twoDigit(date[0])+"/"+twoDigit(date[1])+"/"+twoDigit(date[2])+" "+twoDigit(time[0])+":"+twoDigit(time[1])+" "+latest.split(" ")[3]
+        return twoDigit(date[0])+"/"+twoDigit(date[1])+
+                "/"+twoDigit(date[2])+" "+twoDigit(time[0])+
+                ":"+twoDigit(time[1])+" "+latest.split(" ")[3]
 
     }
     else{
@@ -227,15 +233,20 @@ hbs.handlebars.registerHelper("getTime", function(data, safety, index) {
     if(!safety[index]){
         return 
     }
+
     if(data.length == 0){
         return "Not updated yet"
     }
+
     const latest = data[data.length-1].time
+
     if (latest){
         const time = latest.split(" ")[2].split(":")
         const date = latest.split(" ")[0].split("/")
         // formating the time 
-        return twoDigit(date[0])+"/"+twoDigit(date[1])+"/"+twoDigit(date[2])+" "+twoDigit(time[0])+":"+twoDigit(time[1])+" "+latest.split(" ")[3]
+        return twoDigit(date[0])+"/"+twoDigit(date[1])+"/"
+        +twoDigit(date[2])+" "+twoDigit(time[0])+
+        ":"+twoDigit(time[1])+" "+latest.split(" ")[3]
     }
     else{
         return latest
@@ -254,17 +265,19 @@ function twoDigit(data){
 
 // check patient's safty threshold
 hbs.handlebars.registerHelper("checkSafety", function(safety,value,index) {
-
     if(value.length == 0){
         return ""
     }
+
     const bound =  safety[index];
+
     // if the data is required 
     if(!bound.includes("Not Required")){
         // find the upper and lower bound
         const lower = Number(bound.split("-")[0])
         const upper = Number(bound.split("-")[1])
         const latestValue = value[value.length-1].value
+        
         // if the updated value is <=lower or >= upper, change element style
         if(latestValue<=lower || latestValue>=upper){
             return "color: red; font-style: italic; font-weight: bold; "
